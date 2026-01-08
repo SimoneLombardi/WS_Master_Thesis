@@ -1,0 +1,34 @@
+[0.020s] Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing -- -j32 -l32
+[0.056s] [35m[1mConsolidate compiler generated dependencies of target cloud_motion_segmentation[0m
+[0.056s] [35m[1mConsolidate compiler generated dependencies of target env_cloud_manager[0m
+[0.077s] [ 50%] Built target env_cloud_manager
+[0.082s] [100%] Built target cloud_motion_segmentation
+[0.123s] Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing -- -j32 -l32
+[0.124s] Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing
+[0.142s] -- Install configuration: ""
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/lib/environment_pointcloud_processing/env_cloud_manager
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/lib/environment_pointcloud_processing/cloud_motion_segmentation
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources/partial_chassis_downsampled_cloud.pcd
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources/chassis_downsampled_cloud.ply
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources/rviz
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources/rviz/rviz_cfg.rviz
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources/chassis_downsampled_cloud.pcd
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources/chassis_downsampled_cloud_scaled.pcd
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources/chassis_downsampled_cloud_scaled_centered.pcd
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/ament_index/resource_index/package_run_dependencies/environment_pointcloud_processing
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/ament_index/resource_index/parent_prefix_path/environment_pointcloud_processing
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/environment/ament_prefix_path.sh
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/environment/ament_prefix_path.dsv
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/environment/path.sh
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/environment/path.dsv
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/local_setup.bash
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/local_setup.sh
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/local_setup.zsh
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/local_setup.dsv
+[0.142s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/package.dsv
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/ament_index/resource_index/packages/environment_pointcloud_processing
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/cmake/environment_pointcloud_processingConfig.cmake
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/cmake/environment_pointcloud_processingConfig-version.cmake
+[0.142s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/package.xml
+[0.143s] Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing

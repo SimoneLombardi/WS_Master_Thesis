@@ -1,0 +1,30 @@
+[35m[1mConsolidate compiler generated dependencies of target cloud_motion_segmentation[0m
+[35m[1mConsolidate compiler generated dependencies of target env_cloud_manager[0m
+[ 50%] Built target env_cloud_manager
+[100%] Built target cloud_motion_segmentation
+-- Install configuration: ""
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/lib/environment_pointcloud_processing/env_cloud_manager
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/lib/environment_pointcloud_processing/cloud_motion_segmentation
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources/partial_chassis_downsampled_cloud.pcd
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources/chassis_downsampled_cloud.ply
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources/rviz
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources/rviz/rviz_cfg.rviz
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources/chassis_downsampled_cloud.pcd
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources/chassis_downsampled_cloud_scaled.pcd
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources/chassis_downsampled_cloud_scaled_centered.pcd
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/ament_index/resource_index/package_run_dependencies/environment_pointcloud_processing
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/ament_index/resource_index/parent_prefix_path/environment_pointcloud_processing
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/environment/ament_prefix_path.sh
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/environment/path.sh
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/environment/path.dsv
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/local_setup.bash
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/local_setup.sh
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/local_setup.zsh
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/local_setup.dsv
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/package.dsv
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/ament_index/resource_index/packages/environment_pointcloud_processing
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/cmake/environment_pointcloud_processingConfig.cmake
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/cmake/environment_pointcloud_processingConfig-version.cmake
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/package.xml

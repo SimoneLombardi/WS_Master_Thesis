@@ -1,0 +1,36 @@
+[35m[1mConsolidate compiler generated dependencies of target kuka-test-controller[0m
+[35m[1mConsolidate compiler generated dependencies of target ur10e-test-admittance[0m
+[ 50%] Built target kuka-test-controller
+[100%] Built target ur10e-test-admittance
+-- Install configuration: ""
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/lib/ur_admittance_controller/kuka-test-controller
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/lib/ur_admittance_controller/ur10e-test-admittance
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//launch
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//launch/ur_task_controllers_real.launch.py
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//launch/ur_task_controllers_sim.launch.py
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//launch/ur_task_controllers_control_checks.launch.py
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//resources
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//resources/partial_chassis_downsampled_cloud.pcd
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//resources/chassis_downsampled_cloud.ply
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//resources/rviz
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//resources/rviz/rviz_cfg.rviz
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//resources/chassis_downsampled_cloud.pcd
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//resources/bagfiles
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//resources/bagfiles/rosbag2_2025_01_14-19_19_57
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//resources/bagfiles/rosbag2_2025_01_14-19_19_57/rosbag2_2025_01_14-19_19_57_0.db3
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//resources/bagfiles/rosbag2_2025_01_14-19_19_57/metadata.yaml
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ament_index/resource_index/package_run_dependencies/ur_admittance_controller
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ament_index/resource_index/parent_prefix_path/ur_admittance_controller
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/environment/ament_prefix_path.sh
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/environment/path.sh
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/environment/path.dsv
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/local_setup.bash
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/local_setup.sh
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/local_setup.zsh
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/local_setup.dsv
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/package.dsv
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ament_index/resource_index/packages/ur_admittance_controller
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/cmake/ur_admittance_controllerConfig.cmake
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/cmake/ur_admittance_controllerConfig-version.cmake
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/package.xml
