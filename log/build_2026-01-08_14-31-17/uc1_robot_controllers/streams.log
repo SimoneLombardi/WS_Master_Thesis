@@ -1,0 +1,244 @@
+[0.009s] Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers': AMENT_PREFIX_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers -- -j32 -l32
+[0.054s] [35m[1mConsolidate compiler generated dependencies of target joint-robot-test[0m
+[0.055s] [35m[1mConsolidate compiler generated dependencies of target joint-robot-tp-test[0m
+[0.063s] [  9%] Built target kuka-joint-cmd-buf
+[0.068s] [ 31%] Built target robot-test
+[0.074s] [ 36%] [32mBuilding CXX object CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.o[0m
+[0.075s] [ 40%] [32mBuilding CXX object CMakeFiles/joint-robot-tp-test.dir/src/TPComputation.cpp.o[0m
+[0.535s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:[m[K In member function ‘[01m[KEigen::MatrixXd TPComputation::REG_Pinv(const MatrixXd&)[m[K’:
+[0.535s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;31m[Kerror: [m[Kclass template argument deduction failed:
+[0.535s]    67 |     Eigen::DiagonalMatrix [01;31m[KSS_pinv[m[K;
+[0.535s]       |                           [01;31m[K^~~~~~~[m[K
+[0.535s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KDiagonalMatrix()[m[K’
+[0.536s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:314[m[K,
+[0.536s]                  from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+[0.536s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+[0.536s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[0.536s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:218:21:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime, class OtherDerived> DiagonalMatrix(const Eigen::MatrixBase<OtherDerived>&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>[m[K’
+[0.536s]   218 |     explicit inline [01;36m[KDiagonalMatrix[m[K(const MatrixBase<OtherDerived>& other) : m_diagonal(other)
+[0.536s]       |                     [01;36m[K^~~~~~~~~~~~~~[m[K
+[0.536s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:218:21:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[0.536s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[0.536s]    67 |     Eigen::DiagonalMatrix [01;36m[KSS_pinv[m[K;
+[0.536s]       |                           [01;36m[K^~~~~~~[m[K
+[0.536s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:314[m[K,
+[0.536s]                  from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+[0.536s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+[0.536s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[0.536s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:212:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(const Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>[m[K’
+[0.536s]   212 |     inline [01;36m[KDiagonalMatrix[m[K(const DiagonalMatrix& other) : m_diagonal(other.diagonal()) {}
+[0.536s]       |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[0.536s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:212:12:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[0.536s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[0.536s]    67 |     Eigen::DiagonalMatrix [01;36m[KSS_pinv[m[K;
+[0.536s]       |                           [01;36m[K^~~~~~~[m[K
+[0.537s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:314[m[K,
+[0.537s]                  from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+[0.537s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+[0.537s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[0.537s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:208:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime, class OtherDerived> DiagonalMatrix(const Eigen::DiagonalBase<OtherDerived>&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>[m[K’
+[0.537s]   208 |     inline [01;36m[KDiagonalMatrix[m[K(const DiagonalBase<OtherDerived>& other) : m_diagonal(other.diagonal()) {}
+[0.537s]       |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[0.537s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:208:12:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[0.537s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[0.537s]    67 |     Eigen::DiagonalMatrix [01;36m[KSS_pinv[m[K;
+[0.537s]       |                           [01;36m[K^~~~~~~[m[K
+[0.537s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:314[m[K,
+[0.537s]                  from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+[0.537s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+[0.537s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[0.537s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:201:34:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(const std::initializer_list<std::initializer_list<_Tp> >&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>[m[K’
+[0.537s]   201 |     explicit EIGEN_STRONG_INLINE [01;36m[KDiagonalMatrix[m[K(const std::initializer_list<std::initializer_list<Scalar>>& list)
+[0.537s]       |                                  [01;36m[K^~~~~~~~~~~~~~[m[K
+[0.537s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:201:34:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[0.537s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[0.537s]    67 |     Eigen::DiagonalMatrix [01;36m[KSS_pinv[m[K;
+[0.537s]       |                           [01;36m[K^~~~~~~[m[K
+[0.537s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:314[m[K,
+[0.538s]                  from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+[0.538s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+[0.538s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[0.538s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:194:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime, class ... ArgTypes> DiagonalMatrix(const _Scalar&, const _Scalar&, const _Scalar&, const ArgTypes& ...)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>[m[K’
+[0.538s]   194 |     [01;36m[KDiagonalMatrix[m[K(const Scalar& a0, const Scalar& a1, const Scalar& a2, const ArgTypes&... args)
+[0.538s]       |     [01;36m[K^~~~~~~~~~~~~~[m[K
+[0.538s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:194:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[0.538s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;36m[Knote: [m[K  candidate expects at least 3 arguments, 0 provided
+[0.538s]    67 |     Eigen::DiagonalMatrix [01;36m[KSS_pinv[m[K;
+[0.538s]       |                           [01;36m[K^~~~~~~[m[K
+[0.538s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:314[m[K,
+[0.538s]                  from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+[0.538s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+[0.538s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[0.538s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:179:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(const _Scalar&, const _Scalar&, const _Scalar&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>[m[K’
+[0.538s]   179 |     inline [01;36m[KDiagonalMatrix[m[K(const Scalar& x, const Scalar& y, const Scalar& z) : m_diagonal(x,y,z) {}
+[0.538s]       |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[0.538s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:179:12:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[0.538s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 0 provided
+[0.538s]    67 |     Eigen::DiagonalMatrix [01;36m[KSS_pinv[m[K;
+[0.538s]       |                           [01;36m[K^~~~~~~[m[K
+[0.538s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:314[m[K,
+[0.538s]                  from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+[0.538s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+[0.539s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[0.539s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:175:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(const _Scalar&, const _Scalar&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>[m[K’
+[0.539s]   175 |     inline [01;36m[KDiagonalMatrix[m[K(const Scalar& x, const Scalar& y) : m_diagonal(x,y) {}
+[0.539s]       |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[0.539s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:175:12:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[0.539s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+[0.539s]    67 |     Eigen::DiagonalMatrix [01;36m[KSS_pinv[m[K;
+[0.539s]       |                           [01;36m[K^~~~~~~[m[K
+[0.539s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:314[m[K,
+[0.539s]                  from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+[0.539s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+[0.539s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[0.539s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:171:21:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(Eigen::Index)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>[m[K’
+[0.539s]   171 |     explicit inline [01;36m[KDiagonalMatrix[m[K(Index dim) : m_diagonal(dim) {}
+[0.539s]       |                     [01;36m[K^~~~~~~~~~~~~~[m[K
+[0.539s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:171:21:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[0.539s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[0.539s]    67 |     Eigen::DiagonalMatrix [01;36m[KSS_pinv[m[K;
+[0.539s]       |                           [01;36m[K^~~~~~~[m[K
+[0.539s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:314[m[K,
+[0.539s]                  from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+[0.539s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+[0.539s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[0.540s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:167:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix()-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>[m[K’
+[0.540s]   167 |     inline [01;36m[KDiagonalMatrix[m[K() {}
+[0.540s]       |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[0.540s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:167:12:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[0.540s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;36m[Knote: [m[K  couldn’t deduce template parameter ‘[01m[K_Scalar[m[K’
+[0.540s]    67 |     Eigen::DiagonalMatrix [01;36m[KSS_pinv[m[K;
+[0.540s]       |                           [01;36m[K^~~~~~~[m[K
+[0.540s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:163[m[K,
+[0.540s]                  from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+[0.540s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+[0.540s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[0.540s] [01m[K/usr/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h:100:101:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>[m[K’
+[0.540s]   100 | template<typename _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime=SizeAtCompileTime> class [01;36m[KDiagonalMatrix[m[K;
+[0.540s]       |                                                                                                     [01;36m[K^~~~~~~~~~~~~~[m[K
+[0.540s] [01m[K/usr/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h:100:101:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[0.540s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[0.540s]    67 |     Eigen::DiagonalMatrix [01;36m[KSS_pinv[m[K;
+[0.540s]       |                           [01;36m[K^~~~~~~[m[K
+[0.544s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:[m[K In member function ‘[01m[KEigen::MatrixXd TPComputation::REG_Pinv(const MatrixXd&)[m[K’:
+[0.544s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;31m[Kerror: [m[Kclass template argument deduction failed:
+[0.544s]    67 |     Eigen::DiagonalMatrix [01;31m[KSS_pinv[m[K;
+[0.544s]       |                           [01;31m[K^~~~~~~[m[K
+[0.544s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KDiagonalMatrix()[m[K’
+[0.544s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:314[m[K,
+[0.544s]                  from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+[0.544s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+[0.545s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[0.545s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:218:21:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime, class OtherDerived> DiagonalMatrix(const Eigen::MatrixBase<OtherDerived>&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>[m[K’
+[0.545s]   218 |     explicit inline [01;36m[KDiagonalMatrix[m[K(const MatrixBase<OtherDerived>& other) : m_diagonal(other)
+[0.545s]       |                     [01;36m[K^~~~~~~~~~~~~~[m[K
+[0.545s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:218:21:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[0.545s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[0.545s]    67 |     Eigen::DiagonalMatrix [01;36m[KSS_pinv[m[K;
+[0.545s]       |                           [01;36m[K^~~~~~~[m[K
+[0.545s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:314[m[K,
+[0.545s]                  from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+[0.545s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+[0.545s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[0.545s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:212:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(const Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>[m[K’
+[0.545s]   212 |     inline [01;36m[KDiagonalMatrix[m[K(const DiagonalMatrix& other) : m_diagonal(other.diagonal()) {}
+[0.545s]       |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[0.545s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:212:12:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[0.545s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[0.545s]    67 |     Eigen::DiagonalMatrix [01;36m[KSS_pinv[m[K;
+[0.545s]       |                           [01;36m[K^~~~~~~[m[K
+[0.545s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:314[m[K,
+[0.545s]                  from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+[0.545s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+[0.545s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[0.546s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:208:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime, class OtherDerived> DiagonalMatrix(const Eigen::DiagonalBase<OtherDerived>&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>[m[K’
+[0.546s]   208 |     inline [01;36m[KDiagonalMatrix[m[K(const DiagonalBase<OtherDerived>& other) : m_diagonal(other.diagonal()) {}
+[0.546s]       |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[0.546s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:208:12:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[0.546s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[0.546s]    67 |     Eigen::DiagonalMatrix [01;36m[KSS_pinv[m[K;
+[0.546s]       |                           [01;36m[K^~~~~~~[m[K
+[0.546s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:314[m[K,
+[0.546s]                  from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+[0.546s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+[0.546s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[0.546s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:201:34:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(const std::initializer_list<std::initializer_list<_Tp> >&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>[m[K’
+[0.546s]   201 |     explicit EIGEN_STRONG_INLINE [01;36m[KDiagonalMatrix[m[K(const std::initializer_list<std::initializer_list<Scalar>>& list)
+[0.546s]       |                                  [01;36m[K^~~~~~~~~~~~~~[m[K
+[0.546s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:201:34:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[0.546s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[0.546s]    67 |     Eigen::DiagonalMatrix [01;36m[KSS_pinv[m[K;
+[0.546s]       |                           [01;36m[K^~~~~~~[m[K
+[0.546s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:314[m[K,
+[0.546s]                  from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+[0.546s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+[0.546s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[0.546s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:194:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime, class ... ArgTypes> DiagonalMatrix(const _Scalar&, const _Scalar&, const _Scalar&, const ArgTypes& ...)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>[m[K’
+[0.546s]   194 |     [01;36m[KDiagonalMatrix[m[K(const Scalar& a0, const Scalar& a1, const Scalar& a2, const ArgTypes&... args)
+[0.546s]       |     [01;36m[K^~~~~~~~~~~~~~[m[K
+[0.546s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:194:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[0.546s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;36m[Knote: [m[K  candidate expects at least 3 arguments, 0 provided
+[0.546s]    67 |     Eigen::DiagonalMatrix [01;36m[KSS_pinv[m[K;
+[0.546s]       |                           [01;36m[K^~~~~~~[m[K
+[0.547s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:314[m[K,
+[0.547s]                  from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+[0.547s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+[0.547s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[0.547s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:179:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(const _Scalar&, const _Scalar&, const _Scalar&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>[m[K’
+[0.547s]   179 |     inline [01;36m[KDiagonalMatrix[m[K(const Scalar& x, const Scalar& y, const Scalar& z) : m_diagonal(x,y,z) {}
+[0.547s]       |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[0.547s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:179:12:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[0.547s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 0 provided
+[0.547s]    67 |     Eigen::DiagonalMatrix [01;36m[KSS_pinv[m[K;
+[0.547s]       |                           [01;36m[K^~~~~~~[m[K
+[0.547s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:314[m[K,
+[0.547s]                  from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+[0.547s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+[0.547s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[0.547s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:175:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(const _Scalar&, const _Scalar&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>[m[K’
+[0.547s]   175 |     inline [01;36m[KDiagonalMatrix[m[K(const Scalar& x, const Scalar& y) : m_diagonal(x,y) {}
+[0.547s]       |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[0.547s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:175:12:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[0.547s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+[0.547s]    67 |     Eigen::DiagonalMatrix [01;36m[KSS_pinv[m[K;
+[0.547s]       |                           [01;36m[K^~~~~~~[m[K
+[0.547s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:314[m[K,
+[0.547s]                  from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+[0.547s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+[0.547s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[0.547s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:171:21:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(Eigen::Index)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>[m[K’
+[0.547s]   171 |     explicit inline [01;36m[KDiagonalMatrix[m[K(Index dim) : m_diagonal(dim) {}
+[0.547s]       |                     [01;36m[K^~~~~~~~~~~~~~[m[K
+[0.547s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:171:21:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[0.547s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[0.547s]    67 |     Eigen::DiagonalMatrix [01;36m[KSS_pinv[m[K;
+[0.547s]       |                           [01;36m[K^~~~~~~[m[K
+[0.547s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:314[m[K,
+[0.547s]                  from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+[0.547s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+[0.547s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[0.547s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:167:12:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix()-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>[m[K’
+[0.547s]   167 |     inline [01;36m[KDiagonalMatrix[m[K() {}
+[0.547s]       |            [01;36m[K^~~~~~~~~~~~~~[m[K
+[0.547s] [01m[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:167:12:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[0.547s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;36m[Knote: [m[K  couldn’t deduce template parameter ‘[01m[K_Scalar[m[K’
+[0.547s]    67 |     Eigen::DiagonalMatrix [01;36m[KSS_pinv[m[K;
+[0.547s]       |                           [01;36m[K^~~~~~~[m[K
+[0.547s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:163[m[K,
+[0.548s]                  from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+[0.548s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+[0.548s]                  from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[0.548s] [01m[K/usr/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h:100:101:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>[m[K’
+[0.548s]   100 | template<typename _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime=SizeAtCompileTime> class [01;36m[KDiagonalMatrix[m[K;
+[0.548s]       |                                                                                                     [01;36m[K^~~~~~~~~~~~~~[m[K
+[0.548s] [01m[K/usr/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h:100:101:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[0.548s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[0.548s]    67 |     Eigen::DiagonalMatrix [01;36m[KSS_pinv[m[K;
+[0.548s]       |                           [01;36m[K^~~~~~~[m[K
+[4.068s] gmake[2]: *** [CMakeFiles/joint-robot-test.dir/build.make:146: CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.o] Error 1
+[4.068s] gmake[1]: *** [CMakeFiles/Makefile2:169: CMakeFiles/joint-robot-test.dir/all] Error 2
+[4.068s] gmake[1]: *** Waiting for unfinished jobs....
+[4.142s] gmake[2]: *** [CMakeFiles/joint-robot-tp-test.dir/build.make:160: CMakeFiles/joint-robot-tp-test.dir/src/TPComputation.cpp.o] Error 1
+[4.142s] gmake[1]: *** [CMakeFiles/Makefile2:195: CMakeFiles/joint-robot-tp-test.dir/all] Error 2
+[4.142s] gmake: *** [Makefile:146: all] Error 2
+[4.146s] Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers' returned '2': AMENT_PREFIX_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers -- -j32 -l32

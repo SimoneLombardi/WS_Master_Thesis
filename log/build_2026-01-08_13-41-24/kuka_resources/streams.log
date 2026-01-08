@@ -1,0 +1,35 @@
+[0.014s] Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_resources': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_resources -- -j32 -l32
+[0.035s] Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_resources' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_resources -- -j32 -l32
+[0.042s] Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_resources': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_resources
+[0.048s] -- Install configuration: ""
+[0.048s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/urdf
+[0.048s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/urdf/common_constants.xacro
+[0.048s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/urdf/common_colours.xacro
+[0.048s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/urdf/common_materials.xacro
+[0.048s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/config
+[0.048s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/config/view_7_axis_planning_scene.rviz
+[0.048s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/config/planning_7_axis.rviz
+[0.048s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/config/fake_hardware_config_7_axis.yaml
+[0.049s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/config/fake_hardware_config_6_axis.yaml
+[0.049s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/config/view_6_axis_urdf.rviz
+[0.049s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/config/view_6_axis_planning_scene.rviz
+[0.049s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/config/planning_6_axis.rviz
+[0.049s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/config/view_7_axis_urdf.rviz
+[0.049s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/launch
+[0.049s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/launch/fake_hardware_planning_template.launch.py
+[0.049s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/ament_index/resource_index/package_run_dependencies/kuka_resources
+[0.049s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/ament_index/resource_index/parent_prefix_path/kuka_resources
+[0.049s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/environment/ament_prefix_path.sh
+[0.049s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/environment/ament_prefix_path.dsv
+[0.049s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/environment/path.sh
+[0.049s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/environment/path.dsv
+[0.050s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/local_setup.bash
+[0.050s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/local_setup.sh
+[0.050s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/local_setup.zsh
+[0.050s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/local_setup.dsv
+[0.050s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/package.dsv
+[0.051s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/ament_index/resource_index/packages/kuka_resources
+[0.051s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/cmake/kuka_resourcesConfig.cmake
+[0.051s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/cmake/kuka_resourcesConfig-version.cmake
+[0.051s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/package.xml
+[0.056s] Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_resources' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_resources

@@ -308,20 +308,24 @@ int main(int argc, char **argv)
 
     // get the parameters
     if(node2->has_parameter("position")){
-        RCLCPP_INFO(node2->get_logger(), "%f %f %f", node2->position_[0], node2->position_[1], node2->position_[2]);
+        RCLCPP_INFO(node2->get_logger(), "\n%f %f %f", node2->position_[0], node2->position_[1], node2->position_[2]);
     }else{
         RCLCPP_WARN(node2->get_logger(), "Missing parameter, position");
     }
 
     if(node2->has_parameter("orientation")){
-        RCLCPP_INFO(node2->get_logger(), "%f %f %f", node2->orientation_[0], node2->orientation_[1], node2->orientation_[2]);
+        RCLCPP_INFO(node2->get_logger(), "%f %f %f\n", node2->orientation_[0], node2->orientation_[1], node2->orientation_[2]);
     }else{
         RCLCPP_WARN(node2->get_logger(), "Missing parameter, orientation");
     }
 
-    tf2::Vector3 position2(2.0, 0.0, 0.05);
+    tf2::Vector3 position2(node2->position_[0], 
+                           node2->position_[1], 
+                           node2->position_[2]);
     tf2::Quaternion orientation2;
-    orientation2.setRPY(0.0, 0.0, 0.0);
+    orientation2.setRPY(node2->orientation_[0], 
+                        node2->orientation_[1], 
+                        node2->orientation_[2]);
 
     // run nodes
     //node1->make6DofMarker(false, visualization_msgs::msg::InteractiveMarkerControl::MOVE_ROTATE_3D, position1, orientation1, true);

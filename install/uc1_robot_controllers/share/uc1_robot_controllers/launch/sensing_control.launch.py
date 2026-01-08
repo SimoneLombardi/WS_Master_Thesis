@@ -12,7 +12,7 @@ def generate_launch_description():
         executable="interactive-target",
         name="ik_target_body_marker",
         parameters=[{
-            "position":[2.5, 0.0, 0.05],
+            "position":[3.0, 0.0, 0.05],
             "orientation":[0.0, 0.0, 0.0]
         }]
     )

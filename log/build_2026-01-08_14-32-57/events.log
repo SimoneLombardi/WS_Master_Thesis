@@ -1,0 +1,303 @@
+[0.000000] (-) TimerEvent: {}
+[0.000238] (-) JobUnselected: {'identifier': 'environment_pointcloud_processing'}
+[0.000251] (-) JobUnselected: {'identifier': 'keyboard_publisher_pkg'}
+[0.000258] (-) JobUnselected: {'identifier': 'kuka_150_3100_description'}
+[0.000263] (-) JobUnselected: {'identifier': 'kuka_resources'}
+[0.000269] (-) JobUnselected: {'identifier': 'pointcloud_interactive_markers'}
+[0.000274] (-) JobUnselected: {'identifier': 'rsp_uc1'}
+[0.000280] (-) JobUnselected: {'identifier': 'uc1_robot_controllers_interfaces'}
+[0.000285] (-) JobUnselected: {'identifier': 'uc1_robot_perception'}
+[0.000291] (-) JobUnselected: {'identifier': 'uc1_robots_description'}
+[0.000296] (-) JobUnselected: {'identifier': 'ur_admittance_controller'}
+[0.000303] (uc1_robot_controllers) JobQueued: {'identifier': 'uc1_robot_controllers', 'dependencies': OrderedDict([('uc1_robot_controllers_interfaces', '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces'), ('uc1_robot_perception', '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception')])}
+[0.000571] (uc1_robot_controllers) JobStarted: {'identifier': 'uc1_robot_controllers'}
+[0.006639] (uc1_robot_controllers) JobProgress: {'identifier': 'uc1_robot_controllers', 'progress': 'cmake'}
+[0.007290] (uc1_robot_controllers) JobProgress: {'identifier': 'uc1_robot_controllers', 'progress': 'build'}
+[0.008102] (uc1_robot_controllers) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers', '--', '-j32', '-l32'], 'cwd': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'maclab'), ('LC_TIME', 'it_IT.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/maclab'), ('OLDPWD', '/home/maclab/Documents/ROS_WORKSPACES'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'it_IT.UTF-8'), ('MANAGERPID', '2117'), ('SYSTEMD_EXEC_PID', '2526'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '24392'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'maclab'), ('JOURNAL_STREAM', '8:19690'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'maclab'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ISAAC_ROS_WS', '/home/maclab/workspaces/isaac_ros-dev/'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/maclab:@/tmp/.ICE-unix/2250,unix/maclab:/tmp/.ICE-unix/2250'), ('INVOCATION_ID', '98ec006d46cb45f69ba72a27675811a5'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'it_IT.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'it_IT.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.TD9TI3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'it_IT.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:b03254aa-56de-41d7-8b87-651d84ec2e62'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'it_IT.UTF-8'), ('LC_IDENTIFICATION', 'it_IT.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'it_IT.UTF-8'), ('LC_PAPER', 'it_IT.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces:/opt/ros/humble')]), 'shell': False}
+[0.042430] (uc1_robot_controllers) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target joint-robot-test\x1b[0m\n'}
+[0.045938] (uc1_robot_controllers) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target joint-robot-tp-test\x1b[0m\n'}
+[0.048886] (uc1_robot_controllers) StdoutLine: {'line': b'[  9%] Built target kuka-joint-cmd-buf\n'}
+[0.059502] (uc1_robot_controllers) StdoutLine: {'line': b'[ 13%] \x1b[32mBuilding CXX object CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.o\x1b[0m\n'}
+[0.059948] (uc1_robot_controllers) StdoutLine: {'line': b'[ 36%] Built target robot-test\n'}
+[0.069177] (uc1_robot_controllers) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/joint-robot-tp-test.dir/src/TPComputation.cpp.o\x1b[0m\n'}
+[0.100042] (-) TimerEvent: {}
+[0.200278] (-) TimerEvent: {}
+[0.300515] (-) TimerEvent: {}
+[0.400866] (-) TimerEvent: {}
+[0.501178] (-) TimerEvent: {}
+[0.543976] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[KEigen::MatrixXd TPComputation::REG_Pinv(const MatrixXd&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[0.544138] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kclass template argument deduction failed:\n'}
+[0.544190] (uc1_robot_controllers) StderrLine: {'line': b'   67 |     Eigen::DiagonalMatrix \x1b[01;31m\x1b[KSS_pinv\x1b[m\x1b[K;\n'}
+[0.544235] (uc1_robot_controllers) StderrLine: {'line': b'      |                           \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.544277] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[KDiagonalMatrix()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.544320] (uc1_robot_controllers) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Core:314\x1b[m\x1b[K,\n'}
+[0.544362] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Dense:1\x1b[m\x1b[K,\n'}
+[0.544403] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6\x1b[m\x1b[K,\n'}
+[0.544511] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1\x1b[m\x1b[K:\n'}
+[0.544557] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:218:21:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime, class OtherDerived> DiagonalMatrix(const Eigen::MatrixBase<OtherDerived>&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.544604] (uc1_robot_controllers) StderrLine: {'line': b'  218 |     explicit inline \x1b[01;36m\x1b[KDiagonalMatrix\x1b[m\x1b[K(const MatrixBase<OtherDerived>& other) : m_diagonal(other)\n'}
+[0.544648] (uc1_robot_controllers) StderrLine: {'line': b'      |                     \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.544692] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:218:21:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[0.544736] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 0 provided\n'}
+[0.544780] (uc1_robot_controllers) StderrLine: {'line': b'   67 |     Eigen::DiagonalMatrix \x1b[01;36m\x1b[KSS_pinv\x1b[m\x1b[K;\n'}
+[0.544831] (uc1_robot_controllers) StderrLine: {'line': b'      |                           \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.544876] (uc1_robot_controllers) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Core:314\x1b[m\x1b[K,\n'}
+[0.544919] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Dense:1\x1b[m\x1b[K,\n'}
+[0.545040] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6\x1b[m\x1b[K,\n'}
+[0.545083] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1\x1b[m\x1b[K:\n'}
+[0.545124] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:212:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(const Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.545170] (uc1_robot_controllers) StderrLine: {'line': b'  212 |     inline \x1b[01;36m\x1b[KDiagonalMatrix\x1b[m\x1b[K(const DiagonalMatrix& other) : m_diagonal(other.diagonal()) {}\n'}
+[0.545211] (uc1_robot_controllers) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.545252] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:212:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[0.545292] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 0 provided\n'}
+[0.545333] (uc1_robot_controllers) StderrLine: {'line': b'   67 |     Eigen::DiagonalMatrix \x1b[01;36m\x1b[KSS_pinv\x1b[m\x1b[K;\n'}
+[0.545374] (uc1_robot_controllers) StderrLine: {'line': b'      |                           \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.545415] (uc1_robot_controllers) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Core:314\x1b[m\x1b[K,\n'}
+[0.545455] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Dense:1\x1b[m\x1b[K,\n'}
+[0.545499] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6\x1b[m\x1b[K,\n'}
+[0.545539] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1\x1b[m\x1b[K:\n'}
+[0.545580] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:208:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime, class OtherDerived> DiagonalMatrix(const Eigen::DiagonalBase<OtherDerived>&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.545625] (uc1_robot_controllers) StderrLine: {'line': b'  208 |     inline \x1b[01;36m\x1b[KDiagonalMatrix\x1b[m\x1b[K(const DiagonalBase<OtherDerived>& other) : m_diagonal(other.diagonal()) {}\n'}
+[0.545665] (uc1_robot_controllers) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.545706] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:208:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[0.545746] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 0 provided\n'}
+[0.545787] (uc1_robot_controllers) StderrLine: {'line': b'   67 |     Eigen::DiagonalMatrix \x1b[01;36m\x1b[KSS_pinv\x1b[m\x1b[K;\n'}
+[0.545835] (uc1_robot_controllers) StderrLine: {'line': b'      |                           \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.545875] (uc1_robot_controllers) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Core:314\x1b[m\x1b[K,\n'}
+[0.545915] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Dense:1\x1b[m\x1b[K,\n'}
+[0.545956] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6\x1b[m\x1b[K,\n'}
+[0.545999] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1\x1b[m\x1b[K:\n'}
+[0.546040] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:201:34:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(const std::initializer_list<std::initializer_list<_Tp> >&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.546082] (uc1_robot_controllers) StderrLine: {'line': b'  201 |     explicit EIGEN_STRONG_INLINE \x1b[01;36m\x1b[KDiagonalMatrix\x1b[m\x1b[K(const std::initializer_list<std::initializer_list<Scalar>>& list)\n'}
+[0.546123] (uc1_robot_controllers) StderrLine: {'line': b'      |                                  \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.546164] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:201:34:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[0.546207] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 0 provided\n'}
+[0.546249] (uc1_robot_controllers) StderrLine: {'line': b'   67 |     Eigen::DiagonalMatrix \x1b[01;36m\x1b[KSS_pinv\x1b[m\x1b[K;\n'}
+[0.546289] (uc1_robot_controllers) StderrLine: {'line': b'      |                           \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.546330] (uc1_robot_controllers) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Core:314\x1b[m\x1b[K,\n'}
+[0.546371] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Dense:1\x1b[m\x1b[K,\n'}
+[0.546411] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6\x1b[m\x1b[K,\n'}
+[0.546452] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1\x1b[m\x1b[K:\n'}
+[0.546492] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:194:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime, class ... ArgTypes> DiagonalMatrix(const _Scalar&, const _Scalar&, const _Scalar&, const ArgTypes& ...)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.546535] (uc1_robot_controllers) StderrLine: {'line': b'  194 |     \x1b[01;36m\x1b[KDiagonalMatrix\x1b[m\x1b[K(const Scalar& a0, const Scalar& a1, const Scalar& a2, const ArgTypes&... args)\n'}
+[0.546576] (uc1_robot_controllers) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.546616] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:194:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[0.546657] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects at least 3 arguments, 0 provided\n'}
+[0.546701] (uc1_robot_controllers) StderrLine: {'line': b'   67 |     Eigen::DiagonalMatrix \x1b[01;36m\x1b[KSS_pinv\x1b[m\x1b[K;\n'}
+[0.546745] (uc1_robot_controllers) StderrLine: {'line': b'      |                           \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.546785] (uc1_robot_controllers) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Core:314\x1b[m\x1b[K,\n'}
+[0.546832] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Dense:1\x1b[m\x1b[K,\n'}
+[0.546873] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6\x1b[m\x1b[K,\n'}
+[0.546914] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1\x1b[m\x1b[K:\n'}
+[0.546957] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:179:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(const _Scalar&, const _Scalar&, const _Scalar&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.547004] (uc1_robot_controllers) StderrLine: {'line': b'  179 |     inline \x1b[01;36m\x1b[KDiagonalMatrix\x1b[m\x1b[K(const Scalar& x, const Scalar& y, const Scalar& z) : m_diagonal(x,y,z) {}\n'}
+[0.547045] (uc1_robot_controllers) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.547085] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:179:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[0.547126] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 3 arguments, 0 provided\n'}
+[0.547166] (uc1_robot_controllers) StderrLine: {'line': b'   67 |     Eigen::DiagonalMatrix \x1b[01;36m\x1b[KSS_pinv\x1b[m\x1b[K;\n'}
+[0.547207] (uc1_robot_controllers) StderrLine: {'line': b'      |                           \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.547247] (uc1_robot_controllers) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Core:314\x1b[m\x1b[K,\n'}
+[0.547287] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Dense:1\x1b[m\x1b[K,\n'}
+[0.547327] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6\x1b[m\x1b[K,\n'}
+[0.547368] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1\x1b[m\x1b[K:\n'}
+[0.547408] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:175:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(const _Scalar&, const _Scalar&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.547453] (uc1_robot_controllers) StderrLine: {'line': b'  175 |     inline \x1b[01;36m\x1b[KDiagonalMatrix\x1b[m\x1b[K(const Scalar& x, const Scalar& y) : m_diagonal(x,y) {}\n'}
+[0.547494] (uc1_robot_controllers) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.547535] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:175:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[0.547581] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 0 provided\n'}
+[0.547621] (uc1_robot_controllers) StderrLine: {'line': b'   67 |     Eigen::DiagonalMatrix \x1b[01;36m\x1b[KSS_pinv\x1b[m\x1b[K;\n'}
+[0.547661] (uc1_robot_controllers) StderrLine: {'line': b'      |                           \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.547701] (uc1_robot_controllers) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Core:314\x1b[m\x1b[K,\n'}
+[0.547742] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Dense:1\x1b[m\x1b[K,\n'}
+[0.547782] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6\x1b[m\x1b[K,\n'}
+[0.547828] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1\x1b[m\x1b[K:\n'}
+[0.547869] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:171:21:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(Eigen::Index)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.547911] (uc1_robot_controllers) StderrLine: {'line': b'  171 |     explicit inline \x1b[01;36m\x1b[KDiagonalMatrix\x1b[m\x1b[K(Index dim) : m_diagonal(dim) {}\n'}
+[0.547951] (uc1_robot_controllers) StderrLine: {'line': b'      |                     \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.547991] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:171:21:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[0.548032] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 0 provided\n'}
+[0.548075] (uc1_robot_controllers) StderrLine: {'line': b'   67 |     Eigen::DiagonalMatrix \x1b[01;36m\x1b[KSS_pinv\x1b[m\x1b[K;\n'}
+[0.548116] (uc1_robot_controllers) StderrLine: {'line': b'      |                           \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.548156] (uc1_robot_controllers) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Core:314\x1b[m\x1b[K,\n'}
+[0.548196] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Dense:1\x1b[m\x1b[K,\n'}
+[0.548236] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6\x1b[m\x1b[K,\n'}
+[0.548278] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1\x1b[m\x1b[K:\n'}
+[0.548318] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:167:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix()-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.548363] (uc1_robot_controllers) StderrLine: {'line': b'  167 |     inline \x1b[01;36m\x1b[KDiagonalMatrix\x1b[m\x1b[K() {}\n'}
+[0.548405] (uc1_robot_controllers) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.548445] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:167:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[0.548486] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  couldn\xe2\x80\x99t deduce template parameter \xe2\x80\x98\x1b[01m\x1b[K_Scalar\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.548527] (uc1_robot_controllers) StderrLine: {'line': b'   67 |     Eigen::DiagonalMatrix \x1b[01;36m\x1b[KSS_pinv\x1b[m\x1b[K;\n'}
+[0.548567] (uc1_robot_controllers) StderrLine: {'line': b'      |                           \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.548607] (uc1_robot_controllers) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Core:163\x1b[m\x1b[K,\n'}
+[0.548646] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Dense:1\x1b[m\x1b[K,\n'}
+[0.548687] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6\x1b[m\x1b[K,\n'}
+[0.548727] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1\x1b[m\x1b[K:\n'}
+[0.548767] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h:100:101:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.548920] (uc1_robot_controllers) StderrLine: {'line': b'  100 | template<typename _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime=SizeAtCompileTime> class \x1b[01;36m\x1b[KDiagonalMatrix\x1b[m\x1b[K;\n'}
+[0.548986] (uc1_robot_controllers) StderrLine: {'line': b'      |                                                                                                     \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.549009] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h:100:101:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[0.549031] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 0 provided\n'}
+[0.549051] (uc1_robot_controllers) StderrLine: {'line': b'   67 |     Eigen::DiagonalMatrix \x1b[01;36m\x1b[KSS_pinv\x1b[m\x1b[K;\n'}
+[0.549070] (uc1_robot_controllers) StderrLine: {'line': b'      |                           \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.561113] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[KEigen::MatrixXd TPComputation::REG_Pinv(const MatrixXd&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[0.561322] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kclass template argument deduction failed:\n'}
+[0.561408] (uc1_robot_controllers) StderrLine: {'line': b'   67 |     Eigen::DiagonalMatrix \x1b[01;31m\x1b[KSS_pinv\x1b[m\x1b[K;\n'}
+[0.561463] (uc1_robot_controllers) StderrLine: {'line': b'      |                           \x1b[01;31m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.561480] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[KDiagonalMatrix()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.561498] (uc1_robot_controllers) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Core:314\x1b[m\x1b[K,\n'}
+[0.561515] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Dense:1\x1b[m\x1b[K,\n'}
+[0.561532] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6\x1b[m\x1b[K,\n'}
+[0.561550] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1\x1b[m\x1b[K:\n'}
+[0.561568] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:218:21:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime, class OtherDerived> DiagonalMatrix(const Eigen::MatrixBase<OtherDerived>&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.561592] (uc1_robot_controllers) StderrLine: {'line': b'  218 |     explicit inline \x1b[01;36m\x1b[KDiagonalMatrix\x1b[m\x1b[K(const MatrixBase<OtherDerived>& other) : m_diagonal(other)\n'}
+[0.561610] (uc1_robot_controllers) StderrLine: {'line': b'      |                     \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.561627] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:218:21:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[0.561644] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 0 provided\n'}
+[0.561662] (uc1_robot_controllers) StderrLine: {'line': b'   67 |     Eigen::DiagonalMatrix \x1b[01;36m\x1b[KSS_pinv\x1b[m\x1b[K;\n'}
+[0.561679] (uc1_robot_controllers) StderrLine: {'line': b'      |                           \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.561695] (uc1_robot_controllers) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Core:314\x1b[m\x1b[K,\n'}
+[0.561712] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Dense:1\x1b[m\x1b[K,\n'}
+[0.561728] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6\x1b[m\x1b[K,\n'}
+[0.561745] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1\x1b[m\x1b[K:\n'}
+[0.561762] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:212:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(const Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.561784] (uc1_robot_controllers) StderrLine: {'line': b'  212 |     inline \x1b[01;36m\x1b[KDiagonalMatrix\x1b[m\x1b[K(const DiagonalMatrix& other) : m_diagonal(other.diagonal()) {}\n'}
+[0.561814] (uc1_robot_controllers) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.561832] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:212:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[0.561849] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 0 provided\n'}
+[0.561866] (uc1_robot_controllers) StderrLine: {'line': b'   67 |     Eigen::DiagonalMatrix \x1b[01;36m\x1b[KSS_pinv\x1b[m\x1b[K;\n'}
+[0.561898] (uc1_robot_controllers) StderrLine: {'line': b'      |                           \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.561916] (uc1_robot_controllers) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Core:314\x1b[m\x1b[K,\n'}
+[0.561934] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Dense:1\x1b[m\x1b[K,\n'}
+[0.561953] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6\x1b[m\x1b[K,\n'}
+[0.561970] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1\x1b[m\x1b[K:\n'}
+[0.561987] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:208:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime, class OtherDerived> DiagonalMatrix(const Eigen::DiagonalBase<OtherDerived>&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.562007] (uc1_robot_controllers) StderrLine: {'line': b'  208 |     inline \x1b[01;36m\x1b[KDiagonalMatrix\x1b[m\x1b[K(const DiagonalBase<OtherDerived>& other) : m_diagonal(other.diagonal()) {}\n'}
+[0.562025] (uc1_robot_controllers) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.562043] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:208:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[0.562060] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 0 provided\n'}
+[0.562078] (uc1_robot_controllers) StderrLine: {'line': b'   67 |     Eigen::DiagonalMatrix \x1b[01;36m\x1b[KSS_pinv\x1b[m\x1b[K;\n'}
+[0.562099] (uc1_robot_controllers) StderrLine: {'line': b'      |                           \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.562116] (uc1_robot_controllers) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Core:314\x1b[m\x1b[K,\n'}
+[0.562133] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Dense:1\x1b[m\x1b[K,\n'}
+[0.562150] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6\x1b[m\x1b[K,\n'}
+[0.562169] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1\x1b[m\x1b[K:\n'}
+[0.562186] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:201:34:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(const std::initializer_list<std::initializer_list<_Tp> >&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.562227] (uc1_robot_controllers) StderrLine: {'line': b'  201 |     explicit EIGEN_STRONG_INLINE \x1b[01;36m\x1b[KDiagonalMatrix\x1b[m\x1b[K(const std::initializer_list<std::initializer_list<Scalar>>& list)\n'}
+[0.562245] (uc1_robot_controllers) StderrLine: {'line': b'      |                                  \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.562262] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:201:34:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[0.562279] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 0 provided\n'}
+[0.562297] (uc1_robot_controllers) StderrLine: {'line': b'   67 |     Eigen::DiagonalMatrix \x1b[01;36m\x1b[KSS_pinv\x1b[m\x1b[K;\n'}
+[0.562313] (uc1_robot_controllers) StderrLine: {'line': b'      |                           \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.562330] (uc1_robot_controllers) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Core:314\x1b[m\x1b[K,\n'}
+[0.562347] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Dense:1\x1b[m\x1b[K,\n'}
+[0.562366] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6\x1b[m\x1b[K,\n'}
+[0.562384] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1\x1b[m\x1b[K:\n'}
+[0.562401] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:194:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime, class ... ArgTypes> DiagonalMatrix(const _Scalar&, const _Scalar&, const _Scalar&, const ArgTypes& ...)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.562419] (uc1_robot_controllers) StderrLine: {'line': b'  194 |     \x1b[01;36m\x1b[KDiagonalMatrix\x1b[m\x1b[K(const Scalar& a0, const Scalar& a1, const Scalar& a2, const ArgTypes&... args)\n'}
+[0.562441] (uc1_robot_controllers) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.562459] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:194:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[0.562477] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects at least 3 arguments, 0 provided\n'}
+[0.562496] (uc1_robot_controllers) StderrLine: {'line': b'   67 |     Eigen::DiagonalMatrix \x1b[01;36m\x1b[KSS_pinv\x1b[m\x1b[K;\n'}
+[0.562513] (uc1_robot_controllers) StderrLine: {'line': b'      |                           \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.562531] (uc1_robot_controllers) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Core:314\x1b[m\x1b[K,\n'}
+[0.562549] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Dense:1\x1b[m\x1b[K,\n'}
+[0.562567] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6\x1b[m\x1b[K,\n'}
+[0.562598] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1\x1b[m\x1b[K:\n'}
+[0.562631] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:179:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(const _Scalar&, const _Scalar&, const _Scalar&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.562666] (uc1_robot_controllers) StderrLine: {'line': b'  179 |     inline \x1b[01;36m\x1b[KDiagonalMatrix\x1b[m\x1b[K(const Scalar& x, const Scalar& y, const Scalar& z) : m_diagonal(x,y,z) {}\n'}
+[0.562699] (uc1_robot_controllers) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.562732] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:179:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[0.562765] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 3 arguments, 0 provided\n'}
+[0.562804] (uc1_robot_controllers) StderrLine: {'line': b'   67 |     Eigen::DiagonalMatrix \x1b[01;36m\x1b[KSS_pinv\x1b[m\x1b[K;\n'}
+[0.562833] (uc1_robot_controllers) StderrLine: {'line': b'      |                           \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.562863] (uc1_robot_controllers) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Core:314\x1b[m\x1b[K,\n'}
+[0.562951] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Dense:1\x1b[m\x1b[K,\n'}
+[0.563024] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6\x1b[m\x1b[K,\n'}
+[0.563074] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1\x1b[m\x1b[K:\n'}
+[0.563130] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:175:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(const _Scalar&, const _Scalar&)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.563178] (uc1_robot_controllers) StderrLine: {'line': b'  175 |     inline \x1b[01;36m\x1b[KDiagonalMatrix\x1b[m\x1b[K(const Scalar& x, const Scalar& y) : m_diagonal(x,y) {}\n'}
+[0.563223] (uc1_robot_controllers) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.563266] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:175:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[0.563310] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 0 provided\n'}
+[0.563356] (uc1_robot_controllers) StderrLine: {'line': b'   67 |     Eigen::DiagonalMatrix \x1b[01;36m\x1b[KSS_pinv\x1b[m\x1b[K;\n'}
+[0.563402] (uc1_robot_controllers) StderrLine: {'line': b'      |                           \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.563444] (uc1_robot_controllers) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Core:314\x1b[m\x1b[K,\n'}
+[0.563486] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Dense:1\x1b[m\x1b[K,\n'}
+[0.563527] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6\x1b[m\x1b[K,\n'}
+[0.563569] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1\x1b[m\x1b[K:\n'}
+[0.563611] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:171:21:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(Eigen::Index)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.563654] (uc1_robot_controllers) StderrLine: {'line': b'  171 |     explicit inline \x1b[01;36m\x1b[KDiagonalMatrix\x1b[m\x1b[K(Index dim) : m_diagonal(dim) {}\n'}
+[0.563696] (uc1_robot_controllers) StderrLine: {'line': b'      |                     \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.563738] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:171:21:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[0.563781] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 0 provided\n'}
+[0.563836] (uc1_robot_controllers) StderrLine: {'line': b'   67 |     Eigen::DiagonalMatrix \x1b[01;36m\x1b[KSS_pinv\x1b[m\x1b[K;\n'}
+[0.563879] (uc1_robot_controllers) StderrLine: {'line': b'      |                           \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.563920] (uc1_robot_controllers) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Core:314\x1b[m\x1b[K,\n'}
+[0.563963] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Dense:1\x1b[m\x1b[K,\n'}
+[0.564004] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6\x1b[m\x1b[K,\n'}
+[0.564046] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1\x1b[m\x1b[K:\n'}
+[0.564089] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:167:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix()-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.564132] (uc1_robot_controllers) StderrLine: {'line': b'  167 |     inline \x1b[01;36m\x1b[KDiagonalMatrix\x1b[m\x1b[K() {}\n'}
+[0.564174] (uc1_robot_controllers) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.564216] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:167:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[0.564258] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  couldn\xe2\x80\x99t deduce template parameter \xe2\x80\x98\x1b[01m\x1b[K_Scalar\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.564304] (uc1_robot_controllers) StderrLine: {'line': b'   67 |     Eigen::DiagonalMatrix \x1b[01;36m\x1b[KSS_pinv\x1b[m\x1b[K;\n'}
+[0.564346] (uc1_robot_controllers) StderrLine: {'line': b'      |                           \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.564387] (uc1_robot_controllers) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Core:163\x1b[m\x1b[K,\n'}
+[0.564432] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Dense:1\x1b[m\x1b[K,\n'}
+[0.564474] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6\x1b[m\x1b[K,\n'}
+[0.564516] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1\x1b[m\x1b[K:\n'}
+[0.564557] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h:100:101:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime> DiagonalMatrix(Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>)-> Eigen::DiagonalMatrix<_Scalar, SizeAtCompileTime, MaxSizeAtCompileTime>\x1b[m\x1b[K\xe2\x80\x99\n'}
+[0.564604] (uc1_robot_controllers) StderrLine: {'line': b'  100 | template<typename _Scalar, int SizeAtCompileTime, int MaxSizeAtCompileTime=SizeAtCompileTime> class \x1b[01;36m\x1b[KDiagonalMatrix\x1b[m\x1b[K;\n'}
+[0.564648] (uc1_robot_controllers) StderrLine: {'line': b'      |                                                                                                     \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.564690] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h:100:101:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[0.564731] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:67:27:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 0 provided\n'}
+[0.564772] (uc1_robot_controllers) StderrLine: {'line': b'   67 |     Eigen::DiagonalMatrix \x1b[01;36m\x1b[KSS_pinv\x1b[m\x1b[K;\n'}
+[0.564819] (uc1_robot_controllers) StderrLine: {'line': b'      |                           \x1b[01;36m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[0.601270] (-) TimerEvent: {}
+[0.701535] (-) TimerEvent: {}
+[0.801802] (-) TimerEvent: {}
+[0.902039] (-) TimerEvent: {}
+[1.002274] (-) TimerEvent: {}
+[1.102510] (-) TimerEvent: {}
+[1.202743] (-) TimerEvent: {}
+[1.302982] (-) TimerEvent: {}
+[1.403215] (-) TimerEvent: {}
+[1.503442] (-) TimerEvent: {}
+[1.603661] (-) TimerEvent: {}
+[1.703840] (-) TimerEvent: {}
+[1.804055] (-) TimerEvent: {}
+[1.904242] (-) TimerEvent: {}
+[2.004433] (-) TimerEvent: {}
+[2.104622] (-) TimerEvent: {}
+[2.204824] (-) TimerEvent: {}
+[2.305163] (-) TimerEvent: {}
+[2.405400] (-) TimerEvent: {}
+[2.505642] (-) TimerEvent: {}
+[2.605899] (-) TimerEvent: {}
+[2.706138] (-) TimerEvent: {}
+[2.806372] (-) TimerEvent: {}
+[2.906690] (-) TimerEvent: {}
+[3.006929] (-) TimerEvent: {}
+[3.107241] (-) TimerEvent: {}
+[3.207462] (-) TimerEvent: {}
+[3.307709] (-) TimerEvent: {}
+[3.408018] (-) TimerEvent: {}
+[3.508210] (-) TimerEvent: {}
+[3.608392] (-) TimerEvent: {}
+[3.708576] (-) TimerEvent: {}
+[3.808821] (-) TimerEvent: {}
+[3.909009] (-) TimerEvent: {}
+[4.009242] (-) TimerEvent: {}
+[4.109436] (-) TimerEvent: {}
+[4.124142] (uc1_robot_controllers) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/joint-robot-test.dir/build.make:146: CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.o] Error 1\n'}
+[4.124289] (uc1_robot_controllers) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:169: CMakeFiles/joint-robot-test.dir/all] Error 2\n'}
+[4.124316] (uc1_robot_controllers) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[4.209514] (-) TimerEvent: {}
+[4.209876] (uc1_robot_controllers) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/joint-robot-tp-test.dir/build.make:160: CMakeFiles/joint-robot-tp-test.dir/src/TPComputation.cpp.o] Error 1\n'}
+[4.210163] (uc1_robot_controllers) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:195: CMakeFiles/joint-robot-tp-test.dir/all] Error 2\n'}
+[4.210250] (uc1_robot_controllers) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[4.211639] (uc1_robot_controllers) CommandEnded: {'returncode': 2}
+[4.219037] (uc1_robot_controllers) JobEnded: {'identifier': 'uc1_robot_controllers', 'rc': 2}
+[4.229481] (-) EventReactorShutdown: {}

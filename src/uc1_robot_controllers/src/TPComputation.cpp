@@ -33,28 +33,8 @@ double TPComputation::DecreasingBellShapedFunction(double xmin, double xmax, dou
 
 Eigen::MatrixXd TPComputation::REG_Pinv(const Eigen::MatrixXd& mat)
 {
-    /*
-    double mu = 0.1;
-
     Eigen::JacobiSVD<Eigen::MatrixXd> svd(mat, Eigen::ComputeFullU | Eigen::ComputeFullV);
-    Eigen::MatrixXd SigmaPlus(mat.cols(), mat.rows());
-    Eigen::VectorXd eigen = svd.singularValues();
-
-    int r = eigen.size();
-    SigmaPlus.setZero();
-    // for singular values equal to 0
-    for (int i = 0; i < r; i++)
-    {
-        SigmaPlus(i, i) = eigen(i) / (eigen(i) * eigen(i) + mu * mu);
-    }
-
-    Eigen::MatrixXd V = svd.matrixV();
-    Eigen::MatrixXd UT = svd.matrixU().transpose().eval();
-
-    return V * SigmaPlus * UT;
-    */
-
-    Eigen::JacobiSVD<Eigen::MatrixXd> svd(mat, Eigen::ComputeFullU | Eigen::ComputeFullV);
+    //Eigen::LLT<Eigen::MatrixXd> svd(mat, Eigen::ComputeFullU | Eigen::ComputeFullV);
     Eigen::MatrixXd V = svd.matrixV();
     Eigen::MatrixXd U = svd.matrixU();
     Eigen::VectorXd S = svd.singularValues();
@@ -63,12 +43,18 @@ Eigen::MatrixXd TPComputation::REG_Pinv(const Eigen::MatrixXd& mat)
     int col = mat.cols();
     int r = std::min(row, col);
     Eigen::MatrixXd S_pinv = Eigen::MatrixXd::Zero(col, row);
+    //Eigen::DiagonalMatrix<double, Eigen::Dynamic> SS_pinv = (Eigen::VectorXd::Zero(r)).asDiagonal();
 
     for(int i = 0; i < r; i++)
     {
         double SingV = DecreasingBellShapedFunction(0, threshold_, 0, lambda_, S(i));
         S_pinv(i,i) = S(i) /(S(i) * S(i) + SingV);
+        //SS_pinv.diagonal()(i) = S(i) /(S(i) * S(i) + SingV);
     }
+
+    // std::cout << "V dimensions: " << V.rows() << " x " << V.cols() << std::endl;
+    // std::cout << "S_pinv dimensions: " << S_pinv.rows() << " x " << S_pinv.cols() << std::endl;  
+    // std::cout << "U.transpose() dimensions: " << U.transpose().rows() << " x " << U.transpose().cols() << std::endl;
 
     return V * S_pinv * U.transpose();
 }
@@ -124,12 +110,10 @@ void TPComputation::computeTP_step(const std::string& task_id, const Eigen::Matr
 
 
     W = ProjJac * Xq;
-    //std::cout << "controllo TP W" << std::endl;
+    
     Q = Qold * (eye - XI * ProjJac);
-    //std::cout << "controllo TP Q" << std::endl;
+    
     y = yold + Qold * XI * W * (TaskRef - TaskJac * yold);
-    //std::cout << "controllo TP y" << std::endl;
-    //std::cout << "\033[1;34m algo check\033[0m\n" << Qold.size() << " " << y.size() << std::endl;
 
     /// SAVE DATA ON FILE /// 
     std::string dir = "/home/simone/Documents/SIMO/tesi/experiments/fromTPComputation/";

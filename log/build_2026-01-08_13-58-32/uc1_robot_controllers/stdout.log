@@ -1,0 +1,6 @@
+[  9%] Built target kuka-joint-cmd-buf
+[ 63%] Built target robot-test
+[ 63%] Built target joint-robot-test
+[ 68%] [32mBuilding CXX object CMakeFiles/joint-robot-tp-test.dir/src/JointRobotTP/JointRobotTP.cpp.o[0m
+[ 72%] [32mBuilding CXX object CMakeFiles/joint-robot-tp-test.dir/src/joint_controller/joint_robot_tp_test.cpp.o[0m
+[ 77%] [32mBuilding CXX object CMakeFiles/joint-robot-tp-test.dir/src/JointRobotTP/JointRobotTP_functions.cpp.o[0m

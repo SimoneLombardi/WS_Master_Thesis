@@ -1,0 +1,33 @@
+[0.029s] Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/pointcloud_interactive_markers': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/pointcloud_interactive_markers -- -j32 -l32
+[0.073s] [ 16%] Built target interactive-target
+[0.073s] [ 33%] Built target mindist-dummy-broadcaster
+[0.080s] [ 50%] Built target cylinder-cloud-broadcaster-multi
+[0.082s] [ 66%] Built target sphere-cloud-broadcaster
+[0.082s] [ 83%] Built target chassis-cloud
+[0.083s] [100%] Built target cylinder-cloud-broadcaster
+[0.110s] Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/pointcloud_interactive_markers' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/pointcloud_interactive_markers -- -j32 -l32
+[0.111s] Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/pointcloud_interactive_markers': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/pointcloud_interactive_markers
+[0.126s] -- Install configuration: ""
+[0.126s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/lib/pointcloud_interactive_markers/interactive-target
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/lib/pointcloud_interactive_markers/mindist-dummy-broadcaster
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/lib/pointcloud_interactive_markers/sphere-cloud-broadcaster
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/lib/pointcloud_interactive_markers/cylinder-cloud-broadcaster
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/lib/pointcloud_interactive_markers/cylinder-cloud-broadcaster-multi
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/lib/pointcloud_interactive_markers/chassis-cloud
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers//launch
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/ament_index/resource_index/package_run_dependencies/pointcloud_interactive_markers
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/ament_index/resource_index/parent_prefix_path/pointcloud_interactive_markers
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/environment/ament_prefix_path.sh
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/environment/ament_prefix_path.dsv
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/environment/path.sh
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/environment/path.dsv
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/local_setup.bash
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/local_setup.sh
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/local_setup.zsh
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/local_setup.dsv
+[0.127s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/package.dsv
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/ament_index/resource_index/packages/pointcloud_interactive_markers
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/cmake/pointcloud_interactive_markersConfig.cmake
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/cmake/pointcloud_interactive_markersConfig-version.cmake
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/package.xml
+[0.140s] Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/pointcloud_interactive_markers' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/pointcloud_interactive_markers

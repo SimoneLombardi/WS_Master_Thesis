@@ -1,0 +1,142 @@
+[0.000000] (-) TimerEvent: {}
+[0.000336] (-) JobUnselected: {'identifier': 'environment_pointcloud_processing'}
+[0.000404] (-) JobUnselected: {'identifier': 'keyboard_publisher_pkg'}
+[0.000453] (-) JobUnselected: {'identifier': 'kuka_150_3100_description'}
+[0.000469] (-) JobUnselected: {'identifier': 'kuka_resources'}
+[0.000484] (-) JobUnselected: {'identifier': 'pointcloud_interactive_markers'}
+[0.000497] (-) JobUnselected: {'identifier': 'rsp_uc1'}
+[0.000510] (-) JobUnselected: {'identifier': 'uc1_robot_controllers_interfaces'}
+[0.000523] (-) JobUnselected: {'identifier': 'uc1_robot_perception'}
+[0.000535] (-) JobUnselected: {'identifier': 'uc1_robots_description'}
+[0.000547] (-) JobUnselected: {'identifier': 'ur_admittance_controller'}
+[0.000561] (uc1_robot_controllers) JobQueued: {'identifier': 'uc1_robot_controllers', 'dependencies': OrderedDict([('uc1_robot_controllers_interfaces', '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces'), ('uc1_robot_perception', '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception')])}
+[0.000581] (uc1_robot_controllers) JobStarted: {'identifier': 'uc1_robot_controllers'}
+[0.008647] (uc1_robot_controllers) JobProgress: {'identifier': 'uc1_robot_controllers', 'progress': 'cmake'}
+[0.009888] (uc1_robot_controllers) JobProgress: {'identifier': 'uc1_robot_controllers', 'progress': 'build'}
+[0.011017] (uc1_robot_controllers) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers', '--', '-j32', '-l32'], 'cwd': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'maclab'), ('LC_TIME', 'it_IT.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/maclab'), ('OLDPWD', '/home/maclab'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'it_IT.UTF-8'), ('MANAGERPID', '2117'), ('SYSTEMD_EXEC_PID', '2526'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '24392'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'maclab'), ('JOURNAL_STREAM', '8:19690'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'maclab'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ISAAC_ROS_WS', '/home/maclab/workspaces/isaac_ros-dev/'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/maclab:@/tmp/.ICE-unix/2250,unix/maclab:/tmp/.ICE-unix/2250'), ('INVOCATION_ID', '98ec006d46cb45f69ba72a27675811a5'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'it_IT.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'it_IT.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.TD9TI3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'it_IT.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:b03254aa-56de-41d7-8b87-651d84ec2e62'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'it_IT.UTF-8'), ('LC_IDENTIFICATION', 'it_IT.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'it_IT.UTF-8'), ('LC_PAPER', 'it_IT.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces:/opt/ros/humble')]), 'shell': False}
+[0.049398] (uc1_robot_controllers) StdoutLine: {'line': b'[  9%] Built target kuka-joint-cmd-buf\n'}
+[0.060156] (uc1_robot_controllers) StdoutLine: {'line': b'[ 63%] Built target robot-test\n'}
+[0.060297] (uc1_robot_controllers) StdoutLine: {'line': b'[ 63%] Built target joint-robot-test\n'}
+[0.065113] (uc1_robot_controllers) StdoutLine: {'line': b'[ 68%] \x1b[32mBuilding CXX object CMakeFiles/joint-robot-tp-test.dir/src/JointRobotTP/JointRobotTP.cpp.o\x1b[0m\n'}
+[0.065358] (uc1_robot_controllers) StdoutLine: {'line': b'[ 72%] \x1b[32mBuilding CXX object CMakeFiles/joint-robot-tp-test.dir/src/joint_controller/joint_robot_tp_test.cpp.o\x1b[0m\n'}
+[0.065463] (uc1_robot_controllers) StdoutLine: {'line': b'[ 77%] \x1b[32mBuilding CXX object CMakeFiles/joint-robot-tp-test.dir/src/JointRobotTP/JointRobotTP_functions.cpp.o\x1b[0m\n'}
+[0.099986] (-) TimerEvent: {}
+[0.200176] (-) TimerEvent: {}
+[0.300658] (-) TimerEvent: {}
+[0.400873] (-) TimerEvent: {}
+[0.501091] (-) TimerEvent: {}
+[0.601324] (-) TimerEvent: {}
+[0.701547] (-) TimerEvent: {}
+[0.801748] (-) TimerEvent: {}
+[0.902007] (-) TimerEvent: {}
+[1.002244] (-) TimerEvent: {}
+[1.102487] (-) TimerEvent: {}
+[1.202738] (-) TimerEvent: {}
+[1.303006] (-) TimerEvent: {}
+[1.403252] (-) TimerEvent: {}
+[1.503499] (-) TimerEvent: {}
+[1.603739] (-) TimerEvent: {}
+[1.703974] (-) TimerEvent: {}
+[1.804308] (-) TimerEvent: {}
+[1.904575] (-) TimerEvent: {}
+[2.004767] (-) TimerEvent: {}
+[2.105647] (-) TimerEvent: {}
+[2.205817] (-) TimerEvent: {}
+[2.306657] (-) TimerEvent: {}
+[2.398808] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP_functions.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid JointRobotTP::Update_TskJac_EETarget()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.398924] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP_functions.cpp:224:21:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kvariable \xe2\x80\x98\x1b[01m\x1b[Kfixed\x1b[m\x1b[K\xe2\x80\x99 set but not used [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable\x07-Wunused-but-set-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.398954] (uc1_robot_controllers) StderrLine: {'line': b'  224 |     Eigen::Affine3d \x1b[01;35m\x1b[Kfixed\x1b[m\x1b[K = getGenericTransformation(KUKA_BASE_LINK, UR10_BASE_LINK);\n'}
+[2.398976] (uc1_robot_controllers) StderrLine: {'line': b'      |                     \x1b[01;35m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[2.406738] (-) TimerEvent: {}
+[2.456913] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid JointRobotTP::RunCartesianReachingLoop(const string&, bool)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.457099] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:294:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kkuka_gain\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.457158] (uc1_robot_controllers) StderrLine: {'line': b'  294 |         double \x1b[01;35m\x1b[Kkuka_gain\x1b[m\x1b[K = kuka_gain_;\n'}
+[2.457206] (uc1_robot_controllers) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.457256] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:295:16:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kur10_gain\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.457304] (uc1_robot_controllers) StderrLine: {'line': b'  295 |         double \x1b[01;35m\x1b[Kur10_gain\x1b[m\x1b[K = ur10_gain_;\n'}
+[2.457347] (uc1_robot_controllers) StderrLine: {'line': b'      |                \x1b[01;35m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.460913] (uc1_robot_controllers) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24\x1b[m\x1b[K,\n'}
+[2.461033] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.461084] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[2.461132] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.461177] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.461236] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.461281] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.461324] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.461367] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.461411] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.461454] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.461495] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/RobotInterface.hpp:4\x1b[m\x1b[K,\n'}
+[2.461538] (uc1_robot_controllers) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:1\x1b[m\x1b[K:\n'}
+[2.461580] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:304:77:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kkuka_gain\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kkuka_gain_\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.461625] (uc1_robot_controllers) StderrLine: {'line': b'  304 |     RCLCPP_WARN(node_->get_logger(), "KUKA gain: %.4f and UR10 gain: %.4f", \x1b[01;31m\x1b[Kkuka_gain\x1b[m\x1b[K, ur10_gain);\n'}
+[2.461668] (uc1_robot_controllers) StderrLine: {'line': b'      |                                                                             \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.463903] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:304:88:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kur10_gain\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kur10_gain_\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.463971] (uc1_robot_controllers) StderrLine: {'line': b'  304 |     RCLCPP_WARN(node_->get_logger(), "KUKA gain: %.4f and UR10 gain: %.4f", kuka_gain, \x1b[01;31m\x1b[Kur10_gain\x1b[m\x1b[K);\n'}
+[2.464019] (uc1_robot_controllers) StderrLine: {'line': b'      |                                                                                        \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.474874] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:373:40:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kkuka_gain\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kkuka_gain_\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.474995] (uc1_robot_controllers) StderrLine: {'line': b'  373 |         SendVelocityCommands(qdot_des, \x1b[01;31m\x1b[Kkuka_gain\x1b[m\x1b[K, ur10_gain);\n'}
+[2.475038] (uc1_robot_controllers) StderrLine: {'line': b'      |                                        \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.475081] (uc1_robot_controllers) StderrLine: {'line': b'      |                                        \x1b[32m\x1b[Kkuka_gain_\x1b[m\x1b[K\n'}
+[2.477631] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:373:51:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kur10_gain\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kur10_gain_\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.477691] (uc1_robot_controllers) StderrLine: {'line': b'  373 |         SendVelocityCommands(qdot_des, kuka_gain, \x1b[01;31m\x1b[Kur10_gain\x1b[m\x1b[K);\n'}
+[2.477732] (uc1_robot_controllers) StderrLine: {'line': b'      |                                                   \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[2.477773] (uc1_robot_controllers) StderrLine: {'line': b'      |                                                   \x1b[32m\x1b[Kur10_gain_\x1b[m\x1b[K\n'}
+[2.478095] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:288:64:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kgoal_frame\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.478146] (uc1_robot_controllers) StderrLine: {'line': b'  288 | void JointRobotTP::RunCartesianReachingLoop(\x1b[01;35m\x1b[Kconst std::string& goal_frame\x1b[m\x1b[K, bool reached_goal){\n'}
+[2.478189] (uc1_robot_controllers) StderrLine: {'line': b'      |                                             \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.506828] (-) TimerEvent: {}
+[2.555576] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Krclcpp_action::GoalResponse JointRobotTP::handle_goal(const GoalUUID&, std::shared_ptr<const uc1_robot_controllers_interfaces::action::MoveRobotTP_Goal_<std::allocator<void> > >)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.555723] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:427:134:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kgoal\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.555772] (uc1_robot_controllers) StderrLine: {'line': b'  427 | rclcpp_action::GoalResponse JointRobotTP::handle_goal(const rclcpp_action::GoalUUID & uuid, \x1b[01;35m\x1b[Kstd::shared_ptr<const MoveRobotTP::Goal> goal\x1b[m\x1b[K){\n'}
+[2.555829] (uc1_robot_controllers) StderrLine: {'line': b'      |                                                                                             \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[2.606927] (-) TimerEvent: {}
+[2.621627] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid JointRobotTP::execute(std::shared_ptr<rclcpp_action::ServerGoalHandle<uc1_robot_controllers_interfaces::action::MoveRobotTP> >)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.621769] (uc1_robot_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:579:12:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kdist\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.621835] (uc1_robot_controllers) StderrLine: {'line': b'  579 |     double \x1b[01;35m\x1b[Kdist\x1b[m\x1b[K = 0.0;\n'}
+[2.621881] (uc1_robot_controllers) StderrLine: {'line': b'      |            \x1b[01;35m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.707022] (-) TimerEvent: {}
+[2.807257] (-) TimerEvent: {}
+[2.907536] (-) TimerEvent: {}
+[3.007841] (-) TimerEvent: {}
+[3.108078] (-) TimerEvent: {}
+[3.208348] (-) TimerEvent: {}
+[3.308613] (-) TimerEvent: {}
+[3.408827] (-) TimerEvent: {}
+[3.509097] (-) TimerEvent: {}
+[3.609328] (-) TimerEvent: {}
+[3.709560] (-) TimerEvent: {}
+[3.809866] (-) TimerEvent: {}
+[3.910090] (-) TimerEvent: {}
+[4.010322] (-) TimerEvent: {}
+[4.110626] (-) TimerEvent: {}
+[4.210962] (-) TimerEvent: {}
+[4.311206] (-) TimerEvent: {}
+[4.411429] (-) TimerEvent: {}
+[4.511660] (-) TimerEvent: {}
+[4.611878] (-) TimerEvent: {}
+[4.715838] (-) TimerEvent: {}
+[4.817334] (-) TimerEvent: {}
+[4.917652] (-) TimerEvent: {}
+[5.017818] (-) TimerEvent: {}
+[5.118024] (-) TimerEvent: {}
+[5.218269] (-) TimerEvent: {}
+[5.318505] (-) TimerEvent: {}
+[5.418786] (-) TimerEvent: {}
+[5.519022] (-) TimerEvent: {}
+[5.619680] (-) TimerEvent: {}
+[5.720048] (-) TimerEvent: {}
+[5.820276] (-) TimerEvent: {}
+[5.920517] (-) TimerEvent: {}
+[6.020728] (-) TimerEvent: {}
+[6.121005] (-) TimerEvent: {}
+[6.221240] (-) TimerEvent: {}
+[6.321419] (-) TimerEvent: {}
+[6.421631] (-) TimerEvent: {}
+[6.521950] (-) TimerEvent: {}
+[6.596581] (uc1_robot_controllers) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/joint-robot-tp-test.dir/build.make:90: CMakeFiles/joint-robot-tp-test.dir/src/JointRobotTP/JointRobotTP.cpp.o] Error 1\n'}
+[6.596770] (uc1_robot_controllers) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:195: CMakeFiles/joint-robot-tp-test.dir/all] Error 2\n'}
+[6.597025] (uc1_robot_controllers) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[6.598146] (uc1_robot_controllers) CommandEnded: {'returncode': 2}
+[6.602821] (uc1_robot_controllers) JobEnded: {'identifier': 'uc1_robot_controllers', 'rc': 2}
+[6.613139] (-) EventReactorShutdown: {}

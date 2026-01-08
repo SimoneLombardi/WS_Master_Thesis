@@ -68,13 +68,9 @@ void JointRobotTP::initialize(NodeShPtr node_joint_robot, NodeShPtr kuka_node, N
     frame_names_ = {"kuka_link_1", "kuka_link_2", "kuka_link_3", "kuka_link_4", "kuka_link_5", "kuka_link_6",
                      "shoulder_link", "upper_arm_link", "forearm_link", "wrist_1_link", "wrist_2_link", "wrist_3_link"};
 
-    frame_names_jac_ = {"kuka_link_1","kuka_link_2", "kuka_link_3", "kuka_link_4", "kuka_link_5", "kuka_link_6",
-                     "shoulder_link", "upper_arm_link", "forearm_link", "wrist_1_link", "wrist_2_link", "wrist_3_link"};
-
-    // ============================================== //
-    //              experiment logging var            //
-    log_counter_ = 0;
-    // ============================================== //
+    // parameter declaration
+    kuka_gain_ = node_->declare_parameter<double>("kuka_gain", 0.05);
+    ur10_gain_ = node_->declare_parameter<double>("ur10_gain", 0.5);
 
     RCLCPP_INFO(node_->get_logger(), "JointRobotTP, initialize complete");
 }
@@ -293,45 +289,22 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool 
     rclcpp::Rate loop_rate(200);
 
     TPComputation tp_controller;
-    std::vector<double> kukaGain = {0.5, 0.2, 0.05, 0.01};
-    std::vector<double> ur10Gain = {0.5, 0.2, 0.05, 0.01};
-    // exp variables
-    double kuka_gain = 0.5;
-    double ur10_gain = 0.5;
-
+    double kuka_gain, ur10_gain;
+    if((node_->has_parameter("kuka_gain") && node_->has_parameter("ur10_gain"))){
+        // exp variables
+        kuka_gain = kuka_gain_;
+        ur10_gain = ur10_gain_;
+        RCLCPP_INFO(node_->get_logger(), "\n\n%f %f\n\n, kuka and ur10 gain parameter", kuka_gain_, ur10_gain_);
+    }
+    
     double lambda = 0.0001; 
     double threshold = 0.01;
     double weight = 10.0;
-
-    std::string exp_title = "GAIN TUNING";
-    
-    // ============================================================== //
-    //                           Logging ONCE                         //
-    std::string base_dir = "/home/simone/Documents/SIMO/tesi/experiments";
-    std::string curr_exp_dir = base_dir + "/exp_" + std::to_string(log_counter_);
-    system(("mkdir -p " + curr_exp_dir).c_str());
-
-    std::ofstream exp_info_file = std::ofstream(curr_exp_dir + "/exp_info_file.txt", std::ios::app);
-    if(exp_info_file.is_open()){
-        exp_info_file << "Experiment title: " << exp_title << std::endl;
-        exp_info_file << "Epx variables:\n" << 
-                 "Kuka gain: " << kuka_gain << std::endl <<
-                 "ur10 gain: " << ur10_gain << std::endl <<
-                 "lambda: "    << lambda    << std::endl << 
-                 "threshold: " << threshold << std::endl <<
-                 "weight: "    << weight    << std::endl;
-
-        exp_info_file << "EXP COUNTER: " << log_counter_ << std::endl;
-        exp_info_file.close();
-    }
-    // ============================================================== //
-    
+      
 
     RCLCPP_WARN(node_->get_logger(), "KUKA gain: %.4f and UR10 gain: %.4f", kuka_gain, ur10_gain);
     while(rclcpp::ok() && !reached_goal){
         TIC(loop)
-
-
         // ---------------------- UPDATE DATA STEP ---------------------- //
         TIC(update);
         //std::cout << "----- control 1 -----" << std::endl;
@@ -373,8 +346,6 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool 
         ////TOC(stop_cond);
         // ---------------------- Eval STOP CONDION --------------------- //
 
-
-        // -------------------------------------------------------------- //
         // ---------------------- UPDATE TPIK STEP ---------------------- //
         //TIC(tpk);
         //TIC(init_tpk);
@@ -398,73 +369,20 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool 
         // ---------------------- UPDATE TPIK STEP ---------------------- //
 
 
-        //Eigen::VectorXd qdot_des = computePseudoInverse_jointWeight(TP_task_map_["endeff_target"].TskJacobian) * TP_task_map_["endeff_target"].RefRate;
-
-
         // ---------------------- SEND VELOCITY STEP -------------------- //
         ////TIC(send_vel);
         SendVelocityCommands(qdot_des, kuka_gain, ur10_gain);
         //////TOC(send_vel);
         // ---------------------- SEND VELOCITY STEP -------------------- //
-
-
-        // ============================================================== //
-        //                           Logging                              //
-        /// SAVE DATA ON FILE /// 
-
         
-        // std::string dir = "/task_info/";
-        // std::vector<std::string> task_id = {"endeff_target"};
-        // system(("mkdir -p " + curr_exp_dir + dir).c_str());
-
-        // for(int i=0; i<size(task_id); ++i){
-        //     // std::ofstream actFcn = std::ofstream(curr_exp_dir + dir + task_id[i] + "_actFcn.txt", std::ios::app);
-        //     // if(actFcn.is_open()){
-        //     //     actFcn << TP_task_map_[task_id[i]].ActMatrix.diagonal().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
-        //     //     actFcn.close();    
-        //     // }
-
-        //     // std::ofstream jacTaks = std::ofstream(curr_exp_dir + dir + task_id[i] + "_jacTaks.txt", std::ios::app);
-        //     // if(jacTaks.is_open()){
-        //     //     jacTaks << TP_task_map_[task_id[i]].TskJacobian.reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
-        //     //     jacTaks.close();    
-        //     // }
-
-        //     std::ofstream refRat = std::ofstream(curr_exp_dir + dir + task_id[i] + "_refRat.txt", std::ios::app);
-        //     if(refRat.is_open()){
-        //         refRat << TP_task_map_[task_id[i]].RefRate.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
-        //         refRat.close();    
-        //     }
-        // }
-
-        /*
-        dir = "/link_dist/";
-        system(("mkdir -p " + curr_exp_dir + dir).c_str());
-        for(auto& task : Prx_task_pts_OBAV_){
-            std::ofstream dist = std::ofstream(curr_exp_dir + dir + task.link_id + "_dist.txt", std::ios::app);
-            if(dist.is_open()){
-                dist << task.distance << std::endl;
-                dist.close();    
-            }
-        }
-
-        std::ofstream velVector = std::ofstream(curr_exp_dir + "/velVector.txt", std::ios::app);
-        if(velVector.is_open()){
-            velVector << qdot_des.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
-            velVector.close();
-        }
-        */
-        // ============================================================== //
-
         // CLEAR TASK PRIORITY MAP -------------------------------------- //
         TP_task_map_.clear();
         // CLEAR TASK PRIORITY MAP -------------------------------------- //
 
-        std_msgs::msg::String msg;
-        msg.data = "reaching loop";
-        debug_trace_publisher_->publish(msg);
+        // std_msgs::msg::String msg;
+        // msg.data = "reaching loop";
+        // debug_trace_publisher_->publish(msg);
         loop_rate.sleep();
-
         TOC(loop);
     }
 }
@@ -478,7 +396,6 @@ Eigen::Affine3d JointRobotTP::getGenericTransformation(const std::string& target
 
 Eigen::MatrixXd JointRobotTP::computePseudoInverse_jointWeight(const Eigen::MatrixXd &jacobian)
 {
-
     double mu = 0.1;
 
     Eigen::JacobiSVD<Eigen::MatrixXd> svd(jacobian, Eigen::ComputeFullU | Eigen::ComputeFullV);
@@ -544,12 +461,6 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
     // ---------------------------------------------------------------------------------------------------------- INITIAL CONFIGURATION REACHING
 
     std::this_thread::sleep_for(500ms);
-
-
-
-
-
-
 
 
     // print trasformation sequence
@@ -689,7 +600,7 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
     RunCartesianReachingLoop(goal_frame, reached_goal);
 
     // INCREMENT LOGGING COUNTER
-    log_counter_++;
+    //log_counter_++;
     // ---------------------------------------------------------------------------------------------------------- EXECUTE REACHING LOOP
 
     if(rclcpp::ok()){

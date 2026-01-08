@@ -1,0 +1,22 @@
+[0.032s] Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/keyboard_publisher_pkg': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/keyboard_publisher_pkg -- -j32 -l32
+[0.064s] [100%] Built target keyboard_publisher_node
+[0.099s] Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/keyboard_publisher_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/keyboard_publisher_pkg -- -j32 -l32
+[0.099s] Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/keyboard_publisher_pkg': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/keyboard_publisher_pkg
+[0.104s] -- Install configuration: ""
+[0.104s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/lib/keyboard_publisher_pkg/keyboard_publisher_node
+[0.105s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/ament_index/resource_index/package_run_dependencies/keyboard_publisher_pkg
+[0.105s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/ament_index/resource_index/parent_prefix_path/keyboard_publisher_pkg
+[0.105s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/environment/ament_prefix_path.sh
+[0.105s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/environment/ament_prefix_path.dsv
+[0.105s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/environment/path.sh
+[0.105s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/environment/path.dsv
+[0.105s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/local_setup.bash
+[0.105s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/local_setup.sh
+[0.105s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/local_setup.zsh
+[0.105s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/local_setup.dsv
+[0.105s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/package.dsv
+[0.106s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/ament_index/resource_index/packages/keyboard_publisher_pkg
+[0.106s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/cmake/keyboard_publisher_pkgConfig.cmake
+[0.106s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/cmake/keyboard_publisher_pkgConfig-version.cmake
+[0.106s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/package.xml
+[0.131s] Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/keyboard_publisher_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/keyboard_publisher_pkg

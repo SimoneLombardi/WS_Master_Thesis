@@ -1,0 +1,51 @@
+[0.026s] Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/rsp_uc1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/rsp_uc1 -- -j32 -l32
+[0.056s] [ 12%] Built target gtest
+[0.069s] [ 25%] Built target rsp_uc1
+[0.070s] [ 37%] Built target rsp_uc1_node
+[0.079s] [ 50%] Built target test_two_links_fixed_joint_prefix
+[0.080s] [ 62%] Built target test_two_links_moving_joint
+[0.083s] [ 75%] Built target test_two_links_change_fixed_joint
+[0.085s] [100%] Built target test_change_mimic_joint
+[0.085s] [100%] Built target test_two_links_fixed_joint
+[0.119s] Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/rsp_uc1' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/rsp_uc1 -- -j32 -l32
+[0.119s] Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/rsp_uc1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/rsp_uc1
+[0.126s] -- Install configuration: ""
+[0.126s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/lib/rsp_uc1/rsp_uc1
+[0.126s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/lib/librsp_uc1_node.so
+[0.126s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/include/rsp_uc1
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/include/rsp_uc1/robot_state_publisher
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/include/rsp_uc1/robot_state_publisher/robot_state_publisher.hpp
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/launch
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/launch/rsp-launch-xacro-command-subst.xml
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/launch/rsp-launch-xacro-command-subst.py
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/launch/rsp-launch-urdf-inline.xml
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/launch/rsp-launch-urdf-inline.py
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/launch/rsp-launch-urdf-file1.py
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/launch/rsp-launch-urdf-file.xml
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/launch/rsp-launch-xacro-api.py
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/launch/rsp-launch-xacro-popen.py
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/launch/rsp-launch-urdf-file2.py
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/urdf
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/urdf/test-desc.urdf
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/urdf/test-desc.urdf.xacro
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/ament_index/resource_index/package_run_dependencies/rsp_uc1
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/ament_index/resource_index/parent_prefix_path/rsp_uc1
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/environment/ament_prefix_path.sh
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/environment/ament_prefix_path.dsv
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/environment/path.sh
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/environment/path.dsv
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/local_setup.bash
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/local_setup.sh
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/local_setup.zsh
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/local_setup.dsv
+[0.127s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/package.dsv
+[0.127s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/ament_index/resource_index/packages/rsp_uc1
+[0.128s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/cmake/export_rsp_uc1_nodeExport.cmake
+[0.128s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/cmake/export_rsp_uc1_nodeExport-noconfig.cmake
+[0.128s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/ament_index/resource_index/rclcpp_components/rsp_uc1
+[0.128s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/cmake/ament_cmake_export_targets-extras.cmake
+[0.128s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.128s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/cmake/rsp_uc1Config.cmake
+[0.128s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/cmake/rsp_uc1Config-version.cmake
+[0.128s] -- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/package.xml
+[0.144s] Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/rsp_uc1' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/rsp_uc1

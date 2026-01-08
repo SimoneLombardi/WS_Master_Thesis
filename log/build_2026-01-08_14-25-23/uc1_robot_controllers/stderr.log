@@ -1,0 +1,108 @@
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:[m[K In member function ‘[01m[KEigen::MatrixXd TPComputation::REG_Pinv(const MatrixXd&)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:58:83:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KEigen::LLT<Eigen::Matrix<double, -1, -1>, 1>::LLT(const MatrixXd&, int)[m[K’
+   58 |     Eigen::LLT<Eigen::MatrixXd> svd(mat, Eigen::ComputeFullU | Eigen::ComputeFullV[01;31m[K)[m[K;
+      |                                                                                   [01;31m[K^[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Cholesky:32[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:3[m[K,
+                 from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+                 from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:120:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class InputType> Eigen::LLT<MatrixType, UpLo>::LLT(Eigen::EigenBase<OtherDerived>&) [with InputType = InputType; _MatrixType = Eigen::Matrix<double, -1, -1>; int _UpLo = 1][m[K’
+  120 |     explicit [01;36m[KLLT[m[K(EigenBase<InputType>& matrix)
+      |              [01;36m[K^~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:120:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:58:83:[m[K [01;36m[Knote: [m[K  types ‘[01m[KEigen::EigenBase<Derived>[m[K’ and ‘[01m[Kconst MatrixXd[m[K’ {aka ‘[01m[Kconst Eigen::Matrix<double, -1, -1>[m[K’} have incompatible cv-qualifiers
+   58 |     Eigen::LLT<Eigen::MatrixXd> svd(mat, Eigen::ComputeFullU | Eigen::ComputeFullV[01;36m[K)[m[K;
+      |                                                                                   [01;36m[K^[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Cholesky:32[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:3[m[K,
+                 from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+                 from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:105:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class InputType> Eigen::LLT<MatrixType, UpLo>::LLT(const Eigen::EigenBase<OtherDerived>&) [with InputType = InputType; _MatrixType = Eigen::Matrix<double, -1, -1>; int _UpLo = 1][m[K’
+  105 |     explicit [01;36m[KLLT[m[K(const EigenBase<InputType>& matrix)
+      |              [01;36m[K^~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:105:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:58:83:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+   58 |     Eigen::LLT<Eigen::MatrixXd> svd(mat, Eigen::ComputeFullU | Eigen::ComputeFullV[01;36m[K)[m[K;
+      |                                                                                   [01;36m[K^[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Cholesky:32[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:3[m[K,
+                 from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+                 from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:101:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KEigen::LLT<MatrixType, UpLo>::LLT(Eigen::Index) [with _MatrixType = Eigen::Matrix<double, -1, -1>; int _UpLo = 1; Eigen::Index = long int][m[K’
+  101 |     explicit [01;36m[KLLT[m[K(Index size) : m_matrix(size, size),
+      |              [01;36m[K^~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:101:14:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:93:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KEigen::LLT<MatrixType, UpLo>::LLT() [with _MatrixType = Eigen::Matrix<double, -1, -1>; int _UpLo = 1][m[K’
+   93 |     [01;36m[KLLT[m[K() : m_matrix(), m_isInitialized(false) {}
+      |     [01;36m[K^~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:93:5:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 2 provided
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:66:49:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KEigen::LLT<Eigen::Matrix<double, -1, -1>, 1>::LLT(const Eigen::LLT<Eigen::Matrix<double, -1, -1>, 1>&)[m[K’
+   66 | template<typename _MatrixType, int _UpLo> class [01;36m[KLLT[m[K
+      |                                                 [01;36m[K^~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:66:49:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:66:49:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KEigen::LLT<Eigen::Matrix<double, -1, -1>, 1>::LLT(Eigen::LLT<Eigen::Matrix<double, -1, -1>, 1>&&)[m[K’
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:66:49:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:59:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Eigen::LLT<Eigen::Matrix<double, -1, -1>, 1>[m[K’ has no member named ‘[01m[KmatrixV[m[K’; did you mean ‘[01m[KmatrixU[m[K’?
+   59 |     Eigen::MatrixXd V = svd.[01;31m[KmatrixV[m[K();
+      |                             [01;31m[K^~~~~~~[m[K
+      |                             [32m[KmatrixU[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:[m[K In member function ‘[01m[KEigen::MatrixXd TPComputation::REG_Pinv(const MatrixXd&)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:58:83:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KEigen::LLT<Eigen::Matrix<double, -1, -1>, 1>::LLT(const MatrixXd&, int)[m[K’
+   58 |     Eigen::LLT<Eigen::MatrixXd> svd(mat, Eigen::ComputeFullU | Eigen::ComputeFullV[01;31m[K)[m[K;
+      |                                                                                   [01;31m[K^[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Cholesky:32[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:3[m[K,
+                 from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+                 from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:120:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class InputType> Eigen::LLT<MatrixType, UpLo>::LLT(Eigen::EigenBase<OtherDerived>&) [with InputType = InputType; _MatrixType = Eigen::Matrix<double, -1, -1>; int _UpLo = 1][m[K’
+  120 |     explicit [01;36m[KLLT[m[K(EigenBase<InputType>& matrix)
+      |              [01;36m[K^~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:120:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:58:83:[m[K [01;36m[Knote: [m[K  types ‘[01m[KEigen::EigenBase<Derived>[m[K’ and ‘[01m[Kconst MatrixXd[m[K’ {aka ‘[01m[Kconst Eigen::Matrix<double, -1, -1>[m[K’} have incompatible cv-qualifiers
+   58 |     Eigen::LLT<Eigen::MatrixXd> svd(mat, Eigen::ComputeFullU | Eigen::ComputeFullV[01;36m[K)[m[K;
+      |                                                                                   [01;36m[K^[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Cholesky:32[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:3[m[K,
+                 from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+                 from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:105:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class InputType> Eigen::LLT<MatrixType, UpLo>::LLT(const Eigen::EigenBase<OtherDerived>&) [with InputType = InputType; _MatrixType = Eigen::Matrix<double, -1, -1>; int _UpLo = 1][m[K’
+  105 |     explicit [01;36m[KLLT[m[K(const EigenBase<InputType>& matrix)
+      |              [01;36m[K^~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:105:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:58:83:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+   58 |     Eigen::LLT<Eigen::MatrixXd> svd(mat, Eigen::ComputeFullU | Eigen::ComputeFullV[01;36m[K)[m[K;
+      |                                                                                   [01;36m[K^[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Cholesky:32[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:3[m[K,
+                 from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include/TPComputation.hpp:6[m[K,
+                 from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:1[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:101:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KEigen::LLT<MatrixType, UpLo>::LLT(Eigen::Index) [with _MatrixType = Eigen::Matrix<double, -1, -1>; int _UpLo = 1; Eigen::Index = long int][m[K’
+  101 |     explicit [01;36m[KLLT[m[K(Index size) : m_matrix(size, size),
+      |              [01;36m[K^~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:101:14:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:93:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KEigen::LLT<MatrixType, UpLo>::LLT() [with _MatrixType = Eigen::Matrix<double, -1, -1>; int _UpLo = 1][m[K’
+   93 |     [01;36m[KLLT[m[K() : m_matrix(), m_isInitialized(false) {}
+      |     [01;36m[K^~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:93:5:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 2 provided
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:66:49:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KEigen::LLT<Eigen::Matrix<double, -1, -1>, 1>::LLT(const Eigen::LLT<Eigen::Matrix<double, -1, -1>, 1>&)[m[K’
+   66 | template<typename _MatrixType, int _UpLo> class [01;36m[KLLT[m[K
+      |                                                 [01;36m[K^~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:66:49:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:66:49:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KEigen::LLT<Eigen::Matrix<double, -1, -1>, 1>::LLT(Eigen::LLT<Eigen::Matrix<double, -1, -1>, 1>&&)[m[K’
+[01m[K/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:66:49:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:59:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Eigen::LLT<Eigen::Matrix<double, -1, -1>, 1>[m[K’ has no member named ‘[01m[KmatrixV[m[K’; did you mean ‘[01m[KmatrixU[m[K’?
+   59 |     Eigen::MatrixXd V = svd.[01;31m[KmatrixV[m[K();
+      |                             [01;31m[K^~~~~~~[m[K
+      |                             [32m[KmatrixU[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:61:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Eigen::LLT<Eigen::Matrix<double, -1, -1>, 1>[m[K’ has no member named ‘[01m[KsingularValues[m[K’
+   61 |     Eigen::VectorXd S = svd.[01;31m[KsingularValues[m[K();
+      |                             [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp:61:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass Eigen::LLT<Eigen::Matrix<double, -1, -1>, 1>[m[K’ has no member named ‘[01m[KsingularValues[m[K’
+   61 |     Eigen::VectorXd S = svd.[01;31m[KsingularValues[m[K();
+      |                             [01;31m[K^~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/joint-robot-tp-test.dir/build.make:160: CMakeFiles/joint-robot-tp-test.dir/src/TPComputation.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:195: CMakeFiles/joint-robot-tp-test.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/joint-robot-test.dir/build.make:146: CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:169: CMakeFiles/joint-robot-test.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
