@@ -1,0 +1,5 @@
+# ------------------ combined robots with rviz visualization only
+ros2 launch uc1_robots_description view_kuka_ur_combined.launch.py 
+
+# ------------------ combined robots with ursim support 
+ros2 launch ur_robot_driver ur_control.launch.py ur_type:=ur10e robot_ip:=192.168.56.101 launch_rviz:=false initial_joint_controller:=joint_trajectory_controller description_package:=uc1_robots_description description_file:=kuka_ur_combined.urdf.xacro

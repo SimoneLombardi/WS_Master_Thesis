@@ -1,0 +1,6 @@
+.vscode/*
+cmake/*
+config/*
+test/*
+meshes/*
+environment/*

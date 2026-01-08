@@ -1,0 +1,18 @@
+--------------- basic ik goal (back and forth between two frames)
+
+ros2 run tf2_ros static_transform_publisher -0.2 0.5 0.8 1.57 1.57 1.57 base_link ik_reach_goal
+
+ros2 run tf2_ros static_transform_publisher 0.5 0.5 0.5 0 0 0 base_link ik_reach_goal
+
+--------------- forearm ik goal (to test control on other frames)
+
+ros2 run tf2_ros static_transform_publisher -0.2 0.5 0.8 0 0 0 base_link forearm_reach_goal
+
+
+------------- KUKA ik goal
+
+ros2 run tf2_ros static_transform_publisher 0.5 -2.5 0.8 -1.57 0 0 kuka_base_link ik_reach_goal
+
+
+-------------- UR-KUKA models linker
+ros2 run tf2_ros static_transform_publisher 0 0 0 0 1.57 0 kuka_link_6 base_float

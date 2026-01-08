@@ -1,0 +1,4 @@
+geometry_msgs/Vector3 contact_location
+geometry_msgs/Vector3 contact_normal
+float32 contact_intensity
+string reference_frame

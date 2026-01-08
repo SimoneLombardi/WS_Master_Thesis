@@ -1,0 +1,9 @@
+{
+  "package_name": "uc1_robot_perception",
+  "non_idl_tuples": [
+    "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception:msg/ProximityTask.msg",
+    "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception:msg/ProximityTaskArray.msg",
+    "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception:msg/Contact.msg",
+    "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception:msg/ContactArray.msg"
+  ]
+}

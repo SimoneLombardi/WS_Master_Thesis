@@ -1,0 +1,4 @@
+source;share/uc1_robots_description/local_setup.bash
+source;share/uc1_robots_description/local_setup.dsv
+source;share/uc1_robots_description/local_setup.sh
+source;share/uc1_robots_description/local_setup.zsh

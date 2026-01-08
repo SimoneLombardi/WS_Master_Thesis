@@ -1,0 +1,41 @@
+[0.280s] Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/jsp_uc1/jsp_gui_uc1': AMENT_PREFIX_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1:${AMENT_PREFIX_PATH} PYTHONPATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_gui_uc1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_gui_uc1/lib/python3.10/site-packages:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/jsp_gui_uc1 build --build-base /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_gui_uc1/build install --record /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_gui_uc1/install.log --single-version-externally-managed install_data
+[0.378s] running egg_info
+[0.378s] creating ../../../build/jsp_gui_uc1/jsp_gui_uc1.egg-info
+[0.378s] writing ../../../build/jsp_gui_uc1/jsp_gui_uc1.egg-info/PKG-INFO
+[0.378s] writing dependency_links to ../../../build/jsp_gui_uc1/jsp_gui_uc1.egg-info/dependency_links.txt
+[0.379s] writing entry points to ../../../build/jsp_gui_uc1/jsp_gui_uc1.egg-info/entry_points.txt
+[0.379s] writing requirements to ../../../build/jsp_gui_uc1/jsp_gui_uc1.egg-info/requires.txt
+[0.379s] writing top-level names to ../../../build/jsp_gui_uc1/jsp_gui_uc1.egg-info/top_level.txt
+[0.379s] writing manifest file '../../../build/jsp_gui_uc1/jsp_gui_uc1.egg-info/SOURCES.txt'
+[0.379s] reading manifest file '../../../build/jsp_gui_uc1/jsp_gui_uc1.egg-info/SOURCES.txt'
+[0.379s] adding license file 'LICENSE'
+[0.380s] writing manifest file '../../../build/jsp_gui_uc1/jsp_gui_uc1.egg-info/SOURCES.txt'
+[0.380s] running build
+[0.380s] running build_py
+[0.380s] creating /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_gui_uc1/build
+[0.380s] creating /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_gui_uc1/build/lib
+[0.380s] creating /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_gui_uc1/build/lib/jsp_gui_uc1
+[0.380s] copying jsp_gui_uc1/__init__.py -> /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_gui_uc1/build/lib/jsp_gui_uc1
+[0.380s] copying jsp_gui_uc1/flow_layout.py -> /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_gui_uc1/build/lib/jsp_gui_uc1
+[0.380s] copying jsp_gui_uc1/jsp_gui_uc1.py -> /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_gui_uc1/build/lib/jsp_gui_uc1
+[0.380s] running install
+[0.380s] running install_lib
+[0.380s] creating /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_gui_uc1/lib/python3.10/site-packages/jsp_gui_uc1
+[0.380s] copying /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_gui_uc1/build/lib/jsp_gui_uc1/__init__.py -> /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_gui_uc1/lib/python3.10/site-packages/jsp_gui_uc1
+[0.380s] copying /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_gui_uc1/build/lib/jsp_gui_uc1/flow_layout.py -> /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_gui_uc1/lib/python3.10/site-packages/jsp_gui_uc1
+[0.381s] copying /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_gui_uc1/build/lib/jsp_gui_uc1/jsp_gui_uc1.py -> /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_gui_uc1/lib/python3.10/site-packages/jsp_gui_uc1
+[0.381s] byte-compiling /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_gui_uc1/lib/python3.10/site-packages/jsp_gui_uc1/__init__.py to __init__.cpython-310.pyc
+[0.381s] byte-compiling /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_gui_uc1/lib/python3.10/site-packages/jsp_gui_uc1/flow_layout.py to flow_layout.cpython-310.pyc
+[0.381s] byte-compiling /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_gui_uc1/lib/python3.10/site-packages/jsp_gui_uc1/jsp_gui_uc1.py to jsp_gui_uc1.cpython-310.pyc
+[0.382s] running install_data
+[0.382s] creating /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_gui_uc1/share/ament_index
+[0.382s] creating /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_gui_uc1/share/ament_index/resource_index
+[0.382s] creating /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_gui_uc1/share/ament_index/resource_index/packages
+[0.382s] copying resource/jsp_gui_uc1 -> /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_gui_uc1/share/ament_index/resource_index/packages
+[0.382s] copying package.xml -> /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_gui_uc1/share/jsp_gui_uc1
+[0.382s] running install_egg_info
+[0.383s] Copying ../../../build/jsp_gui_uc1/jsp_gui_uc1.egg-info to /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_gui_uc1/lib/python3.10/site-packages/jsp_gui_uc1-2.4.0-py3.10.egg-info
+[0.383s] running install_scripts
+[0.392s] Installing jsp_gui_uc1 script to /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_gui_uc1/lib/jsp_gui_uc1
+[0.392s] writing list of installed files to '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_gui_uc1/install.log'
+[0.403s] Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/jsp_uc1/jsp_gui_uc1' returned '0': AMENT_PREFIX_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1:${AMENT_PREFIX_PATH} PYTHONPATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_gui_uc1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_gui_uc1/lib/python3.10/site-packages:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/jsp_gui_uc1 build --build-base /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_gui_uc1/build install --record /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_gui_uc1/install.log --single-version-externally-managed install_data

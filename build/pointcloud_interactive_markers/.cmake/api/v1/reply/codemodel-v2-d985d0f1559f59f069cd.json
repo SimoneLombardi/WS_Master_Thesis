@@ -1,0 +1,124 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-e4bf1f8fbc472be474cf.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "pointcloud_interactive_markers",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "chassis-cloud::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-chassis-cloud-82c217469760bcbeae9a.json",
+					"name" : "chassis-cloud",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cylinder-cloud-broadcaster::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cylinder-cloud-broadcaster-831c96f1e91c22c76da7.json",
+					"name" : "cylinder-cloud-broadcaster",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cylinder-cloud-broadcaster-multi::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cylinder-cloud-broadcaster-multi-987090f56578217ce29f.json",
+					"name" : "cylinder-cloud-broadcaster-multi",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "interactive-target::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-interactive-target-1afc099d3758c2c53faa.json",
+					"name" : "interactive-target",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mindist-dummy-broadcaster::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mindist-dummy-broadcaster-32d6c73834b6bf7863dd.json",
+					"name" : "mindist-dummy-broadcaster",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pointcloud_interactive_markers_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pointcloud_interactive_markers_uninstall-ce8b62a4285aff0182dc.json",
+					"name" : "pointcloud_interactive_markers_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sphere-cloud-broadcaster::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sphere-cloud-broadcaster-6c75ac19e20d1ab9634f.json",
+					"name" : "sphere-cloud-broadcaster",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-1f2c7b4b3575592e7920.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/pointcloud_interactive_markers",
+		"source" : "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/pointcloud_interactive_markers"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

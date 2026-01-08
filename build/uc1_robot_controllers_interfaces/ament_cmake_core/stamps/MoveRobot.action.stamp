@@ -1,0 +1,11 @@
+# Request
+uc1_robot_controllers_interfaces/MoveRobotGoal goal
+int32 init_config_code 
+int32 jacobian_type_code
+---
+# Result
+string result
+---
+# Feedback
+float64 linvel_norm
+float64 angvel_norm

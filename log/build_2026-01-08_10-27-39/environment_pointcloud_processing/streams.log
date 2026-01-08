@@ -1,0 +1,140 @@
+[0.120s] Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/environment_pointcloud_processing -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing
+[0.209s] -- The C compiler identification is GNU 12.3.0
+[0.262s] -- The CXX compiler identification is GNU 11.4.0
+[0.265s] -- Detecting C compiler ABI info
+[0.323s] -- Detecting C compiler ABI info - done
+[0.329s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.329s] -- Detecting C compile features
+[0.329s] -- Detecting C compile features - done
+[0.331s] -- Detecting CXX compiler ABI info
+[0.380s] -- Detecting CXX compiler ABI info - done
+[0.386s] -- Check for working CXX compiler: /usr/bin/g++-11 - skipped
+[0.386s] -- Detecting CXX compile features
+[0.386s] -- Detecting CXX compile features - done
+[0.388s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.471s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.517s] -- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+[0.544s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.547s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.552s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.561s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.571s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.598s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.599s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.637s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.652s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.677s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.681s] -- Looking for pthread.h
+[0.719s] -- Looking for pthread.h - found
+[0.720s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.763s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.764s] -- Found Threads: TRUE  
+[0.787s] -- Found example_interfaces: 0.9.3 (/opt/ros/humble/share/example_interfaces/cmake)
+[0.810s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.825s] -- Found visualization_msgs: 4.9.0 (/opt/ros/humble/share/visualization_msgs/cmake)
+[0.840s] -- Found interactive_markers: 2.3.2 (/opt/ros/humble/share/interactive_markers/cmake)
+[0.847s] -- Found tf2_ros: 0.25.16 (/opt/ros/humble/share/tf2_ros/cmake)
+[0.874s] -- Found tf2_eigen: 0.25.16 (/opt/ros/humble/share/tf2_eigen/cmake)
+[0.879s] -- Found tf2_geometry_msgs: 0.25.16 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[0.882s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[0.882s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[0.883s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[0.884s] -- Found pcl_conversions: 2.4.5 (/opt/ros/humble/share/pcl_conversions/cmake)
+[0.903s] -- Checking for module 'eigen3'
+[0.909s] --   Found eigen3, version 3.4.0
+[0.926s] -- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") 
+[0.926s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[0.945s] -- Checking for module 'flann'
+[0.952s] --   Found flann, version 1.9.1
+[0.974s] -- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  
+[0.974s] -- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)
+[1.562s] -- Checking for module 'libusb-1.0'
+[1.570s] --   Found libusb-1.0, version 1.0.25
+[1.590s] -- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  
+[1.591s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[1.623s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[1.715s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[1.719s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[1.723s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[1.824s] -- Found Qhull version 8.0.2
+[1.917s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[2.016s] -- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  
+[2.017s] -- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  
+[2.017s] -- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  
+[2.018s] -- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  
+[2.018s] -- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  
+[2.018s] -- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  
+[2.019s] -- Found PCL_2D: /usr/include/pcl-1.12  
+[2.019s] -- Found PCL_GEOMETRY: /usr/include/pcl-1.12  
+[2.019s] -- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  
+[2.020s] -- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  
+[2.020s] -- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so  
+[2.021s] -- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so  
+[2.021s] -- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so  
+[2.022s] -- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so  
+[2.022s] -- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  
+[2.023s] -- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so  
+[2.023s] -- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so  
+[2.023s] -- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so  
+[2.024s] -- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so  
+[2.024s] -- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so  
+[2.025s] -- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  
+[2.025s] -- Found PCL_MODELER: /usr/include/pcl-1.12  
+[2.025s] -- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  
+[2.025s] -- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so  
+[2.026s] -- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so  
+[2.027s] -- Found pcl_ros: 2.4.5 (/opt/ros/humble/share/pcl_ros/cmake)
+[2.034s] -- Found urdf: 2.6.1 (/opt/ros/humble/share/urdf/cmake)
+[2.046s] -- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+[2.060s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.116s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.116s] -- Configured cppcheck include dirs: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/environment_pointcloud_processing/include
+[2.116s] -- Configured cppcheck exclude dirs and/or files: 
+[2.116s] -- Added test 'lint_cmake' to check CMake code style
+[2.117s] -- Added test 'uncrustify' to check C / C++ code style
+[2.117s] -- Configured uncrustify additional arguments: 
+[2.117s] -- Added test 'xmllint' to check XML markup files
+[2.117s] -- Configuring done
+[2.167s] -- Generating done
+[2.180s] -- Build files have been written to: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing
+[2.199s] Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/environment_pointcloud_processing -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing
+[2.201s] Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing -- -j32 -l32
+[2.238s] [ 33%] [32mBuilding CXX object CMakeFiles/env_cloud_manager.dir/src/EnvCloudMain.cpp.o[0m
+[2.238s] [ 33%] [32mBuilding CXX object CMakeFiles/env_cloud_manager.dir/src/EnvCloudManager.cpp.o[0m
+[2.238s] [ 50%] [32mBuilding CXX object CMakeFiles/cloud_motion_segmentation.dir/src/MotionCloudSegmentation.cpp.o[0m
+[2.238s] [ 66%] [32mBuilding CXX object CMakeFiles/cloud_motion_segmentation.dir/src/CloudMotionExtractor.cpp.o[0m
+[8.148s] [ 83%] [32m[1mLinking CXX executable env_cloud_manager[0m
+[8.621s] [ 83%] Built target env_cloud_manager
+[10.727s] [100%] [32m[1mLinking CXX executable cloud_motion_segmentation[0m
+[11.077s] [100%] Built target cloud_motion_segmentation
+[11.084s] Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing -- -j32 -l32
+[11.085s] Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing
+[11.090s] -- Install configuration: ""
+[11.090s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/lib/environment_pointcloud_processing/env_cloud_manager
+[11.090s] -- Set runtime path of "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/lib/environment_pointcloud_processing/env_cloud_manager" to ""
+[11.090s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/lib/environment_pointcloud_processing/cloud_motion_segmentation
+[11.092s] -- Set runtime path of "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/lib/environment_pointcloud_processing/cloud_motion_segmentation" to ""
+[11.092s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources
+[11.092s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources/partial_chassis_downsampled_cloud.pcd
+[11.092s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources/chassis_downsampled_cloud.ply
+[11.092s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources/rviz
+[11.092s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources/rviz/rviz_cfg.rviz
+[11.092s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources/chassis_downsampled_cloud.pcd
+[11.092s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources/chassis_downsampled_cloud_scaled.pcd
+[11.092s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing//resources/chassis_downsampled_cloud_scaled_centered.pcd
+[11.092s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/ament_index/resource_index/package_run_dependencies/environment_pointcloud_processing
+[11.092s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/ament_index/resource_index/parent_prefix_path/environment_pointcloud_processing
+[11.092s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/environment/ament_prefix_path.sh
+[11.092s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/environment/ament_prefix_path.dsv
+[11.092s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/environment/path.sh
+[11.092s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/environment/path.dsv
+[11.092s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/local_setup.bash
+[11.092s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/local_setup.sh
+[11.093s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/local_setup.zsh
+[11.093s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/local_setup.dsv
+[11.093s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/package.dsv
+[11.093s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/ament_index/resource_index/packages/environment_pointcloud_processing
+[11.093s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/cmake/environment_pointcloud_processingConfig.cmake
+[11.093s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/cmake/environment_pointcloud_processingConfig-version.cmake
+[11.093s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/package.xml
+[11.094s] Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing

@@ -1,0 +1,490 @@
+-- The C compiler identification is GNU 12.3.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++-11 - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found example_interfaces: 0.9.3 (/opt/ros/humble/share/example_interfaces/cmake)
+-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found visualization_msgs: 4.9.0 (/opt/ros/humble/share/visualization_msgs/cmake)
+-- Found interactive_markers: 2.3.2 (/opt/ros/humble/share/interactive_markers/cmake)
+-- Found tf2_ros: 0.25.16 (/opt/ros/humble/share/tf2_ros/cmake)
+-- Found tf2_eigen: 0.25.16 (/opt/ros/humble/share/tf2_eigen/cmake)
+-- Found tf2_geometry_msgs: 0.25.16 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+-- Found Eigen3: TRUE (found version "3.4.0") 
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found pcl_conversions: 2.4.5 (/opt/ros/humble/share/pcl_conversions/cmake)
+-- Checking for module 'eigen3'
+--   Found eigen3, version 3.4.0
+-- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") 
+-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+-- Checking for module 'flann'
+--   Found flann, version 1.9.1
+-- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  
+-- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)
+-- Checking for module 'libusb-1.0'
+--   Found libusb-1.0, version 1.0.25
+-- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+-- Found Qhull version 8.0.2
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  
+-- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  
+-- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  
+-- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  
+-- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  
+-- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  
+-- Found PCL_2D: /usr/include/pcl-1.12  
+-- Found PCL_GEOMETRY: /usr/include/pcl-1.12  
+-- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  
+-- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  
+-- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so  
+-- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so  
+-- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so  
+-- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so  
+-- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  
+-- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so  
+-- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so  
+-- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so  
+-- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so  
+-- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so  
+-- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  
+-- Found PCL_MODELER: /usr/include/pcl-1.12  
+-- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  
+-- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so  
+-- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so  
+-- Found pcl_ros: 2.4.5 (/opt/ros/humble/share/pcl_ros/cmake)
+-- Found urdf: 2.6.1 (/opt/ros/humble/share/urdf/cmake)
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+-- Found PythonExtra: .so  
+[0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):
+  Use rosidl_get_typesupport_target() and target_link_libraries() instead of
+  rosidl_target_interfaces()
+Call Stack (most recent call first):
+  CMakeLists.txt:65 (rosidl_target_interfaces)
+
+[0m
+[0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):
+  Use rosidl_get_typesupport_target() and target_link_libraries() instead of
+  rosidl_target_interfaces()
+Call Stack (most recent call first):
+  CMakeLists.txt:82 (rosidl_target_interfaces)
+
+[0m
+[0mCMake Deprecation Warning at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):
+  Use rosidl_get_typesupport_target() and target_link_libraries() instead of
+  rosidl_target_interfaces()
+Call Stack (most recent call first):
+  CMakeLists.txt:99 (rosidl_target_interfaces)
+
+[0m
+-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception/include
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_perception
+[  1%] [34m[1mGenerating C code for ROS interfaces[0m
+[  3%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[  3%] Built target ament_cmake_python_copy_uc1_robot_perception
+running egg_info
+creating uc1_robot_perception.egg-info
+writing uc1_robot_perception.egg-info/PKG-INFO
+writing dependency_links to uc1_robot_perception.egg-info/dependency_links.txt
+writing top-level names to uc1_robot_perception.egg-info/top_level.txt
+writing manifest file 'uc1_robot_perception.egg-info/SOURCES.txt'
+reading manifest file 'uc1_robot_perception.egg-info/SOURCES.txt'
+writing manifest file 'uc1_robot_perception.egg-info/SOURCES.txt'
+[  3%] Built target ament_cmake_python_build_uc1_robot_perception_egg
+[  3%] Built target uc1_robot_perception__cpp
+[  4%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[  6%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[  8%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[ 12%] [32mBuilding C object CMakeFiles/uc1_robot_perception__rosidl_generator_c.dir/rosidl_generator_c/uc1_robot_perception/msg/detail/contact_array__functions.c.o[0m
+[ 12%] [32mBuilding C object CMakeFiles/uc1_robot_perception__rosidl_generator_c.dir/rosidl_generator_c/uc1_robot_perception/msg/detail/proximity_task_array__functions.c.o[0m
+[ 12%] [32mBuilding C object CMakeFiles/uc1_robot_perception__rosidl_generator_c.dir/rosidl_generator_c/uc1_robot_perception/msg/detail/proximity_task__functions.c.o[0m
+[ 14%] [32mBuilding C object CMakeFiles/uc1_robot_perception__rosidl_generator_c.dir/rosidl_generator_c/uc1_robot_perception/msg/detail/contact__functions.c.o[0m
+[ 16%] [32m[1mLinking C shared library libuc1_robot_perception__rosidl_generator_c.so[0m
+[ 16%] Built target uc1_robot_perception__rosidl_generator_c
+[ 20%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[ 20%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[ 20%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[ 24%] [32mBuilding CXX object CMakeFiles/uc1_robot_perception__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/uc1_robot_perception/msg/proximity_task__type_support.cpp.o[0m
+[ 24%] [32mBuilding CXX object CMakeFiles/uc1_robot_perception__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/uc1_robot_perception/msg/contact__type_support.cpp.o[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/uc1_robot_perception__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/uc1_robot_perception/msg/proximity_task_array__type_support.cpp.o[0m
+[ 27%] [32mBuilding CXX object CMakeFiles/uc1_robot_perception__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/uc1_robot_perception/msg/contact_array__type_support.cpp.o[0m
+[ 29%] [32mBuilding CXX object CMakeFiles/uc1_robot_perception__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/uc1_robot_perception/msg/detail/proximity_task__type_support.cpp.o[0m
+[ 30%] [32mBuilding CXX object CMakeFiles/uc1_robot_perception__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/uc1_robot_perception/msg/detail/proximity_task_array__type_support.cpp.o[0m
+[ 32%] [32mBuilding CXX object CMakeFiles/uc1_robot_perception__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/uc1_robot_perception/msg/detail/contact_array__type_support.cpp.o[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/uc1_robot_perception__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/uc1_robot_perception/msg/detail/contact__type_support.cpp.o[0m
+[ 35%] [32mBuilding CXX object CMakeFiles/uc1_robot_perception__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/uc1_robot_perception/msg/detail/dds_fastrtps/proximity_task__type_support.cpp.o[0m
+[ 37%] [32mBuilding CXX object CMakeFiles/uc1_robot_perception__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/uc1_robot_perception/msg/detail/dds_fastrtps/contact__type_support.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/uc1_robot_perception__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/uc1_robot_perception/msg/detail/dds_fastrtps/proximity_task_array__type_support.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/uc1_robot_perception__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/uc1_robot_perception/msg/detail/dds_fastrtps/contact_array__type_support.cpp.o[0m
+[ 41%] [32mBuilding CXX object CMakeFiles/uc1_robot_perception__rosidl_typesupport_c.dir/rosidl_typesupport_c/uc1_robot_perception/msg/proximity_task__type_support.cpp.o[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/uc1_robot_perception__rosidl_typesupport_c.dir/rosidl_typesupport_c/uc1_robot_perception/msg/proximity_task_array__type_support.cpp.o[0m
+[ 45%] [32mBuilding CXX object CMakeFiles/uc1_robot_perception__rosidl_typesupport_c.dir/rosidl_typesupport_c/uc1_robot_perception/msg/contact__type_support.cpp.o[0m
+[ 46%] [32mBuilding CXX object CMakeFiles/uc1_robot_perception__rosidl_typesupport_c.dir/rosidl_typesupport_c/uc1_robot_perception/msg/contact_array__type_support.cpp.o[0m
+[ 48%] [32m[1mLinking CXX shared library libuc1_robot_perception__rosidl_typesupport_c.so[0m
+[ 50%] [32m[1mLinking CXX shared library libuc1_robot_perception__rosidl_typesupport_cpp.so[0m
+[ 51%] [32mBuilding CXX object CMakeFiles/uc1_robot_perception__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/uc1_robot_perception/msg/detail/proximity_task__type_support_c.cpp.o[0m
+[ 53%] [32mBuilding C object CMakeFiles/uc1_robot_perception__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/uc1_robot_perception/msg/detail/proximity_task_array__type_support.c.o[0m
+[ 54%] [32mBuilding CXX object CMakeFiles/uc1_robot_perception__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/uc1_robot_perception/msg/detail/proximity_task_array__type_support_c.cpp.o[0m
+[ 56%] [32mBuilding C object CMakeFiles/uc1_robot_perception__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/uc1_robot_perception/msg/detail/proximity_task__type_support.c.o[0m
+[ 58%] [32mBuilding C object CMakeFiles/uc1_robot_perception__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/uc1_robot_perception/msg/detail/contact_array__type_support.c.o[0m
+[ 59%] [32mBuilding C object CMakeFiles/uc1_robot_perception__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/uc1_robot_perception/msg/detail/contact__type_support.c.o[0m
+[ 61%] [32mBuilding CXX object CMakeFiles/uc1_robot_perception__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/uc1_robot_perception/msg/detail/contact_array__type_support_c.cpp.o[0m
+[ 62%] [32mBuilding CXX object CMakeFiles/uc1_robot_perception__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/uc1_robot_perception/msg/detail/contact__type_support_c.cpp.o[0m
+[ 62%] Built target uc1_robot_perception__rosidl_typesupport_c
+[ 62%] Built target uc1_robot_perception__rosidl_typesupport_cpp
+[ 64%] [32m[1mLinking C shared library libuc1_robot_perception__rosidl_typesupport_introspection_c.so[0m
+[ 64%] Built target uc1_robot_perception__rosidl_typesupport_introspection_c
+[ 66%] [32m[1mLinking CXX shared library libuc1_robot_perception__rosidl_typesupport_introspection_cpp.so[0m
+[ 67%] [32m[1mLinking CXX shared library libuc1_robot_perception__rosidl_typesupport_fastrtps_cpp.so[0m
+[ 69%] [32m[1mLinking CXX shared library libuc1_robot_perception__rosidl_typesupport_fastrtps_c.so[0m
+[ 69%] Built target uc1_robot_perception__rosidl_typesupport_introspection_cpp
+[ 69%] Built target uc1_robot_perception__rosidl_typesupport_fastrtps_cpp
+[ 69%] Built target uc1_robot_perception__rosidl_typesupport_fastrtps_c
+[ 69%] Built target uc1_robot_perception
+[ 72%] [34m[1mGenerating Python code for ROS interfaces[0m
+[ 72%] [32mBuilding CXX object CMakeFiles/simulated_contact_publisher.dir/src/SimulatedContactPublisher.cpp.o[0m
+[ 74%] [32mBuilding CXX object CMakeFiles/interactive_contact_publisher.dir/src/InteractiveContactPublisher.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/proximity_task_generator.dir/src/ProximityTest.cpp.o[0m
+[ 77%] [32mBuilding CXX object CMakeFiles/proximity_task_generator.dir/src/ProximityTaskGenerator.cpp.o[0m
+In file included from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception/include/ProximityTaskGenerator.hpp:17[m[K,
+                 from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception/src/ProximityTest.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/tf2_eigen/tf2_eigen/tf2_eigen.h:32:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   32 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead
+      |  [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception/include/ProximityTaskGenerator.hpp:17[m[K,
+                 from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception/src/ProximityTaskGenerator.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/tf2_eigen/tf2_eigen/tf2_eigen.h:32:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   32 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead
+      |  [01;35m[K^~~~~~~[m[K
+[ 77%] Built target uc1_robot_perception__py
+[ 79%] [32mBuilding C object CMakeFiles/uc1_robot_perception__rosidl_generator_py.dir/rosidl_generator_py/uc1_robot_perception/msg/_proximity_task_s.c.o[0m
+[ 80%] [32mBuilding C object CMakeFiles/uc1_robot_perception__rosidl_generator_py.dir/rosidl_generator_py/uc1_robot_perception/msg/_contact_s.c.o[0m
+[ 83%] [32mBuilding C object CMakeFiles/uc1_robot_perception__rosidl_generator_py.dir/rosidl_generator_py/uc1_robot_perception/msg/_contact_array_s.c.o[0m
+[ 83%] [32mBuilding C object CMakeFiles/uc1_robot_perception__rosidl_generator_py.dir/rosidl_generator_py/uc1_robot_perception/msg/_proximity_task_array_s.c.o[0m
+[ 85%] [32m[1mLinking C shared library rosidl_generator_py/uc1_robot_perception/libuc1_robot_perception__rosidl_generator_py.so[0m
+[ 85%] Built target uc1_robot_perception__rosidl_generator_py
+[ 90%] [32mBuilding C object CMakeFiles/uc1_robot_perception__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/uc1_robot_perception/_uc1_robot_perception_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[ 90%] [32mBuilding C object CMakeFiles/uc1_robot_perception__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/uc1_robot_perception/_uc1_robot_perception_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[ 90%] [32mBuilding C object CMakeFiles/uc1_robot_perception__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/uc1_robot_perception/_uc1_robot_perception_s.ep.rosidl_typesupport_c.c.o[0m
+[ 91%] [32m[1mLinking C shared library rosidl_generator_py/uc1_robot_perception/uc1_robot_perception_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[ 95%] [32m[1mLinking C shared library rosidl_generator_py/uc1_robot_perception/uc1_robot_perception_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[ 95%] [32m[1mLinking C shared library rosidl_generator_py/uc1_robot_perception/uc1_robot_perception_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[ 95%] Built target uc1_robot_perception__rosidl_typesupport_introspection_c__pyext
+[ 95%] Built target uc1_robot_perception__rosidl_typesupport_fastrtps_c__pyext
+[ 95%] Built target uc1_robot_perception__rosidl_typesupport_c__pyext
+[ 96%] [32m[1mLinking CXX executable simulated_contact_publisher[0m
+[ 96%] Built target simulated_contact_publisher
+In file included from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception/src/ProximityTaskGenerator.cpp:2[m[K:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception/include/PointCloudHelpers.hpp:[m[K In function ‘[01m[Kvoid linkTfOffset(size_t, Eigen::Matrix4d&)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception/include/PointCloudHelpers.hpp:39:21:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kpitch[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   39 |   double yaw, roll, [01;35m[Kpitch[m[K;
+      |                     [01;35m[K^~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception/src/ProximityTaskGenerator.cpp:[m[K In constructor ‘[01m[KProximityTaskGenerator::ProximityTaskGenerator()[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception/src/ProximityTaskGenerator.cpp:65:46:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::vector<pcl::PointXYZ, Eigen::aligned_allocator<pcl::PointXYZ> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+   65 |     if ([01;35m[Krobot_link_clouds_[i]->points.size() <= max_cloud_pts[m[K)
+      |         [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception/src/ProximityTaskGenerator.cpp:59:9:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kradius[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   59 |   float [01;35m[Kradius[m[K = 0.02;                                         //k_l_6
+      |         [01;35m[K^~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception/src/ProximityTaskGenerator.cpp:[m[K In member function ‘[01m[Kvoid ProximityTaskGenerator::pointCloudCallback(sensor_msgs::msg::PointCloud2_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception/src/ProximityTaskGenerator.cpp:143:19:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kbbox_transform[m[K’ set but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable-Wunused-but-set-variable]8;;[m[K]
+  143 |   Eigen::Matrix4f [01;35m[Kbbox_transform[m[K = eigen_affine.matrix().cast<float>();
+      |                   [01;35m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception/src/ProximityTaskGenerator.cpp:146:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kproximity_threshold[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  146 |   double [01;35m[Kproximity_threshold[m[K = 0.05; // Example: remove points closer than 20 cm.
+      |          [01;35m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception/src/ProximityTaskGenerator.cpp:[m[K In member function ‘[01m[Kvoid ProximityTaskGenerator::robotCloudModel()[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception/src/ProximityTaskGenerator.cpp:252:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::array<std::shared_ptr<pcl::PointCloud<pcl::PointXYZ> >, 14>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  252 |   for (int i = 0; [01;35m[Ki < robot_link_clouds_.size()[m[K; i++)
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception/src/ProximityTaskGenerator.cpp:[m[K In member function ‘[01m[Kstd::vector<ProximityTask> ProximityTaskGenerator::computeProximityTasks(pcl::PointCloud<pcl::PointXYZ>::Ptr)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception/src/ProximityTaskGenerator.cpp:276:19:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::array<std::shared_ptr<pcl::PointCloud<pcl::PointXYZ> >, 14>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  276 |   for (int i=0; [01;35m[Ki < robot_link_clouds_base_.size()[m[K; i++)
+      |                 [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[ 98%] [32m[1mLinking CXX executable interactive_contact_publisher[0m
+[ 98%] Built target interactive_contact_publisher
+[100%] [32m[1mLinking CXX executable proximity_task_generator[0m
+[100%] Built target proximity_task_generator
+-- Install configuration: ""
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/ament_index/resource_index/rosidl_interfaces/uc1_robot_perception
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/rosidl_generator_c__visibility_control.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/proximity_task.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact_array__functions.c
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task_array__functions.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task_array__type_support.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact__type_support.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task_array__struct.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact_array__type_support.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact_array__struct.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task__functions.c
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task__type_support.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task__struct.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact_array__functions.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact__functions.c
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact__struct.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact__functions.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task__functions.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task_array__functions.c
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/proximity_task_array.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/contact.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/contact_array.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/environment/library_path.sh
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/environment/library_path.dsv
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/libuc1_robot_perception__rosidl_generator_c.so
+-- Set runtime path of "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/libuc1_robot_perception__rosidl_generator_c.so" to ""
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task__rosidl_typesupport_fastrtps_c.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact__rosidl_typesupport_fastrtps_c.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact_array__rosidl_typesupport_fastrtps_c.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task_array__rosidl_typesupport_fastrtps_c.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/libuc1_robot_perception__rosidl_typesupport_fastrtps_c.so
+-- Set runtime path of "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/libuc1_robot_perception__rosidl_typesupport_fastrtps_c.so" to ""
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/rosidl_generator_cpp__visibility_control.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/proximity_task.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/contact.hpp
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact__type_support.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task_array__traits.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact_array__builder.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact__struct.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact__traits.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact__builder.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact_array__traits.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact_array__struct.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task_array__builder.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task_array__type_support.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task__type_support.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact_array__type_support.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task__struct.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task_array__struct.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task__traits.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task__builder.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/contact_array.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/proximity_task_array.hpp
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task_array__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact_array__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/dds_fastrtps
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/libuc1_robot_perception__rosidl_typesupport_fastrtps_cpp.so
+-- Set runtime path of "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/libuc1_robot_perception__rosidl_typesupport_fastrtps_cpp.so" to ""
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/rosidl_typesupport_introspection_c__visibility_control.h
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact__rosidl_typesupport_introspection_c.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact_array__type_support.c
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task__type_support.c
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact_array__rosidl_typesupport_introspection_c.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task_array__rosidl_typesupport_introspection_c.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact__type_support.c
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task__rosidl_typesupport_introspection_c.h
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task_array__type_support.c
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/libuc1_robot_perception__rosidl_typesupport_introspection_c.so
+-- Set runtime path of "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/libuc1_robot_perception__rosidl_typesupport_introspection_c.so" to ""
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/libuc1_robot_perception__rosidl_typesupport_c.so
+-- Set runtime path of "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/libuc1_robot_perception__rosidl_typesupport_c.so" to ""
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task_array__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact__type_support.cpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task_array__type_support.cpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/proximity_task__type_support.cpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact_array__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/include/uc1_robot_perception/uc1_robot_perception/msg/detail/contact_array__type_support.cpp
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/libuc1_robot_perception__rosidl_typesupport_introspection_cpp.so
+-- Set runtime path of "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/libuc1_robot_perception__rosidl_typesupport_introspection_cpp.so" to ""
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/libuc1_robot_perception__rosidl_typesupport_cpp.so
+-- Set runtime path of "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/libuc1_robot_perception__rosidl_typesupport_cpp.so" to ""
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/environment/pythonpath.sh
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/environment/pythonpath.dsv
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception-0.0.0-py3.10.egg-info
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception-0.0.0-py3.10.egg-info/dependency_links.txt
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception-0.0.0-py3.10.egg-info/SOURCES.txt
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception-0.0.0-py3.10.egg-info/PKG-INFO
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception-0.0.0-py3.10.egg-info/top_level.txt
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/__init__.py
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/msg
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/msg/_proximity_task.py
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/msg/__init__.py
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/msg/_contact_array.py
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/msg/_proximity_task_s.c
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/msg/_contact_array_s.c
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/msg/_proximity_task_array_s.c
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/msg/_contact_s.c
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/msg/_proximity_task_array.py
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/msg/_contact.py
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/uc1_robot_perception_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/_uc1_robot_perception_s.ep.rosidl_typesupport_fastrtps_c.c
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/uc1_robot_perception_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/libuc1_robot_perception__rosidl_generator_py.so
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/uc1_robot_perception_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/_uc1_robot_perception_s.ep.rosidl_typesupport_c.c
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/_uc1_robot_perception_s.ep.rosidl_typesupport_introspection_c.c
+Listing '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception'...
+Compiling '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/__init__.py'...
+Listing '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/msg'...
+Compiling '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/msg/__init__.py'...
+Compiling '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/msg/_contact.py'...
+Compiling '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/msg/_contact_array.py'...
+Compiling '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/msg/_proximity_task.py'...
+Compiling '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/msg/_proximity_task_array.py'...
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/uc1_robot_perception_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+-- Set runtime path of "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/uc1_robot_perception_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/uc1_robot_perception_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+-- Set runtime path of "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/uc1_robot_perception_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/uc1_robot_perception_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+-- Set runtime path of "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages/uc1_robot_perception/uc1_robot_perception_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/libuc1_robot_perception__rosidl_generator_py.so
+-- Set runtime path of "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/libuc1_robot_perception__rosidl_generator_py.so" to ""
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/msg/ProximityTask.idl
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/msg/ProximityTaskArray.idl
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/msg/Contact.idl
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/msg/ContactArray.idl
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/msg/ProximityTask.msg
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/msg/ProximityTaskArray.msg
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/msg/Contact.msg
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/msg/ContactArray.msg
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/uc1_robot_perception/simulated_contact_publisher
+-- Set runtime path of "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/uc1_robot_perception/simulated_contact_publisher" to ""
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/uc1_robot_perception/interactive_contact_publisher
+-- Set runtime path of "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/uc1_robot_perception/interactive_contact_publisher" to ""
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/uc1_robot_perception/proximity_task_generator
+-- Set runtime path of "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/uc1_robot_perception/proximity_task_generator" to ""
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/stl
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/stl/wrist2.stl
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/stl/shoulder.stl
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/stl/wrist1.stl
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/stl/forearm.stl
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/stl/base.stl
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/stl/upperarm.stl
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/stl/wrist3.stl
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/ply
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/ply/ur10
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/ply/ur10/upperarm.ply
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/ply/ur10/base.ply
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/ply/ur10/wrist2.ply
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/ply/ur10/wrist1.ply
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/ply/ur10/wrist3.ply
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/ply/ur10/forearm.ply
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/ply/ur10/shoulder.ply
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/ply/kuka
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/ply/kuka/link_6.ply
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/ply/kuka/link_3.ply
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/ply/kuka/link_5.ply
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/ply/kuka/link_2.ply
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/ply/kuka/link_4.ply
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/ply/kuka/base_link.ply
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception//resources/ply/kuka/link_1.ply
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/msg
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/msg/Contact.msg
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/msg/ProximityTask.msg
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/msg/ProximityTaskArray.msg
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/msg/ContactArray.msg
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/package.xml
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/ament_index/resource_index/package_run_dependencies/uc1_robot_perception
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/ament_index/resource_index/parent_prefix_path/uc1_robot_perception
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/environment/ament_prefix_path.sh
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/environment/ament_prefix_path.dsv
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/environment/path.sh
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/environment/path.dsv
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/local_setup.bash
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/local_setup.sh
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/local_setup.zsh
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/local_setup.dsv
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/package.dsv
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/ament_index/resource_index/packages/uc1_robot_perception
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/export_uc1_robot_perception__rosidl_generator_cExport.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/export_uc1_robot_perception__rosidl_generator_cExport-noconfig.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/export_uc1_robot_perception__rosidl_typesupport_fastrtps_cExport.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/export_uc1_robot_perception__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/export_uc1_robot_perception__rosidl_generator_cppExport.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/export_uc1_robot_perception__rosidl_typesupport_fastrtps_cppExport.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/export_uc1_robot_perception__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/uc1_robot_perception__rosidl_typesupport_introspection_cExport.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/uc1_robot_perception__rosidl_typesupport_introspection_cExport-noconfig.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/uc1_robot_perception__rosidl_typesupport_cExport.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/uc1_robot_perception__rosidl_typesupport_cExport-noconfig.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/uc1_robot_perception__rosidl_typesupport_introspection_cppExport.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/uc1_robot_perception__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/uc1_robot_perception__rosidl_typesupport_cppExport.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/uc1_robot_perception__rosidl_typesupport_cppExport-noconfig.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/export_uc1_robot_perception__rosidl_generator_pyExport.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/export_uc1_robot_perception__rosidl_generator_pyExport-noconfig.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/rosidl_cmake-extras.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/ament_cmake_export_libraries-extras.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/ament_cmake_export_targets-extras.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/uc1_robot_perceptionConfig.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake/uc1_robot_perceptionConfig-version.cmake
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/package.xml

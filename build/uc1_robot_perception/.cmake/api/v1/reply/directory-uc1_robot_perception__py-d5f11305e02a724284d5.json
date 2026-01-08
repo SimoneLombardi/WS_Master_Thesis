@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "uc1_robot_perception__py",
+		"source" : "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_perception/uc1_robot_perception__py"
+	}
+}

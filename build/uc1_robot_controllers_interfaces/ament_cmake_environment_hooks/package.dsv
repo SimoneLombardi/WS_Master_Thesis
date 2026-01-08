@@ -1,0 +1,4 @@
+source;share/uc1_robot_controllers_interfaces/local_setup.bash
+source;share/uc1_robot_controllers_interfaces/local_setup.dsv
+source;share/uc1_robot_controllers_interfaces/local_setup.sh
+source;share/uc1_robot_controllers_interfaces/local_setup.zsh

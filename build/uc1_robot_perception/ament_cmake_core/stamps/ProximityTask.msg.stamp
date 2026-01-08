@@ -1,0 +1,4 @@
+geometry_msgs/Vector3 min_point_robot
+geometry_msgs/Vector3 min_point_vector
+float32 distance
+string link_id

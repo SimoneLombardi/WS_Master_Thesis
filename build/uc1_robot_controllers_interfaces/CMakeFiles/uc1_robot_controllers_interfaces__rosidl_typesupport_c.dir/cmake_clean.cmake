@@ -1,0 +1,24 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/uc1_robot_controllers_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/uc1_robot_controllers_interfaces/action/move_robot__type_support.cpp.o"
+  "CMakeFiles/uc1_robot_controllers_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/uc1_robot_controllers_interfaces/action/move_robot__type_support.cpp.o.d"
+  "CMakeFiles/uc1_robot_controllers_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/uc1_robot_controllers_interfaces/action/move_robot_tp__type_support.cpp.o"
+  "CMakeFiles/uc1_robot_controllers_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/uc1_robot_controllers_interfaces/action/move_robot_tp__type_support.cpp.o.d"
+  "CMakeFiles/uc1_robot_controllers_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/uc1_robot_controllers_interfaces/msg/move_robot_goal__type_support.cpp.o"
+  "CMakeFiles/uc1_robot_controllers_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/uc1_robot_controllers_interfaces/msg/move_robot_goal__type_support.cpp.o.d"
+  "CMakeFiles/uc1_robot_controllers_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/uc1_robot_controllers_interfaces/msg/move_robot_orient__type_support.cpp.o"
+  "CMakeFiles/uc1_robot_controllers_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/uc1_robot_controllers_interfaces/msg/move_robot_orient__type_support.cpp.o.d"
+  "CMakeFiles/uc1_robot_controllers_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/uc1_robot_controllers_interfaces/msg/move_robot_point__type_support.cpp.o"
+  "CMakeFiles/uc1_robot_controllers_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/uc1_robot_controllers_interfaces/msg/move_robot_point__type_support.cpp.o.d"
+  "libuc1_robot_controllers_interfaces__rosidl_typesupport_c.pdb"
+  "libuc1_robot_controllers_interfaces__rosidl_typesupport_c.so"
+  "rosidl_typesupport_c/uc1_robot_controllers_interfaces/action/move_robot__type_support.cpp"
+  "rosidl_typesupport_c/uc1_robot_controllers_interfaces/action/move_robot_tp__type_support.cpp"
+  "rosidl_typesupport_c/uc1_robot_controllers_interfaces/msg/move_robot_goal__type_support.cpp"
+  "rosidl_typesupport_c/uc1_robot_controllers_interfaces/msg/move_robot_orient__type_support.cpp"
+  "rosidl_typesupport_c/uc1_robot_controllers_interfaces/msg/move_robot_point__type_support.cpp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/uc1_robot_controllers_interfaces__rosidl_typesupport_c.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

@@ -1,0 +1,4 @@
+source;share/rsp_uc1/local_setup.bash
+source;share/rsp_uc1/local_setup.dsv
+source;share/rsp_uc1/local_setup.sh
+source;share/rsp_uc1/local_setup.zsh

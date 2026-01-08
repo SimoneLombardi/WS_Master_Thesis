@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from uc1_robot_perception/msg/ProximityTask.msg
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/Vector3.idl"
+
+module uc1_robot_perception {
+  module msg {
+    struct ProximityTask {
+      geometry_msgs::msg::Vector3 min_point_robot;
+
+      geometry_msgs::msg::Vector3 min_point_vector;
+
+      float distance;
+
+      string link_id;
+    };
+  };
+};

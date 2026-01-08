@@ -1,0 +1,10 @@
+{
+  "package_name": "uc1_robot_controllers_interfaces",
+  "non_idl_tuples": [
+    "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers_interfaces:action/MoveRobot.action",
+    "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers_interfaces:action/MoveRobotTP.action",
+    "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers_interfaces:msg/MoveRobotPoint.msg",
+    "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers_interfaces:msg/MoveRobotOrient.msg",
+    "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers_interfaces:msg/MoveRobotGoal.msg"
+  ]
+}

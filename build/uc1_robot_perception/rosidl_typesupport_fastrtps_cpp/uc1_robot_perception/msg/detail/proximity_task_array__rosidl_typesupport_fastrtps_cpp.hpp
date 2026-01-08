@@ -1,0 +1,80 @@
+// generated from rosidl_typesupport_fastrtps_cpp/resource/idl__rosidl_typesupport_fastrtps_cpp.hpp.em
+// with input from uc1_robot_perception:msg/ProximityTaskArray.idl
+// generated code does not contain a copyright notice
+
+#ifndef UC1_ROBOT_PERCEPTION__MSG__DETAIL__PROXIMITY_TASK_ARRAY__ROSIDL_TYPESUPPORT_FASTRTPS_CPP_HPP_
+#define UC1_ROBOT_PERCEPTION__MSG__DETAIL__PROXIMITY_TASK_ARRAY__ROSIDL_TYPESUPPORT_FASTRTPS_CPP_HPP_
+
+#include "rosidl_runtime_c/message_type_support_struct.h"
+#include "rosidl_typesupport_interface/macros.h"
+#include "uc1_robot_perception/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h"
+#include "uc1_robot_perception/msg/detail/proximity_task_array__struct.hpp"
+
+#ifndef _WIN32
+# pragma GCC diagnostic push
+# pragma GCC diagnostic ignored "-Wunused-parameter"
+# ifdef __clang__
+#  pragma clang diagnostic ignored "-Wdeprecated-register"
+#  pragma clang diagnostic ignored "-Wreturn-type-c-linkage"
+# endif
+#endif
+#ifndef _WIN32
+# pragma GCC diagnostic pop
+#endif
+
+#include "fastcdr/Cdr.h"
+
+namespace uc1_robot_perception
+{
+
+namespace msg
+{
+
+namespace typesupport_fastrtps_cpp
+{
+
+bool
+ROSIDL_TYPESUPPORT_FASTRTPS_CPP_PUBLIC_uc1_robot_perception
+cdr_serialize(
+  const uc1_robot_perception::msg::ProximityTaskArray & ros_message,
+  eprosima::fastcdr::Cdr & cdr);
+
+bool
+ROSIDL_TYPESUPPORT_FASTRTPS_CPP_PUBLIC_uc1_robot_perception
+cdr_deserialize(
+  eprosima::fastcdr::Cdr & cdr,
+  uc1_robot_perception::msg::ProximityTaskArray & ros_message);
+
+size_t
+ROSIDL_TYPESUPPORT_FASTRTPS_CPP_PUBLIC_uc1_robot_perception
+get_serialized_size(
+  const uc1_robot_perception::msg::ProximityTaskArray & ros_message,
+  size_t current_alignment);
+
+size_t
+ROSIDL_TYPESUPPORT_FASTRTPS_CPP_PUBLIC_uc1_robot_perception
+max_serialized_size_ProximityTaskArray(
+  bool & full_bounded,
+  bool & is_plain,
+  size_t current_alignment);
+
+}  // namespace typesupport_fastrtps_cpp
+
+}  // namespace msg
+
+}  // namespace uc1_robot_perception
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+ROSIDL_TYPESUPPORT_FASTRTPS_CPP_PUBLIC_uc1_robot_perception
+const rosidl_message_type_support_t *
+  ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_fastrtps_cpp, uc1_robot_perception, msg, ProximityTaskArray)();
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif  // UC1_ROBOT_PERCEPTION__MSG__DETAIL__PROXIMITY_TASK_ARRAY__ROSIDL_TYPESUPPORT_FASTRTPS_CPP_HPP_

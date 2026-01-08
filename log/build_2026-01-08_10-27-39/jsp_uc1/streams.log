@@ -1,0 +1,38 @@
+[0.387s] Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/jsp_uc1/jsp_uc1': PYTHONPATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_uc1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/jsp_uc1 build --build-base /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_uc1/build install --record /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_uc1/install.log --single-version-externally-managed install_data
+[0.526s] running egg_info
+[0.526s] creating ../../../build/jsp_uc1/jsp_uc1.egg-info
+[0.526s] writing ../../../build/jsp_uc1/jsp_uc1.egg-info/PKG-INFO
+[0.526s] writing dependency_links to ../../../build/jsp_uc1/jsp_uc1.egg-info/dependency_links.txt
+[0.527s] writing entry points to ../../../build/jsp_uc1/jsp_uc1.egg-info/entry_points.txt
+[0.527s] writing requirements to ../../../build/jsp_uc1/jsp_uc1.egg-info/requires.txt
+[0.527s] writing top-level names to ../../../build/jsp_uc1/jsp_uc1.egg-info/top_level.txt
+[0.527s] writing manifest file '../../../build/jsp_uc1/jsp_uc1.egg-info/SOURCES.txt'
+[0.527s] reading manifest file '../../../build/jsp_uc1/jsp_uc1.egg-info/SOURCES.txt'
+[0.527s] adding license file 'LICENSE'
+[0.528s] writing manifest file '../../../build/jsp_uc1/jsp_uc1.egg-info/SOURCES.txt'
+[0.528s] running build
+[0.528s] running build_py
+[0.528s] creating /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_uc1/build
+[0.528s] creating /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_uc1/build/lib
+[0.528s] creating /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_uc1/build/lib/jsp_uc1
+[0.528s] copying jsp_uc1/__init__.py -> /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_uc1/build/lib/jsp_uc1
+[0.528s] copying jsp_uc1/jsp_uc1.py -> /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_uc1/build/lib/jsp_uc1
+[0.528s] running install
+[0.528s] running install_lib
+[0.528s] creating /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/lib/python3.10/site-packages/jsp_uc1
+[0.528s] copying /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_uc1/build/lib/jsp_uc1/__init__.py -> /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/lib/python3.10/site-packages/jsp_uc1
+[0.528s] copying /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_uc1/build/lib/jsp_uc1/jsp_uc1.py -> /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/lib/python3.10/site-packages/jsp_uc1
+[0.528s] byte-compiling /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/lib/python3.10/site-packages/jsp_uc1/__init__.py to __init__.cpython-310.pyc
+[0.529s] byte-compiling /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/lib/python3.10/site-packages/jsp_uc1/jsp_uc1.py to jsp_uc1.cpython-310.pyc
+[0.530s] running install_data
+[0.530s] creating /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/share/ament_index
+[0.530s] creating /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/share/ament_index/resource_index
+[0.530s] creating /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/share/ament_index/resource_index/packages
+[0.530s] copying resource/jsp_uc1 -> /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/share/ament_index/resource_index/packages
+[0.530s] copying package.xml -> /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/share/jsp_uc1
+[0.530s] running install_egg_info
+[0.531s] Copying ../../../build/jsp_uc1/jsp_uc1.egg-info to /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/lib/python3.10/site-packages/jsp_uc1-2.4.0-py3.10.egg-info
+[0.532s] running install_scripts
+[0.540s] Installing jsp_uc1 script to /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/lib/jsp_uc1
+[0.541s] writing list of installed files to '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_uc1/install.log'
+[0.551s] Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/jsp_uc1/jsp_uc1' returned '0': PYTHONPATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_uc1/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/jsp_uc1 build --build-base /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_uc1/build install --record /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_uc1/install.log --single-version-externally-managed install_data

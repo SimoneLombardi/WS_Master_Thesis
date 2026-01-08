@@ -1,0 +1,10 @@
+# Request
+uc1_robot_controllers_interfaces/MoveRobotGoal goal
+string init_config_name
+---
+# Result
+string result
+---
+# Feedback
+float64 linvel_norm
+float64 angvel_norm

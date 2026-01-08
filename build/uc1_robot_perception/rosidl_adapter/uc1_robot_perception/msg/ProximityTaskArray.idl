@@ -1,0 +1,13 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from uc1_robot_perception/msg/ProximityTaskArray.msg
+// generated code does not contain a copyright notice
+
+#include "uc1_robot_perception/msg/ProximityTask.idl"
+
+module uc1_robot_perception {
+  module msg {
+    struct ProximityTaskArray {
+      sequence<uc1_robot_perception::msg::ProximityTask> proximity_tasks;
+    };
+  };
+};

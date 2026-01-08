@@ -1,0 +1,22 @@
+{
+  "configurations": [
+    {
+      "name": "linux-gcc-x64",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "/opt/ros/humble/include/**",
+        "~/Documents/SIMO/tesi/sestosenso_uc1_ws/install/**/include/**",
+        "~/Documents/SIMO/tesi/sestosenso_uc1_urdf_ws/install/**/include/**"
+      ],
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "${default}",
+      "cppStandard": "${default}",
+      "intelliSenseMode": "linux-gcc-x64",
+      "compileCommands": "~/Documents/SIMO/tesi/sestosenso_uc1_ws/build/compile_commands.json",
+      "compilerArgs": [
+        ""
+      ]
+    }
+  ],
+  "version": 4
+}

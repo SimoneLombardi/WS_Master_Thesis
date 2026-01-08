@@ -1,0 +1,20 @@
+------------ OFFLINE DEMO ------------
+
+ros2 run ur_client_library start_ursim.sh -m ur10e
+
+ros2 launch ur_robot_driver ur_control.launch.py ur_type:=ur10e robot_ip:=192.168.56.101 launch_rviz:=true initial_joint_controller:=joint_trajectory_controller
+
+ros2 run pointcloud_interactive_markers interactive-target
+
+ros2 run pointcloud_interactive_markers sphere-cloud-broadcaster
+ros2 run pointcloud_interactive_markers cylinder-cloud-broadcaster
+ros2 run pointcloud_interactive_markers cylinder-cloud-broadcaster-multi
+
+ros2 run uc1_robot_perception proximity_task_generator 
+
+ros2 run uc1_robot_controllers ur10e-proximity-controller
+
+------------ DEMOS WITH TOF -----------
+
+check if they can use docker, if yes we are good, otherwise fix issues
+

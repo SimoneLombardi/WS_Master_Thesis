@@ -1,0 +1,25 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/uc1_robot_perception__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/uc1_robot_perception/msg/detail/dds_fastrtps/contact__type_support.cpp.o"
+  "CMakeFiles/uc1_robot_perception__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/uc1_robot_perception/msg/detail/dds_fastrtps/contact__type_support.cpp.o.d"
+  "CMakeFiles/uc1_robot_perception__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/uc1_robot_perception/msg/detail/dds_fastrtps/contact_array__type_support.cpp.o"
+  "CMakeFiles/uc1_robot_perception__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/uc1_robot_perception/msg/detail/dds_fastrtps/contact_array__type_support.cpp.o.d"
+  "CMakeFiles/uc1_robot_perception__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/uc1_robot_perception/msg/detail/dds_fastrtps/proximity_task__type_support.cpp.o"
+  "CMakeFiles/uc1_robot_perception__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/uc1_robot_perception/msg/detail/dds_fastrtps/proximity_task__type_support.cpp.o.d"
+  "CMakeFiles/uc1_robot_perception__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/uc1_robot_perception/msg/detail/dds_fastrtps/proximity_task_array__type_support.cpp.o"
+  "CMakeFiles/uc1_robot_perception__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/uc1_robot_perception/msg/detail/dds_fastrtps/proximity_task_array__type_support.cpp.o.d"
+  "libuc1_robot_perception__rosidl_typesupport_fastrtps_cpp.pdb"
+  "libuc1_robot_perception__rosidl_typesupport_fastrtps_cpp.so"
+  "rosidl_typesupport_fastrtps_cpp/uc1_robot_perception/msg/detail/contact__rosidl_typesupport_fastrtps_cpp.hpp"
+  "rosidl_typesupport_fastrtps_cpp/uc1_robot_perception/msg/detail/contact_array__rosidl_typesupport_fastrtps_cpp.hpp"
+  "rosidl_typesupport_fastrtps_cpp/uc1_robot_perception/msg/detail/dds_fastrtps/contact__type_support.cpp"
+  "rosidl_typesupport_fastrtps_cpp/uc1_robot_perception/msg/detail/dds_fastrtps/contact_array__type_support.cpp"
+  "rosidl_typesupport_fastrtps_cpp/uc1_robot_perception/msg/detail/dds_fastrtps/proximity_task__type_support.cpp"
+  "rosidl_typesupport_fastrtps_cpp/uc1_robot_perception/msg/detail/dds_fastrtps/proximity_task_array__type_support.cpp"
+  "rosidl_typesupport_fastrtps_cpp/uc1_robot_perception/msg/detail/proximity_task__rosidl_typesupport_fastrtps_cpp.hpp"
+  "rosidl_typesupport_fastrtps_cpp/uc1_robot_perception/msg/detail/proximity_task_array__rosidl_typesupport_fastrtps_cpp.hpp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/uc1_robot_perception__rosidl_typesupport_fastrtps_cpp.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

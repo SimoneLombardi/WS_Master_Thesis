@@ -1,0 +1,36 @@
+running egg_info
+creating ../../../build/jsp_uc1/jsp_uc1.egg-info
+writing ../../../build/jsp_uc1/jsp_uc1.egg-info/PKG-INFO
+writing dependency_links to ../../../build/jsp_uc1/jsp_uc1.egg-info/dependency_links.txt
+writing entry points to ../../../build/jsp_uc1/jsp_uc1.egg-info/entry_points.txt
+writing requirements to ../../../build/jsp_uc1/jsp_uc1.egg-info/requires.txt
+writing top-level names to ../../../build/jsp_uc1/jsp_uc1.egg-info/top_level.txt
+writing manifest file '../../../build/jsp_uc1/jsp_uc1.egg-info/SOURCES.txt'
+reading manifest file '../../../build/jsp_uc1/jsp_uc1.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../../build/jsp_uc1/jsp_uc1.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_uc1/build
+creating /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_uc1/build/lib
+creating /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_uc1/build/lib/jsp_uc1
+copying jsp_uc1/__init__.py -> /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_uc1/build/lib/jsp_uc1
+copying jsp_uc1/jsp_uc1.py -> /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_uc1/build/lib/jsp_uc1
+running install
+running install_lib
+creating /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/lib/python3.10/site-packages/jsp_uc1
+copying /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_uc1/build/lib/jsp_uc1/__init__.py -> /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/lib/python3.10/site-packages/jsp_uc1
+copying /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_uc1/build/lib/jsp_uc1/jsp_uc1.py -> /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/lib/python3.10/site-packages/jsp_uc1
+byte-compiling /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/lib/python3.10/site-packages/jsp_uc1/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/lib/python3.10/site-packages/jsp_uc1/jsp_uc1.py to jsp_uc1.cpython-310.pyc
+running install_data
+creating /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/share/ament_index
+creating /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/share/ament_index/resource_index
+creating /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/share/ament_index/resource_index/packages
+copying resource/jsp_uc1 -> /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/share/ament_index/resource_index/packages
+copying package.xml -> /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/share/jsp_uc1
+running install_egg_info
+Copying ../../../build/jsp_uc1/jsp_uc1.egg-info to /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/lib/python3.10/site-packages/jsp_uc1-2.4.0-py3.10.egg-info
+running install_scripts
+Installing jsp_uc1 script to /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/jsp_uc1/lib/jsp_uc1
+writing list of installed files to '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/jsp_uc1/install.log'

@@ -1,0 +1,6 @@
+source;share/jsp_uc1/hook/pythonpath.ps1
+source;share/jsp_uc1/hook/pythonpath.dsv
+source;share/jsp_uc1/hook/pythonpath.sh
+source;share/jsp_uc1/hook/ament_prefix_path.ps1
+source;share/jsp_uc1/hook/ament_prefix_path.dsv
+source;share/jsp_uc1/hook/ament_prefix_path.sh
