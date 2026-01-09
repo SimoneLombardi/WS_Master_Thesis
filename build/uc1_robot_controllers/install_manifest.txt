@@ -10,7 +10,6 @@
 /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//launch/kuka_ur10e_display.launch.py
 /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//launch/sensing_control.launch.py
 /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//launch/kuka_display_control.launch.py
-/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//launch/joint_robot.launch.py
 /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//resources/partial_chassis_downsampled_cloud.pcd
 /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//resources/chassis_downsampled_cloud.ply
 /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//resources/chassis_downsampled_cloud.pcd
