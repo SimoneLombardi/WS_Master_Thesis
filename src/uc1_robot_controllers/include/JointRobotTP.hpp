@@ -6,7 +6,7 @@
 #include "KukaRobot.hpp"
 #include "UR10eRobot.hpp"
 
-#include "TPComputation.hpp"
+#include "uc1_robot_controllers_interfaces/TPComputation.hpp"
 
 // action server
 #include "TfGoalBroadcaster.hpp"

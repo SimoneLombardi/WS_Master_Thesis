@@ -231,7 +231,10 @@ rclcpp_components
 # uc1_robot_perception
 # )
 
-add_executable(joint-robot-test src/joint_controller/joint_robot_test.cpp src/JointRobot.cpp src/KukaRobot.cpp src/UR10eRobot.cpp src/TfGoalBroadcaster.cpp src/TPComputation.cpp)
+add_executable(joint-robot-test src/joint_controller/joint_robot_test.cpp src/JointRobot.cpp src/KukaRobot.cpp src/UR10eRobot.cpp src/TfGoalBroadcaster.cpp)
+target_link_libraries(joint-robot-test
+  uc1_robot_controllers_interfaces::TPComputation
+)
 ament_target_dependencies(joint-robot-test
 rclcpp 
 example_interfaces
@@ -257,7 +260,10 @@ add_executable(joint-robot-tp-test src/joint_controller/joint_robot_tp_test.cpp
   src/KukaRobot.cpp 
   src/UR10eRobot.cpp 
   src/TfGoalBroadcaster.cpp 
-  src/TPComputation.cpp)
+)
+target_link_libraries(joint-robot-tp-test
+  uc1_robot_controllers_interfaces::TPComputation
+)
 ament_target_dependencies(joint-robot-tp-test
 rclcpp 
 example_interfaces

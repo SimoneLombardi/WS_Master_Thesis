@@ -378,33 +378,6 @@ src/KukaRobot.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot-test.dir/build.make CMakeFiles/robot-test.dir/src/KukaRobot.cpp.s
 .PHONY : src/KukaRobot.cpp.s
 
-src/TPComputation.o: src/TPComputation.cpp.o
-.PHONY : src/TPComputation.o
-
-# target to build an object file
-src/TPComputation.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/joint-robot-test.dir/build.make CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/joint-robot-tp-test.dir/build.make CMakeFiles/joint-robot-tp-test.dir/src/TPComputation.cpp.o
-.PHONY : src/TPComputation.cpp.o
-
-src/TPComputation.i: src/TPComputation.cpp.i
-.PHONY : src/TPComputation.i
-
-# target to preprocess a source file
-src/TPComputation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/joint-robot-test.dir/build.make CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/joint-robot-tp-test.dir/build.make CMakeFiles/joint-robot-tp-test.dir/src/TPComputation.cpp.i
-.PHONY : src/TPComputation.cpp.i
-
-src/TPComputation.s: src/TPComputation.cpp.s
-.PHONY : src/TPComputation.s
-
-# target to generate assembly for a file
-src/TPComputation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/joint-robot-test.dir/build.make CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/joint-robot-tp-test.dir/build.make CMakeFiles/joint-robot-tp-test.dir/src/TPComputation.cpp.s
-.PHONY : src/TPComputation.cpp.s
-
 src/TfGoalBroadcaster.o: src/TfGoalBroadcaster.cpp.o
 .PHONY : src/TfGoalBroadcaster.o
 
@@ -571,9 +544,6 @@ help:
 	@echo "... src/KukaRobot.o"
 	@echo "... src/KukaRobot.i"
 	@echo "... src/KukaRobot.s"
-	@echo "... src/TPComputation.o"
-	@echo "... src/TPComputation.i"
-	@echo "... src/TPComputation.s"
 	@echo "... src/TfGoalBroadcaster.o"
 	@echo "... src/TfGoalBroadcaster.i"
 	@echo "... src/TfGoalBroadcaster.s"

@@ -1,0 +1,242 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-ba4e010bb3136740f349.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				},
+				{
+					"build" : "uc1_robot_controllers_interfaces__py",
+					"jsonFile" : "directory-uc1_robot_controllers_interfaces__py-Release-cb04d4e26448f32eb511.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers_interfaces/uc1_robot_controllers_interfaces__py",
+					"targetIndexes" : 
+					[
+						5
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "uc1_robot_controllers_interfaces",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "TPComputation::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TPComputation-Release-06dfaca829f47a879ca5.json",
+					"name" : "TPComputation",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_uc1_robot_controllers_interfaces_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_uc1_robot_controllers_interfaces_egg-Release-0fb41e44245f146f1d71.json",
+					"name" : "ament_cmake_python_build_uc1_robot_controllers_interfaces_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_uc1_robot_controllers_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_uc1_robot_controllers_interfaces-Release-bd07ad2869890e95211e.json",
+					"name" : "ament_cmake_python_copy_uc1_robot_controllers_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uc1_robot_controllers_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uc1_robot_controllers_interfaces-Release-737e49a35758dfcede93.json",
+					"name" : "uc1_robot_controllers_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uc1_robot_controllers_interfaces__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uc1_robot_controllers_interfaces__cpp-Release-e4f13a4dc211d888a292.json",
+					"name" : "uc1_robot_controllers_interfaces__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "uc1_robot_controllers_interfaces__py::@449d5323b548d3efa914",
+					"jsonFile" : "target-uc1_robot_controllers_interfaces__py-Release-a44f236d5bb6a50707dd.json",
+					"name" : "uc1_robot_controllers_interfaces__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uc1_robot_controllers_interfaces__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uc1_robot_controllers_interfaces__rosidl_generator_c-Release-6ae15f8aeb02abbed9df.json",
+					"name" : "uc1_robot_controllers_interfaces__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uc1_robot_controllers_interfaces__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uc1_robot_controllers_interfaces__rosidl_generator_py-Release-918c77f345ad9c3c509a.json",
+					"name" : "uc1_robot_controllers_interfaces__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uc1_robot_controllers_interfaces__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uc1_robot_controllers_interfaces__rosidl_typesupport_c-Release-a582f4c5d0bff5918c8d.json",
+					"name" : "uc1_robot_controllers_interfaces__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uc1_robot_controllers_interfaces__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uc1_robot_controllers_interfaces__rosidl_typesupport_c__pyext-Release-b930c57c7a41dd439fe6.json",
+					"name" : "uc1_robot_controllers_interfaces__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uc1_robot_controllers_interfaces__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uc1_robot_controllers_interfaces__rosidl_typesupport_cpp-Release-8981cf2947e53278a89f.json",
+					"name" : "uc1_robot_controllers_interfaces__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uc1_robot_controllers_interfaces__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uc1_robot_controllers_interfaces__rosidl_typesupport_fastrtps_c-Release-92a9feacc849b4bda8c0.json",
+					"name" : "uc1_robot_controllers_interfaces__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uc1_robot_controllers_interfaces__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uc1_robot_controllers_interfaces__rosidl_typesupport_fastrtps_c__pyext-Release-ffaa8fbcb04e49a75186.json",
+					"name" : "uc1_robot_controllers_interfaces__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uc1_robot_controllers_interfaces__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uc1_robot_controllers_interfaces__rosidl_typesupport_fastrtps_cpp-Release-1f1cbfaccb9824444751.json",
+					"name" : "uc1_robot_controllers_interfaces__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uc1_robot_controllers_interfaces__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uc1_robot_controllers_interfaces__rosidl_typesupport_introspection_c-Release-12a01fca950fa6b30244.json",
+					"name" : "uc1_robot_controllers_interfaces__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uc1_robot_controllers_interfaces__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uc1_robot_controllers_interfaces__rosidl_typesupport_introspection_c__pyext-Release-b11bd95a7a6d3ec74adc.json",
+					"name" : "uc1_robot_controllers_interfaces__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uc1_robot_controllers_interfaces__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uc1_robot_controllers_interfaces__rosidl_typesupport_introspection_cpp-Release-988a2eb6101c36264d69.json",
+					"name" : "uc1_robot_controllers_interfaces__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uc1_robot_controllers_interfaces_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uc1_robot_controllers_interfaces_uninstall-Release-c753f8b62b964b8745b3.json",
+					"name" : "uc1_robot_controllers_interfaces_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Release-2a36a933e6e8f983d759.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers_interfaces",
+		"source" : "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers_interfaces"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

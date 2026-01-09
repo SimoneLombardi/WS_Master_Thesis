@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.8)
 project(uc1_robot_controllers_interfaces)
 
+if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+  set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
+endif()
+
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
@@ -11,6 +15,7 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
+find_package(Eigen3 REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "action/MoveRobot.action"
@@ -22,6 +27,37 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 )
 
 ament_export_dependencies(rosidl_default_runtime)
+
+# library stuff
+add_library(TPComputation src/TPComputation.cpp)
+
+target_include_directories(TPComputation
+  PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/uc1_robot_controllers_interfaces>
+    $<INSTALL_INTERFACE:include>
+    ${EIGEN_INCLUDE_DIRS}
+)
+
+target_link_libraries(TPComputation
+  Eigen3::Eigen
+)
+
+ament_export_targets(TPComputation HAS_LIBRARY_TARGET)
+ament_export_dependencies(Eigen3)
+
+install(
+  DIRECTORY include/uc1_robot_controllers_interfaces
+  DESTINATION include
+)
+
+install(
+  TARGETS TPComputation
+  EXPORT TPComputation
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+  INCLUDES DESTINATION include
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

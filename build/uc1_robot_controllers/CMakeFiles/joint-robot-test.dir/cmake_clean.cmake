@@ -3,8 +3,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/joint-robot-test.dir/src/JointRobot.cpp.o.d"
   "CMakeFiles/joint-robot-test.dir/src/KukaRobot.cpp.o"
   "CMakeFiles/joint-robot-test.dir/src/KukaRobot.cpp.o.d"
-  "CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.o"
-  "CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.o.d"
   "CMakeFiles/joint-robot-test.dir/src/TfGoalBroadcaster.cpp.o"
   "CMakeFiles/joint-robot-test.dir/src/TfGoalBroadcaster.cpp.o.d"
   "CMakeFiles/joint-robot-test.dir/src/UR10eRobot.cpp.o"

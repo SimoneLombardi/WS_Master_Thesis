@@ -112,6 +112,7 @@ kuka-joint-cmd-buf: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/insta
 kuka-joint-cmd-buf: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib/libuc1_robot_controllers_interfaces__rosidl_typesupport_introspection_cpp.so
 kuka-joint-cmd-buf: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib/libuc1_robot_controllers_interfaces__rosidl_typesupport_cpp.so
 kuka-joint-cmd-buf: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib/libuc1_robot_controllers_interfaces__rosidl_generator_py.so
+kuka-joint-cmd-buf: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib/libTPComputation.so
 kuka-joint-cmd-buf: /opt/ros/humble/lib/librclcpp_action.so
 kuka-joint-cmd-buf: /opt/ros/humble/lib/libcomponent_manager.so
 kuka-joint-cmd-buf: /opt/ros/humble/lib/libexample_interfaces__rosidl_typesupport_c.so

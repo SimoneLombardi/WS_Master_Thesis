@@ -142,28 +142,13 @@ CMakeFiles/joint-robot-test.dir/src/TfGoalBroadcaster.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/joint-robot-test.dir/src/TfGoalBroadcaster.cpp.s"
 	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TfGoalBroadcaster.cpp -o CMakeFiles/joint-robot-test.dir/src/TfGoalBroadcaster.cpp.s
 
-CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.o: CMakeFiles/joint-robot-test.dir/flags.make
-CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.o: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp
-CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.o: CMakeFiles/joint-robot-test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.o"
-	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.o -MF CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.o.d -o CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.o -c /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp
-
-CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.i"
-	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp > CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.i
-
-CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.s"
-	/usr/bin/g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/TPComputation.cpp -o CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.s
-
 # Object files for target joint-robot-test
 joint__robot__test_OBJECTS = \
 "CMakeFiles/joint-robot-test.dir/src/joint_controller/joint_robot_test.cpp.o" \
 "CMakeFiles/joint-robot-test.dir/src/JointRobot.cpp.o" \
 "CMakeFiles/joint-robot-test.dir/src/KukaRobot.cpp.o" \
 "CMakeFiles/joint-robot-test.dir/src/UR10eRobot.cpp.o" \
-"CMakeFiles/joint-robot-test.dir/src/TfGoalBroadcaster.cpp.o" \
-"CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.o"
+"CMakeFiles/joint-robot-test.dir/src/TfGoalBroadcaster.cpp.o"
 
 # External object files for target joint-robot-test
 joint__robot__test_EXTERNAL_OBJECTS =
@@ -173,7 +158,6 @@ joint-robot-test: CMakeFiles/joint-robot-test.dir/src/JointRobot.cpp.o
 joint-robot-test: CMakeFiles/joint-robot-test.dir/src/KukaRobot.cpp.o
 joint-robot-test: CMakeFiles/joint-robot-test.dir/src/UR10eRobot.cpp.o
 joint-robot-test: CMakeFiles/joint-robot-test.dir/src/TfGoalBroadcaster.cpp.o
-joint-robot-test: CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.o
 joint-robot-test: CMakeFiles/joint-robot-test.dir/build.make
 joint-robot-test: /opt/ros/humble/lib/libexample_interfaces__rosidl_typesupport_fastrtps_c.so
 joint-robot-test: /opt/ros/humble/lib/libexample_interfaces__rosidl_typesupport_introspection_c.so
@@ -202,6 +186,7 @@ joint-robot-test: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install
 joint-robot-test: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib/libuc1_robot_controllers_interfaces__rosidl_typesupport_introspection_cpp.so
 joint-robot-test: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib/libuc1_robot_controllers_interfaces__rosidl_typesupport_cpp.so
 joint-robot-test: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib/libuc1_robot_controllers_interfaces__rosidl_generator_py.so
+joint-robot-test: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib/libTPComputation.so
 joint-robot-test: /opt/ros/humble/lib/libcomponent_manager.so
 joint-robot-test: /usr/lib/x86_64-linux-gnu/liborocos-kdl.so
 joint-robot-test: /opt/ros/humble/lib/libexample_interfaces__rosidl_typesupport_c.so
@@ -336,7 +321,7 @@ joint-robot-test: /opt/ros/humble/lib/librcpputils.so
 joint-robot-test: /opt/ros/humble/lib/librosidl_runtime_c.so
 joint-robot-test: /opt/ros/humble/lib/librcutils.so
 joint-robot-test: CMakeFiles/joint-robot-test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable joint-robot-test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable joint-robot-test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/joint-robot-test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -170,6 +170,7 @@ robot-test: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_r
 robot-test: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib/libuc1_robot_controllers_interfaces__rosidl_typesupport_introspection_cpp.so
 robot-test: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib/libuc1_robot_controllers_interfaces__rosidl_typesupport_cpp.so
 robot-test: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib/libuc1_robot_controllers_interfaces__rosidl_generator_py.so
+robot-test: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib/libTPComputation.so
 robot-test: /opt/ros/humble/lib/libcomponent_manager.so
 robot-test: /usr/lib/x86_64-linux-gnu/liborocos-kdl.so
 robot-test: /opt/ros/humble/lib/libexample_interfaces__rosidl_typesupport_c.so
