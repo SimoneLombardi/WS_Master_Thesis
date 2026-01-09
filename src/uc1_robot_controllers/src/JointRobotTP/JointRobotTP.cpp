@@ -289,6 +289,7 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool 
     rclcpp::Rate loop_rate(200);
 
     TPComputation tp_controller;
+
     double kuka_gain, ur10_gain;
     if((node_->has_parameter("kuka_gain") && node_->has_parameter("ur10_gain"))){
         // exp variables
@@ -363,7 +364,7 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool 
         Eigen::VectorXd qdot_des = tp_controller.getTP_ydot();
         
         //TIC(close_tpk);
-        tp_controller.kill_TPComputation();  
+        tp_controller.clear_TPComputation();  
         //TOC(close_tpk); 
         //TOC(tpk);              
         // ---------------------- UPDATE TPIK STEP ---------------------- //

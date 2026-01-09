@@ -398,7 +398,7 @@ void JointRobot::runCartesianReachingLoop(std::string goal_frame, bool reached_g
         tp_controller.computeTP_step("target", Eigen::MatrixXd::Identity(6,6), getJoint_jacobian(), cart_err_); // tool target task
         Eigen::VectorXd qdot_des_temp = tp_controller.getTP_ydot();
 
-        tp_controller.kill_TPComputation(); // clear internal data to ensure no data carry over to next iteration
+        tp_controller.clear_TPComputation(); // clear internal data to ensure no data carry over to next iteration
         // TP ALGO
 
         float Kp_kuka = 0.05;

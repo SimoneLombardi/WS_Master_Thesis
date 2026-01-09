@@ -11,7 +11,7 @@ void TPComputation::init_TPComputation(const int& ndof, const float& lambda, con
     is_first_step_ = true;
 }
 
-void TPComputation::kill_TPComputation()
+void TPComputation::clear_TPComputation()
 {
     Q.resize(0,0);
     y.resize(0,0);
@@ -35,14 +35,14 @@ Eigen::MatrixXd TPComputation::REG_Pinv(const Eigen::MatrixXd& mat)
 {
     Eigen::JacobiSVD<Eigen::MatrixXd> svd(mat, Eigen::ComputeFullU | Eigen::ComputeFullV);
     //Eigen::LLT<Eigen::MatrixXd> svd(mat, Eigen::ComputeFullU | Eigen::ComputeFullV);
-    Eigen::MatrixXd V = svd.matrixV();
-    Eigen::MatrixXd U = svd.matrixU();
-    Eigen::VectorXd S = svd.singularValues();
+    V = svd.matrixV();
+    U = svd.matrixU();
+    S = svd.singularValues();
 
     int row = mat.rows();
     int col = mat.cols();
     int r = std::min(row, col);
-    Eigen::MatrixXd S_pinv = Eigen::MatrixXd::Zero(col, row);
+    S_pinv = Eigen::MatrixXd::Zero(col, row);
     //Eigen::DiagonalMatrix<double, Eigen::Dynamic> SS_pinv = (Eigen::VectorXd::Zero(r)).asDiagonal();
 
     for(int i = 0; i < r; i++)
@@ -66,13 +66,13 @@ Eigen::MatrixXd TPComputation::REG_Pinv_operator(const Eigen::MatrixXd& ProjJac,
     const int jcols = ProjJac.cols();
 
     // J'*(I-A)*A*J -> task oriented regularization
-    Eigen::MatrixXd TaskOr_reg = ProjJac.transpose() * (Eigen::MatrixXd::Identity(jrows, jrows)-act) * act * ProjJac;
+    TaskOr_reg = ProjJac.transpose() * (Eigen::MatrixXd::Identity(jrows, jrows)-act) * act * ProjJac;
 
     // control direcion regularization 
-    Eigen::MatrixXd CtrlDr_reg = weight_*((Eigen::MatrixXd::Identity(jcols, jcols) - proj).transpose()*(Eigen::MatrixXd::Identity(jcols, jcols) - proj));
+    CtrlDr_reg = weight_*((Eigen::MatrixXd::Identity(jcols, jcols) - proj).transpose()*(Eigen::MatrixXd::Identity(jcols, jcols) - proj));
 
     // 
-    Eigen::MatrixXd Pinv = REG_Pinv(ProjJac.transpose()*act.transpose()*act*ProjJac + TaskOr_reg + CtrlDr_reg);
+    Pinv = REG_Pinv(ProjJac.transpose()*act.transpose()*act*ProjJac + TaskOr_reg + CtrlDr_reg);
 
     return Pinv*ProjJac.transpose()*act.transpose()*act;
 }
@@ -99,14 +99,13 @@ void TPComputation::computeTP_step(const std::string& task_id, const Eigen::Matr
         return;
     }
 
-    Eigen::MatrixXd Qold = Q;
-    Eigen::MatrixXd yold = y;
-    Eigen::MatrixXd W;
+    Qold = Q;
+    yold = y;
     Eigen::MatrixXd eye = Eigen::MatrixXd::Identity(TjcC,TjcC);
 
-    Eigen::MatrixXd ProjJac = TaskJac * Qold; // project the current task jacobian in the KERNEL of the previous step
-    Eigen::MatrixXd Xq = REG_Pinv_operator(ProjJac, ActivationFnc, Qold);
-    Eigen::MatrixXd XI = REG_Pinv_operator(ProjJac, ActivationFnc, eye);
+    ProjJac = TaskJac * Qold; // project the current task jacobian in the KERNEL of the previous step
+    Xq = REG_Pinv_operator(ProjJac, ActivationFnc, Qold);
+    XI = REG_Pinv_operator(ProjJac, ActivationFnc, eye);
 
 
     W = ProjJac * Xq;
@@ -114,30 +113,6 @@ void TPComputation::computeTP_step(const std::string& task_id, const Eigen::Matr
     Q = Qold * (eye - XI * ProjJac);
     
     y = yold + Qold * XI * W * (TaskRef - TaskJac * yold);
-
-    /// SAVE DATA ON FILE /// 
-    std::string dir = "/home/simone/Documents/SIMO/tesi/experiments/fromTPComputation/";
-    std::string tsk = task_id;
-
-    if(0){
-        std::ofstream actFcn = std::ofstream(dir + task_id + "_actFcn.txt", std::ios::app);
-        if(actFcn.is_open()){
-            actFcn << ActivationFnc.diagonal().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
-            actFcn.close();    
-        }
-
-        std::ofstream jacTaks = std::ofstream(dir + task_id + "_jacTaks.txt", std::ios::app);
-        if(jacTaks.is_open()){
-            jacTaks << TaskJac.reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
-            jacTaks.close();    
-        }
-
-        std::ofstream refRat = std::ofstream(dir + task_id + "_refRat.txt", std::ios::app);
-        if(refRat.is_open()){
-            refRat << TaskRef.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
-            refRat.close();    
-        }
-    }
 }
 
 Eigen::MatrixXd TPComputation::getTP_ydot()

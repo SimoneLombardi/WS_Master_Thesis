@@ -14,7 +14,7 @@ class TPComputation
 {
     public:
         void init_TPComputation(const int& NDOF, const float& lambda, const float& threshold, const float& weight);
-        void kill_TPComputation();
+        void clear_TPComputation();
 
         // da chiamare per ogni TASK nella gerarchia, una volta mandato il comando distruggo l'oggetto della classe
         void computeTP_step(const std::string& task_id, const Eigen::MatrixXd& ActivationFnc, const Eigen::MatrixXd& TaskJac, const Eigen::VectorXd& TaskRef);
@@ -28,8 +28,29 @@ class TPComputation
         double DecreasingBellShapedFunction(double xmin, double xmax, double ymin, double ymax, double x);
 
     private:
+        // old step matrices
         Eigen::MatrixXd Q;
         Eigen::MatrixXd y;
+
+        Eigen::MatrixXd Qold;
+        Eigen::MatrixXd yold;
+
+        // temp matrices to avoid redefinition
+        // TC step
+        Eigen::MatrixXd W;
+        
+        Eigen::MatrixXd ProjJac;
+        Eigen::MatrixXd Xq;
+        Eigen::MatrixXd XI;
+        // REG pinv op
+        Eigen::MatrixXd TaskOr_reg;
+        Eigen::MatrixXd CtrlDr_reg;
+        Eigen::MatrixXd Pinv;
+        // REG pinv
+        Eigen::MatrixXd S_pinv;
+        Eigen::MatrixXd V;
+        Eigen::MatrixXd U;
+        Eigen::VectorXd S;
 
         // velcity vector dimension
         int ndof_;

@@ -163,7 +163,6 @@ void ProximityTaskGenerator::pointCloudCallback(const sensor_msgs::msg::PointClo
 
   // publish custom task msg
   publishProximityTasks(tasks, task_publisher_); 
-  
 }
 
 void ProximityTaskGenerator::publishPointCloud(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud,
