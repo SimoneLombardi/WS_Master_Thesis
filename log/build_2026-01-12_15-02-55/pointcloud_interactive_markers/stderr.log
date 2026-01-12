@@ -1,0 +1,38 @@
+[33mCMake Warning (dev) at CMakeLists.txt:26 (find_package):
+  Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.
+  Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  CMake variable PCL_ROOT is set to:
+
+    /usr
+
+  For compatibility, CMake is ignoring the variable.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+[0m
+In file included from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/pointcloud_interactive_markers/src/sphere-cloud.cpp:10[m[K:
+[01m[K/opt/ros/humble/include/tf2_eigen/tf2_eigen/tf2_eigen.h:32:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   32 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead
+      |  [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/pointcloud_interactive_markers/src/chassis-cloud.cpp:10[m[K:
+[01m[K/opt/ros/humble/include/tf2_eigen/tf2_eigen/tf2_eigen.h:32:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   32 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead
+      |  [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/pointcloud_interactive_markers/src/cylinder-cloud-multi.cpp:10[m[K:
+[01m[K/opt/ros/humble/include/tf2_eigen/tf2_eigen/tf2_eigen.h:32:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   32 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead
+      |  [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/pointcloud_interactive_markers/src/cylinder-cloud.cpp:10[m[K:
+[01m[K/opt/ros/humble/include/tf2_eigen/tf2_eigen/tf2_eigen.h:32:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   32 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_eigen/tf2_eigen.hpp instead
+      |  [01;35m[K^~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/pointcloud_interactive_markers/src/interactive-target.cpp:[m[K In constructor ‘[01m[KIkTargetNode::IkTargetNode(const string&, const string&, const rclcpp::NodeOptions&)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/pointcloud_interactive_markers/src/interactive-target.cpp:62:17:[m[K [01;35m[Kwarning: [m[K‘[01m[KIkTargetNode::frame_name_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   62 |     std::string [01;35m[Kframe_name_[m[K;
+      |                 [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/pointcloud_interactive_markers/src/interactive-target.cpp:58:38:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kinteractive_markers::MenuHandler IkTargetNode::menu_handler_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   58 |     interactive_markers::MenuHandler [01;35m[Kmenu_handler_[m[K;
+      |                                      [01;35m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/pointcloud_interactive_markers/src/interactive-target.cpp:65:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   65 | [01;35m[KIkTargetNode[m[K::IkTargetNode(const std::string &node_name, const std::string &frame_name, const rclcpp::NodeOptions &options)
+      | [01;35m[K^~~~~~~~~~~~[m[K

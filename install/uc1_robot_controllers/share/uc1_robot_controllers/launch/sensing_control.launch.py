@@ -32,6 +32,6 @@ def generate_launch_description():
     
     return LaunchDescription([
         interactive_targhet_node,
-        #obstacle_node,
+        obstacle_node,
         proximity_task_gen_node
     ])

@@ -28,6 +28,7 @@
 #include <memory>
 #include <vector>
 #include <cmath>
+#include <ctime>
 
 // clocking macro
 using Clock = std::chrono::steady_clock;
@@ -103,6 +104,13 @@ class JointRobotTP
         void Update_TskJac_MinAlt();
         // ------------------------------------------------- TP TASKS FUNCTIONS ------------------------------------------------- //
 
+        // ------------------------------------------------- LOG VAR ------------------------------------------------- //
+        std::vector<Eigen::Vector3d> ee_pos, ee_ori, cerr_pos;
+        Eigen::Vector3d g_pos, g_ori;
+
+        std::vector<std::vector<double>> obs_dist;
+        std::vector<Eigen::Vector2d> abs_act;
+        // ------------------------------------------------- LOG VAR ------------------------------------------------- //
     private:
         // -------------------------------------------------------------------------------------------------------------------------------------------- Robot interfaces
         std::shared_ptr<rclcpp::Node> node_; 

@@ -114,19 +114,19 @@ void JointRobotTP::insertInitConfigMap(){
 void JointRobotTP::insertFuncPointerVtc(){
     //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_JointLimits);
     TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_EETarget);
-    //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance);
+    TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance);
     //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance_setBased);
     //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_MinAlt);
 
     //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_JointLimits);
     AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_EETarget);
-    //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_ObstAvoidance);
+    AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_ObstAvoidance);
     //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_ObstAvoidance_setBased);
     //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_MinAlt);
 
     //TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_JointLimits);
     TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_EETarget);
-    //TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_ObstAvoidance);
+    TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_ObstAvoidance);
     //TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_ObstAvoidance_setBased);
     //TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_MinAlt);
 
@@ -286,7 +286,7 @@ void JointRobotTP::ReachInitialConfiguration(const std::string init_config_name)
 }
 
 void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool reached_goal){
-    rclcpp::Rate loop_rate(200);
+    rclcpp::Rate loop_rate(100);
 
     TPComputation tp_controller;
 
@@ -301,13 +301,16 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool 
     double lambda = 0.0001; 
     double threshold = 0.01;
     double weight = 10.0;
+
+    std_msgs::msg::String msg;
+    msg.data = "ciao";
       
 
     RCLCPP_WARN(node_->get_logger(), "KUKA gain: %.4f and UR10 gain: %.4f", kuka_gain, ur10_gain);
     while(rclcpp::ok() && !reached_goal){
-        TIC(loop)
+        //TIC(loop)
         // ---------------------- UPDATE DATA STEP ---------------------- //
-        TIC(update);
+        //TIC(update);
         //std::cout << "----- control 1 -----" << std::endl;
         UpdateTasksReferenceRate();
         //std::cout << "----- control 2 -----" << std::endl;
@@ -315,11 +318,11 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool 
         //std::cout << "----- control 3 -----" << std::endl;
         UpdateTasksJacobians();
         //std::cout << "----- control 4 -----" << std::endl;
-        TOC(update);
+        //TOC(update);
         // ---------------------- UPDATE DATA STEP ---------------------- //
 
         // ---------------------- Eval STOP CONDION --------------------- //
-        ////TIC(stop_cond);
+        //////TIC(stop_cond);
         Eigen::VectorXd ee_error = TP_task_map_["endeff_target"].RefRate;
         Eigen::VectorXd pos = ee_error.head(3);
         Eigen::VectorXd ang = ee_error.tail(3);
@@ -344,47 +347,58 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool 
                 //RCLCPP_INFO(node_->get_logger(), "(%.3f,%.3f) - %.4f", pos.norm(),ang.norm(), ee_error.norm());
             }
         }
-        ////TOC(stop_cond);
+        //////TOC(stop_cond);
         // ---------------------- Eval STOP CONDION --------------------- //
 
         // ---------------------- UPDATE TPIK STEP ---------------------- //
-        //TIC(tpk);
-        //TIC(init_tpk);
+        ////TIC(tpk);
+        ////TIC(init_tpk);
         tp_controller.init_TPComputation(NDOF, lambda, threshold, weight); 
-        //TOC(init_tpk);
+        ////TOC(init_tpk);
         
         //tp_controller.computeTP_step("min_altitude",  TP_task_map_["min_altitude"].ActMatrix,  TP_task_map_["min_altitude"].TskJacobian,  TP_task_map_["min_altitude"].RefRate);
         //tp_controller.computeTP_step("obstacle_avoidance",  TP_task_map_["obstacle_avoidance"].ActMatrix,  TP_task_map_["obstacle_avoidance"].TskJacobian,  TP_task_map_["obstacle_avoidance"].RefRate);
-        TIC(step_tpk_tg);
+        //TIC(step_tpk_tg);
         tp_controller.computeTP_step("endeff_target", TP_task_map_["endeff_target"].ActMatrix, TP_task_map_["endeff_target"].TskJacobian, TP_task_map_["endeff_target"].RefRate);
-        TOC(step_tpk_tg);
-        TIC(step_tpk);
+        //TOC(step_tpk_tg);
+        //TIC(step_tpk);
         tp_controller.computeTP_step("close_task", Eigen::MatrixXd::Identity(NDOF,NDOF), Eigen::MatrixXd::Identity(NDOF,NDOF), Eigen::VectorXd::Zero(NDOF)); 
-        TOC(step_tpk);
+        //TOC(step_tpk);
         Eigen::VectorXd qdot_des = tp_controller.getTP_ydot();
         
-        //TIC(close_tpk);
+        ////TIC(close_tpk);
         tp_controller.clear_TPComputation();  
-        //TOC(close_tpk); 
-        //TOC(tpk);              
+        ////TOC(close_tpk); 
+        ////TOC(tpk);              
         // ---------------------- UPDATE TPIK STEP ---------------------- //
 
 
         // ---------------------- SEND VELOCITY STEP -------------------- //
-        ////TIC(send_vel);
+        //////TIC(send_vel);
         SendVelocityCommands(qdot_des, kuka_gain, ur10_gain);
-        //////TOC(send_vel);
+        ////////TOC(send_vel);
         // ---------------------- SEND VELOCITY STEP -------------------- //
         
         // CLEAR TASK PRIORITY MAP -------------------------------------- //
         TP_task_map_.clear();
         // CLEAR TASK PRIORITY MAP -------------------------------------- //
 
-        // std_msgs::msg::String msg;
-        // msg.data = "reaching loop";
-        // debug_trace_publisher_->publish(msg);
+        
+        /// SAVE LOG VARIABLES
+        std::vector<double> temp;
+        for(int i=0;i<frame_names_.size();++i){
+            for(int j=0;j<Prx_task_pts_OBAV_.size();++j){
+                if(frame_names_[i] == Prx_task_pts_OBAV_[j].link_id){
+                    temp.push_back(Prx_task_pts_OBAV_[j].distance);
+                }
+            }
+        }
+        obs_dist.push_back(temp);
+        /// SAVE LOG VARIABLES
+        debug_trace_publisher_->publish(msg);
+
         loop_rate.sleep();
-        TOC(loop);
+        //TOC(loop);
     }
 }
 // ------------------------------------------------------------------------------------------------------------------------------- MOVEMENT RELATED METHODS
@@ -568,13 +582,15 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
     std::string goal_frame  = "GOAL_FRAME";
     goal_name_ = goal_frame;
 
-    goal_traslation << 1.8131, 0.0, 2.0592;
+    //goal_traslation << 1.8131, 0.0, 2.0592;
     //goal_traslation << 0.5, 0.0, 0.5; // related to base_link
     goal_rotation << 0.0, 0.0, 0.0;
 
     goal_frame_broadcaster_->broadcastStaticTransform(goal_traslation, goal_rotation.reverse(), parent_frame, goal_frame);
     std::cout << "Goal sent (position): " << goal_traslation.transpose() << std::endl;
     std::cout << "Goal sent (orientat): " << goal_rotation.transpose() << std::endl;
+    g_pos = goal_traslation;
+    g_ori = goal_rotation;
     // ---------------------------------------------------------------------------------------------------------- GOAL FRAME BROADCASTING
 
     // ------------------------------------------ CHECK RELATIVE POSITION GOAL AND OBSTACLE
@@ -603,6 +619,59 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
     // INCREMENT LOGGING COUNTER
     //log_counter_++;
     // ---------------------------------------------------------------------------------------------------------- EXECUTE REACHING LOOP
+
+    // ---------------------------------------------------------------------------------------------------------- LOG RESULT ON FILE
+    std::string path = "/home/maclab/Documents/ROS_WORKSPACES/experiment";
+    std::string dir = "/test1";
+
+    std::ofstream ee = std::ofstream(path + dir + "/ee_pos_orient.txt", std::ios::app);
+    if(ee.is_open()){
+        if(ee_pos.size() == ee_ori.size()){
+            for(int i=0; i<ee_pos.size();++i){
+                ee << ee_pos[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << ";" << ee_ori[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+            }
+        }
+        ee.close();    
+    }
+
+    std::ofstream cerr = std::ofstream(path + dir + "/cerr_pos.txt", std::ios::app);
+    if(cerr.is_open()){
+        for(int i=0; i<cerr_pos.size();++i){
+            cerr << cerr_pos[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+        }
+        cerr.close();    
+    }
+
+    std::ofstream g = std::ofstream(path + dir + "/g_pos_orient.txt", std::ios::app);
+    if(g.is_open()){
+        g << g_pos.reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << ";" << g_ori.reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+        g.close();    
+    }
+
+    std::ofstream obst_dist(path + dir + "/obst_dist.txt", std::ios::app);
+    if (obst_dist.is_open()) {
+        for (size_t i = 0; i < obs_dist.size(); ++i) {
+
+            // Print obs_dist[i]
+            for (size_t j = 0; j < obs_dist[i].size(); ++j) {
+                obst_dist << obs_dist[i][j];
+                if (j + 1 < obs_dist[i].size())
+                    obst_dist << "; ";
+            }
+            obst_dist << std::endl;
+        }
+        obst_dist.close();
+    }
+
+    std::ofstream obst_act = std::ofstream(path + dir + "/obst_act.txt", std::ios::app);
+    if(obst_act.is_open()){
+        for(int i=0; i<abs_act.size();++i){
+            obst_act << abs_act[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+        }
+        obst_act.close();    
+    }
+    // ---------------------------------------------------------------------------------------------------------- LOG RESULT ON FILE
+
 
     if(rclcpp::ok()){
         result->result = "Reaching Loop completed, ready for next Goal\n";

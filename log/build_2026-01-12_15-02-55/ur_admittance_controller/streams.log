@@ -1,0 +1,168 @@
+[0.018s] Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/ur_admittance_controller': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/ur_admittance_controller -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller
+[0.060s] -- The C compiler identification is GNU 12.3.0
+[0.094s] -- The CXX compiler identification is GNU 11.4.0
+[0.098s] -- Detecting C compiler ABI info
+[0.135s] -- Detecting C compiler ABI info - done
+[0.138s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.138s] -- Detecting C compile features
+[0.139s] -- Detecting C compile features - done
+[0.140s] -- Detecting CXX compiler ABI info
+[0.181s] -- Detecting CXX compiler ABI info - done
+[0.187s] -- Check for working CXX compiler: /usr/bin/g++-11 - skipped
+[0.187s] -- Detecting CXX compile features
+[0.188s] -- Detecting CXX compile features - done
+[0.189s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.284s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.328s] -- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+[0.353s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.354s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.357s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.363s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.371s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.391s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.392s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.435s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.451s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.479s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.484s] -- Looking for pthread.h
+[0.532s] -- Looking for pthread.h - found
+[0.533s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.567s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.568s] -- Found Threads: TRUE  
+[0.593s] -- Found example_interfaces: 0.9.3 (/opt/ros/humble/share/example_interfaces/cmake)
+[0.610s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.625s] -- Found visualization_msgs: 4.9.0 (/opt/ros/humble/share/visualization_msgs/cmake)
+[0.634s] -- Found interactive_markers: 2.3.2 (/opt/ros/humble/share/interactive_markers/cmake)
+[0.640s] -- Found tf2_ros: 0.25.16 (/opt/ros/humble/share/tf2_ros/cmake)
+[0.667s] -- Found tf2_eigen: 0.25.16 (/opt/ros/humble/share/tf2_eigen/cmake)
+[0.671s] -- Found tf2_geometry_msgs: 0.25.16 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[0.674s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[0.674s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[0.675s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[0.676s] -- Found kdl_parser: 2.6.4 (/opt/ros/humble/share/kdl_parser/cmake)
+[0.678s] -- Found pcl_conversions: 2.4.5 (/opt/ros/humble/share/pcl_conversions/cmake)
+[0.694s] -- Checking for module 'eigen3'
+[0.702s] --   Found eigen3, version 3.4.0
+[0.722s] -- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") 
+[0.722s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[0.736s] -- Checking for module 'flann'
+[0.742s] --   Found flann, version 1.9.1
+[0.764s] -- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  
+[0.764s] -- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)
+[1.309s] -- Checking for module 'libusb-1.0'
+[1.317s] --   Found libusb-1.0, version 1.0.25
+[1.338s] -- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  
+[1.338s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[1.371s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[1.467s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[1.471s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[1.474s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[1.569s] -- Found Qhull version 8.0.2
+[1.671s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[1.763s] -- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  
+[1.764s] -- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  
+[1.764s] -- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  
+[1.764s] -- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  
+[1.765s] -- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  
+[1.765s] -- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  
+[1.766s] -- Found PCL_2D: /usr/include/pcl-1.12  
+[1.766s] -- Found PCL_GEOMETRY: /usr/include/pcl-1.12  
+[1.766s] -- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  
+[1.767s] -- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  
+[1.767s] -- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so  
+[1.767s] -- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so  
+[1.768s] -- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so  
+[1.768s] -- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so  
+[1.769s] -- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  
+[1.769s] -- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so  
+[1.770s] -- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so  
+[1.770s] -- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so  
+[1.771s] -- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so  
+[1.771s] -- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so  
+[1.771s] -- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  
+[1.772s] -- Found PCL_MODELER: /usr/include/pcl-1.12  
+[1.772s] -- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  
+[1.772s] -- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so  
+[1.773s] -- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so  
+[1.774s] -- Found pcl_ros: 2.4.5 (/opt/ros/humble/share/pcl_ros/cmake)
+[1.781s] -- Found urdf: 2.6.1 (/opt/ros/humble/share/urdf/cmake)
+[1.792s] -- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+[1.806s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.870s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.870s] -- Configured cppcheck include dirs: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/ur_admittance_controller/include
+[1.870s] -- Configured cppcheck exclude dirs and/or files: 
+[1.871s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.871s] -- Added test 'lint_cmake' to check CMake code style
+[1.871s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.872s] -- Added test 'uncrustify' to check C / C++ code style
+[1.873s] -- Configured uncrustify additional arguments: 
+[1.873s] -- Added test 'xmllint' to check XML markup files
+[1.874s] -- Configuring done
+[1.894s] -- Generating done
+[1.899s] -- Build files have been written to: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/ur_admittance_controller
+[1.908s] Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/ur_admittance_controller' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/ur_admittance_controller -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller
+[1.909s] Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/ur_admittance_controller': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/ur_admittance_controller -- -j32 -l32
+[1.944s] [ 33%] [32mBuilding CXX object CMakeFiles/kuka-test-controller.dir/src/KukaRobot.cpp.o[0m
+[1.944s] [ 33%] [32mBuilding CXX object CMakeFiles/kuka-test-controller.dir/src/KukaTestController.cpp.o[0m
+[1.946s] [ 66%] [32mBuilding CXX object CMakeFiles/ur10e-test-admittance.dir/src/UR10eTestAdmittance.cpp.o[0m
+[1.946s] [ 66%] [32mBuilding CXX object CMakeFiles/ur10e-test-admittance.dir/src/UR10eRobot.cpp.o[0m
+[4.765s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/ur_admittance_controller/src/KukaTestController.cpp:[m[K In function ‘[01m[Kvoid signal_handler(int)[m[K’:
+[4.765s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/ur_admittance_controller/src/KukaTestController.cpp:7:25:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ksignum[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[4.765s]     7 | void signal_handler([01;35m[Kint signum[m[K)
+[4.765s]       |                     [01;35m[K~~~~^~~~~~[m[K
+[4.812s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/ur_admittance_controller/src/KukaTestController.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[4.812s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/ur_admittance_controller/src/KukaTestController.cpp:53:33:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Ktranslation[m[K’ set but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable-Wunused-but-set-variable]8;;[m[K]
+[4.812s]    53 |                 Eigen::Vector3d [01;35m[Ktranslation[m[K = tf.translation();
+[4.812s]       |                                 [01;35m[K^~~~~~~~~~~[m[K
+[5.194s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/ur_admittance_controller/src/UR10eTestAdmittance.cpp:[m[K In function ‘[01m[Kvoid signal_handler(int)[m[K’:
+[5.194s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/ur_admittance_controller/src/UR10eTestAdmittance.cpp:8:25:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ksignum[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[5.194s]     8 | void signal_handler([01;35m[Kint signum[m[K)
+[5.194s]       |                     [01;35m[K~~~~^~~~~~[m[K
+[5.276s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/ur_admittance_controller/src/UR10eTestAdmittance.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[5.277s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/ur_admittance_controller/src/UR10eTestAdmittance.cpp:94:33:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Ktranslation[m[K’ set but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable-Wunused-but-set-variable]8;;[m[K]
+[5.277s]    94 |                 Eigen::Vector3d [01;35m[Ktranslation[m[K = tf.translation();
+[5.277s]       |                                 [01;35m[K^~~~~~~~~~~[m[K
+[5.308s] [01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/ur_admittance_controller/src/UR10eTestAdmittance.cpp:33:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kreached_q_init[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[5.308s]    33 |     bool [01;35m[Kreached_q_init[m[K = false;
+[5.308s]       |          [01;35m[K^~~~~~~~~~~~~~[m[K
+[13.106s] [ 83%] [32m[1mLinking CXX executable kuka-test-controller[0m
+[13.451s] [ 83%] Built target kuka-test-controller
+[13.537s] [100%] [32m[1mLinking CXX executable ur10e-test-admittance[0m
+[14.174s] [100%] Built target ur10e-test-admittance
+[14.181s] Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/ur_admittance_controller' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/ur_admittance_controller -- -j32 -l32
+[14.182s] Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/ur_admittance_controller': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/ur_admittance_controller
+[14.186s] -- Install configuration: ""
+[14.186s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/lib/ur_admittance_controller/kuka-test-controller
+[14.188s] -- Set runtime path of "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/lib/ur_admittance_controller/kuka-test-controller" to ""
+[14.188s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/lib/ur_admittance_controller/ur10e-test-admittance
+[14.191s] -- Set runtime path of "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/lib/ur_admittance_controller/ur10e-test-admittance" to ""
+[14.191s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//launch
+[14.191s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//launch/ur_task_controllers_real.launch.py
+[14.191s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//launch/ur_task_controllers_sim.launch.py
+[14.191s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//launch/ur_task_controllers_control_checks.launch.py
+[14.191s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//resources
+[14.192s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//resources/partial_chassis_downsampled_cloud.pcd
+[14.192s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//resources/chassis_downsampled_cloud.ply
+[14.192s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//resources/rviz
+[14.192s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//resources/rviz/rviz_cfg.rviz
+[14.192s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//resources/chassis_downsampled_cloud.pcd
+[14.192s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//resources/bagfiles
+[14.192s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//resources/bagfiles/rosbag2_2025_01_14-19_19_57
+[14.192s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//resources/bagfiles/rosbag2_2025_01_14-19_19_57/rosbag2_2025_01_14-19_19_57_0.db3
+[14.195s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller//resources/bagfiles/rosbag2_2025_01_14-19_19_57/metadata.yaml
+[14.195s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ament_index/resource_index/package_run_dependencies/ur_admittance_controller
+[14.195s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ament_index/resource_index/parent_prefix_path/ur_admittance_controller
+[14.195s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/environment/ament_prefix_path.sh
+[14.195s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/environment/ament_prefix_path.dsv
+[14.195s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/environment/path.sh
+[14.195s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/environment/path.dsv
+[14.195s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/local_setup.bash
+[14.195s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/local_setup.sh
+[14.196s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/local_setup.zsh
+[14.196s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/local_setup.dsv
+[14.196s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/package.dsv
+[14.196s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ament_index/resource_index/packages/ur_admittance_controller
+[14.196s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/cmake/ur_admittance_controllerConfig.cmake
+[14.196s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/cmake/ur_admittance_controllerConfig-version.cmake
+[14.196s] -- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/package.xml
+[14.197s] Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/ur_admittance_controller' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/ur_admittance_controller

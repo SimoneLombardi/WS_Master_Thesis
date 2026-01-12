@@ -55,6 +55,11 @@ void JointRobotTP::Update_TRR_EETarget(){
     msg.point.z = (tool_tf.translation())(2);
     point_publisher->publish(msg);
 
+    /// SAVE LOG VAR
+    ee_pos.push_back(Eigen::Vector3d((tool_tf.translation())(0),(tool_tf.translation())(1),(tool_tf.translation())(2)));
+    ee_ori.push_back(Eigen::Vector3d((tool_tf.linear().eulerAngles(2, 1, 0).reverse())));
+    cerr_pos.push_back(Eigen::Vector3d(cart_err[0],cart_err[1],cart_err[2]));
+    /// SAVE LOG VAR
 
     // test temp: remove error from rotation part
     //cart_err.tail(3) = Eigen::Vector3d::Zero();
@@ -63,8 +68,6 @@ void JointRobotTP::Update_TRR_EETarget(){
     TP_task_map_["endeff_target"].RefRate.block(0,0,cart_err.size(),1) = cart_err;
 
     //std::cout << "EE Target Ref Rate: " << TP_task_map_["endeff_target"].RefRate.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
-    //publishArrowMarker(tool_tf.translation(), cart_err.head(3),KUKA_BASE_LINK,"cart_error","bblue",1,control_task_publisher_);
-    //publishArrowMarker(Eigen::Vector3d::Zero(), goal_tf.translation(),KUKA_BASE_LINK,"goal_tf","bblue",1,control_task_publisher_);
 }
 
 void JointRobotTP::Update_TRR_ObstAvoidance(){
@@ -86,6 +89,10 @@ void JointRobotTP::Update_TRR_ObstAvoidance(){
                             -Prx_task_pts_OBAV_[0].min_point_vector.y
         );
     }
+
+    /// SAVE LOG VAR
+    
+    /// SAVE LOG VAR
 
     //std::cout << "[UPDATE TRR] OBAV Ref Rate: " << TP_task_map_["obstacle_avoidance"].RefRate.rows() << "." << TP_task_map_["obstacle_avoidance"].RefRate.cols() << std::endl;
     //std::cout << "[UPDATE TRR] OBAV Ref Rate: " << TP_task_map_["obstacle_avoidance"].RefRate.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
@@ -159,6 +166,10 @@ void JointRobotTP::Update_AFunc_ObstAvoidance(){
         TP_task_map_["obstacle_avoidance"].ActMatrix(i,i) = act_value;
     }
     
+    /// SAVE LOG VAR
+    abs_act.push_back(Eigen::Vector2d(TP_task_map_["obstacle_avoidance"].ActMatrix(0,0),TP_task_map_["obstacle_avoidance"].ActMatrix(1,1)));
+    /// SAVE LOG VAR
+
     //std::cout << "OBAV Ref Rate:\n(" << TP_task_map_["obstacle_avoidance"].RefRate.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << ") -- (" <<  dir.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << ") -- " << TP_task_map_["obstacle_avoidance"].RefRate.norm() <<  std::endl;
     //std::cout << "Distance OBAV: " << distance << " -- dir: " << dir.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", ""));
     //std::cout << "OBAV Act Func:\n" << TP_task_map_["obstacle_avoidance"].ActMatrix.matrix() << std::endl;

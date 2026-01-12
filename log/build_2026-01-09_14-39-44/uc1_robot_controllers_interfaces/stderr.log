@@ -1,8 +1,0 @@
-[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers_interfaces/src/TPComputation.cpp:1:10:[m[K [01;31m[Kfatal error: [m[KTPComputation.hpp: No such file or directory
-    1 | #include [01;31m[K"TPComputation.hpp"[m[K
-      |          [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
-compilation terminated.
-gmake[2]: *** [CMakeFiles/TPComputation.dir/build.make:79: CMakeFiles/TPComputation.dir/src/TPComputation.cpp.o] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:595: CMakeFiles/TPComputation.dir/all] Error 2
-gmake[1]: *** Waiting for unfinished jobs....
-gmake: *** [Makefile:149: all] Error 2

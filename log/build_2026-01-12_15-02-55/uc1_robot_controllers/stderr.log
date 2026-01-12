@@ -1,0 +1,168 @@
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/KukaRobot.cpp:[m[K In member function ‘[01m[Kvoid KukaRobot::runCartesianReachingLoop(std::string, bool)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/KukaRobot.cpp:500:33:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Ktranslation[m[K’ set but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable-Wunused-but-set-variable]8;;[m[K]
+  500 |                 Eigen::Vector3d [01;35m[Ktranslation[m[K = tf.translation();
+      |                                 [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/KukaRobot.cpp:[m[K In member function ‘[01m[Kvoid KukaRobot::runCartesianReachingLoop(std::string, bool)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/KukaRobot.cpp:500:33:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Ktranslation[m[K’ set but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable-Wunused-but-set-variable]8;;[m[K]
+  500 |                 Eigen::Vector3d [01;35m[Ktranslation[m[K = tf.translation();
+      |                                 [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:[m[K In member function ‘[01m[Kvoid JointRobotTP::RunCartesianReachingLoop(const string&, bool)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:389:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::__cxx11::basic_string<char> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  389 |         for(int i=0;[01;35m[Ki<frame_names_.size()[m[K;++i){
+      |                     [01;35m[K~^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:390:26:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<uc1_robot_perception::msg::ProximityTask_<std::allocator<void> >, std::allocator<uc1_robot_perception::msg::ProximityTask_<std::allocator<void> > > >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  390 |             for(int j=0;[01;35m[Kj<Prx_task_pts_OBAV_.size()[m[K;++j){
+      |                         [01;35m[K~^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP_functions.cpp:[m[K In member function ‘[01m[Kvoid JointRobotTP::Update_TskJac_EETarget()[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP_functions.cpp:235:21:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kfixed[m[K’ set but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable-Wunused-but-set-variable]8;;[m[K]
+  235 |     Eigen::Affine3d [01;35m[Kfixed[m[K = getGenericTransformation(KUKA_BASE_LINK, UR10_BASE_LINK);
+      |                     [01;35m[K^~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:288:64:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kgoal_frame[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  288 | void JointRobotTP::RunCartesianReachingLoop([01;35m[Kconst std::string& goal_frame[m[K, bool reached_goal){
+      |                                             [01;35m[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:[m[K In member function ‘[01m[Krclcpp_action::GoalResponse JointRobotTP::handle_goal(const GoalUUID&, std::shared_ptr<const uc1_robot_controllers_interfaces::action::MoveRobotTP_Goal_<std::allocator<void> > >)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:443:134:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kgoal[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  443 | rclcpp_action::GoalResponse JointRobotTP::handle_goal(const rclcpp_action::GoalUUID & uuid, [01;35m[Kstd::shared_ptr<const MoveRobotTP::Goal> goal[m[K){
+      |                                                                                             [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:[m[K In member function ‘[01m[Kvoid JointRobotTP::execute(std::shared_ptr<rclcpp_action::ServerGoalHandle<uc1_robot_controllers_interfaces::action::MoveRobotTP> >)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:630:27:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  630 |             for(int i=0; [01;35m[Ki<ee_pos.size()[m[K;++i){
+      |                          [01;35m[K~^~~~~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:639:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 3, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  639 |         for(int i=0; [01;35m[Ki<cerr_pos.size()[m[K;++i){
+      |                      [01;35m[K~^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:668:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<Eigen::Matrix<double, 2, 1> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  668 |         for(int i=0; [01;35m[Ki<abs_act.size()[m[K;++i){
+      |                      [01;35m[K~^~~~~~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobotTP/JointRobotTP.cpp:597:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kdist[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  597 |     double [01;35m[Kdist[m[K = 0.0;
+      |            [01;35m[K^~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:[m[K In member function ‘[01m[Kvoid UR10eRobot::runJointControlLoop(Eigen::VectorXd, Eigen::VectorXd)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:552:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kkp[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  552 |     float [01;35m[Kkp[m[K = 0.1;
+      |           [01;35m[K^~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:[m[K In member function ‘[01m[Kvoid UR10eRobot::runCartesianReachingLoop(std::string, bool)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:585:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KKp[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  585 |     float [01;35m[KKp[m[K = 0.05;
+      |           [01;35m[K^~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:582:55:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kgoal_frame[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  582 | void UR10eRobot::runCartesianReachingLoop([01;35m[Kstd::string goal_frame[m[K, bool reached_goal)
+      |                                           [01;35m[K~~~~~~~~~~~~^~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:[m[K In member function ‘[01m[Kvoid UR10eRobot::runProximityControlLoop(std::string, bool)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:631:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KKp[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  631 |     float [01;35m[KKp[m[K = 0.05;
+      |           [01;35m[K^~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:628:54:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kgoal_frame[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  628 | void UR10eRobot::runProximityControlLoop([01;35m[Kstd::string goal_frame[m[K, bool reached_goal)
+      |                                          [01;35m[K~~~~~~~~~~~~^~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:[m[K In member function ‘[01m[Kvoid UR10eRobot::runTactileControlLoop(std::string, bool)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:733:52:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kgoal_frame[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  733 | void UR10eRobot::runTactileControlLoop([01;35m[Kstd::string goal_frame[m[K, bool reached_goal)
+      |                                        [01;35m[K~~~~~~~~~~~~^~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:[m[K In member function ‘[01m[KEigen::VectorXd UR10eRobot::computeProximityAvoidance(const ProximityTask&, float&)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:979:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmin_avoidance[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  979 |     double [01;35m[Kmin_avoidance[m[K = (minimum_dist + alfa) - task.distance;
+      |            [01;35m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:[m[K In member function ‘[01m[KEigen::VectorXd UR10eRobot::computeTactileAvoidance(const Contact&, float&)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:1009:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmin_avoidance[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+ 1009 |     double [01;35m[Kmin_avoidance[m[K = (minimum_force + alfa) - task.contact_intensity;
+      |            [01;35m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:[m[K In member function ‘[01m[Kvoid UR10eRobot::runJointControlLoop(Eigen::VectorXd, Eigen::VectorXd)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:552:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kkp[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  552 |     float [01;35m[Kkp[m[K = 0.1;
+      |           [01;35m[K^~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:[m[K In member function ‘[01m[Kvoid UR10eRobot::runCartesianReachingLoop(std::string, bool)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:585:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KKp[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  585 |     float [01;35m[KKp[m[K = 0.05;
+      |           [01;35m[K^~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:582:55:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kgoal_frame[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  582 | void UR10eRobot::runCartesianReachingLoop([01;35m[Kstd::string goal_frame[m[K, bool reached_goal)
+      |                                           [01;35m[K~~~~~~~~~~~~^~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:[m[K In member function ‘[01m[Kvoid UR10eRobot::runProximityControlLoop(std::string, bool)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:631:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KKp[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  631 |     float [01;35m[KKp[m[K = 0.05;
+      |           [01;35m[K^~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:628:54:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kgoal_frame[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  628 | void UR10eRobot::runProximityControlLoop([01;35m[Kstd::string goal_frame[m[K, bool reached_goal)
+      |                                          [01;35m[K~~~~~~~~~~~~^~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:[m[K In member function ‘[01m[Kvoid UR10eRobot::runTactileControlLoop(std::string, bool)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:733:52:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kgoal_frame[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  733 | void UR10eRobot::runTactileControlLoop([01;35m[Kstd::string goal_frame[m[K, bool reached_goal)
+      |                                        [01;35m[K~~~~~~~~~~~~^~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:[m[K In member function ‘[01m[KEigen::Vector3d UR10eRobot::projectTaskOnRobotBase(const Vector3&, const Vector3&, float, const string&, const string&)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:1119:40:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ksensor_position[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+ 1119 |     [01;35m[Kconst geometry_msgs::msg::Vector3& sensor_position[m[K,
+      |     [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:[m[K In member function ‘[01m[KEigen::VectorXd UR10eRobot::computeProximityAvoidance(const ProximityTask&, float&)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:979:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmin_avoidance[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  979 |     double [01;35m[Kmin_avoidance[m[K = (minimum_dist + alfa) - task.distance;
+      |            [01;35m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:[m[K In member function ‘[01m[KEigen::VectorXd UR10eRobot::computeTactileAvoidance(const Contact&, float&)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:1009:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmin_avoidance[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+ 1009 |     double [01;35m[Kmin_avoidance[m[K = (minimum_force + alfa) - task.contact_intensity;
+      |            [01;35m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/KukaRobot.cpp:[m[K In member function ‘[01m[Kvoid KukaRobot::runCartesianReachingLoop(std::string, bool)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/KukaRobot.cpp:500:33:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Ktranslation[m[K’ set but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable-Wunused-but-set-variable]8;;[m[K]
+  500 |                 Eigen::Vector3d [01;35m[Ktranslation[m[K = tf.translation();
+      |                                 [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:[m[K In member function ‘[01m[KEigen::Vector3d UR10eRobot::projectTaskOnRobotBase(const Vector3&, const Vector3&, float, const string&, const string&)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:1119:40:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ksensor_position[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+ 1119 |     [01;35m[Kconst geometry_msgs::msg::Vector3& sensor_position[m[K,
+      |     [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/joint_controller/joint_robot_test.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/joint_controller/joint_robot_test.cpp:40:14:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kreached_q_init[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   40 |         bool [01;35m[Kreached_q_init[m[K = false;
+      |              [01;35m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobot.cpp:[m[K In member function ‘[01m[Kvoid JointRobot::setJoint_transformChain()[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobot.cpp:178:28:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kshort int[m[K’ and ‘[01m[Kstd::vector<std::__cxx11::basic_string<char> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  178 |     for(short indx=0; [01;35m[Kindx < (joint_names_.size())[m[K; ++indx)
+      |                       [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobot.cpp:[m[K In member function ‘[01m[Kvoid JointRobot::runCartesianReachingLoop(std::string, bool)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobot.cpp:413:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kur10_dof[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  413 |         int [01;35m[Kur10_dof[m[K = 6;
+      |             [01;35m[K^~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobot.cpp:414:13:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kkuka_dof[m[K’ set but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable-Wunused-but-set-variable]8;;[m[K]
+  414 |         int [01;35m[Kkuka_dof[m[K;
+      |             [01;35m[K^~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:[m[K In member function ‘[01m[Kvoid UR10eRobot::runJointControlLoop(Eigen::VectorXd, Eigen::VectorXd)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:552:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kkp[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  552 |     float [01;35m[Kkp[m[K = 0.1;
+      |           [01;35m[K^~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:[m[K In member function ‘[01m[Kvoid UR10eRobot::runCartesianReachingLoop(std::string, bool)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:585:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KKp[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  585 |     float [01;35m[KKp[m[K = 0.05;
+      |           [01;35m[K^~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:582:55:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kgoal_frame[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  582 | void UR10eRobot::runCartesianReachingLoop([01;35m[Kstd::string goal_frame[m[K, bool reached_goal)
+      |                                           [01;35m[K~~~~~~~~~~~~^~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:[m[K In member function ‘[01m[Kvoid UR10eRobot::runProximityControlLoop(std::string, bool)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:631:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KKp[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  631 |     float [01;35m[KKp[m[K = 0.05;
+      |           [01;35m[K^~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:628:54:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kgoal_frame[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  628 | void UR10eRobot::runProximityControlLoop([01;35m[Kstd::string goal_frame[m[K, bool reached_goal)
+      |                                          [01;35m[K~~~~~~~~~~~~^~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:[m[K In member function ‘[01m[Kvoid UR10eRobot::runTactileControlLoop(std::string, bool)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:733:52:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kgoal_frame[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  733 | void UR10eRobot::runTactileControlLoop([01;35m[Kstd::string goal_frame[m[K, bool reached_goal)
+      |                                        [01;35m[K~~~~~~~~~~~~^~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:[m[K In member function ‘[01m[KEigen::VectorXd UR10eRobot::computeProximityAvoidance(const ProximityTask&, float&)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:979:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmin_avoidance[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  979 |     double [01;35m[Kmin_avoidance[m[K = (minimum_dist + alfa) - task.distance;
+      |            [01;35m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:[m[K In member function ‘[01m[KEigen::VectorXd UR10eRobot::computeTactileAvoidance(const Contact&, float&)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:1009:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmin_avoidance[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+ 1009 |     double [01;35m[Kmin_avoidance[m[K = (minimum_force + alfa) - task.contact_intensity;
+      |            [01;35m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobot.cpp:[m[K In member function ‘[01m[KEigen::MatrixXd JointRobot::computePseudoInverse(const MatrixXd&, std::vector<float>)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobot.cpp:496:108:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kpartition[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  496 | Eigen::MatrixXd JointRobot::computePseudoInverse(const Eigen::MatrixXd& jacobian, [01;35m[Kconst std::vector<float> partition[m[K){
+      |                                                                                   [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobot.cpp:[m[K In member function ‘[01m[Krclcpp_action::GoalResponse JointRobot::handle_goal(const GoalUUID&, std::shared_ptr<const uc1_robot_controllers_interfaces::action::MoveRobot_Goal_<std::allocator<void> > >)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/JointRobot.cpp:556:172:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kgoal[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  556 | rclcpp_action::GoalResponse JointRobot::handle_goal(const rclcpp_action::GoalUUID & uuid, [01;35m[Kstd::shared_ptr<const uc1_robot_controllers_interfaces::action::MoveRobot::Goal> goal[m[K){
+      |                                                                                           [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:[m[K In member function ‘[01m[KEigen::Vector3d UR10eRobot::projectTaskOnRobotBase(const Vector3&, const Vector3&, float, const string&, const string&)[m[K’:
+[01m[K/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/src/UR10eRobot.cpp:1119:40:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ksensor_position[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+ 1119 |     [01;35m[Kconst geometry_msgs::msg::Vector3& sensor_position[m[K,
+      |     [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~[m[K

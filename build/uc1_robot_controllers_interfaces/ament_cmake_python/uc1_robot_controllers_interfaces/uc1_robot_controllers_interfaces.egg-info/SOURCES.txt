@@ -4,10 +4,3 @@ uc1_robot_controllers_interfaces.egg-info/PKG-INFO
 uc1_robot_controllers_interfaces.egg-info/SOURCES.txt
 uc1_robot_controllers_interfaces.egg-info/dependency_links.txt
 uc1_robot_controllers_interfaces.egg-info/top_level.txt
-uc1_robot_controllers_interfaces/action/__init__.py
-uc1_robot_controllers_interfaces/action/_move_robot.py
-uc1_robot_controllers_interfaces/action/_move_robot_tp.py
-uc1_robot_controllers_interfaces/msg/__init__.py
-uc1_robot_controllers_interfaces/msg/_move_robot_goal.py
-uc1_robot_controllers_interfaces/msg/_move_robot_orient.py
-uc1_robot_controllers_interfaces/msg/_move_robot_point.py

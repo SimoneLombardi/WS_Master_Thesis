@@ -1,4 +1,0 @@
-Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/urdf_launch': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/urdf_launch -- -j32 -l32
-Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/urdf_launch' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/urdf_launch -- -j32 -l32
-Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/urdf_launch': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/urdf_launch
-Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/urdf_launch' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/urdf_launch

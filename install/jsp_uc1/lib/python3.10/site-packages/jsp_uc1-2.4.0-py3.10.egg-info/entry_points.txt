@@ -1,3 +1,0 @@
-[console_scripts]
-jsp_uc1 = jsp_uc1.jsp_uc1:main
-
