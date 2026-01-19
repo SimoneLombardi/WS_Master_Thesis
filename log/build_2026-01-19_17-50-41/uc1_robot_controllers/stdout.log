@@ -1,0 +1,188 @@
+-- The C compiler identification is GNU 12.3.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++-11 - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found rclcpp: 16.0.17 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found example_interfaces: 0.9.3 (/opt/ros/humble/share/example_interfaces/cmake)
+-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found visualization_msgs: 4.9.0 (/opt/ros/humble/share/visualization_msgs/cmake)
+-- Found interactive_markers: 2.3.2 (/opt/ros/humble/share/interactive_markers/cmake)
+-- Found tf2_ros: 0.25.18 (/opt/ros/humble/share/tf2_ros/cmake)
+-- Found tf2_eigen: 0.25.18 (/opt/ros/humble/share/tf2_eigen/cmake)
+-- Found tf2_geometry_msgs: 0.25.18 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+-- Found Eigen3: TRUE (found version "3.4.0") 
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found kdl_parser: 2.6.4 (/opt/ros/humble/share/kdl_parser/cmake)
+-- Found pcl_conversions: 2.4.5 (/opt/ros/humble/share/pcl_conversions/cmake)
+-- Checking for module 'eigen3'
+--   Found eigen3, version 3.4.0
+-- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") 
+-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+-- Checking for module 'flann'
+--   Found flann, version 1.9.1
+-- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  
+-- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)
+-- Checking for module 'libusb-1.0'
+--   Found libusb-1.0, version 1.0.25
+-- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+-- Found Qhull version 8.0.2
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  
+-- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  
+-- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  
+-- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  
+-- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  
+-- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  
+-- Found PCL_2D: /usr/include/pcl-1.12  
+-- Found PCL_GEOMETRY: /usr/include/pcl-1.12  
+-- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  
+-- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  
+-- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so  
+-- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so  
+-- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so  
+-- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so  
+-- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  
+-- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so  
+-- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so  
+-- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so  
+-- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so  
+-- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so  
+-- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  
+-- Found PCL_MODELER: /usr/include/pcl-1.12  
+-- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  
+-- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so  
+-- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so  
+-- Found pcl_ros: 2.4.5 (/opt/ros/humble/share/pcl_ros/cmake)
+-- Found urdf: 2.6.1 (/opt/ros/humble/share/urdf/cmake)
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+-- Found uc1_robot_perception: 0.0.0 (/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/cmake)
+-- Found uc1_robot_controllers_interfaces: 0.0.0 (/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/uc1_robot_controllers_interfaces/cmake)
+-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/include
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers
+[ 15%] [32mBuilding CXX object CMakeFiles/joint-robot-test.dir/src/JointRobot.cpp.o[0m
+[ 20%] [32mBuilding CXX object CMakeFiles/kuka-joint-cmd-buf.dir/src/KukaJointCommandBuffer.cpp.o[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/robot-test.dir/src/joint_controller/test_robot_functions.cpp.o[0m
+[ 30%] [32mBuilding CXX object CMakeFiles/joint-robot-tp-test.dir/src/UR10eRobot.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/robot-test.dir/src/UR10eRobot.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/joint-robot-test.dir/src/joint_controller/joint_robot_test.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/robot-test.dir/src/TfGoalBroadcaster.cpp.o[0m
+[ 55%] [32mBuilding CXX object CMakeFiles/joint-robot-tp-test.dir/src/joint_controller/joint_robot_tp_test.cpp.o[0m
+[ 65%] [32mBuilding CXX object CMakeFiles/joint-robot-test.dir/src/TfGoalBroadcaster.cpp.o[0m
+[ 65%] [32mBuilding CXX object CMakeFiles/joint-robot-tp-test.dir/src/JointRobotTP/JointRobotTP_functions.cpp.o[0m
+[ 70%] [32mBuilding CXX object CMakeFiles/joint-robot-tp-test.dir/src/KukaRobot.cpp.o[0m
+[ 15%] [32mBuilding CXX object CMakeFiles/joint-robot-tp-test.dir/src/JointRobotTP/JointRobotTP.cpp.o[0m
+[ 15%] [32mBuilding CXX object CMakeFiles/robot-test.dir/src/KukaRobot.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/joint-robot-tp-test.dir/src/TfGoalBroadcaster.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/joint-robot-test.dir/src/KukaRobot.cpp.o[0m
+[ 80%] [32mBuilding CXX object CMakeFiles/joint-robot-test.dir/src/UR10eRobot.cpp.o[0m
+[ 85%] [32m[1mLinking CXX executable kuka-joint-cmd-buf[0m
+[ 85%] Built target kuka-joint-cmd-buf
+[ 90%] [32m[1mLinking CXX executable robot-test[0m
+[ 90%] Built target robot-test
+[ 95%] [32m[1mLinking CXX executable joint-robot-tp-test[0m
+[100%] [32m[1mLinking CXX executable joint-robot-test[0m
+[100%] Built target joint-robot-tp-test
+[100%] Built target joint-robot-test
+-- Install configuration: ""
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/lib/uc1_robot_controllers/kuka-joint-cmd-buf
+-- Set runtime path of "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/lib/uc1_robot_controllers/kuka-joint-cmd-buf" to ""
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/lib/uc1_robot_controllers/joint-robot-test
+-- Set runtime path of "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/lib/uc1_robot_controllers/joint-robot-test" to ""
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/lib/uc1_robot_controllers/joint-robot-tp-test
+-- Set runtime path of "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/lib/uc1_robot_controllers/joint-robot-tp-test" to ""
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/lib/uc1_robot_controllers/robot-test
+-- Set runtime path of "/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/lib/uc1_robot_controllers/robot-test" to ""
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//launch
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//launch/floating_ur10e.launch.py
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//launch/ur_task_controllers_real.launch.py
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//launch/ur_task_controllers_sim.launch.py
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//launch/ur_task_controllers_control_checks.launch.py
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//launch/kuka_display.launch.py
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//launch/kuka_ur10e_display.launch.py
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//launch/sensing_control.launch.py
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//launch/kuka_display_control.launch.py
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//resources
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//resources/partial_chassis_downsampled_cloud.pcd
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//resources/chassis_downsampled_cloud.ply
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//resources/chassis_downsampled_cloud.pcd
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//resources/bagfiles
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//resources/bagfiles/rosbag2_2025_01_14-19_19_57
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//resources/bagfiles/rosbag2_2025_01_14-19_19_57/rosbag2_2025_01_14-19_19_57_0.db3
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//resources/bagfiles/rosbag2_2025_01_14-19_19_57/metadata.yaml
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//urdf
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//urdf/ur_macro.xacro
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//urdf/inc
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//urdf/inc/ur_common.xacro
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//urdf/inc/ur_transmissions.xacro
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//urdf/kuka_ur_combined.urdf
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//urdf/ur_floating.urdf.xacro
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//urdf/kuka.urdf.xacro
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//urdf/ur.urdf.xacro
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//urdf/ur.ros2_control.xacro
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//urdf/kr150_2.urdf
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//urdf/kuka_ur_combined.urdf.xacro
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//urdf/kr150r3100_2.urdf
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//msg
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//msg/Contact.msg
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//msg/ProximityTask.msg
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//msg/ProximityTaskArray.msg
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers//msg/ContactArray.msg
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/package.xml
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/ament_index/resource_index/package_run_dependencies/uc1_robot_controllers
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/ament_index/resource_index/parent_prefix_path/uc1_robot_controllers
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/environment/ament_prefix_path.sh
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/environment/ament_prefix_path.dsv
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/environment/path.sh
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/environment/path.dsv
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/local_setup.bash
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/local_setup.sh
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/local_setup.zsh
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/local_setup.dsv
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/package.dsv
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/ament_index/resource_index/packages/uc1_robot_controllers
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/cmake/uc1_robot_controllersConfig.cmake
+-- Installing: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/cmake/uc1_robot_controllersConfig-version.cmake
+-- Up-to-date: /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/package.xml

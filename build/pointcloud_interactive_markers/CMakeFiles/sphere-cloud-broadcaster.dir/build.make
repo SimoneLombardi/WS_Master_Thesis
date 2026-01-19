@@ -219,7 +219,7 @@ sphere-cloud-broadcaster: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesuppo
 sphere-cloud-broadcaster: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_fastrtps_cpp.so
 sphere-cloud-broadcaster: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_fastrtps_cpp.so
 sphere-cloud-broadcaster: /opt/ros/humble/lib/librosidl_typesupport_fastrtps_cpp.so
-sphere-cloud-broadcaster: /opt/ros/humble/lib/libfastcdr.so.1.0.24
+sphere-cloud-broadcaster: /opt/ros/humble/lib/libfastcdr.so.1.0.29
 sphere-cloud-broadcaster: /opt/ros/humble/lib/librmw.so
 sphere-cloud-broadcaster: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_introspection_cpp.so
 sphere-cloud-broadcaster: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_introspection_cpp.so

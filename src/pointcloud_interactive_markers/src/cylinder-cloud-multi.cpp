@@ -7,7 +7,7 @@
 #include <pcl/common/transforms.h>
 #include <tf2_ros/transform_listener.h>
 #include <tf2_ros/buffer.h>
-#include <tf2_eigen/tf2_eigen.h>
+#include <tf2_eigen/tf2_eigen.hpp>
 #include <cmath>
 
 #define LINK_ZERO_NAME "kuka_base_link" // nome del primo link del quale devo calcolare le proximity task

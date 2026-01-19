@@ -140,7 +140,7 @@ simulated_contact_publisher: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_t
 simulated_contact_publisher: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_fastrtps_cpp.so
 simulated_contact_publisher: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_fastrtps_cpp.so
 simulated_contact_publisher: /opt/ros/humble/lib/librosidl_typesupport_fastrtps_cpp.so
-simulated_contact_publisher: /opt/ros/humble/lib/libfastcdr.so.1.0.24
+simulated_contact_publisher: /opt/ros/humble/lib/libfastcdr.so.1.0.29
 simulated_contact_publisher: /opt/ros/humble/lib/librmw.so
 simulated_contact_publisher: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_introspection_cpp.so
 simulated_contact_publisher: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_introspection_cpp.so

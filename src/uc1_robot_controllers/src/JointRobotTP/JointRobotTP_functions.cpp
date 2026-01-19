@@ -29,9 +29,26 @@ void JointRobotTP::Update_TRR_JointLimits(){
     if((kuka_sz+ur10_sz) == NDOF){
         // instantiate after for initializing the dimenision
         TP_task_map_["joint_limits"].RefRate.resize((kuka_sz+ur10_sz),1);
-
         TP_task_map_["joint_limits"].RefRate.block(0,0,kuka_sz,1) = kuka_q;
         TP_task_map_["joint_limits"].RefRate.block(kuka_sz,0,ur10_sz,1) = ur10_q;
+
+        //SAVE LOG VAR
+        jq.push_back(TP_task_map_["joint_limits"].RefRate);
+        //SAVE LOG VAR
+
+
+        for(int i=0; i<NDOF; ++i){
+            if(TP_task_map_["joint_limits"].RefRate(i) <= jl_avg_[i]){
+                TP_task_map_["joint_limits"].RefRate(i) = 0.2 * (jl_down_[i]-TP_task_map_["joint_limits"].RefRate(i)+0.01);
+            }else{
+                TP_task_map_["joint_limits"].RefRate(i) = 0.2 * (jl_up_[i]-TP_task_map_["joint_limits"].RefRate(i)-0.01);
+            }
+        }
+
+        //SAVE LOG VAR
+        jl_ref.push_back(TP_task_map_["joint_limits"].RefRate);
+        //SAVE LOG VAR
+
     }else{
         //RCLCPP_ERROR(node_->get_logger(), "JOINT LIMITS Tsk Ref DIM ERROR");
     }
@@ -124,21 +141,29 @@ void JointRobotTP::Update_TRR_MinAlt(){
 void JointRobotTP::Update_AFunc_JointLimits(){
     //RCLCPP_INFO(node_->get_logger(), "--- [Update ACT FUNC Joint Limits] ---");
 
-    // joint limits vectors (12x1)
-    std::vector<double> robot_limits_up = {2.8,2.8,2.8,2.8,2.8,2.8,2.8,2.8,2.8,2.8,2.8,2.8};
-    std::vector<double> robot_limits_low = {-2.8,-2.8,-2.8,-2.8,-2.8,-2.8,-2.8,-2.8,-2.8,-2.8,-2.8,-2.8};
-
     // activation function matrix
     int RefRate_sz = TP_task_map_["joint_limits"].RefRate.size();
     TP_task_map_["joint_limits"].ActMatrix = Eigen::MatrixXd::Zero(RefRate_sz, RefRate_sz);
 
+    Eigen::VectorXd joint_v;
+    joint_v.resize(RefRate_sz);
+    //joint_v.setZero();
+    joint_v.head(RefRate_sz/2) = kuka_robot_->getJointPositions();
+    joint_v.tail(RefRate_sz/2) = ur10_robot_->getJointPositions();
+    
+
     // compute the activation funtion for each joint
-    for (int i=7; i<RefRate_sz; ++i){
-        double incBellVal = ur10_robot_->IncreasingBellShapedFunction(robot_limits_up[i]-0.1,robot_limits_up[i],0.0,1.0, TP_task_map_["joint_limits"].RefRate(i));
-        double decBellVal = ur10_robot_->DecreasingBellShapedFunction(robot_limits_low[i]+0.1,robot_limits_low[i],0.0,1.0, TP_task_map_["joint_limits"].RefRate(i));
+    for (int i=0; i<RefRate_sz; ++i){
+        double incBellVal = ur10_robot_->IncreasingBellShapedFunction(jl_up_[i]-0.1,jl_up_[i],0.0,1.0, joint_v[i]);
+        double decBellVal = ur10_robot_->DecreasingBellShapedFunction(jl_down_[i]+0.1,jl_down_[i],0.0,1.0, joint_v[i]);
 
         TP_task_map_["joint_limits"].ActMatrix(i,i) = incBellVal + decBellVal;
     }
+
+    //SAVE LOG VAR
+    jl_act.push_back(Eigen::MatrixXd(TP_task_map_["joint_limits"].ActMatrix.diagonal()));
+    std::cout << joint_v << std::endl << std::endl;
+    //SAVE LOG VAR
 }
 
 void JointRobotTP::Update_AFunc_EETarget(){

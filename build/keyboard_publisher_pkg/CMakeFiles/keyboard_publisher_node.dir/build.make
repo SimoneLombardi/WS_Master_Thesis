@@ -136,7 +136,7 @@ keyboard_publisher_node: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_types
 keyboard_publisher_node: /opt/ros/humble/lib/librosidl_typesupport_fastrtps_c.so
 keyboard_publisher_node: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_fastrtps_cpp.so
 keyboard_publisher_node: /opt/ros/humble/lib/librosidl_typesupport_fastrtps_cpp.so
-keyboard_publisher_node: /opt/ros/humble/lib/libfastcdr.so.1.0.24
+keyboard_publisher_node: /opt/ros/humble/lib/libfastcdr.so.1.0.29
 keyboard_publisher_node: /opt/ros/humble/lib/librmw.so
 keyboard_publisher_node: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_introspection_c.so
 keyboard_publisher_node: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_introspection_cpp.so

@@ -239,7 +239,7 @@ proximity_task_generator: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesuppo
 proximity_task_generator: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_fastrtps_cpp.so
 proximity_task_generator: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_fastrtps_cpp.so
 proximity_task_generator: /opt/ros/humble/lib/librosidl_typesupport_fastrtps_cpp.so
-proximity_task_generator: /opt/ros/humble/lib/libfastcdr.so.1.0.24
+proximity_task_generator: /opt/ros/humble/lib/libfastcdr.so.1.0.29
 proximity_task_generator: /opt/ros/humble/lib/librmw.so
 proximity_task_generator: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_introspection_c.so
 proximity_task_generator: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_introspection_c.so

@@ -1,0 +1,820 @@
+[0.048s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--cmake-clean-cache']
+[0.048s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=32, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=True, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x70e3efe51ba0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x70e3efe51510>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x70e3efe51510>>, mixin_verb=('build',))
+[0.122s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.122s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.122s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.122s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.122s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.122s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.122s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis'
+[0.122s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.122s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.122s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.122s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.122s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.122s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.122s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.122s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.122s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(src/environment_pointcloud_processing) by extensions ['ignore', 'ignore_ament_install']
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(src/environment_pointcloud_processing) by extension 'ignore'
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(src/environment_pointcloud_processing) by extension 'ignore_ament_install'
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(src/environment_pointcloud_processing) by extensions ['colcon_pkg']
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(src/environment_pointcloud_processing) by extension 'colcon_pkg'
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(src/environment_pointcloud_processing) by extensions ['colcon_meta']
+[0.127s] Level 1:colcon.colcon_core.package_identification:_identify(src/environment_pointcloud_processing) by extension 'colcon_meta'
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(src/environment_pointcloud_processing) by extensions ['ros']
+[0.128s] Level 1:colcon.colcon_core.package_identification:_identify(src/environment_pointcloud_processing) by extension 'ros'
+[0.129s] DEBUG:colcon.colcon_core.package_identification:Package 'src/environment_pointcloud_processing' with type 'ros.ament_cmake' and name 'environment_pointcloud_processing'
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src/keyboard_events_publisher) by extensions ['ignore', 'ignore_ament_install']
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src/keyboard_events_publisher) by extension 'ignore'
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src/keyboard_events_publisher) by extension 'ignore_ament_install'
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src/keyboard_events_publisher) by extensions ['colcon_pkg']
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src/keyboard_events_publisher) by extension 'colcon_pkg'
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src/keyboard_events_publisher) by extensions ['colcon_meta']
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src/keyboard_events_publisher) by extension 'colcon_meta'
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src/keyboard_events_publisher) by extensions ['ros']
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src/keyboard_events_publisher) by extension 'ros'
+[0.129s] DEBUG:colcon.colcon_core.package_identification:Package 'src/keyboard_events_publisher' with type 'ros.ament_cmake' and name 'keyboard_publisher_pkg'
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src/kuka_150_3100_description) by extensions ['ignore', 'ignore_ament_install']
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src/kuka_150_3100_description) by extension 'ignore'
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src/kuka_150_3100_description) by extension 'ignore_ament_install'
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src/kuka_150_3100_description) by extensions ['colcon_pkg']
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src/kuka_150_3100_description) by extension 'colcon_pkg'
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src/kuka_150_3100_description) by extensions ['colcon_meta']
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src/kuka_150_3100_description) by extension 'colcon_meta'
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src/kuka_150_3100_description) by extensions ['ros']
+[0.129s] Level 1:colcon.colcon_core.package_identification:_identify(src/kuka_150_3100_description) by extension 'ros'
+[0.130s] DEBUG:colcon.colcon_core.package_identification:Package 'src/kuka_150_3100_description' with type 'ros.ament_cmake' and name 'kuka_150_3100_description'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/kuka_resources) by extensions ['ignore', 'ignore_ament_install']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/kuka_resources) by extension 'ignore'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/kuka_resources) by extension 'ignore_ament_install'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/kuka_resources) by extensions ['colcon_pkg']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/kuka_resources) by extension 'colcon_pkg'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/kuka_resources) by extensions ['colcon_meta']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/kuka_resources) by extension 'colcon_meta'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/kuka_resources) by extensions ['ros']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/kuka_resources) by extension 'ros'
+[0.130s] DEBUG:colcon.colcon_core.package_identification:Package 'src/kuka_resources' with type 'ros.ament_cmake' and name 'kuka_resources'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/pointcloud_interactive_markers) by extensions ['ignore', 'ignore_ament_install']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/pointcloud_interactive_markers) by extension 'ignore'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/pointcloud_interactive_markers) by extension 'ignore_ament_install'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/pointcloud_interactive_markers) by extensions ['colcon_pkg']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/pointcloud_interactive_markers) by extension 'colcon_pkg'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/pointcloud_interactive_markers) by extensions ['colcon_meta']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/pointcloud_interactive_markers) by extension 'colcon_meta'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/pointcloud_interactive_markers) by extensions ['ros']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(src/pointcloud_interactive_markers) by extension 'ros'
+[0.131s] DEBUG:colcon.colcon_core.package_identification:Package 'src/pointcloud_interactive_markers' with type 'ros.ament_cmake' and name 'pointcloud_interactive_markers'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/rsp_uc1) by extensions ['ignore', 'ignore_ament_install']
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/rsp_uc1) by extension 'ignore'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/rsp_uc1) by extension 'ignore_ament_install'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/rsp_uc1) by extensions ['colcon_pkg']
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/rsp_uc1) by extension 'colcon_pkg'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/rsp_uc1) by extensions ['colcon_meta']
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/rsp_uc1) by extension 'colcon_meta'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/rsp_uc1) by extensions ['ros']
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/rsp_uc1) by extension 'ros'
+[0.131s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rsp_uc1' with type 'ros.ament_cmake' and name 'rsp_uc1'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_controllers) by extensions ['ignore', 'ignore_ament_install']
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_controllers) by extension 'ignore'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_controllers) by extension 'ignore_ament_install'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_controllers) by extensions ['colcon_pkg']
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_controllers) by extension 'colcon_pkg'
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_controllers) by extensions ['colcon_meta']
+[0.131s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_controllers) by extension 'colcon_meta'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_controllers) by extensions ['ros']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_controllers) by extension 'ros'
+[0.132s] DEBUG:colcon.colcon_core.package_identification:Package 'src/uc1_robot_controllers' with type 'ros.ament_cmake' and name 'uc1_robot_controllers'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_controllers_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_controllers_interfaces) by extension 'ignore'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_controllers_interfaces) by extension 'ignore_ament_install'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_controllers_interfaces) by extensions ['colcon_pkg']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_controllers_interfaces) by extension 'colcon_pkg'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_controllers_interfaces) by extensions ['colcon_meta']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_controllers_interfaces) by extension 'colcon_meta'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_controllers_interfaces) by extensions ['ros']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_controllers_interfaces) by extension 'ros'
+[0.133s] DEBUG:colcon.colcon_core.package_identification:Package 'src/uc1_robot_controllers_interfaces' with type 'ros.ament_cmake' and name 'uc1_robot_controllers_interfaces'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_perception) by extensions ['ignore', 'ignore_ament_install']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_perception) by extension 'ignore'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_perception) by extension 'ignore_ament_install'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_perception) by extensions ['colcon_pkg']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_perception) by extension 'colcon_pkg'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_perception) by extensions ['colcon_meta']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_perception) by extension 'colcon_meta'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_perception) by extensions ['ros']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robot_perception) by extension 'ros'
+[0.133s] DEBUG:colcon.colcon_core.package_identification:Package 'src/uc1_robot_perception' with type 'ros.ament_cmake' and name 'uc1_robot_perception'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robots_description) by extensions ['ignore', 'ignore_ament_install']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robots_description) by extension 'ignore'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robots_description) by extension 'ignore_ament_install'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robots_description) by extensions ['colcon_pkg']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robots_description) by extension 'colcon_pkg'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robots_description) by extensions ['colcon_meta']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robots_description) by extension 'colcon_meta'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robots_description) by extensions ['ros']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(src/uc1_robots_description) by extension 'ros'
+[0.134s] DEBUG:colcon.colcon_core.package_identification:Package 'src/uc1_robots_description' with type 'ros.ament_cmake' and name 'uc1_robots_description'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_admittance_controller) by extensions ['ignore', 'ignore_ament_install']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_admittance_controller) by extension 'ignore'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_admittance_controller) by extension 'ignore_ament_install'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_admittance_controller) by extensions ['colcon_pkg']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_admittance_controller) by extension 'colcon_pkg'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_admittance_controller) by extensions ['colcon_meta']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_admittance_controller) by extension 'colcon_meta'
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_admittance_controller) by extensions ['ros']
+[0.134s] Level 1:colcon.colcon_core.package_identification:_identify(src/ur_admittance_controller) by extension 'ros'
+[0.135s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ur_admittance_controller' with type 'ros.ament_cmake' and name 'ur_admittance_controller'
+[0.135s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.135s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.135s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.153s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.153s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.157s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 313 installed packages in /opt/ros/humble
+[0.160s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'environment_pointcloud_processing' build argument 'cmake_args' from command line to 'None'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'environment_pointcloud_processing' build argument 'cmake_target' from command line to 'None'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'environment_pointcloud_processing' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'environment_pointcloud_processing' build argument 'cmake_clean_cache' from command line to 'True'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'environment_pointcloud_processing' build argument 'cmake_clean_first' from command line to 'False'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'environment_pointcloud_processing' build argument 'cmake_force_configure' from command line to 'False'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'environment_pointcloud_processing' build argument 'ament_cmake_args' from command line to 'None'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'environment_pointcloud_processing' build argument 'catkin_cmake_args' from command line to 'None'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'environment_pointcloud_processing' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.197s] DEBUG:colcon.colcon_core.verb:Building package 'environment_pointcloud_processing' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': True, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing', 'merge_install': False, 'path': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/environment_pointcloud_processing', 'symlink_install': False, 'test_result_base': None}
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'keyboard_publisher_pkg' build argument 'cmake_args' from command line to 'None'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'keyboard_publisher_pkg' build argument 'cmake_target' from command line to 'None'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'keyboard_publisher_pkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'keyboard_publisher_pkg' build argument 'cmake_clean_cache' from command line to 'True'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'keyboard_publisher_pkg' build argument 'cmake_clean_first' from command line to 'False'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'keyboard_publisher_pkg' build argument 'cmake_force_configure' from command line to 'False'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'keyboard_publisher_pkg' build argument 'ament_cmake_args' from command line to 'None'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'keyboard_publisher_pkg' build argument 'catkin_cmake_args' from command line to 'None'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'keyboard_publisher_pkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.197s] DEBUG:colcon.colcon_core.verb:Building package 'keyboard_publisher_pkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/keyboard_publisher_pkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': True, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg', 'merge_install': False, 'path': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/keyboard_events_publisher', 'symlink_install': False, 'test_result_base': None}
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'kuka_150_3100_description' build argument 'cmake_args' from command line to 'None'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'kuka_150_3100_description' build argument 'cmake_target' from command line to 'None'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'kuka_150_3100_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'kuka_150_3100_description' build argument 'cmake_clean_cache' from command line to 'True'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'kuka_150_3100_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'kuka_150_3100_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'kuka_150_3100_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'kuka_150_3100_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.197s] Level 5:colcon.colcon_core.verb:set package 'kuka_150_3100_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.197s] DEBUG:colcon.colcon_core.verb:Building package 'kuka_150_3100_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_150_3100_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': True, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description', 'merge_install': False, 'path': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/kuka_150_3100_description', 'symlink_install': False, 'test_result_base': None}
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'kuka_resources' build argument 'cmake_args' from command line to 'None'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'kuka_resources' build argument 'cmake_target' from command line to 'None'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'kuka_resources' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'kuka_resources' build argument 'cmake_clean_cache' from command line to 'True'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'kuka_resources' build argument 'cmake_clean_first' from command line to 'False'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'kuka_resources' build argument 'cmake_force_configure' from command line to 'False'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'kuka_resources' build argument 'ament_cmake_args' from command line to 'None'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'kuka_resources' build argument 'catkin_cmake_args' from command line to 'None'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'kuka_resources' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.198s] DEBUG:colcon.colcon_core.verb:Building package 'kuka_resources' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_resources', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': True, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources', 'merge_install': False, 'path': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/kuka_resources', 'symlink_install': False, 'test_result_base': None}
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'pointcloud_interactive_markers' build argument 'cmake_args' from command line to 'None'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'pointcloud_interactive_markers' build argument 'cmake_target' from command line to 'None'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'pointcloud_interactive_markers' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'pointcloud_interactive_markers' build argument 'cmake_clean_cache' from command line to 'True'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'pointcloud_interactive_markers' build argument 'cmake_clean_first' from command line to 'False'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'pointcloud_interactive_markers' build argument 'cmake_force_configure' from command line to 'False'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'pointcloud_interactive_markers' build argument 'ament_cmake_args' from command line to 'None'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'pointcloud_interactive_markers' build argument 'catkin_cmake_args' from command line to 'None'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'pointcloud_interactive_markers' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.198s] DEBUG:colcon.colcon_core.verb:Building package 'pointcloud_interactive_markers' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/pointcloud_interactive_markers', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': True, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers', 'merge_install': False, 'path': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/pointcloud_interactive_markers', 'symlink_install': False, 'test_result_base': None}
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'rsp_uc1' build argument 'cmake_args' from command line to 'None'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'rsp_uc1' build argument 'cmake_target' from command line to 'None'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'rsp_uc1' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'rsp_uc1' build argument 'cmake_clean_cache' from command line to 'True'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'rsp_uc1' build argument 'cmake_clean_first' from command line to 'False'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'rsp_uc1' build argument 'cmake_force_configure' from command line to 'False'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'rsp_uc1' build argument 'ament_cmake_args' from command line to 'None'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'rsp_uc1' build argument 'catkin_cmake_args' from command line to 'None'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'rsp_uc1' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.198s] DEBUG:colcon.colcon_core.verb:Building package 'rsp_uc1' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/rsp_uc1', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': True, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1', 'merge_install': False, 'path': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/rsp_uc1', 'symlink_install': False, 'test_result_base': None}
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_controllers_interfaces' build argument 'cmake_args' from command line to 'None'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_controllers_interfaces' build argument 'cmake_target' from command line to 'None'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_controllers_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_controllers_interfaces' build argument 'cmake_clean_cache' from command line to 'True'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_controllers_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_controllers_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_controllers_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_controllers_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_controllers_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.198s] DEBUG:colcon.colcon_core.verb:Building package 'uc1_robot_controllers_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': True, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces', 'merge_install': False, 'path': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers_interfaces', 'symlink_install': False, 'test_result_base': None}
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_perception' build argument 'cmake_args' from command line to 'None'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_perception' build argument 'cmake_target' from command line to 'None'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_perception' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_perception' build argument 'cmake_clean_cache' from command line to 'True'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_perception' build argument 'cmake_clean_first' from command line to 'False'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_perception' build argument 'cmake_force_configure' from command line to 'False'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_perception' build argument 'ament_cmake_args' from command line to 'None'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_perception' build argument 'catkin_cmake_args' from command line to 'None'
+[0.198s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_perception' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.198s] DEBUG:colcon.colcon_core.verb:Building package 'uc1_robot_perception' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_perception', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': True, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception', 'merge_install': False, 'path': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception', 'symlink_install': False, 'test_result_base': None}
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'uc1_robots_description' build argument 'cmake_args' from command line to 'None'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'uc1_robots_description' build argument 'cmake_target' from command line to 'None'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'uc1_robots_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'uc1_robots_description' build argument 'cmake_clean_cache' from command line to 'True'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'uc1_robots_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'uc1_robots_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'uc1_robots_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'uc1_robots_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'uc1_robots_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.199s] DEBUG:colcon.colcon_core.verb:Building package 'uc1_robots_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robots_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': True, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description', 'merge_install': False, 'path': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robots_description', 'symlink_install': False, 'test_result_base': None}
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'ur_admittance_controller' build argument 'cmake_args' from command line to 'None'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'ur_admittance_controller' build argument 'cmake_target' from command line to 'None'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'ur_admittance_controller' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'ur_admittance_controller' build argument 'cmake_clean_cache' from command line to 'True'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'ur_admittance_controller' build argument 'cmake_clean_first' from command line to 'False'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'ur_admittance_controller' build argument 'cmake_force_configure' from command line to 'False'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'ur_admittance_controller' build argument 'ament_cmake_args' from command line to 'None'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'ur_admittance_controller' build argument 'catkin_cmake_args' from command line to 'None'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'ur_admittance_controller' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.199s] DEBUG:colcon.colcon_core.verb:Building package 'ur_admittance_controller' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/ur_admittance_controller', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': True, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller', 'merge_install': False, 'path': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/ur_admittance_controller', 'symlink_install': False, 'test_result_base': None}
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_controllers' build argument 'cmake_args' from command line to 'None'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_controllers' build argument 'cmake_target' from command line to 'None'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_controllers' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_controllers' build argument 'cmake_clean_cache' from command line to 'True'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_controllers' build argument 'cmake_clean_first' from command line to 'False'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_controllers' build argument 'cmake_force_configure' from command line to 'False'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_controllers' build argument 'ament_cmake_args' from command line to 'None'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_controllers' build argument 'catkin_cmake_args' from command line to 'None'
+[0.199s] Level 5:colcon.colcon_core.verb:set package 'uc1_robot_controllers' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.199s] DEBUG:colcon.colcon_core.verb:Building package 'uc1_robot_controllers' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': True, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers', 'merge_install': False, 'path': '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers', 'symlink_install': False, 'test_result_base': None}
+[0.199s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.200s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.201s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers_interfaces' with build type 'ament_cmake'
+[0.201s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers_interfaces'
+[0.202s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.203s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.203s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.205s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception' with build type 'ament_cmake'
+[0.205s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception'
+[0.205s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.205s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.207s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/environment_pointcloud_processing' with build type 'ament_cmake'
+[0.207s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/environment_pointcloud_processing'
+[0.207s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.207s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.208s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/keyboard_events_publisher' with build type 'ament_cmake'
+[0.208s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/keyboard_events_publisher'
+[0.208s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.208s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.209s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/kuka_150_3100_description' with build type 'ament_cmake'
+[0.209s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/kuka_150_3100_description'
+[0.209s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.209s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.212s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/kuka_resources' with build type 'ament_cmake'
+[0.213s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/kuka_resources'
+[0.213s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.213s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.216s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/pointcloud_interactive_markers' with build type 'ament_cmake'
+[0.216s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/pointcloud_interactive_markers'
+[0.216s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.216s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.218s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/rsp_uc1' with build type 'ament_cmake'
+[0.218s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/rsp_uc1'
+[0.218s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.218s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.220s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robots_description' with build type 'ament_cmake'
+[0.220s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robots_description'
+[0.220s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.220s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.222s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/ur_admittance_controller' with build type 'ament_cmake'
+[0.222s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/ur_admittance_controller'
+[0.222s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.222s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.225s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers_interfaces -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces
+[0.230s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_perception': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception
+[0.231s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/environment_pointcloud_processing -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing
+[0.233s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/keyboard_publisher_pkg': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/keyboard_events_publisher -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg
+[0.234s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_150_3100_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/kuka_150_3100_description -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description
+[0.236s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_resources': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/kuka_resources -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources
+[0.237s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/pointcloud_interactive_markers': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/pointcloud_interactive_markers -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers
+[0.238s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/rsp_uc1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/rsp_uc1 -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1
+[0.240s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robots_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robots_description -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description
+[0.247s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/ur_admittance_controller': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/ur_admittance_controller -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller
+[0.602s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_150_3100_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/kuka_150_3100_description -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description
+[0.603s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_150_3100_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_150_3100_description -- -j32 -l32
+[0.604s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robots_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robots_description -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description
+[0.605s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robots_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robots_description -- -j32 -l32
+[0.623s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_150_3100_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_150_3100_description -- -j32 -l32
+[0.629s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_150_3100_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_150_3100_description
+[0.630s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robots_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robots_description -- -j32 -l32
+[0.632s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robots_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robots_description
+[0.644s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_resources' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/kuka_resources -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources
+[0.645s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_resources': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_resources -- -j32 -l32
+[0.657s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(kuka_150_3100_description)
+[0.659s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_150_3100_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_150_3100_description
+[0.660s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description' for CMake module files
+[0.661s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description' for CMake config files
+[0.661s] Level 1:colcon.colcon_core.shell:create_environment_hook('kuka_150_3100_description', 'cmake_prefix_path')
+[0.661s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/share/kuka_150_3100_description/hook/cmake_prefix_path.ps1'
+[0.661s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/share/kuka_150_3100_description/hook/cmake_prefix_path.dsv'
+[0.662s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/share/kuka_150_3100_description/hook/cmake_prefix_path.sh'
+[0.662s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/bin'
+[0.662s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/lib/pkgconfig/kuka_150_3100_description.pc'
+[0.663s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/lib/python3.10/site-packages'
+[0.663s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/bin'
+[0.663s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/share/kuka_150_3100_description/package.ps1'
+[0.664s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/share/kuka_150_3100_description/package.dsv'
+[0.664s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/share/kuka_150_3100_description/package.sh'
+[0.665s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/share/kuka_150_3100_description/package.bash'
+[0.665s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/share/kuka_150_3100_description/package.zsh'
+[0.666s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/share/colcon-core/packages/kuka_150_3100_description)
+[0.666s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(kuka_150_3100_description)
+[0.666s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description' for CMake module files
+[0.667s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description' for CMake config files
+[0.667s] Level 1:colcon.colcon_core.shell:create_environment_hook('kuka_150_3100_description', 'cmake_prefix_path')
+[0.667s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/share/kuka_150_3100_description/hook/cmake_prefix_path.ps1'
+[0.667s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/share/kuka_150_3100_description/hook/cmake_prefix_path.dsv'
+[0.667s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/share/kuka_150_3100_description/hook/cmake_prefix_path.sh'
+[0.668s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/bin'
+[0.668s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/lib/pkgconfig/kuka_150_3100_description.pc'
+[0.668s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/lib/python3.10/site-packages'
+[0.668s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/bin'
+[0.668s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/share/kuka_150_3100_description/package.ps1'
+[0.669s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/share/kuka_150_3100_description/package.dsv'
+[0.669s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/share/kuka_150_3100_description/package.sh'
+[0.670s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/share/kuka_150_3100_description/package.bash'
+[0.670s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/share/kuka_150_3100_description/package.zsh'
+[0.670s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_150_3100_description/share/colcon-core/packages/kuka_150_3100_description)
+[0.676s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_resources' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_resources -- -j32 -l32
+[0.677s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_resources': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_resources
+[0.682s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(kuka_resources)
+[0.682s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources' for CMake module files
+[0.683s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources' for CMake config files
+[0.683s] Level 1:colcon.colcon_core.shell:create_environment_hook('kuka_resources', 'cmake_prefix_path')
+[0.683s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/hook/cmake_prefix_path.ps1'
+[0.683s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/hook/cmake_prefix_path.dsv'
+[0.683s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/hook/cmake_prefix_path.sh'
+[0.684s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/bin'
+[0.684s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/lib/pkgconfig/kuka_resources.pc'
+[0.684s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/lib/python3.10/site-packages'
+[0.684s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/bin'
+[0.684s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/package.ps1'
+[0.685s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/package.dsv'
+[0.685s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/package.sh'
+[0.685s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/package.bash'
+[0.685s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/package.zsh'
+[0.685s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_resources' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/kuka_resources
+[0.686s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/colcon-core/packages/kuka_resources)
+[0.686s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(kuka_resources)
+[0.686s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources' for CMake module files
+[0.687s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources' for CMake config files
+[0.687s] Level 1:colcon.colcon_core.shell:create_environment_hook('kuka_resources', 'cmake_prefix_path')
+[0.687s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/hook/cmake_prefix_path.ps1'
+[0.687s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/hook/cmake_prefix_path.dsv'
+[0.688s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/hook/cmake_prefix_path.sh'
+[0.688s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/bin'
+[0.688s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/lib/pkgconfig/kuka_resources.pc'
+[0.688s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/lib/python3.10/site-packages'
+[0.689s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/bin'
+[0.689s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/package.ps1'
+[0.690s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/package.dsv'
+[0.690s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/package.sh'
+[0.690s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/package.bash'
+[0.691s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/kuka_resources/package.zsh'
+[0.692s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/kuka_resources/share/colcon-core/packages/kuka_resources)
+[0.694s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(uc1_robots_description)
+[0.695s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description' for CMake module files
+[0.695s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robots_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robots_description
+[0.695s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description' for CMake config files
+[0.695s] Level 1:colcon.colcon_core.shell:create_environment_hook('uc1_robots_description', 'cmake_prefix_path')
+[0.696s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/share/uc1_robots_description/hook/cmake_prefix_path.ps1'
+[0.696s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/share/uc1_robots_description/hook/cmake_prefix_path.dsv'
+[0.696s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/share/uc1_robots_description/hook/cmake_prefix_path.sh'
+[0.696s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/bin'
+[0.696s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/lib/pkgconfig/uc1_robots_description.pc'
+[0.697s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/lib/python3.10/site-packages'
+[0.697s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/bin'
+[0.697s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/share/uc1_robots_description/package.ps1'
+[0.697s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/share/uc1_robots_description/package.dsv'
+[0.698s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/share/uc1_robots_description/package.sh'
+[0.698s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/share/uc1_robots_description/package.bash'
+[0.698s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/share/uc1_robots_description/package.zsh'
+[0.699s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/share/colcon-core/packages/uc1_robots_description)
+[0.699s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(uc1_robots_description)
+[0.700s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description' for CMake module files
+[0.700s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description' for CMake config files
+[0.700s] Level 1:colcon.colcon_core.shell:create_environment_hook('uc1_robots_description', 'cmake_prefix_path')
+[0.700s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/share/uc1_robots_description/hook/cmake_prefix_path.ps1'
+[0.701s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/share/uc1_robots_description/hook/cmake_prefix_path.dsv'
+[0.701s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/share/uc1_robots_description/hook/cmake_prefix_path.sh'
+[0.701s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/bin'
+[0.701s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/lib/pkgconfig/uc1_robots_description.pc'
+[0.702s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/lib/python3.10/site-packages'
+[0.702s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/bin'
+[0.702s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/share/uc1_robots_description/package.ps1'
+[0.702s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/share/uc1_robots_description/package.dsv'
+[0.703s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/share/uc1_robots_description/package.sh'
+[0.703s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/share/uc1_robots_description/package.bash'
+[0.704s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/share/uc1_robots_description/package.zsh'
+[0.704s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robots_description/share/colcon-core/packages/uc1_robots_description)
+[0.917s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/keyboard_publisher_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/keyboard_events_publisher -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg
+[0.918s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/keyboard_publisher_pkg': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/keyboard_publisher_pkg -- -j32 -l32
+[1.102s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/rsp_uc1' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/rsp_uc1 -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1
+[1.103s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/rsp_uc1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/rsp_uc1 -- -j32 -l32
+[1.633s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers_interfaces -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces
+[1.636s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers_interfaces -- -j32 -l32
+[2.322s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/ur_admittance_controller' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/ur_admittance_controller -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller
+[2.323s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/ur_admittance_controller': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/ur_admittance_controller -- -j32 -l32
+[2.332s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/environment_pointcloud_processing -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing
+[2.332s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing -- -j32 -l32
+[2.389s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/pointcloud_interactive_markers' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/pointcloud_interactive_markers -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers
+[2.390s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/pointcloud_interactive_markers': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/pointcloud_interactive_markers -- -j32 -l32
+[3.282s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_perception' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_perception -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception
+[3.283s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_perception': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_perception -- -j32 -l32
+[5.185s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/keyboard_publisher_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/keyboard_publisher_pkg -- -j32 -l32
+[5.189s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/keyboard_publisher_pkg': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/keyboard_publisher_pkg
+[5.198s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(keyboard_publisher_pkg)
+[5.198s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg' for CMake module files
+[5.199s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg' for CMake config files
+[5.199s] Level 1:colcon.colcon_core.shell:create_environment_hook('keyboard_publisher_pkg', 'cmake_prefix_path')
+[5.199s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/hook/cmake_prefix_path.ps1'
+[5.199s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/hook/cmake_prefix_path.dsv'
+[5.200s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/hook/cmake_prefix_path.sh'
+[5.200s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/lib'
+[5.200s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/bin'
+[5.200s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/lib/pkgconfig/keyboard_publisher_pkg.pc'
+[5.201s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/lib/python3.10/site-packages'
+[5.201s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/bin'
+[5.201s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/package.ps1'
+[5.201s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/keyboard_publisher_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/keyboard_publisher_pkg
+[5.203s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/package.dsv'
+[5.203s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/package.sh'
+[5.204s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/package.bash'
+[5.204s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/package.zsh'
+[5.204s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/colcon-core/packages/keyboard_publisher_pkg)
+[5.205s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(keyboard_publisher_pkg)
+[5.205s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg' for CMake module files
+[5.205s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg' for CMake config files
+[5.206s] Level 1:colcon.colcon_core.shell:create_environment_hook('keyboard_publisher_pkg', 'cmake_prefix_path')
+[5.206s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/hook/cmake_prefix_path.ps1'
+[5.206s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/hook/cmake_prefix_path.dsv'
+[5.206s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/hook/cmake_prefix_path.sh'
+[5.207s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/lib'
+[5.207s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/bin'
+[5.207s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/lib/pkgconfig/keyboard_publisher_pkg.pc'
+[5.207s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/lib/python3.10/site-packages'
+[5.207s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/bin'
+[5.208s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/package.ps1'
+[5.209s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/package.dsv'
+[5.209s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/package.sh'
+[5.209s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/package.bash'
+[5.210s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/keyboard_publisher_pkg/package.zsh'
+[5.210s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/keyboard_publisher_pkg/share/colcon-core/packages/keyboard_publisher_pkg)
+[11.837s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/pointcloud_interactive_markers' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/pointcloud_interactive_markers -- -j32 -l32
+[11.838s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/pointcloud_interactive_markers': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/pointcloud_interactive_markers
+[11.854s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(pointcloud_interactive_markers)
+[11.854s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers' for CMake module files
+[11.854s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/pointcloud_interactive_markers' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/pointcloud_interactive_markers
+[11.855s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers' for CMake config files
+[11.855s] Level 1:colcon.colcon_core.shell:create_environment_hook('pointcloud_interactive_markers', 'cmake_prefix_path')
+[11.855s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/hook/cmake_prefix_path.ps1'
+[11.855s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/hook/cmake_prefix_path.dsv'
+[11.855s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/hook/cmake_prefix_path.sh'
+[11.855s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/lib'
+[11.856s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/bin'
+[11.856s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/lib/pkgconfig/pointcloud_interactive_markers.pc'
+[11.856s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/lib/python3.10/site-packages'
+[11.856s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/bin'
+[11.856s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/package.ps1'
+[11.856s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/package.dsv'
+[11.857s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/package.sh'
+[11.857s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/package.bash'
+[11.857s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/package.zsh'
+[11.857s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/colcon-core/packages/pointcloud_interactive_markers)
+[11.857s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(pointcloud_interactive_markers)
+[11.858s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers' for CMake module files
+[11.858s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers' for CMake config files
+[11.858s] Level 1:colcon.colcon_core.shell:create_environment_hook('pointcloud_interactive_markers', 'cmake_prefix_path')
+[11.858s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/hook/cmake_prefix_path.ps1'
+[11.858s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/hook/cmake_prefix_path.dsv'
+[11.858s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/hook/cmake_prefix_path.sh'
+[11.859s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/lib'
+[11.859s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/bin'
+[11.859s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/lib/pkgconfig/pointcloud_interactive_markers.pc'
+[11.859s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/lib/python3.10/site-packages'
+[11.859s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/bin'
+[11.859s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/package.ps1'
+[11.859s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/package.dsv'
+[11.860s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/package.sh'
+[11.860s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/package.bash'
+[11.860s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/pointcloud_interactive_markers/package.zsh'
+[11.860s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/pointcloud_interactive_markers/share/colcon-core/packages/pointcloud_interactive_markers)
+[11.907s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/rsp_uc1' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/rsp_uc1 -- -j32 -l32
+[11.908s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/rsp_uc1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/rsp_uc1
+[11.922s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rsp_uc1)
+[11.922s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1' for CMake module files
+[11.922s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/rsp_uc1' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/rsp_uc1
+[11.923s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1' for CMake config files
+[11.923s] Level 1:colcon.colcon_core.shell:create_environment_hook('rsp_uc1', 'cmake_prefix_path')
+[11.923s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/hook/cmake_prefix_path.ps1'
+[11.923s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/hook/cmake_prefix_path.dsv'
+[11.924s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/hook/cmake_prefix_path.sh'
+[11.924s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/lib'
+[11.924s] Level 1:colcon.colcon_core.shell:create_environment_hook('rsp_uc1', 'ld_library_path_lib')
+[11.924s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/hook/ld_library_path_lib.ps1'
+[11.925s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/hook/ld_library_path_lib.dsv'
+[11.925s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/hook/ld_library_path_lib.sh'
+[11.925s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/bin'
+[11.925s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/lib/pkgconfig/rsp_uc1.pc'
+[11.925s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/lib/python3.10/site-packages'
+[11.926s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/bin'
+[11.926s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/package.ps1'
+[11.926s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/package.dsv'
+[11.926s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/package.sh'
+[11.927s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/package.bash'
+[11.927s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/package.zsh'
+[11.927s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/colcon-core/packages/rsp_uc1)
+[11.928s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rsp_uc1)
+[11.928s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1' for CMake module files
+[11.928s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1' for CMake config files
+[11.928s] Level 1:colcon.colcon_core.shell:create_environment_hook('rsp_uc1', 'cmake_prefix_path')
+[11.928s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/hook/cmake_prefix_path.ps1'
+[11.929s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/hook/cmake_prefix_path.dsv'
+[11.929s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/hook/cmake_prefix_path.sh'
+[11.929s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/lib'
+[11.929s] Level 1:colcon.colcon_core.shell:create_environment_hook('rsp_uc1', 'ld_library_path_lib')
+[11.929s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/hook/ld_library_path_lib.ps1'
+[11.930s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/hook/ld_library_path_lib.dsv'
+[11.930s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/hook/ld_library_path_lib.sh'
+[11.930s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/bin'
+[11.930s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/lib/pkgconfig/rsp_uc1.pc'
+[11.930s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/lib/python3.10/site-packages'
+[11.931s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/bin'
+[11.931s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/package.ps1'
+[11.931s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/package.dsv'
+[11.931s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/package.sh'
+[11.931s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/package.bash'
+[11.932s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/rsp_uc1/package.zsh'
+[11.932s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/rsp_uc1/share/colcon-core/packages/rsp_uc1)
+[12.254s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing -- -j32 -l32
+[12.259s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing
+[12.267s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(environment_pointcloud_processing)
+[12.268s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing' for CMake module files
+[12.268s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing' for CMake config files
+[12.268s] Level 1:colcon.colcon_core.shell:create_environment_hook('environment_pointcloud_processing', 'cmake_prefix_path')
+[12.268s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/hook/cmake_prefix_path.ps1'
+[12.268s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/hook/cmake_prefix_path.dsv'
+[12.269s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/hook/cmake_prefix_path.sh'
+[12.269s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/lib'
+[12.269s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/bin'
+[12.269s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/lib/pkgconfig/environment_pointcloud_processing.pc'
+[12.269s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/lib/python3.10/site-packages'
+[12.269s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/bin'
+[12.269s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/package.ps1'
+[12.270s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/package.dsv'
+[12.270s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/package.sh'
+[12.270s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/package.bash'
+[12.270s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/package.zsh'
+[12.270s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/colcon-core/packages/environment_pointcloud_processing)
+[12.271s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(environment_pointcloud_processing)
+[12.271s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing' for CMake module files
+[12.271s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing' for CMake config files
+[12.271s] Level 1:colcon.colcon_core.shell:create_environment_hook('environment_pointcloud_processing', 'cmake_prefix_path')
+[12.271s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/hook/cmake_prefix_path.ps1'
+[12.272s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/environment_pointcloud_processing
+[12.272s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/hook/cmake_prefix_path.dsv'
+[12.272s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/hook/cmake_prefix_path.sh'
+[12.272s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/lib'
+[12.272s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/bin'
+[12.272s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/lib/pkgconfig/environment_pointcloud_processing.pc'
+[12.272s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/lib/python3.10/site-packages'
+[12.273s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/bin'
+[12.273s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/package.ps1'
+[12.273s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/package.dsv'
+[12.273s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/package.sh'
+[12.273s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/package.bash'
+[12.274s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/environment_pointcloud_processing/package.zsh'
+[12.274s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/environment_pointcloud_processing/share/colcon-core/packages/environment_pointcloud_processing)
+[14.304s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers_interfaces -- -j32 -l32
+[14.305s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers_interfaces
+[14.356s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(uc1_robot_controllers_interfaces)
+[14.356s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces' for CMake module files
+[14.356s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers_interfaces
+[14.356s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces' for CMake config files
+[14.356s] Level 1:colcon.colcon_core.shell:create_environment_hook('uc1_robot_controllers_interfaces', 'cmake_prefix_path')
+[14.357s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/uc1_robot_controllers_interfaces/hook/cmake_prefix_path.ps1'
+[14.357s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/uc1_robot_controllers_interfaces/hook/cmake_prefix_path.dsv'
+[14.357s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/uc1_robot_controllers_interfaces/hook/cmake_prefix_path.sh'
+[14.357s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib'
+[14.357s] Level 1:colcon.colcon_core.shell:create_environment_hook('uc1_robot_controllers_interfaces', 'ld_library_path_lib')
+[14.357s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/uc1_robot_controllers_interfaces/hook/ld_library_path_lib.ps1'
+[14.357s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/uc1_robot_controllers_interfaces/hook/ld_library_path_lib.dsv'
+[14.357s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/uc1_robot_controllers_interfaces/hook/ld_library_path_lib.sh'
+[14.358s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/bin'
+[14.358s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib/pkgconfig/uc1_robot_controllers_interfaces.pc'
+[14.358s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib/python3.10/site-packages'
+[14.358s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/bin'
+[14.358s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/uc1_robot_controllers_interfaces/package.ps1'
+[14.358s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/uc1_robot_controllers_interfaces/package.dsv'
+[14.358s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/uc1_robot_controllers_interfaces/package.sh'
+[14.358s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/uc1_robot_controllers_interfaces/package.bash'
+[14.359s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/uc1_robot_controllers_interfaces/package.zsh'
+[14.359s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/colcon-core/packages/uc1_robot_controllers_interfaces)
+[14.359s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(uc1_robot_controllers_interfaces)
+[14.359s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces' for CMake module files
+[14.359s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces' for CMake config files
+[14.359s] Level 1:colcon.colcon_core.shell:create_environment_hook('uc1_robot_controllers_interfaces', 'cmake_prefix_path')
+[14.359s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/uc1_robot_controllers_interfaces/hook/cmake_prefix_path.ps1'
+[14.360s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/uc1_robot_controllers_interfaces/hook/cmake_prefix_path.dsv'
+[14.360s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/uc1_robot_controllers_interfaces/hook/cmake_prefix_path.sh'
+[14.360s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib'
+[14.360s] Level 1:colcon.colcon_core.shell:create_environment_hook('uc1_robot_controllers_interfaces', 'ld_library_path_lib')
+[14.360s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/uc1_robot_controllers_interfaces/hook/ld_library_path_lib.ps1'
+[14.360s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/uc1_robot_controllers_interfaces/hook/ld_library_path_lib.dsv'
+[14.360s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/uc1_robot_controllers_interfaces/hook/ld_library_path_lib.sh'
+[14.360s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/bin'
+[14.360s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib/pkgconfig/uc1_robot_controllers_interfaces.pc'
+[14.361s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib/python3.10/site-packages'
+[14.361s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/bin'
+[14.361s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/uc1_robot_controllers_interfaces/package.ps1'
+[14.361s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/uc1_robot_controllers_interfaces/package.dsv'
+[14.362s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/uc1_robot_controllers_interfaces/package.sh'
+[14.362s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/uc1_robot_controllers_interfaces/package.bash'
+[14.362s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/uc1_robot_controllers_interfaces/package.zsh'
+[14.362s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/share/colcon-core/packages/uc1_robot_controllers_interfaces)
+[16.347s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_perception' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_perception -- -j32 -l32
+[16.348s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_perception': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_perception
+[16.405s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(uc1_robot_perception)
+[16.405s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_perception' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_perception
+[16.405s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception' for CMake module files
+[16.406s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception' for CMake config files
+[16.406s] Level 1:colcon.colcon_core.shell:create_environment_hook('uc1_robot_perception', 'cmake_prefix_path')
+[16.406s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/hook/cmake_prefix_path.ps1'
+[16.406s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/hook/cmake_prefix_path.dsv'
+[16.406s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/hook/cmake_prefix_path.sh'
+[16.407s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib'
+[16.407s] Level 1:colcon.colcon_core.shell:create_environment_hook('uc1_robot_perception', 'ld_library_path_lib')
+[16.407s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/hook/ld_library_path_lib.ps1'
+[16.407s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/hook/ld_library_path_lib.dsv'
+[16.407s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/hook/ld_library_path_lib.sh'
+[16.407s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/bin'
+[16.407s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/pkgconfig/uc1_robot_perception.pc'
+[16.407s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/python3.10/site-packages'
+[16.408s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/bin'
+[16.408s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/package.ps1'
+[16.408s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/package.dsv'
+[16.408s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/package.sh'
+[16.408s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/package.bash'
+[16.409s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/package.zsh'
+[16.409s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/colcon-core/packages/uc1_robot_perception)
+[16.409s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(uc1_robot_perception)
+[16.409s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception' for CMake module files
+[16.409s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception' for CMake config files
+[16.409s] Level 1:colcon.colcon_core.shell:create_environment_hook('uc1_robot_perception', 'cmake_prefix_path')
+[16.410s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/hook/cmake_prefix_path.ps1'
+[16.410s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/hook/cmake_prefix_path.dsv'
+[16.410s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/hook/cmake_prefix_path.sh'
+[16.410s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib'
+[16.410s] Level 1:colcon.colcon_core.shell:create_environment_hook('uc1_robot_perception', 'ld_library_path_lib')
+[16.410s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/hook/ld_library_path_lib.ps1'
+[16.411s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/hook/ld_library_path_lib.dsv'
+[16.411s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/hook/ld_library_path_lib.sh'
+[16.411s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/bin'
+[16.411s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/pkgconfig/uc1_robot_perception.pc'
+[16.411s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib/python3.10/site-packages'
+[16.411s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/bin'
+[16.411s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/package.ps1'
+[16.411s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/package.dsv'
+[16.411s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/package.sh'
+[16.412s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/package.bash'
+[16.412s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/uc1_robot_perception/package.zsh'
+[16.412s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/share/colcon-core/packages/uc1_robot_perception)
+[16.412s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers' with build type 'ament_cmake'
+[16.412s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers'
+[16.412s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[16.412s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[16.419s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers': AMENT_PREFIX_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers
+[18.042s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/ur_admittance_controller' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/ur_admittance_controller -- -j32 -l32
+[18.045s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/ur_admittance_controller': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/ur_admittance_controller
+[18.064s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ur_admittance_controller)
+[18.064s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller' for CMake module files
+[18.065s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/ur_admittance_controller' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/ur_admittance_controller
+[18.065s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller' for CMake config files
+[18.065s] Level 1:colcon.colcon_core.shell:create_environment_hook('ur_admittance_controller', 'cmake_prefix_path')
+[18.065s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/hook/cmake_prefix_path.ps1'
+[18.065s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/hook/cmake_prefix_path.dsv'
+[18.065s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/hook/cmake_prefix_path.sh'
+[18.065s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/lib'
+[18.065s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/bin'
+[18.066s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/lib/pkgconfig/ur_admittance_controller.pc'
+[18.066s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/lib/python3.10/site-packages'
+[18.066s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/bin'
+[18.066s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/package.ps1'
+[18.066s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/package.dsv'
+[18.066s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/package.sh'
+[18.066s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/package.bash'
+[18.066s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/package.zsh'
+[18.067s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/colcon-core/packages/ur_admittance_controller)
+[18.067s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ur_admittance_controller)
+[18.067s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller' for CMake module files
+[18.067s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller' for CMake config files
+[18.067s] Level 1:colcon.colcon_core.shell:create_environment_hook('ur_admittance_controller', 'cmake_prefix_path')
+[18.067s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/hook/cmake_prefix_path.ps1'
+[18.067s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/hook/cmake_prefix_path.dsv'
+[18.067s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/hook/cmake_prefix_path.sh'
+[18.068s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/lib'
+[18.068s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/bin'
+[18.068s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/lib/pkgconfig/ur_admittance_controller.pc'
+[18.068s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/lib/python3.10/site-packages'
+[18.068s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/bin'
+[18.068s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/package.ps1'
+[18.068s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/package.dsv'
+[18.068s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/package.sh'
+[18.068s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/package.bash'
+[18.069s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/ur_admittance_controller/package.zsh'
+[18.069s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/ur_admittance_controller/share/colcon-core/packages/ur_admittance_controller)
+[18.351s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers' returned '0': AMENT_PREFIX_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers -DCMAKE_INSTALL_PREFIX=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers
+[18.352s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers': AMENT_PREFIX_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers -- -j32 -l32
+[39.028s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers' returned '0': AMENT_PREFIX_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers -- -j32 -l32
+[39.029s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers': AMENT_PREFIX_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers
+[39.069s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(uc1_robot_controllers)
+[39.069s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers' returned '0': AMENT_PREFIX_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/lib:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_perception/local/lib/python3.10/dist-packages:/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/build/uc1_robot_controllers
+[39.069s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers' for CMake module files
+[39.070s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers' for CMake config files
+[39.070s] Level 1:colcon.colcon_core.shell:create_environment_hook('uc1_robot_controllers', 'cmake_prefix_path')
+[39.070s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/hook/cmake_prefix_path.ps1'
+[39.070s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/hook/cmake_prefix_path.dsv'
+[39.070s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/hook/cmake_prefix_path.sh'
+[39.071s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/lib'
+[39.071s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/bin'
+[39.071s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/lib/pkgconfig/uc1_robot_controllers.pc'
+[39.071s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/lib/python3.10/site-packages'
+[39.071s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/bin'
+[39.071s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/package.ps1'
+[39.071s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/package.dsv'
+[39.071s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/package.sh'
+[39.072s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/package.bash'
+[39.072s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/package.zsh'
+[39.072s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/colcon-core/packages/uc1_robot_controllers)
+[39.072s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(uc1_robot_controllers)
+[39.072s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers' for CMake module files
+[39.072s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers' for CMake config files
+[39.072s] Level 1:colcon.colcon_core.shell:create_environment_hook('uc1_robot_controllers', 'cmake_prefix_path')
+[39.072s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/hook/cmake_prefix_path.ps1'
+[39.072s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/hook/cmake_prefix_path.dsv'
+[39.073s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/hook/cmake_prefix_path.sh'
+[39.073s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/lib'
+[39.073s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/bin'
+[39.073s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/lib/pkgconfig/uc1_robot_controllers.pc'
+[39.073s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/lib/python3.10/site-packages'
+[39.073s] Level 1:colcon.colcon_core.environment:checking '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/bin'
+[39.073s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/package.ps1'
+[39.074s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/package.dsv'
+[39.074s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/package.sh'
+[39.074s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/package.bash'
+[39.074s] INFO:colcon.colcon_core.shell:Creating package script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/uc1_robot_controllers/package.zsh'
+[39.074s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/uc1_robot_controllers/share/colcon-core/packages/uc1_robot_controllers)
+[39.075s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[39.075s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[39.075s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[39.075s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[39.081s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[39.081s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[39.081s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[39.085s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[39.085s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/local_setup.ps1'
+[39.086s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/_local_setup_util_ps1.py'
+[39.086s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/setup.ps1'
+[39.086s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/local_setup.sh'
+[39.087s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/_local_setup_util_sh.py'
+[39.087s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/setup.sh'
+[39.087s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/local_setup.bash'
+[39.087s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/setup.bash'
+[39.088s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/local_setup.zsh'
+[39.088s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/install/setup.zsh'

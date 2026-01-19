@@ -65,6 +65,13 @@ void JointRobotTP::initialize(NodeShPtr node_joint_robot, NodeShPtr kuka_node, N
     // populate the TP function vectors 
     insertFuncPointerVtc();
 
+    // joint limits vectors
+    jl_down_={-3.2, -0.08, -2.0, -6.0, -2.1,-6.0, -6.0, -6.0, -6.0, -6.0, -6.0, -6.0};
+    jl_up_ = { 3.2, -2.44,  2.9,  6.0,  2.1, 6.0,  6.0,  6.0,  6.0,  6.0,  6.0,  6.0};
+    for(int i=0;i<NDOF;++i){
+        jl_avg_.push_back((jl_down_[i]+jl_up_[i])/2);
+    }
+
     frame_names_ = {"kuka_link_1", "kuka_link_2", "kuka_link_3", "kuka_link_4", "kuka_link_5", "kuka_link_6",
                      "shoulder_link", "upper_arm_link", "forearm_link", "wrist_1_link", "wrist_2_link", "wrist_3_link"};
 
@@ -100,7 +107,11 @@ void JointRobotTP::insertInitConfigMap(){
     Eigen::VectorXd free(12);
     free << 0.0, -2.1, 2.4, 0.0, -1.57, 0.0, 0.0, -1.57, 0.0, -1.57, 0.0, 0.0;
 
+    Eigen::VectorXd jl(12);
+    jl << 0.0, -1.5, 1.5, 0.0, 1.57, 0.0, 0.0, -1.57, 0.0, -1.57, 0.0, 0.0;
+
     // insert into the map (DO NOT MODIFY THE DEFAULT CONFIGURATION)
+    initial_configurations_map_["jl"] = jl;
     initial_configurations_map_["zero"] = zero;
     initial_configurations_map_["sing_sing"] = sing_sing;
     initial_configurations_map_["sing_mob"] = sing_mob;
@@ -112,19 +123,19 @@ void JointRobotTP::insertInitConfigMap(){
 }
 
 void JointRobotTP::insertFuncPointerVtc(){
-    //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_JointLimits);
+    TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_JointLimits);
     TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_EETarget);
     TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance);
     //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance_setBased);
     //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_MinAlt);
 
-    //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_JointLimits);
+    AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_JointLimits);
     AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_EETarget);
     AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_ObstAvoidance);
     //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_ObstAvoidance_setBased);
     //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_MinAlt);
 
-    //TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_JointLimits);
+    TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_JointLimits);
     TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_EETarget);
     TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_ObstAvoidance);
     //TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_ObstAvoidance_setBased);
@@ -286,7 +297,7 @@ void JointRobotTP::ReachInitialConfiguration(const std::string init_config_name)
 }
 
 void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool reached_goal){
-    rclcpp::Rate loop_rate(100);
+    rclcpp::Rate loop_rate(50);
 
     TPComputation tp_controller;
 
@@ -355,7 +366,7 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool 
         ////TIC(init_tpk);
         tp_controller.init_TPComputation(NDOF, lambda, threshold, weight); 
         ////TOC(init_tpk);
-        
+        tp_controller.computeTP_step("joint_limits",  TP_task_map_["joint_limits"].ActMatrix,  TP_task_map_["joint_limits"].TskJacobian,  TP_task_map_["joint_limits"].RefRate);
         //tp_controller.computeTP_step("min_altitude",  TP_task_map_["min_altitude"].ActMatrix,  TP_task_map_["min_altitude"].TskJacobian,  TP_task_map_["min_altitude"].RefRate);
         //tp_controller.computeTP_step("obstacle_avoidance",  TP_task_map_["obstacle_avoidance"].ActMatrix,  TP_task_map_["obstacle_avoidance"].TskJacobian,  TP_task_map_["obstacle_avoidance"].RefRate);
         //TIC(step_tpk_tg);
@@ -670,6 +681,34 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
         }
         obst_act.close();    
     }
+
+    // log jl info 
+    std::ofstream jointvar = std::ofstream(path + dir + "/jointvar.txt", std::ios::app);
+    if(jointvar.is_open()){
+        for(int i=0; i<jq.size();++i){
+            jointvar << jq[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+        }
+        jointvar.close();    
+    }
+
+    std::ofstream jl_act_file = std::ofstream(path + dir + "/jl_act_file.txt", std::ios::app);
+    if(jl_act_file.is_open()){
+        for(int i=0; i<jl_act.size();++i){
+            jl_act_file << jl_act[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+        }
+        jl_act_file.close();    
+    }
+
+    std::ofstream jl_ref_file = std::ofstream(path + dir + "/jl_ref_file.txt", std::ios::app);
+    if(jl_ref_file.is_open()){
+        for(int i=0; i<jl_act.size();++i){
+            jl_ref_file << jl_ref[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+        }
+        jl_ref_file.close();    
+    }
+
+    // log jl info
+
     // ---------------------------------------------------------------------------------------------------------- LOG RESULT ON FILE
 
 

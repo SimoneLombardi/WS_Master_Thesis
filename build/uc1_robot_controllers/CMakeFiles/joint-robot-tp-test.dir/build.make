@@ -308,7 +308,7 @@ joint-robot-tp-test: /opt/ros/humble/lib/libcomposition_interfaces__rosidl_types
 joint-robot-tp-test: /opt/ros/humble/lib/librcl_interfaces__rosidl_typesupport_fastrtps_cpp.so
 joint-robot-tp-test: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_fastrtps_cpp.so
 joint-robot-tp-test: /opt/ros/humble/lib/librosidl_typesupport_fastrtps_cpp.so
-joint-robot-tp-test: /opt/ros/humble/lib/libfastcdr.so.1.0.24
+joint-robot-tp-test: /opt/ros/humble/lib/libfastcdr.so.1.0.29
 joint-robot-tp-test: /opt/ros/humble/lib/librmw.so
 joint-robot-tp-test: /opt/ros/humble/lib/libcomposition_interfaces__rosidl_typesupport_introspection_cpp.so
 joint-robot-tp-test: /opt/ros/humble/lib/librcl_interfaces__rosidl_typesupport_introspection_cpp.so

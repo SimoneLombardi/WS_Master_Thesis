@@ -110,6 +110,10 @@ class JointRobotTP
 
         std::vector<std::vector<double>> obs_dist;
         std::vector<Eigen::Vector2d> abs_act;
+
+        std::vector<Eigen::MatrixXd> jl_act;
+        std::vector<Eigen::MatrixXd> jl_ref;
+        std::vector<Eigen::MatrixXd> jq;
         // ------------------------------------------------- LOG VAR ------------------------------------------------- //
     private:
         // -------------------------------------------------------------------------------------------------------------------------------------------- Robot interfaces
@@ -160,6 +164,9 @@ class JointRobotTP
         int log_counter_;
         // ============================================== //
 
+        std::vector<double> jl_down_;
+        std::vector<double> jl_up_;
+         std::vector<double> jl_avg_;
         // -------------------------------------------------------------------------------------------------------------------------------------------- Robot Internal Variables
 
         // -------------------------------------------------------------------------------------------------------------------------------------------- Frame Names

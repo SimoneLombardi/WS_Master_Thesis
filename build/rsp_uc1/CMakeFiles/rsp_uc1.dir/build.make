@@ -133,7 +133,7 @@ rsp_uc1: /opt/ros/humble/lib/librcl_interfaces__rosidl_typesupport_fastrtps_cpp.
 rsp_uc1: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_fastrtps_cpp.so
 rsp_uc1: /opt/ros/humble/lib/librosidl_typesupport_fastrtps_cpp.so
 rsp_uc1: /opt/ros/humble/lib/librmw.so
-rsp_uc1: /opt/ros/humble/lib/libfastcdr.so.1.0.24
+rsp_uc1: /opt/ros/humble/lib/libfastcdr.so.1.0.29
 rsp_uc1: /opt/ros/humble/lib/libcomposition_interfaces__rosidl_typesupport_introspection_cpp.so
 rsp_uc1: /opt/ros/humble/lib/librcl_interfaces__rosidl_typesupport_introspection_cpp.so
 rsp_uc1: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_introspection_cpp.so

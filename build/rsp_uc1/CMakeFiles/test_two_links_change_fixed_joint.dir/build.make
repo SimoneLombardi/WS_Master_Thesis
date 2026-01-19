@@ -153,7 +153,7 @@ test_two_links_change_fixed_joint: /opt/ros/humble/lib/libaction_msgs__rosidl_ty
 test_two_links_change_fixed_joint: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_fastrtps_cpp.so
 test_two_links_change_fixed_joint: /opt/ros/humble/lib/libunique_identifier_msgs__rosidl_typesupport_fastrtps_cpp.so
 test_two_links_change_fixed_joint: /opt/ros/humble/lib/librosidl_typesupport_fastrtps_cpp.so
-test_two_links_change_fixed_joint: /opt/ros/humble/lib/libfastcdr.so.1.0.24
+test_two_links_change_fixed_joint: /opt/ros/humble/lib/libfastcdr.so.1.0.29
 test_two_links_change_fixed_joint: /opt/ros/humble/lib/librmw.so
 test_two_links_change_fixed_joint: /opt/ros/humble/lib/libtf2_msgs__rosidl_typesupport_introspection_cpp.so
 test_two_links_change_fixed_joint: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_introspection_cpp.so

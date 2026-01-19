@@ -223,7 +223,7 @@ interactive_contact_publisher: /opt/ros/humble/lib/libgeometry_msgs__rosidl_type
 interactive_contact_publisher: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_fastrtps_cpp.so
 interactive_contact_publisher: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_fastrtps_cpp.so
 interactive_contact_publisher: /opt/ros/humble/lib/librosidl_typesupport_fastrtps_cpp.so
-interactive_contact_publisher: /opt/ros/humble/lib/libfastcdr.so.1.0.24
+interactive_contact_publisher: /opt/ros/humble/lib/libfastcdr.so.1.0.29
 interactive_contact_publisher: /opt/ros/humble/lib/librmw.so
 interactive_contact_publisher: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_introspection_c.so
 interactive_contact_publisher: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_introspection_c.so
