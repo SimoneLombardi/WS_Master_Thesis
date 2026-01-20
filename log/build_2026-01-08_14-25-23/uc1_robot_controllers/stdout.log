@@ -1,5 +1,0 @@
-[35m[1mConsolidate compiler generated dependencies of target joint-robot-tp-test[0m
-[  9%] Built target kuka-joint-cmd-buf
-[ 13%] [32mBuilding CXX object CMakeFiles/joint-robot-test.dir/src/TPComputation.cpp.o[0m
-[ 36%] Built target robot-test
-[ 40%] [32mBuilding CXX object CMakeFiles/joint-robot-tp-test.dir/src/TPComputation.cpp.o[0m

@@ -1,3 +1,0 @@
-[console_scripts]
-jsp_gui_uc1 = jsp_gui_uc1.jsp_gui_uc1:main
-
