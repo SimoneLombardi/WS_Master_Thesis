@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -O3 -DNDEBUG -shared -Wl,-soname,libTPComputation.so -o libTPComputation.so CMakeFiles/TPComputation.dir/src/TPComputation.cpp.o 

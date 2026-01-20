@@ -1,2 +1,0 @@
-uc1_robot_controllers_interfaces/MoveRobotPoint translation
-uc1_robot_controllers_interfaces/MoveRobotOrient orientation
