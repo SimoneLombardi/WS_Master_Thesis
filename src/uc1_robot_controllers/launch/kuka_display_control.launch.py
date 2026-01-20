@@ -57,7 +57,7 @@ def generate_launch_description():
     return LaunchDescription([
         robot_state_publisher_node,
         kuka_controller_node,
-        #environment_cloud_node,
+        environment_cloud_node,
         rviz2_node,
         cobot_tf_node
     ])

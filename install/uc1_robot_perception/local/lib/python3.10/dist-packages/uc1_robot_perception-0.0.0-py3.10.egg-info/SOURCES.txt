@@ -4,3 +4,8 @@ uc1_robot_perception.egg-info/PKG-INFO
 uc1_robot_perception.egg-info/SOURCES.txt
 uc1_robot_perception.egg-info/dependency_links.txt
 uc1_robot_perception.egg-info/top_level.txt
+uc1_robot_perception/msg/__init__.py
+uc1_robot_perception/msg/_contact.py
+uc1_robot_perception/msg/_contact_array.py
+uc1_robot_perception/msg/_proximity_task.py
+uc1_robot_perception/msg/_proximity_task_array.py
