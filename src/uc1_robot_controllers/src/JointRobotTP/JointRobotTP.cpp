@@ -30,6 +30,11 @@ void JointRobotTP::initialize(NodeShPtr node_joint_robot, NodeShPtr kuka_node, N
         rclcpp::QoS(10),
         std::bind(&JointRobotTP::proximityTaskCallback, this, std::placeholders::_1)
     );
+    joint_states_subscriber_ = node_->create_subscription<sensor_msgs::msg::JointState>(
+        "/joint_states",
+        rclcpp::QoS(10),
+        std::bind(&JointRobotTP::jointStateCallback, this, std::placeholders::_1)
+    );
     control_task_publisher_ = node_->create_publisher<visualization_msgs::msg::Marker>("/uc1_viz/control_task", 10);
     goal_frame_broadcaster_ = std::make_shared<TfGoalBroadcaster>(node_);
 
@@ -74,6 +79,9 @@ void JointRobotTP::initialize(NodeShPtr node_joint_robot, NodeShPtr kuka_node, N
 
     frame_names_ = {"kuka_link_1", "kuka_link_2", "kuka_link_3", "kuka_link_4", "kuka_link_5", "kuka_link_6",
                      "shoulder_link", "upper_arm_link", "forearm_link", "wrist_1_link", "wrist_2_link", "wrist_3_link"};
+
+    joint_names_ = {"kuka_joint_a1","kuka_joint_a2","kuka_joint_a3","kuka_joint_a4","kuka_joint_a5","kuka_joint_a6",
+                    "shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"};
 
     // parameter declaration
     kuka_gain_ = node_->declare_parameter<double>("kuka_gain", 0.05);
@@ -123,19 +131,19 @@ void JointRobotTP::insertInitConfigMap(){
 }
 
 void JointRobotTP::insertFuncPointerVtc(){
-    TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_JointLimits);
+    //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_JointLimits);
     TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_EETarget);
     TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance);
     //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance_setBased);
     //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_MinAlt);
 
-    AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_JointLimits);
+    //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_JointLimits);
     AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_EETarget);
     AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_ObstAvoidance);
     //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_ObstAvoidance_setBased);
     //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_MinAlt);
 
-    TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_JointLimits);
+    //TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_JointLimits);
     TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_EETarget);
     TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_ObstAvoidance);
     //TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_ObstAvoidance_setBased);
@@ -197,12 +205,20 @@ void JointRobotTP::proximityTaskCallback(const uc1_robot_perception::msg::Proxim
     }
 
     // publish arrow for min dist task
-    double dist = proximity_task_points_[0].distance;
-    Eigen::Vector3d origin(proximity_task_points_[0].min_point_robot.x, proximity_task_points_[0].min_point_robot.y, proximity_task_points_[0].min_point_robot.z);
-    Eigen::Vector3d vector(proximity_task_points_[0].min_point_vector.x*dist, proximity_task_points_[0].min_point_vector.y*dist, proximity_task_points_[0].min_point_vector.z*dist);
+    //double dist = proximity_task_points_[0].distance;
+    //Eigen::Vector3d origin(proximity_task_points_[0].min_point_robot.x, proximity_task_points_[0].min_point_robot.y, proximity_task_points_[0].min_point_robot.z);
+    //Eigen::Vector3d vector(proximity_task_points_[0].min_point_vector.x*dist, proximity_task_points_[0].min_point_vector.y*dist, proximity_task_points_[0].min_point_vector.z*dist);
     
     //publishArrowMarker(origin, vector, KUKA_BASE_LINK, "min_dist_point", "bblue", 1, control_task_publisher_);
     //std::cout << proximity_task_points_.size() << " --- " << proximity_task_points_[0].distance << " --- " << proximity_task_points_[0].link_id << std::endl;
+}
+
+void JointRobotTP::jointStateCallback(const sensor_msgs::msg::JointState::SharedPtr msg){
+    std::lock_guard<std::mutex> lock(joint_states_mutex_);
+    
+    joint_var_log.push_back(msg->header.frame_id + "/" + std::to_string(msg->header.stamp.sec)+ "/" + std::to_string(msg->header.stamp.nanosec));
+
+    //std::cout << msg->name.size() << std::endl;
 }
 
 void JointRobotTP::publishArrowMarker(
@@ -705,6 +721,14 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
             jl_ref_file << jl_ref[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
         }
         jl_ref_file.close();    
+    }
+
+    std::ofstream jvar_sub_log_file = std::ofstream(path + dir + "/jvar_sub_log.txt", std::ios::app);
+    if(jvar_sub_log_file.is_open()){
+        for(int i=0;i<joint_var_log.size();++i){
+            jvar_sub_log_file << joint_var_log[i] << std::endl; 
+        }
+        jvar_sub_log_file.close();
     }
 
     // log jl info

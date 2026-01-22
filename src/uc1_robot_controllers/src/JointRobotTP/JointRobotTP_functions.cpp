@@ -6,6 +6,7 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include <cmath>
 
 // alias definitions
 using NodeShPtr = rclcpp::Node::SharedPtr;
@@ -36,12 +37,11 @@ void JointRobotTP::Update_TRR_JointLimits(){
         jq.push_back(TP_task_map_["joint_limits"].RefRate);
         //SAVE LOG VAR
 
-
         for(int i=0; i<NDOF; ++i){
             if(TP_task_map_["joint_limits"].RefRate(i) <= jl_avg_[i]){
-                TP_task_map_["joint_limits"].RefRate(i) = 0.2 * (jl_down_[i]-TP_task_map_["joint_limits"].RefRate(i)+0.01);
+                TP_task_map_["joint_limits"].RefRate(i) = 0.2 * (abs(jl_avg_[i]-TP_task_map_["joint_limits"].RefRate(i))+0.01);
             }else{
-                TP_task_map_["joint_limits"].RefRate(i) = 0.2 * (jl_up_[i]-TP_task_map_["joint_limits"].RefRate(i)-0.01);
+                TP_task_map_["joint_limits"].RefRate(i) = -0.2 * (abs(jl_avg_[i]-TP_task_map_["joint_limits"].RefRate(i))-0.01);
             }
         }
 
@@ -162,7 +162,8 @@ void JointRobotTP::Update_AFunc_JointLimits(){
 
     //SAVE LOG VAR
     jl_act.push_back(Eigen::MatrixXd(TP_task_map_["joint_limits"].ActMatrix.diagonal()));
-    std::cout << joint_v << std::endl << std::endl;
+    //std::cout << TP_task_map_["joint_limits"].ActMatrix.diagonal() << std::endl << std::endl;
+    //std::cout << joint_v << std::endl << std::endl;
     //SAVE LOG VAR
 }
 

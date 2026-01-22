@@ -31,7 +31,7 @@ public:
     );
 
     timer_ = this->create_wall_timer(
-      std::chrono::milliseconds(100),
+      std::chrono::milliseconds(10),
       std::bind(&JointStateHandler::publish_joint_state, this)
     );
   }
@@ -56,6 +56,7 @@ private:
   {
     auto joint_state_msg = sensor_msgs::msg::JointState();
     joint_state_msg.header.stamp = this->get_clock()->now();
+    joint_state_msg.header.frame_id = "kuka_base_link";
     joint_state_msg.name = ordered_joint_names_;
     joint_state_msg.position = {joint_state_[0], 
                                  joint_state_[1],

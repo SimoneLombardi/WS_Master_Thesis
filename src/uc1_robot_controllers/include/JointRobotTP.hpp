@@ -77,6 +77,7 @@ class JointRobotTP
 
         // callbacks
         void proximityTaskCallback(const uc1_robot_perception::msg::ProximityTaskArray::SharedPtr msg);
+        void jointStateCallback(const sensor_msgs::msg::JointState::SharedPtr msg);
         void publishArrowMarker(const Eigen::Vector3d& origin, const Eigen::Vector3d& vector, const std::string& frame_id, const std::string& ns, const std::string& color, int id,rclcpp::Publisher<visualization_msgs::msg::Marker>::SharedPtr publisher);
 
         // ------------------------------------------------- TP TASKS FUNCTIONS ------------------------------------------------- //
@@ -114,6 +115,8 @@ class JointRobotTP
         std::vector<Eigen::MatrixXd> jl_act;
         std::vector<Eigen::MatrixXd> jl_ref;
         std::vector<Eigen::MatrixXd> jq;
+
+        std::vector<std::string> joint_var_log;
         // ------------------------------------------------- LOG VAR ------------------------------------------------- //
     private:
         // -------------------------------------------------------------------------------------------------------------------------------------------- Robot interfaces
@@ -126,6 +129,7 @@ class JointRobotTP
         rclcpp::Publisher<visualization_msgs::msg::Marker>::SharedPtr control_task_publisher_;
         rclcpp::Publisher<geometry_msgs::msg::PointStamped>::SharedPtr point_publisher;
         rclcpp::Subscription<uc1_robot_perception::msg::ProximityTaskArray>::SharedPtr proximity_task_subscriber_;
+        rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr joint_states_subscriber_;
         rclcpp::Publisher<std_msgs::msg::String>::SharedPtr debug_trace_publisher_; // utility publisher
 
         // -------------------------------------------------------------------------------------------------------------------------------------------- Action server
@@ -152,6 +156,11 @@ class JointRobotTP
         std::vector<uc1_robot_perception::msg::ProximityTask> proximity_task_points_;
         std::vector<uc1_robot_perception::msg::ProximityTask> Prx_task_pts_OBAV_;
 
+        // joint states variables
+        std::mutex joint_states_mutex_;
+        std::map<std::string, double> joint_states_;
+        std::map<std::string, double> joint_states_cpy_;
+
         // TP TASKS VARIABLE
         TasKMapType TP_task_map_;
         // TP Function Pointer Vector
@@ -172,6 +181,7 @@ class JointRobotTP
         // -------------------------------------------------------------------------------------------------------------------------------------------- Frame Names
         std::string goal_name_;
         std::vector<std::string> frame_names_;
+        std::vector<std::string> joint_names_;
         // -------------------------------------------------------------------------------------------------------------------------------------------- Frame Names
 
         // -------------------------------------------------------------------------------------------------------------------------------------------- Parameter definition
