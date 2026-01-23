@@ -24,6 +24,8 @@
   <exec_depend>geometry_msgs</exec_depend>
 
   <depend>rclcpp</depend>
+  <depend>message_filters</depend>
+  <depend>sensor_msgs</depend>
 
   <!-- Mark this as a message definition package -->
   <member_of_group>rosidl_interface_packages</member_of_group>

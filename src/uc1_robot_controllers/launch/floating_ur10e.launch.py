@@ -208,6 +208,7 @@ def launch_setup(context, *args, **kwargs):
             update_rate_config_file,
             ParameterFile(initial_joint_controllers, allow_substs=True),
         ],
+        remappings=[('/joint_states', '/joint_states_ur10')],
         output="screen",
         condition=UnlessCondition(use_fake_hardware),
     )

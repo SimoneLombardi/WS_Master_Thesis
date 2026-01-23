@@ -45,8 +45,8 @@ void KukaRobot::initialize(rclcpp::Node::SharedPtr node)
     }
 
     // ----------------------------- pubs
-    joint_state_pub_ = node->create_publisher<sensor_msgs::msg::JointState>("joint_states", 10);
-    joint_pose_pub_ = node->create_publisher<std_msgs::msg::Float64MultiArray>("kuka_joint_state_buffer", 10);
+    //joint_state_pub_ = node->create_publisher<sensor_msgs::msg::JointState>("/joint_states_kuka", 10);
+    joint_pose_pub_ = node->create_publisher<std_msgs::msg::Float64MultiArray>("/kuka_joint_state_buffer", 10);
 
     // ----------------------------- timed callbacks
     // joint state (fake commands) publishing

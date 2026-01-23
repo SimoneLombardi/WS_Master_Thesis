@@ -14,6 +14,11 @@ def generate_launch_description():
     robot_description = ParameterValue(Command(['xacro ', urdf_path]), value_type=str)
     tf_prefix_ = ParameterValue('kuka_', value_type=str)
 
+    joint_state_sync_node = Node(
+        package="uc1_robot_controllers_interfaces",
+        executable="sync_joint_topic_exe"
+    )
+
     # custom robot state publisher (TODO maybe change namespace for running joint with UR10e)
     robot_state_publisher_node = Node(
         package="rsp_uc1",
@@ -22,7 +27,8 @@ def generate_launch_description():
     )
     kuka_controller_node = Node(
         package="uc1_robot_controllers",
-        executable="kuka-joint-cmd-buf"
+        executable="kuka-joint-cmd-buf",
+        remappings=[('/joint_states', '/joint_states_kuka')]
     )
 
     environment_cloud_node = Node(
@@ -55,6 +61,7 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
+        joint_state_sync_node,
         robot_state_publisher_node,
         kuka_controller_node,
         environment_cloud_node,

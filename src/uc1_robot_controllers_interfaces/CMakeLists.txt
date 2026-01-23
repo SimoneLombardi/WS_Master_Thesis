@@ -16,6 +16,8 @@ find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(Eigen3 REQUIRED)
+find_package(message_filters REQUIRED)
+find_package(sensor_msgs REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "action/MoveRobot.action"
@@ -57,6 +59,17 @@ install(
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
   INCLUDES DESTINATION include
+)
+
+add_executable(sync_joint_topic_exe src/sync_jst.cpp) # Joint State Topic
+ament_target_dependencies(sync_joint_topic_exe
+  sensor_msgs
+  message_filters
+)
+
+install(TARGETS
+  sync_joint_topic_exe
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 if(BUILD_TESTING)

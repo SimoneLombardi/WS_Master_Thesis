@@ -51,7 +51,7 @@ void UR10eRobot::initialize(rclcpp::Node::SharedPtr node)
 
     // ------------------------ subs
     init_joint_state_sub_ = node_->create_subscription<sensor_msgs::msg::JointState>(
-        "joint_states",
+        "joint_states_ur10",
         rclcpp::QoS(10),
         std::bind(&UR10eRobot::initJointStateCallback, this, std::placeholders::_1));
 
@@ -560,6 +560,8 @@ void UR10eRobot::runJointControlLoop(Eigen::VectorXd q_err, Eigen::VectorXd q_de
         // check joint state
         auto q = getJointPositions();
 
+        //std::cout << q << std::endl;
+
         // send joint command 
         float kp = 0.2;
         Eigen::MatrixXd Kp = Eigen::MatrixXd::Identity(6,6);
@@ -574,7 +576,7 @@ void UR10eRobot::runJointControlLoop(Eigen::VectorXd q_err, Eigen::VectorXd q_de
         // skip first iterations and send command
         if (q.norm() != 0) sendJointVelocityCommand(qdot_des);
         
-        RCLCPP_INFO(node_->get_logger(), "Joint loop UR10: joint error norm is %f\r", q_err.norm());
+        //RCLCPP_INFO(node_->get_logger(), "Joint loop UR10: joint error norm is %f\r", q_err.norm());
         loop_rate.sleep();
     }
 }
