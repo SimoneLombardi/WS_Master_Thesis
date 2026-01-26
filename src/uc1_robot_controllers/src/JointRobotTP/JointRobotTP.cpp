@@ -6,6 +6,7 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include <boost/filesystem.hpp>
 
 // alias definitions
 using NodeShPtr = rclcpp::Node::SharedPtr;
@@ -71,8 +72,8 @@ void JointRobotTP::initialize(NodeShPtr node_joint_robot, NodeShPtr kuka_node, N
     insertFuncPointerVtc();
 
     // joint limits vectors
-    jl_down_={-3.2, -0.08, -2.0, -6.0, -2.1,-6.0, -6.0, -6.0, -6.0, -6.0, -6.0, -6.0};
-    jl_up_ = { 3.2, -2.44,  2.9,  6.0,  2.1, 6.0,  6.0,  6.0,  6.0,  6.0,  6.0,  6.0};
+    jl_down_={-3.2, -2.44, -2.0, -6.0, -2.1,-6.0, -6.0, -6.0, -6.0, -6.0, -6.0, -6.0};
+    jl_up_ = { 3.2, -0.08,  2.9,  6.0,  2.1, 6.0,  6.0,  6.0,  6.0,  6.0,  6.0,  6.0};
     for(int i=0;i<NDOF;++i){
         jl_avg_.push_back((jl_down_[i]+jl_up_[i])/2);
     }
@@ -86,6 +87,7 @@ void JointRobotTP::initialize(NodeShPtr node_joint_robot, NodeShPtr kuka_node, N
     // parameter declaration
     kuka_gain_ = node_->declare_parameter<double>("kuka_gain", 0.05);
     ur10_gain_ = node_->declare_parameter<double>("ur10_gain", 0.5);
+    exp_dir_ = node_->declare_parameter<std::string>("exp_dir_name", "def");
 
     RCLCPP_INFO(node_->get_logger(), "JointRobotTP, initialize complete");
 }
@@ -116,7 +118,7 @@ void JointRobotTP::insertInitConfigMap(){
     free << 0.0, -2.1, 2.4, 0.0, -1.57, 0.0, 0.0, -1.57, 0.0, -1.57, 0.0, 0.0;
 
     Eigen::VectorXd jl(12);
-    jl << 0.0, -1.5, 1.5, 0.0, 1.57, 0.0, 0.0, -1.57, 0.0, -1.57, 0.0, 0.0;
+    jl << 0.0, 1.5, 1.5, 0.0, 1.57, 0.0, 0.0, -1.57, 0.0, -1.57, 0.0, 0.0;
 
     // insert into the map (DO NOT MODIFY THE DEFAULT CONFIGURATION)
     initial_configurations_map_["jl"] = jl;
@@ -131,21 +133,21 @@ void JointRobotTP::insertInitConfigMap(){
 }
 
 void JointRobotTP::insertFuncPointerVtc(){
-    //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_JointLimits);
+    TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_JointLimits);
     TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_EETarget);
-    TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance);
+    //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance);
     //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance_setBased);
     //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_MinAlt);
 
-    //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_JointLimits);
+    AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_JointLimits);
     AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_EETarget);
-    AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_ObstAvoidance);
+    //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_ObstAvoidance);
     //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_ObstAvoidance_setBased);
     //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_MinAlt);
 
-    //TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_JointLimits);
+    TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_JointLimits);
     TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_EETarget);
-    TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_ObstAvoidance);
+    //TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_ObstAvoidance);
     //TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_ObstAvoidance_setBased);
     //TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_MinAlt);
 
@@ -382,7 +384,7 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool 
         ////TIC(init_tpk);
         tp_controller.init_TPComputation(NDOF, lambda, threshold, weight); 
         ////TOC(init_tpk);
-        //tp_controller.computeTP_step("joint_limits",  TP_task_map_["joint_limits"].ActMatrix,  TP_task_map_["joint_limits"].TskJacobian,  TP_task_map_["joint_limits"].RefRate);
+        tp_controller.computeTP_step("joint_limits",  TP_task_map_["joint_limits"].ActMatrix,  TP_task_map_["joint_limits"].TskJacobian,  TP_task_map_["joint_limits"].RefRate);
         //tp_controller.computeTP_step("min_altitude",  TP_task_map_["min_altitude"].ActMatrix,  TP_task_map_["min_altitude"].TskJacobian,  TP_task_map_["min_altitude"].RefRate);
         //tp_controller.computeTP_step("obstacle_avoidance",  TP_task_map_["obstacle_avoidance"].ActMatrix,  TP_task_map_["obstacle_avoidance"].TskJacobian,  TP_task_map_["obstacle_avoidance"].RefRate);
         //TIC(step_tpk_tg);
@@ -504,7 +506,8 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
 
     std::this_thread::sleep_for(500ms);
 
-
+    // dump delle trasformazioni nel commento sotto
+    /*
     // print trasformation sequence
     Eigen::Affine3d temp;
     std::cout << "---------------------------------------" << std::endl;
@@ -568,10 +571,7 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
         std::cout << std::fixed << std::setprecision(3);
         std::cout << temp.matrix() << std::endl;
     }
-
-
-
-
+    */
 
 
     // ---------------------------------------------------------------------------------------------------------- GOAL FRAME BROADCASTING
@@ -616,6 +616,7 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
     goal_frame_broadcaster_->broadcastStaticTransform(goal_traslation, goal_rotation.reverse(), parent_frame, goal_frame);
     std::cout << "Goal sent (position): " << goal_traslation.transpose() << std::endl;
     std::cout << "Goal sent (orientat): " << goal_rotation.transpose() << std::endl;
+    std::cout << "Pr frame:" << parent_frame << ", Gl frame:" << goal_frame << std::endl; 
     g_pos = goal_traslation;
     g_ori = goal_rotation;
     // ---------------------------------------------------------------------------------------------------------- GOAL FRAME BROADCASTING
@@ -643,13 +644,13 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
     bool reached_goal = false;
     RunCartesianReachingLoop(goal_frame, reached_goal);
 
-    // INCREMENT LOGGING COUNTER
-    //log_counter_++;
+    
     // ---------------------------------------------------------------------------------------------------------- EXECUTE REACHING LOOP
 
     // ---------------------------------------------------------------------------------------------------------- LOG RESULT ON FILE
     std::string path = "/home/maclab/Documents/ROS_WORKSPACES/experiment";
-    std::string dir = "/test1";
+    std::string slash = "/";
+    std::string dir = slash + exp_dir_;
 
     std::ofstream ee = std::ofstream(path + dir + "/ee_pos_orient.txt", std::ios::app);
     if(ee.is_open()){

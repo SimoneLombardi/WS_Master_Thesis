@@ -150,12 +150,12 @@ void JointRobotTP::Update_AFunc_JointLimits(){
     //joint_v.setZero();
     joint_v.head(RefRate_sz/2) = kuka_robot_->getJointPositions();
     joint_v.tail(RefRate_sz/2) = ur10_robot_->getJointPositions();
-    
+    double delta = 0.3;
 
     // compute the activation funtion for each joint
     for (int i=0; i<RefRate_sz; ++i){
-        double incBellVal = ur10_robot_->IncreasingBellShapedFunction(jl_up_[i]-0.1,jl_up_[i],0.0,1.0, joint_v[i]);
-        double decBellVal = ur10_robot_->DecreasingBellShapedFunction(jl_down_[i]+0.1,jl_down_[i],0.0,1.0, joint_v[i]);
+        double incBellVal = ur10_robot_->IncreasingBellShapedFunction(jl_up_[i]-delta,jl_up_[i],0.0,1.0, joint_v[i]);
+        double decBellVal = ur10_robot_->DecreasingBellShapedFunction(jl_down_[i],jl_down_[i]+delta,0.0,1.0, joint_v[i]);
 
         TP_task_map_["joint_limits"].ActMatrix(i,i) = incBellVal + decBellVal;
     }
