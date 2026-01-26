@@ -118,7 +118,7 @@ void JointRobotTP::insertInitConfigMap(){
     free << 0.0, -2.1, 2.4, 0.0, -1.57, 0.0, 0.0, -1.57, 0.0, -1.57, 0.0, 0.0;
 
     Eigen::VectorXd jl(12);
-    jl << 0.0, 1.5, 1.5, 0.0, 1.57, 0.0, 0.0, -1.57, 0.0, -1.57, 0.0, 0.0;
+    jl << 0.0, -1.5, 1.5, 0.0, 1.57, 0.0, 0.0, -1.57, 0.0, -1.57, 0.0, 0.0;
 
     // insert into the map (DO NOT MODIFY THE DEFAULT CONFIGURATION)
     initial_configurations_map_["jl"] = jl;
@@ -133,22 +133,22 @@ void JointRobotTP::insertInitConfigMap(){
 }
 
 void JointRobotTP::insertFuncPointerVtc(){
-    TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_JointLimits);
+    //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_JointLimits);
     TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_EETarget);
-    //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance);
-    //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance_setBased);
+    TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance);
+    TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance_setBased);
     //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_MinAlt);
 
-    AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_JointLimits);
+    //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_JointLimits);
     AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_EETarget);
-    //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_ObstAvoidance);
-    //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_ObstAvoidance_setBased);
+    AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_ObstAvoidance);
+    AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_ObstAvoidance_setBased);
     //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_MinAlt);
 
-    TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_JointLimits);
+    //TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_JointLimits);
     TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_EETarget);
-    //TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_ObstAvoidance);
-    //TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_ObstAvoidance_setBased);
+    TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_ObstAvoidance);
+    TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_ObstAvoidance_setBased);
     //TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_MinAlt);
 
     if(((TRR_func_vtc.size()+AFunc_func_vtc.size()+TskJac_func_vtc.size())%3)!=0){
@@ -337,21 +337,13 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool 
 
     RCLCPP_WARN(node_->get_logger(), "KUKA gain: %.4f and UR10 gain: %.4f", kuka_gain, ur10_gain);
     while(rclcpp::ok() && !reached_goal){
-        //TIC(loop)
         // ---------------------- UPDATE DATA STEP ---------------------- //
-        //TIC(update);
-        //std::cout << "----- control 1 -----" << std::endl;
         UpdateTasksReferenceRate();
-        //std::cout << "----- control 2 -----" << std::endl;
         UpdateTasksActivationFunctions();
-        //std::cout << "----- control 3 -----" << std::endl;
         UpdateTasksJacobians();
-        //std::cout << "----- control 4 -----" << std::endl;
-        //TOC(update);
         // ---------------------- UPDATE DATA STEP ---------------------- //
 
         // ---------------------- Eval STOP CONDION --------------------- //
-        //////TIC(stop_cond);
         Eigen::VectorXd ee_error = TP_task_map_["endeff_target"].RefRate;
         Eigen::VectorXd pos = ee_error.head(3);
         Eigen::VectorXd ang = ee_error.tail(3);
@@ -376,36 +368,29 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool 
                 //RCLCPP_INFO(node_->get_logger(), "(%.3f,%.3f) - %.4f", pos.norm(),ang.norm(), ee_error.norm());
             }
         }
-        //////TOC(stop_cond);
         // ---------------------- Eval STOP CONDION --------------------- //
 
+        //std::cout << TP_task_map_["obstacle_avoidance_setbased"].ActMatrix.rows() << "-" << TP_task_map_["obstacle_avoidance_setbased"].ActMatrix.cols() << std::endl;
+        //std::cout << TP_task_map_["obstacle_avoidance_setbased"].TskJacobian.rows() << "-" << TP_task_map_["obstacle_avoidance_setbased"].TskJacobian.cols() << std::endl;
+        //std::cout << TP_task_map_["obstacle_avoidance_setbased"].RefRate.rows() << "-" << TP_task_map_["obstacle_avoidance_setbased"].RefRate.cols() << std::endl;
+
+
         // ---------------------- UPDATE TPIK STEP ---------------------- //
-        ////TIC(tpk);
-        ////TIC(init_tpk);
         tp_controller.init_TPComputation(NDOF, lambda, threshold, weight); 
-        ////TOC(init_tpk);
-        tp_controller.computeTP_step("joint_limits",  TP_task_map_["joint_limits"].ActMatrix,  TP_task_map_["joint_limits"].TskJacobian,  TP_task_map_["joint_limits"].RefRate);
+        //tp_controller.computeTP_step("joint_limits",  TP_task_map_["joint_limits"].ActMatrix,  TP_task_map_["joint_limits"].TskJacobian,  TP_task_map_["joint_limits"].RefRate);
         //tp_controller.computeTP_step("min_altitude",  TP_task_map_["min_altitude"].ActMatrix,  TP_task_map_["min_altitude"].TskJacobian,  TP_task_map_["min_altitude"].RefRate);
-        //tp_controller.computeTP_step("obstacle_avoidance",  TP_task_map_["obstacle_avoidance"].ActMatrix,  TP_task_map_["obstacle_avoidance"].TskJacobian,  TP_task_map_["obstacle_avoidance"].RefRate);
-        //TIC(step_tpk_tg);
+        tp_controller.computeTP_step("obstacle_avoidance",  TP_task_map_["obstacle_avoidance"].ActMatrix,  TP_task_map_["obstacle_avoidance"].TskJacobian,  TP_task_map_["obstacle_avoidance"].RefRate);
+        //tp_controller.computeTP_step("obstacle_avoidance_setbased",  TP_task_map_["obstacle_avoidance_setbased"].ActMatrix,  TP_task_map_["obstacle_avoidance_setbased"].TskJacobian,  TP_task_map_["obstacle_avoidance_setbased"].RefRate);
         tp_controller.computeTP_step("endeff_target", TP_task_map_["endeff_target"].ActMatrix, TP_task_map_["endeff_target"].TskJacobian, TP_task_map_["endeff_target"].RefRate);
-        //TOC(step_tpk_tg);
-        //TIC(step_tpk);
         tp_controller.computeTP_step("close_task", Eigen::MatrixXd::Identity(NDOF,NDOF), Eigen::MatrixXd::Identity(NDOF,NDOF), Eigen::VectorXd::Zero(NDOF)); 
-        //TOC(step_tpk);
         Eigen::VectorXd qdot_des = tp_controller.getTP_ydot();
         
-        ////TIC(close_tpk);
         tp_controller.clear_TPComputation();  
-        ////TOC(close_tpk); 
-        ////TOC(tpk);              
         // ---------------------- UPDATE TPIK STEP ---------------------- //
 
 
         // ---------------------- SEND VELOCITY STEP -------------------- //
-        //////TIC(send_vel);
         SendVelocityCommands(qdot_des, kuka_gain, ur10_gain);
-        ////////TOC(send_vel);
         // ---------------------- SEND VELOCITY STEP -------------------- //
         
         // CLEAR TASK PRIORITY MAP -------------------------------------- //
@@ -423,11 +408,9 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool 
             }
         }
         obs_dist.push_back(temp);
-        /// SAVE LOG VARIABLES
         debug_trace_publisher_->publish(msg);
 
         loop_rate.sleep();
-        //TOC(loop);
     }
 }
 // ------------------------------------------------------------------------------------------------------------------------------- MOVEMENT RELATED METHODS
@@ -589,8 +572,6 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
     Rx = Eigen::AngleAxisd(goal_req_rotat[0], Eigen::Vector3d::UnitX()).toRotationMatrix();
     R_goal = Rz * Ry * Rx;
 
-    //std::cout << "goal R:\n" << R_goal << std::endl;
-
     // goal translation in the kuka base frame
     Eigen::VectorXd goal_traslation(3);
     Eigen::VectorXd goal_rotation(3);
@@ -602,15 +583,13 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
     Eigen::Matrix3d fxd_prj = kuka_tool.linear(); // rotation matrix from ur10_tool to kuka_ee
     goal_rotation = (fxd_prj * R_goal).eulerAngles(2, 1, 0);
 
-    //std::cout << "fxd prj:\n" << fxd_prj << std::endl;
-
     // define broadcast frames of the goal frame
     std::string parent_frame = KUKA_BASE_LINK;
     std::string goal_frame  = "GOAL_FRAME";
     goal_name_ = goal_frame;
 
     //goal_traslation << 1.8131, 0.0, 2.0592;
-    //goal_traslation << 0.5, 0.0, 0.5; // related to base_link
+    //goal_traslation << 0.5, 0.0, 0.5; 
     goal_rotation << 0.0, 0.0, 0.0;
 
     goal_frame_broadcaster_->broadcastStaticTransform(goal_traslation, goal_rotation.reverse(), parent_frame, goal_frame);
@@ -621,21 +600,6 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
     g_ori = goal_rotation;
     // ---------------------------------------------------------------------------------------------------------- GOAL FRAME BROADCASTING
 
-    // ------------------------------------------ CHECK RELATIVE POSITION GOAL AND OBSTACLE
-    double dist = 0.0;
-    /*
-    do{
-        Eigen::Affine3d goal_tf = getGenericTransformation(parent_frame, goal_frame);
-        Eigen::Affine3d obst_tf = getGenericTransformation(parent_frame, "ik_target_body");
-        
-        Eigen::Vector3d diff = goal_tf.translation() - obst_tf.translation();
-        diff.z() = 0.0; // ignore z axis for the distance computation
-        dist = diff.norm();
-        RCLCPP_INFO(node_->get_logger(), "Move the obstacle away from the goal position (min distance 0.25 m) - (current distance: %.4f m)", dist);
-    }while(dist < 0.25);
-    */
-
-    // ------------------------------------------ CHECK RELATIVE POSITION GOAL AND OBSTACLE
     // ---------------------------------------------------------------------------------------------------------- EXECUTE REACHING LOOP
     std::this_thread::sleep_for(1000ms);
     std::cout << "\nSTARTNG REACHING LOOP" << std::endl;
@@ -731,9 +695,6 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
         }
         jvar_sub_log_file.close();
     }
-
-    // log jl info
-
     // ---------------------------------------------------------------------------------------------------------- LOG RESULT ON FILE
 
 
