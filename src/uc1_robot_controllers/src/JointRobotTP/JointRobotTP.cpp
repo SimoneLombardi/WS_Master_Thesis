@@ -218,7 +218,7 @@ void JointRobotTP::proximityTaskCallback(const uc1_robot_perception::msg::Proxim
 void JointRobotTP::jointStateCallback(const sensor_msgs::msg::JointState::SharedPtr msg){
     std::lock_guard<std::mutex> lock(joint_states_mutex_);
     
-    joint_var_log.push_back(msg->header.frame_id + "/" + std::to_string(msg->header.stamp.sec)+ "/" + std::to_string(msg->header.stamp.nanosec));
+    //joint_var_log.push_back(msg->header.frame_id + "/" + std::to_string(msg->header.stamp.sec)+ "/" + std::to_string(msg->header.stamp.nanosec));
 
     //std::cout << msg->name.size() << std::endl;
 }
@@ -398,16 +398,6 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool 
         // CLEAR TASK PRIORITY MAP -------------------------------------- //
 
         
-        /// SAVE LOG VARIABLES
-        std::vector<double> temp;
-        for(int i=0;i<frame_names_.size();++i){
-            for(int j=0;j<Prx_task_pts_OBAV_.size();++j){
-                if(frame_names_[i] == Prx_task_pts_OBAV_[j].link_id){
-                    temp.push_back(Prx_task_pts_OBAV_[j].distance);
-                }
-            }
-        }
-        obs_dist.push_back(temp);
         debug_trace_publisher_->publish(msg);
 
         loop_rate.sleep();
@@ -596,8 +586,6 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
     std::cout << "Goal sent (position): " << goal_traslation.transpose() << std::endl;
     std::cout << "Goal sent (orientat): " << goal_rotation.transpose() << std::endl;
     std::cout << "Pr frame:" << parent_frame << ", Gl frame:" << goal_frame << std::endl; 
-    g_pos = goal_traslation;
-    g_ori = goal_rotation;
     // ---------------------------------------------------------------------------------------------------------- GOAL FRAME BROADCASTING
 
     // ---------------------------------------------------------------------------------------------------------- EXECUTE REACHING LOOP
@@ -615,86 +603,95 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
     std::string path = "/home/maclab/Documents/ROS_WORKSPACES/experiment";
     std::string slash = "/";
     std::string dir = slash + exp_dir_;
-
-    std::ofstream ee = std::ofstream(path + dir + "/ee_pos_orient.txt", std::ios::app);
-    if(ee.is_open()){
-        if(ee_pos.size() == ee_ori.size()){
-            for(int i=0; i<ee_pos.size();++i){
-                ee << ee_pos[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << ";" << ee_ori[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
-            }
-        }
-        ee.close();    
+    // JOINT LIMITS
+    std::ofstream jl_act_log = std::ofstream(path + dir + "/jl_act_log.txt", std::ios::app);
+    if(jl_act_log.is_open()){
+        for(int i=0; i<jl_act.size(); ++i){
+            jl_act_log << jl_act[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+        }  
     }
 
-    std::ofstream cerr = std::ofstream(path + dir + "/cerr_pos.txt", std::ios::app);
-    if(cerr.is_open()){
-        for(int i=0; i<cerr_pos.size();++i){
-            cerr << cerr_pos[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
-        }
-        cerr.close();    
+    std::ofstream jl_ref_log = std::ofstream(path + dir + "/jl_ref_log.txt", std::ios::app);
+    if(jl_ref_log.is_open()){
+        for(int i=0; i<jl_ref.size(); ++i){
+            jl_ref_log << jl_ref[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+        }  
     }
 
-    std::ofstream g = std::ofstream(path + dir + "/g_pos_orient.txt", std::ios::app);
-    if(g.is_open()){
-        g << g_pos.reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << ";" << g_ori.reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
-        g.close();    
+    std::ofstream joint_v_log = std::ofstream(path + dir + "/joint_v_log.txt", std::ios::app);
+    if(joint_v_log.is_open()){
+        for(int i=0; i<joint_v.size(); ++i){
+            joint_v_log << joint_v[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+        }  
+    }
+    
+    // OBSTACLE AVOIDANCE NORMAL
+    std::ofstream obav_act_log = std::ofstream(path + dir + "/obav_act_log.txt", std::ios::app);
+    if(obav_act_log.is_open()){
+        for(int i=0; i<obav_act.size(); ++i){
+            obav_act_log << obav_act[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+        }  
     }
 
-    std::ofstream obst_dist(path + dir + "/obst_dist.txt", std::ios::app);
-    if (obst_dist.is_open()) {
-        for (size_t i = 0; i < obs_dist.size(); ++i) {
-
-            // Print obs_dist[i]
-            for (size_t j = 0; j < obs_dist[i].size(); ++j) {
-                obst_dist << obs_dist[i][j];
-                if (j + 1 < obs_dist[i].size())
-                    obst_dist << "; ";
-            }
-            obst_dist << std::endl;
-        }
-        obst_dist.close();
+    std::ofstream obav_ref_log = std::ofstream(path + dir + "/obav_ref_log.txt", std::ios::app);
+    if(obav_ref_log.is_open()){
+        for(int i=0; i<obav_ref.size(); ++i){
+            obav_ref_log << obav_ref[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+        }  
+    }
+    
+    // OBSTACLE AVOIDANCE SET BASED
+    std::ofstream obav_set_act_log = std::ofstream(path + dir + "/obav_set_act_log.txt", std::ios::app);
+    if(obav_set_act_log.is_open()){
+        for(int i=0; i<obav_set_act.size(); ++i){
+            obav_set_act_log << obav_set_act[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+        }  
     }
 
-    std::ofstream obst_act = std::ofstream(path + dir + "/obst_act.txt", std::ios::app);
-    if(obst_act.is_open()){
-        for(int i=0; i<abs_act.size();++i){
-            obst_act << abs_act[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
-        }
-        obst_act.close();    
+    std::ofstream obav_set_ref_log = std::ofstream(path + dir + "/obav_set_ref_log.txt", std::ios::app);
+    if(obav_set_ref_log.is_open()){
+        for(int i=0; i<obav_set_ref.size(); ++i){
+            obav_set_ref_log << obav_set_ref[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+        }  
     }
 
-    // log jl info 
-    std::ofstream jointvar = std::ofstream(path + dir + "/jointvar.txt", std::ios::app);
-    if(jointvar.is_open()){
-        for(int i=0; i<jq.size();++i){
-            jointvar << jq[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
-        }
-        jointvar.close();    
+    std::ofstream dist_v_log = std::ofstream(path + dir + "/dist_v_log.txt", std::ios::app);
+    if(dist_v_log.is_open()){
+        for(int i=0; i<dist_v.size(); ++i){
+            dist_v_log << dist_v[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+        }  
     }
 
-    std::ofstream jl_act_file = std::ofstream(path + dir + "/jl_act_file.txt", std::ios::app);
-    if(jl_act_file.is_open()){
-        for(int i=0; i<jl_act.size();++i){
-            jl_act_file << jl_act[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
-        }
-        jl_act_file.close();    
+    // REACHING TASK
+    std::ofstream ee_pos_log = std::ofstream(path + dir + "/ee_pos_log.txt", std::ios::app);
+    if(ee_pos_log.is_open()){
+        for(int i=0; i<ee_pos.size(); ++i){
+            ee_pos_log << ee_pos[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+        }  
     }
 
-    std::ofstream jl_ref_file = std::ofstream(path + dir + "/jl_ref_file.txt", std::ios::app);
-    if(jl_ref_file.is_open()){
-        for(int i=0; i<jl_act.size();++i){
-            jl_ref_file << jl_ref[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
-        }
-        jl_ref_file.close();    
+    std::ofstream ee_ori_log = std::ofstream(path + dir + "/ee_ori_log.txt", std::ios::app);
+    if(ee_ori_log.is_open()){
+        for(int i=0; i<ee_ori.size(); ++i){
+            ee_ori_log << ee_ori[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+        }  
     }
 
-    std::ofstream jvar_sub_log_file = std::ofstream(path + dir + "/jvar_sub_log.txt", std::ios::app);
-    if(jvar_sub_log_file.is_open()){
-        for(int i=0;i<joint_var_log.size();++i){
-            jvar_sub_log_file << joint_var_log[i] << std::endl; 
-        }
-        jvar_sub_log_file.close();
+    std::ofstream reach_ref_p_log = std::ofstream(path + dir + "/reach_ref_p_log.txt", std::ios::app);
+    if(reach_ref_p_log.is_open()){
+        for(int i=0; i<reach_ref_p.size(); ++i){
+            reach_ref_p_log << reach_ref_p[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+        }  
     }
+
+    std::ofstream reach_ref_o_log = std::ofstream(path + dir + "/reach_ref_o_log.txt", std::ios::app);
+    if(reach_ref_o_log.is_open()){
+        for(int i=0; i<reach_ref_o.size(); ++i){
+            reach_ref_o_log << reach_ref_o[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+        }  
+    }
+
+
     // ---------------------------------------------------------------------------------------------------------- LOG RESULT ON FILE
 
 

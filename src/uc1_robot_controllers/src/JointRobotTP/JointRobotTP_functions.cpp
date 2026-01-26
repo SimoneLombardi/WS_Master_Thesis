@@ -34,7 +34,7 @@ void JointRobotTP::Update_TRR_JointLimits(){
         TP_task_map_["joint_limits"].RefRate.block(kuka_sz,0,ur10_sz,1) = ur10_q;
 
         //SAVE LOG VAR
-        jq.push_back(TP_task_map_["joint_limits"].RefRate);
+        joint_v.push_back(TP_task_map_["joint_limits"].RefRate);
         //SAVE LOG VAR
 
         for(int i=0; i<NDOF; ++i){
@@ -75,7 +75,8 @@ void JointRobotTP::Update_TRR_EETarget(){
     /// SAVE LOG VAR
     ee_pos.push_back(Eigen::Vector3d((tool_tf.translation())(0),(tool_tf.translation())(1),(tool_tf.translation())(2)));
     ee_ori.push_back(Eigen::Vector3d((tool_tf.linear().eulerAngles(2, 1, 0).reverse())));
-    cerr_pos.push_back(Eigen::Vector3d(cart_err[0],cart_err[1],cart_err[2]));
+    reach_ref_p.push_back(Eigen::Vector3d(cart_err[0],cart_err[1],cart_err[2]));
+    reach_ref_o.push_back(Eigen::Vector3d(cart_err[3],cart_err[4],cart_err[5]));
     /// SAVE LOG VAR
 
     // test temp: remove error from rotation part
@@ -108,7 +109,10 @@ void JointRobotTP::Update_TRR_ObstAvoidance(){
     }
 
     /// SAVE LOG VAR
-    
+    Eigen::VectorXd vec(2); 
+    vec(0) = TP_task_map_[task_name].RefRate(0); 
+    vec(1) = TP_task_map_[task_name].RefRate(1);  
+    obav_ref.push_back(vec); 
     /// SAVE LOG VAR
 
     //std::cout << "[UPDATE TRR] OBAV Ref Rate: " << TP_task_map_["obstacle_avoidance"].RefRate.rows() << "." << TP_task_map_["obstacle_avoidance"].RefRate.cols() << std::endl;
@@ -121,6 +125,7 @@ void JointRobotTP::Update_TRR_ObstAvoidance_setBased(){
 
     TP_task_map_[task_name] = task;
     TP_task_map_[task_name].RefRate.resize(frame_names_.size(),1);
+    Eigen::VectorXd dist_raw = Eigen::VectorXd::Zero(frame_names_.size());
 
     double min_dist = 0.15;
     double delta = 0.1;
@@ -135,11 +140,14 @@ void JointRobotTP::Update_TRR_ObstAvoidance_setBased(){
         for(int j=0; j<Prx_task_pts_OBAV_.size(); j++){     // second loop on Prx_task (copy)
             if(frame_names_[i] == Prx_task_pts_OBAV_[j].link_id){
                 TP_task_map_[task_name].RefRate(i) = 0.2 * (min_dist + delta - Prx_task_pts_OBAV_[j].distance);
+                dist_raw(i) = Prx_task_pts_OBAV_[j].distance;
             }
         }
     }
 
     // to be added 
+    obav_set_ref.push_back(TP_task_map_[task_name].RefRate);
+    dist_v.push_back(dist_raw);
     // save log var
 }
 
@@ -186,8 +194,6 @@ void JointRobotTP::Update_AFunc_JointLimits(){
 
     //SAVE LOG VAR
     jl_act.push_back(Eigen::MatrixXd(TP_task_map_["joint_limits"].ActMatrix.diagonal()));
-    //std::cout << TP_task_map_["joint_limits"].ActMatrix.diagonal() << std::endl << std::endl;
-    //std::cout << joint_v << std::endl << std::endl;
     //SAVE LOG VAR
 }
 
@@ -217,7 +223,7 @@ void JointRobotTP::Update_AFunc_ObstAvoidance(){
     }
     
     /// SAVE LOG VAR
-    abs_act.push_back(Eigen::Vector2d(TP_task_map_["obstacle_avoidance"].ActMatrix(0,0),TP_task_map_["obstacle_avoidance"].ActMatrix(1,1)));
+    obav_act.push_back(TP_task_map_["obstacle_avoidance"].ActMatrix.diagonal());
     /// SAVE LOG VAR
 
     //std::cout << "OBAV Ref Rate:\n(" << TP_task_map_["obstacle_avoidance"].RefRate.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << ") -- (" <<  dir.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << ") -- " << TP_task_map_["obstacle_avoidance"].RefRate.norm() <<  std::endl;
@@ -244,6 +250,10 @@ void JointRobotTP::Update_AFunc_ObstAvoidance_setBased(){
             }
         }
     }
+
+    // log var save
+    obav_set_act.push_back(TP_task_map_[task_name].ActMatrix.diagonal());
+    // log var save
 
 }
 

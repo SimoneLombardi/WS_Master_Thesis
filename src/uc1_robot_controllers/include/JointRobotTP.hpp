@@ -106,17 +106,10 @@ class JointRobotTP
         // ------------------------------------------------- TP TASKS FUNCTIONS ------------------------------------------------- //
 
         // ------------------------------------------------- LOG VAR ------------------------------------------------- //
-        std::vector<Eigen::Vector3d> ee_pos, ee_ori, cerr_pos;
-        Eigen::Vector3d g_pos, g_ori;
-
-        std::vector<std::vector<double>> obs_dist;
-        std::vector<Eigen::Vector2d> abs_act;
-
-        std::vector<Eigen::MatrixXd> jl_act;
-        std::vector<Eigen::MatrixXd> jl_ref;
-        std::vector<Eigen::MatrixXd> jq;
-
-        std::vector<std::string> joint_var_log;
+        std::vector<Eigen::VectorXd> jl_act, jl_ref, joint_v;
+        std::vector<Eigen::VectorXd> obav_act, obav_ref;
+        std::vector<Eigen::VectorXd> obav_set_act, obav_set_ref, dist_v;
+        std::vector<Eigen::Vector3d> ee_pos, ee_ori, reach_ref_p, reach_ref_o;
         // ------------------------------------------------- LOG VAR ------------------------------------------------- //
     private:
         // -------------------------------------------------------------------------------------------------------------------------------------------- Robot interfaces
