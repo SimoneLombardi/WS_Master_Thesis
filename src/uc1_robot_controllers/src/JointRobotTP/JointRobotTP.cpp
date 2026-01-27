@@ -202,17 +202,7 @@ void JointRobotTP::proximityTaskCallback(const uc1_robot_perception::msg::Proxim
         }
     }
 
-    if(proximity_task_points_.size() != NDOF-1){
-        RCLCPP_WARN(node_->get_logger(), "Proximity task points size does not match frame names size!");
-    }
-
-    // publish arrow for min dist task
-    //double dist = proximity_task_points_[0].distance;
-    //Eigen::Vector3d origin(proximity_task_points_[0].min_point_robot.x, proximity_task_points_[0].min_point_robot.y, proximity_task_points_[0].min_point_robot.z);
-    //Eigen::Vector3d vector(proximity_task_points_[0].min_point_vector.x*dist, proximity_task_points_[0].min_point_vector.y*dist, proximity_task_points_[0].min_point_vector.z*dist);
-    
-    //publishArrowMarker(origin, vector, KUKA_BASE_LINK, "min_dist_point", "bblue", 1, control_task_publisher_);
-    //std::cout << proximity_task_points_.size() << " --- " << proximity_task_points_[0].distance << " --- " << proximity_task_points_[0].link_id << std::endl;
+    RCLCPP_INFO_THROTTLE(node_->get_logger(), *node_->get_clock(), 1000, "prx task size: %ld", proximity_task_points_.size());
 }
 
 void JointRobotTP::jointStateCallback(const sensor_msgs::msg::JointState::SharedPtr msg){

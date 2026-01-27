@@ -115,7 +115,7 @@ void JointRobotTP::Update_TRR_ObstAvoidance(){
     obav_ref.push_back(vec); 
     /// SAVE LOG VAR
 
-    //std::cout << "[UPDATE TRR] OBAV Ref Rate: " << TP_task_map_["obstacle_avoidance"].RefRate.rows() << "." << TP_task_map_["obstacle_avoidance"].RefRate.cols() << std::endl;
+    std::cout << "[UPDATE TRR] OBAV Ref Rate: " << TP_task_map_["obstacle_avoidance"].RefRate.rows() << "." << TP_task_map_["obstacle_avoidance"].RefRate.cols() << std::endl;
     //std::cout << "[UPDATE TRR] OBAV Ref Rate: " << TP_task_map_["obstacle_avoidance"].RefRate.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
 }
 

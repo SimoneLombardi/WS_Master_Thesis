@@ -39,7 +39,7 @@ def generate_launch_description():
         package="pointcloud_interactive_markers",
         executable="obstacle-cloud-broadcaster",
         parameters=[{
-            "ptc_filename":"/resources/multi_cylinder_colud.pcd",
+            "ptc_filename":"/resources/single_cylinder_colud.pcd",
             "ptc_pkgname":"environment_pointcloud_processing"
         }]
     )
