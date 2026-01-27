@@ -136,19 +136,19 @@ void JointRobotTP::insertFuncPointerVtc(){
     //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_JointLimits);
     TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_EETarget);
     TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance);
-    TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance_setBased);
+    //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance_setBased);
     //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_MinAlt);
 
     //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_JointLimits);
     AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_EETarget);
     AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_ObstAvoidance);
-    AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_ObstAvoidance_setBased);
+    //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_ObstAvoidance_setBased);
     //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_MinAlt);
 
     //TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_JointLimits);
     TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_EETarget);
     TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_ObstAvoidance);
-    TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_ObstAvoidance_setBased);
+    //TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_ObstAvoidance_setBased);
     //TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_MinAlt);
 
     if(((TRR_func_vtc.size()+AFunc_func_vtc.size()+TskJac_func_vtc.size())%3)!=0){
@@ -379,7 +379,7 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool 
         tp_controller.init_TPComputation(NDOF, lambda, threshold, weight); 
         //tp_controller.computeTP_step("joint_limits",  TP_task_map_["joint_limits"].ActMatrix,  TP_task_map_["joint_limits"].TskJacobian,  TP_task_map_["joint_limits"].RefRate);
         //tp_controller.computeTP_step("min_altitude",  TP_task_map_["min_altitude"].ActMatrix,  TP_task_map_["min_altitude"].TskJacobian,  TP_task_map_["min_altitude"].RefRate);
-        tp_controller.computeTP_step("obstacle_avoidance",  TP_task_map_["obstacle_avoidance"].ActMatrix,  TP_task_map_["obstacle_avoidance"].TskJacobian,  TP_task_map_["obstacle_avoidance"].RefRate);
+        //tp_controller.computeTP_step("obstacle_avoidance",  TP_task_map_["obstacle_avoidance"].ActMatrix,  TP_task_map_["obstacle_avoidance"].TskJacobian,  TP_task_map_["obstacle_avoidance"].RefRate);
         //tp_controller.computeTP_step("obstacle_avoidance_setbased",  TP_task_map_["obstacle_avoidance_setbased"].ActMatrix,  TP_task_map_["obstacle_avoidance_setbased"].TskJacobian,  TP_task_map_["obstacle_avoidance_setbased"].RefRate);
         tp_controller.computeTP_step("endeff_target", TP_task_map_["endeff_target"].ActMatrix, TP_task_map_["endeff_target"].TskJacobian, TP_task_map_["endeff_target"].RefRate);
         tp_controller.computeTP_step("close_task", Eigen::MatrixXd::Identity(NDOF,NDOF), Eigen::MatrixXd::Identity(NDOF,NDOF), Eigen::VectorXd::Zero(NDOF)); 
@@ -606,21 +606,21 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
     // JOINT LIMITS
     std::ofstream jl_act_log = std::ofstream(path + dir + "/jl_act_log.txt", std::ios::app);
     if(jl_act_log.is_open()){
-        for(int i=0; i<jl_act.size(); ++i){
+        for(long unsigned int i=0; i<jl_act.size(); ++i){
             jl_act_log << jl_act[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
         }  
     }
 
     std::ofstream jl_ref_log = std::ofstream(path + dir + "/jl_ref_log.txt", std::ios::app);
     if(jl_ref_log.is_open()){
-        for(int i=0; i<jl_ref.size(); ++i){
+        for(long unsigned int i=0; i<jl_ref.size(); ++i){
             jl_ref_log << jl_ref[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
         }  
     }
 
     std::ofstream joint_v_log = std::ofstream(path + dir + "/joint_v_log.txt", std::ios::app);
     if(joint_v_log.is_open()){
-        for(int i=0; i<joint_v.size(); ++i){
+        for(long unsigned int i=0; i<joint_v.size(); ++i){
             joint_v_log << joint_v[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
         }  
     }
@@ -628,14 +628,14 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
     // OBSTACLE AVOIDANCE NORMAL
     std::ofstream obav_act_log = std::ofstream(path + dir + "/obav_act_log.txt", std::ios::app);
     if(obav_act_log.is_open()){
-        for(int i=0; i<obav_act.size(); ++i){
+        for(long unsigned int i=0; i<obav_act.size(); ++i){
             obav_act_log << obav_act[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
         }  
     }
 
     std::ofstream obav_ref_log = std::ofstream(path + dir + "/obav_ref_log.txt", std::ios::app);
     if(obav_ref_log.is_open()){
-        for(int i=0; i<obav_ref.size(); ++i){
+        for(long unsigned int i=0; i<obav_ref.size(); ++i){
             obav_ref_log << obav_ref[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
         }  
     }
@@ -643,21 +643,21 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
     // OBSTACLE AVOIDANCE SET BASED
     std::ofstream obav_set_act_log = std::ofstream(path + dir + "/obav_set_act_log.txt", std::ios::app);
     if(obav_set_act_log.is_open()){
-        for(int i=0; i<obav_set_act.size(); ++i){
+        for(long unsigned int i=0; i<obav_set_act.size(); ++i){
             obav_set_act_log << obav_set_act[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
         }  
     }
 
     std::ofstream obav_set_ref_log = std::ofstream(path + dir + "/obav_set_ref_log.txt", std::ios::app);
     if(obav_set_ref_log.is_open()){
-        for(int i=0; i<obav_set_ref.size(); ++i){
+        for(long unsigned int i=0; i<obav_set_ref.size(); ++i){
             obav_set_ref_log << obav_set_ref[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
         }  
     }
 
     std::ofstream dist_v_log = std::ofstream(path + dir + "/dist_v_log.txt", std::ios::app);
     if(dist_v_log.is_open()){
-        for(int i=0; i<dist_v.size(); ++i){
+        for(long unsigned int i=0; i<dist_v.size(); ++i){
             dist_v_log << dist_v[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
         }  
     }
@@ -665,28 +665,28 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
     // REACHING TASK
     std::ofstream ee_pos_log = std::ofstream(path + dir + "/ee_pos_log.txt", std::ios::app);
     if(ee_pos_log.is_open()){
-        for(int i=0; i<ee_pos.size(); ++i){
+        for(long unsigned int i=0; i<ee_pos.size(); ++i){
             ee_pos_log << ee_pos[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
         }  
     }
 
     std::ofstream ee_ori_log = std::ofstream(path + dir + "/ee_ori_log.txt", std::ios::app);
     if(ee_ori_log.is_open()){
-        for(int i=0; i<ee_ori.size(); ++i){
+        for(long unsigned int i=0; i<ee_ori.size(); ++i){
             ee_ori_log << ee_ori[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
         }  
     }
 
     std::ofstream reach_ref_p_log = std::ofstream(path + dir + "/reach_ref_p_log.txt", std::ios::app);
     if(reach_ref_p_log.is_open()){
-        for(int i=0; i<reach_ref_p.size(); ++i){
+        for(long unsigned int i=0; i<reach_ref_p.size(); ++i){
             reach_ref_p_log << reach_ref_p[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
         }  
     }
 
     std::ofstream reach_ref_o_log = std::ofstream(path + dir + "/reach_ref_o_log.txt", std::ios::app);
     if(reach_ref_o_log.is_open()){
-        for(int i=0; i<reach_ref_o.size(); ++i){
+        for(long unsigned int i=0; i<reach_ref_o.size(); ++i){
             reach_ref_o_log << reach_ref_o[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
         }  
     }

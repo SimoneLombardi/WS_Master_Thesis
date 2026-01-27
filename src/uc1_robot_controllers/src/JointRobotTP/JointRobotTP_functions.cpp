@@ -149,6 +149,8 @@ void JointRobotTP::Update_TRR_ObstAvoidance_setBased(){
     obav_set_ref.push_back(TP_task_map_[task_name].RefRate);
     dist_v.push_back(dist_raw);
     // save log var
+
+    //std::cout << TP_task_map_[task_name].RefRate << std::endl;
 }
 
 void JointRobotTP::Update_TRR_MinAlt(){
@@ -255,6 +257,7 @@ void JointRobotTP::Update_AFunc_ObstAvoidance_setBased(){
     obav_set_act.push_back(TP_task_map_[task_name].ActMatrix.diagonal());
     // log var save
 
+    //std::cout << TP_task_map_[task_name].ActMatrix.diagonal() << std::endl;
 }
 
 void JointRobotTP::Update_AFunc_MinAlt(){
@@ -415,6 +418,7 @@ void JointRobotTP::Update_TskJac_ObstAvoidance_setBased(){
     int RefR_sz = TP_task_map_[task_name].RefRate.size();
     TP_task_map_[task_name].TskJacobian = Eigen::MatrixXd::Zero(RefR_sz, RefR_sz);
 
+    int equal_to_obav=0;
     // temp var definition
     Eigen::Vector3d dvec, ax_vtc, AX_vtc, RobMinPoint;
     Eigen::VectorXd r;
@@ -431,7 +435,7 @@ void JointRobotTP::Update_TskJac_ObstAvoidance_setBased(){
 
                 RobMinPoint = Eigen::Vector3d(Prx_task_pts_OBAV_[j].min_point_robot.x, 
                                               Prx_task_pts_OBAV_[j].min_point_robot.y, 
-                                              Prx_task_pts_OBAV_[j].min_point_robot.z);     
+                                              Prx_task_pts_OBAV_[j].min_point_robot.z);   
             }
         }
         

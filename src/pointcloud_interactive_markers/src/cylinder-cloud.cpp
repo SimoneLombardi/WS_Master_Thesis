@@ -10,6 +10,7 @@
 #include <tf2_eigen/tf2_eigen.hpp>
 #include <cmath>
 
+
 #define LINK_ZERO_NAME "kuka_base_link" // nome del primo link del quale devo calcolare le proximity task
 
 class CylinderPointCloudPublisher : public rclcpp::Node
@@ -62,8 +63,11 @@ private:
     }
     
     cloud->width = static_cast<uint32_t>(cloud->points.size());
-    cloud->height = 5;
+    cloud->height = 1;
     cloud->is_dense = true;
+
+    pcl::io::savePCDFileASCII ("single_cylinder_colud.pcd", *cloud);
+
 
     // get tf between base and interactive target
     geometry_msgs::msg::TransformStamped transformStamped;

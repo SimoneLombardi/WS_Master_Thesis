@@ -36,7 +36,7 @@ public:
 private:
   void timer_callback()
   {
-    // build sphere cloud
+    // load cloud from file
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
     cloud->header.frame_id = "ik_target_body";
 
