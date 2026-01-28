@@ -67,6 +67,7 @@ class JointRobotTP
         void initialize(NodeShPtr node_joint_robot, NodeShPtr kuka_node, NodeShPtr ur1o_node);
         void insertInitConfigMap();
         void insertFuncPointerVtc();
+        void declareParameters();
 
         void ReachInitialConfiguration(const std::string init_config_name);
         void RunCartesianReachingLoop(const std::string& goal_frame, bool reached_goal);

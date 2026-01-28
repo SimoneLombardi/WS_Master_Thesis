@@ -325,6 +325,7 @@ install(DIRECTORY
   resources
   urdf
   msg
+  config
   DESTINATION share/${PROJECT_NAME}/
 )
 

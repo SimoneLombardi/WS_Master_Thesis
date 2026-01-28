@@ -65,11 +65,15 @@ void JointRobotTP::initialize(NodeShPtr node_joint_robot, NodeShPtr kuka_node, N
 
         rcl_action_server_get_default_options()
     );
+    
     // populate the init config vectors
     insertInitConfigMap();
 
     // populate the TP function vectors 
     insertFuncPointerVtc();
+
+    // parameter declaration
+    declareParameters();
 
     // joint limits vectors
     jl_down_={-3.2, -2.44, -2.0, -6.0, -2.1,-6.0, -6.0, -6.0, -6.0, -6.0, -6.0, -6.0};
@@ -83,11 +87,6 @@ void JointRobotTP::initialize(NodeShPtr node_joint_robot, NodeShPtr kuka_node, N
 
     joint_names_ = {"kuka_joint_a1","kuka_joint_a2","kuka_joint_a3","kuka_joint_a4","kuka_joint_a5","kuka_joint_a6",
                     "shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"};
-
-    // parameter declaration
-    kuka_gain_ = node_->declare_parameter<double>("kuka_gain", 0.05);
-    ur10_gain_ = node_->declare_parameter<double>("ur10_gain", 0.5);
-    exp_dir_ = node_->declare_parameter<std::string>("exp_dir_name", "def");
 
     RCLCPP_INFO(node_->get_logger(), "JointRobotTP, initialize complete");
 }
@@ -155,6 +154,35 @@ void JointRobotTP::insertFuncPointerVtc(){
         RCLCPP_ERROR(node_->get_logger(), "TP FUNCTION VECTOR IS NOT COHERENT, CONTROL DEFINTION");
     }
 }
+
+void JointRobotTP::declareParameters(){
+    // general
+    node_->declare_parameter<double>("kuka_gain", 0.05);
+    node_->declare_parameter<double>("ur10_gain", 0.5);
+    node_->declare_parameter<std::string>("exp_dir_name", "def");
+
+    // Joint limit task
+    node_->declare_parameter<double>("jl_gain_ref_rat", 0.2);
+    node_->declare_parameter<double>("jl_act_delta", 0.3);
+    
+    // Reaching task
+    node_->declare_parameter<double>("eer_lin_gain", 1.0);
+    node_->declare_parameter<double>("eer_ori_gain", 1.0);
+
+    // Obstacle avoidance task
+    node_->declare_parameter<double>("obv_dist_limit", 0.05);
+    node_->declare_parameter<double>("obv_delta", 0.2);
+
+    // Obstacle avoidance set based task
+    node_->declare_parameter<double>("obv_set_gain", 0.2);
+    node_->declare_parameter<double>("obv_set_min_dist", 0.15);
+    node_->declare_parameter<double>("obv_set_delta", 0.1);
+
+    node_->declare_parameter<double>("obv_set_dist_limit", 0.05);
+    node_->declare_parameter<double>("obv_set_act_delta", 0.2);
+
+    // Minimum altitude task
+}
 // ------------------------------------------------------------------------------------------------------------------------------- INITIALIZATION METHODS
 
 // ------------------------------------------------------------------------------------------------------------------------------- UPDATER METHODS
@@ -202,7 +230,7 @@ void JointRobotTP::proximityTaskCallback(const uc1_robot_perception::msg::Proxim
         }
     }
 
-    RCLCPP_INFO_THROTTLE(node_->get_logger(), *node_->get_clock(), 1000, "prx task size: %ld", proximity_task_points_.size());
+    RCLCPP_INFO_THROTTLE(node_->get_logger(), *node_->get_clock(), 3000, "prx task size: %ld", proximity_task_points_.size());
 }
 
 void JointRobotTP::jointStateCallback(const sensor_msgs::msg::JointState::SharedPtr msg){
@@ -580,6 +608,11 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
 
     // ---------------------------------------------------------------------------------------------------------- EXECUTE REACHING LOOP
     std::this_thread::sleep_for(1000ms);
+
+    kuka_gain_ = node_->get_parameter("kuka_gain").as_double();
+    ur10_gain_ = node_->get_parameter("ur10_gain").as_double();
+    exp_dir_ = node_->get_parameter("exp_dir_name").as_string();
+    
     std::cout << "\nSTARTNG REACHING LOOP" << std::endl;
 
     

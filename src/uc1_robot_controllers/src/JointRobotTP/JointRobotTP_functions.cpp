@@ -37,11 +37,12 @@ void JointRobotTP::Update_TRR_JointLimits(){
         joint_v.push_back(TP_task_map_["joint_limits"].RefRate);
         //SAVE LOG VAR
 
+        double jl_gain = node_->get_parameter("jl_gain_ref_rat").as_double();
         for(int i=0; i<NDOF; ++i){
             if(TP_task_map_["joint_limits"].RefRate(i) <= jl_avg_[i]){
-                TP_task_map_["joint_limits"].RefRate(i) = 0.2 * (abs(jl_avg_[i]-TP_task_map_["joint_limits"].RefRate(i))+0.01);
+                TP_task_map_["joint_limits"].RefRate(i) = jl_gain * (abs(jl_avg_[i]-TP_task_map_["joint_limits"].RefRate(i))+0.01);
             }else{
-                TP_task_map_["joint_limits"].RefRate(i) = -0.2 * (abs(jl_avg_[i]-TP_task_map_["joint_limits"].RefRate(i))-0.01);
+                TP_task_map_["joint_limits"].RefRate(i) = -jl_gain * (abs(jl_avg_[i]-TP_task_map_["joint_limits"].RefRate(i))-0.01);
             }
         }
 
@@ -79,6 +80,11 @@ void JointRobotTP::Update_TRR_EETarget(){
     reach_ref_o.push_back(Eigen::Vector3d(cart_err[3],cart_err[4],cart_err[5]));
     /// SAVE LOG VAR
 
+    double lin_gain = node_->get_parameter("eer_lin_gain").as_double();
+    double ori_gain = node_->get_parameter("eer_ori_gain").as_double();
+    cart_err.head(3) = cart_err.head(3) * lin_gain;
+    cart_err.tail(3) = cart_err.tail(3) * ori_gain;
+
     // test temp: remove error from rotation part
     //cart_err.tail(3) = Eigen::Vector3d::Zero();
 
@@ -115,7 +121,7 @@ void JointRobotTP::Update_TRR_ObstAvoidance(){
     obav_ref.push_back(vec); 
     /// SAVE LOG VAR
 
-    std::cout << "[UPDATE TRR] OBAV Ref Rate: " << TP_task_map_["obstacle_avoidance"].RefRate.rows() << "." << TP_task_map_["obstacle_avoidance"].RefRate.cols() << std::endl;
+    //std::cout << "[UPDATE TRR] OBAV Ref Rate: " << TP_task_map_["obstacle_avoidance"].RefRate.rows() << "." << TP_task_map_["obstacle_avoidance"].RefRate.cols() << std::endl;
     //std::cout << "[UPDATE TRR] OBAV Ref Rate: " << TP_task_map_["obstacle_avoidance"].RefRate.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
 }
 
@@ -127,8 +133,9 @@ void JointRobotTP::Update_TRR_ObstAvoidance_setBased(){
     TP_task_map_[task_name].RefRate.resize(frame_names_.size(),1);
     Eigen::VectorXd dist_raw = Eigen::VectorXd::Zero(frame_names_.size());
 
-    double min_dist = 0.15;
-    double delta = 0.1;
+    double obv_set_gain = node_->get_parameter("obv_set_gain").as_double();
+    double obv_set_min_dist = node_->get_parameter("obv_set_min_dist").as_double();
+    double obv_set_delta = node_->get_parameter("obv_set_delta").as_double();
     
     if((TP_task_map_.find("obstacle_avoidance") == TP_task_map_.end())){ // if normal_obav not present -> safe copy of prox task
         Prx_task_pts_OBAV_.clear();
@@ -139,7 +146,7 @@ void JointRobotTP::Update_TRR_ObstAvoidance_setBased(){
     for(int i=0; i<frame_names_.size(); ++i){               // first loop on frame_names --> RefRate ordinato come frame_names_
         for(int j=0; j<Prx_task_pts_OBAV_.size(); j++){     // second loop on Prx_task (copy)
             if(frame_names_[i] == Prx_task_pts_OBAV_[j].link_id){
-                TP_task_map_[task_name].RefRate(i) = 0.2 * (min_dist + delta - Prx_task_pts_OBAV_[j].distance);
+                TP_task_map_[task_name].RefRate(i) = obv_set_gain * (obv_set_min_dist + obv_set_delta - Prx_task_pts_OBAV_[j].distance);
                 dist_raw(i) = Prx_task_pts_OBAV_[j].distance;
             }
         }
@@ -184,12 +191,13 @@ void JointRobotTP::Update_AFunc_JointLimits(){
     //joint_v.setZero();
     joint_v.head(RefRate_sz/2) = kuka_robot_->getJointPositions();
     joint_v.tail(RefRate_sz/2) = ur10_robot_->getJointPositions();
-    double delta = 0.3;
+    
+    double jl_act_delta = node_->get_parameter("jl_act_delta").as_double();
 
     // compute the activation funtion for each joint
     for (int i=0; i<RefRate_sz; ++i){
-        double incBellVal = ur10_robot_->IncreasingBellShapedFunction(jl_up_[i]-delta,jl_up_[i],0.0,1.0, joint_v[i]);
-        double decBellVal = ur10_robot_->DecreasingBellShapedFunction(jl_down_[i],jl_down_[i]+delta,0.0,1.0, joint_v[i]);
+        double incBellVal = ur10_robot_->IncreasingBellShapedFunction(jl_up_[i]-jl_act_delta,jl_up_[i],0.0,1.0, joint_v[i]);
+        double decBellVal = ur10_robot_->DecreasingBellShapedFunction(jl_down_[i],jl_down_[i]+jl_act_delta,0.0,1.0, joint_v[i]);
 
         TP_task_map_["joint_limits"].ActMatrix(i,i) = incBellVal + decBellVal;
     }
@@ -213,14 +221,14 @@ void JointRobotTP::Update_AFunc_ObstAvoidance(){
     int RefRate_sz = TP_task_map_["obstacle_avoidance"].RefRate.size();
     TP_task_map_["obstacle_avoidance"].ActMatrix = Eigen::MatrixXd::Zero(RefRate_sz, RefRate_sz);
 
-    double dist_limit = 0.05;
-    double delta = 0.20;
+    double obv_dist_limit = node_->get_parameter("obv_dist_limit").as_double();
+    double obv_delta = node_->get_parameter("obv_delta").as_double();
 
     double act_value = 0.0;
     double distance = Prx_task_pts_OBAV_[0].distance;
     //Eigen::Vector3d dir(Prx_task_pts_OBAV_[0].min_point_vector.x, Prx_task_pts_OBAV_[0].min_point_vector.y, Prx_task_pts_OBAV_[0].min_point_vector.z);
     for(int i=0; i<RefRate_sz; ++i){
-        act_value = ur10_robot_->DecreasingBellShapedFunction(dist_limit, dist_limit+delta, 0.0, 1.0, distance);
+        act_value = ur10_robot_->DecreasingBellShapedFunction(obv_dist_limit, obv_dist_limit+obv_delta, 0.0, 1.0, distance);
         TP_task_map_["obstacle_avoidance"].ActMatrix(i,i) = act_value;
     }
     
@@ -240,13 +248,13 @@ void JointRobotTP::Update_AFunc_ObstAvoidance_setBased(){
     int RefR_sz = TP_task_map_[task_name].RefRate.size();
     TP_task_map_[task_name].ActMatrix = Eigen::MatrixXd::Zero(RefR_sz, RefR_sz);
 
-    double dist_limit = 0.05;
-    double delta = 0.20;
+    double obv_set_dist_limit = node_->get_parameter("obv_set_dist_limit").as_double();
+    double obv_set_delta = node_->get_parameter("obv_set_act_delta").as_double();
 
     for(int i=0; i<frame_names_.size(); ++i){               // first loop on frame_names --> RefRate ordinato come frame_names_
         for(int j=0; j<Prx_task_pts_OBAV_.size(); j++){     // second loop on Prx_task (copy)
             if(frame_names_[i] == Prx_task_pts_OBAV_[j].link_id){
-                TP_task_map_[task_name].ActMatrix(i,i) = ur10_robot_->DecreasingBellShapedFunction(dist_limit, dist_limit+delta, 
+                TP_task_map_[task_name].ActMatrix(i,i) = ur10_robot_->DecreasingBellShapedFunction(obv_set_dist_limit, obv_set_dist_limit+obv_set_delta, 
                                                                                                    0.0, 1.0, 
                                                                                                    Prx_task_pts_OBAV_[j].distance);
             }
