@@ -15,8 +15,14 @@ def generate_launch_description():
         #"orientation":[0.0, 0.0, 0.0]
         # GATE
         #"position"   :[3.0, 0.0, 0.05],
-        #"orientation":[0.0, 0.0, 0.0]
+        #"orientation":[0.0, 0.0, -1.57]
     # chassis-cloud -- CHASSIS MACCHINA
+        # SIDE
+        #"position"   :[3.5, 0.0, 0.05],
+        #"orientation":[0.0, 0.0, -1.57]
+        # BACK
+        #"position"   :[4.0, 0.0, 0.05],
+        #"orientation":[0.0, 0.0, -3.14]
 
     
     interactive_targhet_node = Node(

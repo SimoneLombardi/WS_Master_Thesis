@@ -296,27 +296,27 @@ void JointRobotTP::Update_TskJac_JointLimits(){
 
 void JointRobotTP::Update_TskJac_EETarget(){
 
-    // compute the Jacobian in the respective base frames
-    Eigen::MatrixXd Jacobian = Eigen::MatrixXd::Zero(6,12);
-    Eigen::MatrixXd J_kuka = kuka_robot_->computeJacobian(KUKA_EE_LINK); // kuka_base__J__6/0
-    Eigen::MatrixXd J_ur10 = ur10_robot_->computeJacobian(TOOL);         // ur10_base__J__6/0  "shoulder_link"
-    // compute the trasformation for projecting ur10 jacobian in kuka base frame
-    Eigen::MatrixXd ur10_projector = getGenericTransformation(KUKA_BASE_LINK, UR10_BASE_LINK).linear();               // kuka_base__R__ur10_base 
-    Eigen::VectorXd ur10_tot_trasl = getGenericTransformation(UR10_BASE_LINK, TOOL).translation();      // ur10_base__r__tool
-    // PROVARE SOSTITUIRE IL SH-LINK AL POSTO DI UR10 BASE LINK
-    Eigen::MatrixXd kukaProj = Eigen::MatrixXd::Identity(6,6);
-    Eigen::MatrixXd ur10Proj = Eigen::MatrixXd::Identity(6,6);
+    // // compute the Jacobian in the respective base frames
+    // Eigen::MatrixXd Jacobian = Eigen::MatrixXd::Zero(6,12);
+    // Eigen::MatrixXd J_kuka = kuka_robot_->computeJacobian(KUKA_EE_LINK); // kuka_base__J__6/0
+    // Eigen::MatrixXd J_ur10 = ur10_robot_->computeJacobian(TOOL);         // ur10_base__J__6/0  "shoulder_link"
+    // // compute the trasformation for projecting ur10 jacobian in kuka base frame
+    // Eigen::MatrixXd ur10_projector = getGenericTransformation(KUKA_BASE_LINK, UR10_BASE_LINK).linear();               // kuka_base__R__ur10_base 
+    // Eigen::VectorXd ur10_tot_trasl = getGenericTransformation(UR10_BASE_LINK, TOOL).translation();      // ur10_base__r__tool
+    // // PROVARE SOSTITUIRE IL SH-LINK AL POSTO DI UR10 BASE LINK
+    // Eigen::MatrixXd kukaProj = Eigen::MatrixXd::Identity(6,6);
+    // Eigen::MatrixXd ur10Proj = Eigen::MatrixXd::Identity(6,6);
 
-    ur10Proj.block(0,0,3,3) = ur10_projector;
-    ur10Proj.block(3,3,3,3) = ur10_projector;
+    // ur10Proj.block(0,0,3,3) = ur10_projector;
+    // ur10Proj.block(3,3,3,3) = ur10_projector;
 
-    Eigen::MatrixXd skew_mat = Eigen::MatrixXd::Zero(3,3);
-    Eigen::VectorXd r = ur10_projector * ur10_tot_trasl; 
-    skew_mat << 0,-r(2),r(1),r(2),0,-r(0),-r(1),r(0),0;
-    kukaProj.block(0,3,3,3) = skew_mat.transpose();
+    // Eigen::MatrixXd skew_mat = Eigen::MatrixXd::Zero(3,3);
+    // Eigen::VectorXd r = ur10_projector * ur10_tot_trasl; 
+    // skew_mat << 0,-r(2),r(1),r(2),0,-r(0),-r(1),r(0),0;
+    // kukaProj.block(0,3,3,3) = skew_mat.transpose();
 
-    Jacobian.leftCols(6) = kukaProj * J_kuka;
-    Jacobian.rightCols(6) = ur10Proj * J_ur10;
+    // Jacobian.leftCols(6) = kukaProj * J_kuka;
+    // Jacobian.rightCols(6) = ur10Proj * J_ur10;
 
     // provo a compilare la JACOBIANA con il metodo classico
     Eigen::Affine3d cur_lnk_tf;
@@ -350,6 +350,11 @@ void JointRobotTP::Update_TskJac_EETarget(){
         TP_task_map_["endeff_target"].TskJacobian.block(0,i,3,1) = AX_vtc.cross((ee_tf.translation()-cur_lnk_tf.translation()));
         TP_task_map_["endeff_target"].TskJacobian.block(3,i,3,1) = AX_vtc;
     }
+
+    Eigen::VectorXd temp(Eigen::Map<Eigen::VectorXd>(TP_task_map_["endeff_target"].TskJacobian.data(), 
+                                              TP_task_map_["endeff_target"].TskJacobian.cols()*TP_task_map_["endeff_target"].TskJacobian.rows()));
+    ee_jacobian.push_back(temp);
+
     //TP_task_map_["endeff_target"].TskJacobian.block(0,6,6,6) = ur10Proj * urJac;
     //std::cout << "EE JACOBIAN:\n"<< std::setprecision(2) << TP_task_map_["endeff_target"].TskJacobian << std::endl;
     //std::cout << "JAC NORM:\n" << std::setprecision(2) << jacNorm << std::endl;

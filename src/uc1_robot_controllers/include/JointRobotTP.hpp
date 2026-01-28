@@ -70,7 +70,7 @@ class JointRobotTP
         void declareParameters();
 
         void ReachInitialConfiguration(const std::string init_config_name);
-        void RunCartesianReachingLoop(const std::string& goal_frame, bool reached_goal);
+        void RunCartesianReachingLoop(const std::string& goal_frame, bool* reached_goal);
         void SendVelocityCommands(const Eigen::VectorXd& qdot_des, double kuka_gain, double ur10_gain);
 
         Eigen::Affine3d getGenericTransformation(const std::string& target_frame, const std::string& source_frame);
@@ -111,6 +111,8 @@ class JointRobotTP
         std::vector<Eigen::VectorXd> obav_act, obav_ref;
         std::vector<Eigen::VectorXd> obav_set_act, obav_set_ref, dist_v;
         std::vector<Eigen::Vector3d> ee_pos, ee_ori, reach_ref_p, reach_ref_o;
+        std::vector<Eigen::VectorXd> ee_jacobian;
+        std::vector<Eigen::VectorXd> q_dot_vec;
         // ------------------------------------------------- LOG VAR ------------------------------------------------- //
     private:
         // -------------------------------------------------------------------------------------------------------------------------------------------- Robot interfaces

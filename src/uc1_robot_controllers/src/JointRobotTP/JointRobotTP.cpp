@@ -132,19 +132,19 @@ void JointRobotTP::insertInitConfigMap(){
 }
 
 void JointRobotTP::insertFuncPointerVtc(){
-    //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_JointLimits);
+    TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_JointLimits);
     TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_EETarget);
     TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance);
     //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance_setBased);
     //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_MinAlt);
 
-    //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_JointLimits);
+    AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_JointLimits);
     AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_EETarget);
     AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_ObstAvoidance);
     //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_ObstAvoidance_setBased);
     //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_MinAlt);
 
-    //TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_JointLimits);
+    TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_JointLimits);
     TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_EETarget);
     TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_ObstAvoidance);
     //TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_ObstAvoidance_setBased);
@@ -157,6 +157,13 @@ void JointRobotTP::insertFuncPointerVtc(){
 
 void JointRobotTP::declareParameters(){
     // general
+    node_->declare_parameter<int>("fx_tg_enabler", 0);
+    node_->declare_parameter<std::vector<double>>("fx_tg_pos", {0.0, 0.0, 0.0});
+    node_->declare_parameter<std::vector<double>>("fx_tg_ori", {0.0, 0.0, 0.0});
+
+    node_->declare_parameter<int>("control_loop_freq", 50);
+    node_->declare_parameter<int>("controlloop_step_limit", 10000);
+
     node_->declare_parameter<double>("kuka_gain", 0.05);
     node_->declare_parameter<double>("ur10_gain", 0.5);
     node_->declare_parameter<std::string>("exp_dir_name", "def");
@@ -332,8 +339,9 @@ void JointRobotTP::ReachInitialConfiguration(const std::string init_config_name)
     }
 }
 
-void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool reached_goal){
-    rclcpp::Rate loop_rate(50);
+void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool* reached_goal){
+    int rate = node_->get_parameter("control_loop_freq").as_int();
+    rclcpp::Rate loop_rate(rate);
 
     TPComputation tp_controller;
 
@@ -354,7 +362,7 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool 
       
 
     RCLCPP_WARN(node_->get_logger(), "KUKA gain: %.4f and UR10 gain: %.4f", kuka_gain, ur10_gain);
-    while(rclcpp::ok() && !reached_goal){
+    while(rclcpp::ok() && !(*reached_goal)){
         // ---------------------- UPDATE DATA STEP ---------------------- //
         UpdateTasksReferenceRate();
         UpdateTasksActivationFunctions();
@@ -368,11 +376,11 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool 
         if(0){
             if(pos.norm() != 0.0 && pos.norm() < 0.03){
                 RCLCPP_INFO(node_->get_logger(), "Goal reached with position error: %.4f", pos.norm());
-                reached_goal = true;
+                (*reached_goal) = true;
                 continue;
             }else if(ang.norm() != 0.0 && ang.norm() < 0.03){
                 RCLCPP_INFO(node_->get_logger(), "Goal reached with orientation error: %.4f", ang.norm());
-                reached_goal = true;
+                (*reached_goal) = true;
                 continue;
             }else{
                 RCLCPP_INFO(node_->get_logger(), "(%.4f,%.4f)", pos.norm(),ang.norm());
@@ -380,7 +388,7 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool 
         }else{
             if(ee_error.norm() < 0.03){
                 RCLCPP_INFO(node_->get_logger(), "Goal reached with cartesian error: %.4f", ee_error.norm());
-                reached_goal = true;
+                (*reached_goal) = true;
                 continue;
             }else{
                 //RCLCPP_INFO(node_->get_logger(), "(%.3f,%.3f) - %.4f", pos.norm(),ang.norm(), ee_error.norm());
@@ -410,6 +418,8 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool 
         // ---------------------- SEND VELOCITY STEP -------------------- //
         SendVelocityCommands(qdot_des, kuka_gain, ur10_gain);
         // ---------------------- SEND VELOCITY STEP -------------------- //
+
+        q_dot_vec.push_back(qdot_des);
         
         // CLEAR TASK PRIORITY MAP -------------------------------------- //
         TP_task_map_.clear();
@@ -417,6 +427,11 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool 
 
         
         debug_trace_publisher_->publish(msg);
+        // goal not reached control
+        if(reach_ref_p.size() > node_->get_parameter("controlloop_step_limit").as_int()){
+            RCLCPP_ERROR(node_->get_logger(), "Exedeed task time, %ld, %ld", reach_ref_p.size(), node_->get_parameter("controlloop_step_limit").as_int());
+            break;
+        }
 
         loop_rate.sleep();
     }
@@ -596,11 +611,18 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
     std::string goal_frame  = "GOAL_FRAME";
     goal_name_ = goal_frame;
 
-    //goal_traslation << 1.8131, 0.0, 2.0592;
-    //goal_traslation << 0.5, 0.0, 0.5; 
-    goal_rotation << 0.0, 0.0, 0.0;
+    if(node_->get_parameter("fx_tg_enabler").as_int()){
+        std::vector<double> temp_pos = node_->get_parameter("fx_tg_pos").as_double_array();
+        std::vector<double> temp_ori = node_->get_parameter("fx_tg_ori").as_double_array();
 
-    goal_frame_broadcaster_->broadcastStaticTransform(goal_traslation, goal_rotation.reverse(), parent_frame, goal_frame);
+        goal_traslation << temp_pos[0], temp_pos[1], temp_pos[2];
+        goal_rotation << temp_ori[0], temp_ori[1], temp_ori[2];
+        
+        goal_frame_broadcaster_->broadcastStaticTransform(goal_traslation, goal_rotation, parent_frame, goal_frame);
+    }else{
+        goal_frame_broadcaster_->broadcastStaticTransform(goal_traslation, goal_rotation.reverse(), parent_frame, goal_frame);
+    }
+
     std::cout << "Goal sent (position): " << goal_traslation.transpose() << std::endl;
     std::cout << "Goal sent (orientat): " << goal_rotation.transpose() << std::endl;
     std::cout << "Pr frame:" << parent_frame << ", Gl frame:" << goal_frame << std::endl; 
@@ -617,7 +639,7 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
 
     
     bool reached_goal = false;
-    RunCartesianReachingLoop(goal_frame, reached_goal);
+    RunCartesianReachingLoop(goal_frame, &reached_goal);
 
     
     // ---------------------------------------------------------------------------------------------------------- EXECUTE REACHING LOOP
@@ -714,13 +736,28 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
         }  
     }
 
+    std::ofstream ee_jacobian_log = std::ofstream(path + dir + "/ee_jacobian_log.txt", std::ios::app);
+    if(ee_jacobian_log.is_open()){
+        for(long unsigned int i=0; i<ee_jacobian.size(); ++i){
+            ee_jacobian_log << ee_jacobian[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+        }  
+    }
+
+    std::ofstream q_dot_vec_log = std::ofstream(path + dir + "/q_dot_vec_log.txt", std::ios::app);
+    if(q_dot_vec_log.is_open()){
+        for(long unsigned int i=0; i<q_dot_vec.size(); ++i){
+            q_dot_vec_log << q_dot_vec[i].reshaped().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+        }  
+    }
+
 
     // ---------------------------------------------------------------------------------------------------------- LOG RESULT ON FILE
-
-
-    if(rclcpp::ok()){
+    if(rclcpp::ok() && reached_goal == true){
         result->result = "Reaching Loop completed, ready for next Goal\n";
         goal_handle->succeed(result);
+    }else if(rclcpp::ok() && reached_goal == false){
+        result->result = "Reaching Loop not completed, ready for next Goal\n";
+        goal_handle->abort(result);
     }
 }
 // ------------------------------------------------------------------------------------------------------------------------------- ACTION SERVER

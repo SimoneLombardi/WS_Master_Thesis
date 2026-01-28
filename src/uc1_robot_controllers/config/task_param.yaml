@@ -1,10 +1,19 @@
 joint_robot_tp_node:
   ros__parameters:
+    # FIXED TARGET POS/ORIENT
+    fx_tg_enabler: 0
+    fx_tg_pos: [0.0, 0.0, 0.0]
+    fx_tg_ori: [0.0, 0.0, 0.0]
+
+    # control loop exit
+    control_loop_freq : 50
+    controlloop_step_limit : 3000
+
     # speed command gain for the two robots
-    kuka_gain: 0.05
-    ur10_gain: 0.5
+    kuka_gain: 0.5
+    ur10_gain: 0.01
     # cartella output file txt dati
-    exp_dir_name: "test1" 
+    exp_dir_name: "gain_tuning_exp" 
 
     jl_gain_ref_rat: 0.2      # jl refer rate gain
     jl_act_delta: 0.3         # jl activation region
