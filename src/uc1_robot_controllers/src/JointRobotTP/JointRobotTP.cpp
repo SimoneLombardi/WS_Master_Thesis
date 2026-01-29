@@ -405,7 +405,7 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool*
         tp_controller.init_TPComputation(NDOF, lambda, threshold, weight); 
         //tp_controller.computeTP_step("joint_limits",  TP_task_map_["joint_limits"].ActMatrix,  TP_task_map_["joint_limits"].TskJacobian,  TP_task_map_["joint_limits"].RefRate);
         //tp_controller.computeTP_step("min_altitude",  TP_task_map_["min_altitude"].ActMatrix,  TP_task_map_["min_altitude"].TskJacobian,  TP_task_map_["min_altitude"].RefRate);
-        //tp_controller.computeTP_step("obstacle_avoidance",  TP_task_map_["obstacle_avoidance"].ActMatrix,  TP_task_map_["obstacle_avoidance"].TskJacobian,  TP_task_map_["obstacle_avoidance"].RefRate);
+        tp_controller.computeTP_step("obstacle_avoidance",  TP_task_map_["obstacle_avoidance"].ActMatrix,  TP_task_map_["obstacle_avoidance"].TskJacobian,  TP_task_map_["obstacle_avoidance"].RefRate);
         //tp_controller.computeTP_step("obstacle_avoidance_setbased",  TP_task_map_["obstacle_avoidance_setbased"].ActMatrix,  TP_task_map_["obstacle_avoidance_setbased"].TskJacobian,  TP_task_map_["obstacle_avoidance_setbased"].RefRate);
         tp_controller.computeTP_step("endeff_target", TP_task_map_["endeff_target"].ActMatrix, TP_task_map_["endeff_target"].TskJacobian, TP_task_map_["endeff_target"].RefRate);
         tp_controller.computeTP_step("close_task", Eigen::MatrixXd::Identity(NDOF,NDOF), Eigen::MatrixXd::Identity(NDOF,NDOF), Eigen::VectorXd::Zero(NDOF)); 
@@ -620,8 +620,11 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
         
         goal_frame_broadcaster_->broadcastStaticTransform(goal_traslation, goal_rotation, parent_frame, goal_frame);
     }else{
+        goal_rotation << 0.0, 0.0, 0.0;
         goal_frame_broadcaster_->broadcastStaticTransform(goal_traslation, goal_rotation.reverse(), parent_frame, goal_frame);
     }
+
+    
 
     std::cout << "Goal sent (position): " << goal_traslation.transpose() << std::endl;
     std::cout << "Goal sent (orientat): " << goal_rotation.transpose() << std::endl;
@@ -752,6 +755,15 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
 
 
     // ---------------------------------------------------------------------------------------------------------- LOG RESULT ON FILE
+    
+    jl_act.clear(); jl_ref.clear(); joint_v.clear();
+    obav_act.clear(); obav_ref.clear();
+    obav_set_act.clear(); obav_set_ref.clear(); dist_v.clear();
+    ee_pos.clear(); ee_ori.clear(); reach_ref_p.clear(); reach_ref_o.clear();
+    ee_jacobian.clear();
+    q_dot_vec.clear();
+    
+    
     if(rclcpp::ok() && reached_goal == true){
         result->result = "Reaching Loop completed, ready for next Goal\n";
         goal_handle->succeed(result);

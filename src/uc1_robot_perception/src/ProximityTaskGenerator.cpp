@@ -113,7 +113,7 @@ ProximityTaskGenerator::ProximityTaskGenerator()
 
   // timer to periodically publish the filtered point cloud and custom task message
   timer_ = this->create_wall_timer(
-      std::chrono::milliseconds(10),
+      std::chrono::milliseconds(5),
       std::bind(&ProximityTaskGenerator::robotCloudModel, this));
   
   std::cout << "prox task gen 6, init complete" << std::endl;
@@ -152,14 +152,14 @@ void ProximityTaskGenerator::pointCloudCallback(const sensor_msgs::msg::PointClo
 
 
   // republish filtered cloud
-  publishPointCloud(env_cloud_filtered, LINK_ZERO_NAME, filtered_cloud_publisher_);
+  //publishPointCloud(env_cloud_filtered, LINK_ZERO_NAME, filtered_cloud_publisher_);
 
   // build proximity avoidance task
   std::vector<ProximityTask> tasks = computeProximityTasks(env_cloud_filtered);
 
   // publish task markers
   std::string frame_id = LINK_ZERO_NAME;
-  publishProximityMarkers(tasks, task_marker_publisher_, frame_id, this->now());
+  //publishProximityMarkers(tasks, task_marker_publisher_, frame_id, this->now());
 
   // publish custom task msg
   publishProximityTasks(tasks, task_publisher_); 

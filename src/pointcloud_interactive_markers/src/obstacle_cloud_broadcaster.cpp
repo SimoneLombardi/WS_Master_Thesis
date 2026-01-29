@@ -29,7 +29,7 @@ class ObstaclePointCloudBroadcaster : public rclcpp::Node
             publisher_ = this->create_publisher<sensor_msgs::msg::PointCloud2>("/environment_point_cloud", 10);
 
             // timer, publish the point cloud
-            timer_ = this->create_wall_timer(std::chrono::milliseconds(50),
+            timer_ = this->create_wall_timer(std::chrono::milliseconds(10),
                                              std::bind(&ObstaclePointCloudBroadcaster::timer_callback, this));
             
             auto share_dir = ament_index_cpp::get_package_share_directory(ptc_pkg);
