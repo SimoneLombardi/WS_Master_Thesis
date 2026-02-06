@@ -159,7 +159,7 @@ void ProximityTaskGenerator::pointCloudCallback(const sensor_msgs::msg::PointClo
 
   // publish task markers
   std::string frame_id = LINK_ZERO_NAME;
-  //publishProximityMarkers(tasks, task_marker_publisher_, frame_id, this->now());
+  publishProximityMarkers(tasks, task_marker_publisher_, frame_id, this->now());
 
   // publish custom task msg
   publishProximityTasks(tasks, task_publisher_); 

@@ -92,6 +92,9 @@ void JointRobotTP::Update_TRR_EETarget(){
     TP_task_map_["endeff_target"].RefRate.block(0,0,cart_err.size(),1) = cart_err;
 
     //std::cout << "EE Target Ref Rate: " << TP_task_map_["endeff_target"].RefRate.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+    publishArrowMarker(Eigen::Vector3d((tool_tf.translation())(0),(tool_tf.translation())(1),(tool_tf.translation())(2)),
+                       Eigen::Vector3d(cart_err[0],cart_err[1],cart_err[2]),
+                        KUKA_BASE_LINK, "reach_ref", "red", 1, control_task_publisher_);
 }
 
 void JointRobotTP::Update_TRR_ObstAvoidance(){
@@ -107,22 +110,28 @@ void JointRobotTP::Update_TRR_ObstAvoidance(){
     insResult = TP_task_map_.insert({task_name, task});
 
     // progressive check list of information
+    Eigen::Vector3d origin, vector;
     if(!Prx_task_pts_OBAV_.empty()){ // check for at least 1 min dist points (look out for missing messages publised)
-        TP_task_map_[task_name].RefRate = Eigen::Vector2d(
+        TP_task_map_[task_name].RefRate = Eigen::Vector3d(
                             -Prx_task_pts_OBAV_[0].min_point_vector.x,
-                            -Prx_task_pts_OBAV_[0].min_point_vector.y
+                            -Prx_task_pts_OBAV_[0].min_point_vector.y,
+                            -Prx_task_pts_OBAV_[0].min_point_vector.z
         );
+        origin << Prx_task_pts_OBAV_[0].min_point_robot.x, Prx_task_pts_OBAV_[0].min_point_robot.y, Prx_task_pts_OBAV_[0].min_point_robot.z;
+        vector << -Prx_task_pts_OBAV_[0].min_point_vector.x, -Prx_task_pts_OBAV_[0].min_point_vector.y, -Prx_task_pts_OBAV_[0].min_point_vector.z; 
     }
 
     /// SAVE LOG VAR
-    Eigen::VectorXd vec(2); 
+    Eigen::VectorXd vec(3); 
     vec(0) = TP_task_map_[task_name].RefRate(0); 
-    vec(1) = TP_task_map_[task_name].RefRate(1);  
+    vec(1) = TP_task_map_[task_name].RefRate(1); 
+    vec(2) = TP_task_map_[task_name].RefRate(2); 
     obav_ref.push_back(vec); 
     /// SAVE LOG VAR
 
     //std::cout << "[UPDATE TRR] OBAV Ref Rate: " << TP_task_map_["obstacle_avoidance"].RefRate.rows() << "." << TP_task_map_["obstacle_avoidance"].RefRate.cols() << std::endl;
     //std::cout << "[UPDATE TRR] OBAV Ref Rate: " << TP_task_map_["obstacle_avoidance"].RefRate.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+    publishArrowMarker(origin, vector, KUKA_BASE_LINK, "obst_avoidance", "red", 1, control_task_publisher_);
 }
 
 void JointRobotTP::Update_TRR_ObstAvoidance_setBased(){
@@ -423,7 +432,7 @@ void JointRobotTP::Update_TskJac_ObstAvoidance(){
     rgdJac.block(0,3,3,3) = skew_mat.transpose();
 
     Eigen::MatrixXd temp = rgdJac * Jac;
-    TP_task_map_["obstacle_avoidance"].TskJacobian = temp.block(0,0,2,NDOF);
+    TP_task_map_["obstacle_avoidance"].TskJacobian = temp.block(0,0,RefRate_sz,NDOF);
 }
 
 void JointRobotTP::Update_TskJac_ObstAvoidance_setBased(){

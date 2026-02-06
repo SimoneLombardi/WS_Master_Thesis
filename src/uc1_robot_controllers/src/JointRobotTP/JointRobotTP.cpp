@@ -119,7 +119,15 @@ void JointRobotTP::insertInitConfigMap(){
     Eigen::VectorXd jl(12);
     jl << 0.0, -1.5, 1.5, 0.0, 1.57, 0.0, 0.0, -1.57, 0.0, -1.57, 0.0, 0.0;
 
+    Eigen::VectorXd jl2(12);
+    jl2 << 0.0, -1.5, 1.5, 0.0, 2.0, 0.0, 0.0, -1.57, 0.0, -1.57, 0.0, 0.0;
+
+    Eigen::VectorXd jl3(12);
+    jl3 << -0.2, -1.5, 1.5, 0.0, 1.57, 0.0, 0.0, -1.57, 0.0, -1.57, 0.0, 0.0;
+
     // insert into the map (DO NOT MODIFY THE DEFAULT CONFIGURATION)
+    initial_configurations_map_["jl3"] = jl3;
+    initial_configurations_map_["jl2"] = jl2;
     initial_configurations_map_["jl"] = jl;
     initial_configurations_map_["zero"] = zero;
     initial_configurations_map_["sing_sing"] = sing_sing;
@@ -135,7 +143,7 @@ void JointRobotTP::insertFuncPointerVtc(){
     TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_JointLimits);
     TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_EETarget);
     TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance);
-    //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance_setBased);
+    TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance_setBased);
     //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_MinAlt);
 
     AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_JointLimits);
@@ -403,9 +411,9 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool*
 
         // ---------------------- UPDATE TPIK STEP ---------------------- //
         tp_controller.init_TPComputation(NDOF, lambda, threshold, weight); 
-        //tp_controller.computeTP_step("joint_limits",  TP_task_map_["joint_limits"].ActMatrix,  TP_task_map_["joint_limits"].TskJacobian,  TP_task_map_["joint_limits"].RefRate);
         //tp_controller.computeTP_step("min_altitude",  TP_task_map_["min_altitude"].ActMatrix,  TP_task_map_["min_altitude"].TskJacobian,  TP_task_map_["min_altitude"].RefRate);
         tp_controller.computeTP_step("obstacle_avoidance",  TP_task_map_["obstacle_avoidance"].ActMatrix,  TP_task_map_["obstacle_avoidance"].TskJacobian,  TP_task_map_["obstacle_avoidance"].RefRate);
+        tp_controller.computeTP_step("joint_limits",  TP_task_map_["joint_limits"].ActMatrix,  TP_task_map_["joint_limits"].TskJacobian,  TP_task_map_["joint_limits"].RefRate);
         //tp_controller.computeTP_step("obstacle_avoidance_setbased",  TP_task_map_["obstacle_avoidance_setbased"].ActMatrix,  TP_task_map_["obstacle_avoidance_setbased"].TskJacobian,  TP_task_map_["obstacle_avoidance_setbased"].RefRate);
         tp_controller.computeTP_step("endeff_target", TP_task_map_["endeff_target"].ActMatrix, TP_task_map_["endeff_target"].TskJacobian, TP_task_map_["endeff_target"].RefRate);
         tp_controller.computeTP_step("close_task", Eigen::MatrixXd::Identity(NDOF,NDOF), Eigen::MatrixXd::Identity(NDOF,NDOF), Eigen::VectorXd::Zero(NDOF)); 
@@ -604,7 +612,9 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
     goal_traslation = goal_req_trals + kuka_tool.translation();
 
     Eigen::Matrix3d fxd_prj = kuka_tool.linear(); // rotation matrix from ur10_tool to kuka_ee
-    goal_rotation = (fxd_prj * R_goal).eulerAngles(2, 1, 0);
+    //goal_rotation = (fxd_prj * R_goal).eulerAngles(2, 1, 0);
+    goal_rotation = (R_goal).eulerAngles(2, 1, 0);
+
 
     // define broadcast frames of the goal frame
     std::string parent_frame = KUKA_BASE_LINK;
@@ -620,8 +630,8 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
         
         goal_frame_broadcaster_->broadcastStaticTransform(goal_traslation, goal_rotation, parent_frame, goal_frame);
     }else{
-        goal_rotation << 0.0, 0.0, 0.0;
-        goal_frame_broadcaster_->broadcastStaticTransform(goal_traslation, goal_rotation.reverse(), parent_frame, goal_frame);
+        //goal_rotation << 0.0, 0.0, 0.0;
+        goal_frame_broadcaster_->broadcastStaticTransform(goal_traslation, goal_rotation, parent_frame, goal_frame);
     }
 
     

@@ -604,6 +604,8 @@ def generate_launch_description():
             description="Port that will be opened for trajectory control.",
         )
     )
+
+
     # ----------------------------------------- end of UR10e configuration (taken from original ur ros2 driver launcher)
 
 

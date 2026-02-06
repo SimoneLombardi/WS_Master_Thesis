@@ -115,7 +115,7 @@ RobotStatePublisher::RobotStatePublisher(const rclcpp::NodeOptions & options)
   }
 
   // set publish frequency
-  double publish_freq = this->declare_parameter("publish_frequency", 100.0);
+  double publish_freq = this->declare_parameter("publish_frequency", 150.0);
   RCLCPP_WARN(this->get_logger(), "DECLARED RSP KUKA FREQ:%f", publish_freq);
   if (publish_freq < 0.0 || publish_freq > 1000.0) {
     throw std::runtime_error("publish_frequency must be between 0 and 1000");

@@ -99,10 +99,28 @@ ament_target_dependencies(proximity_task_generator
 rosidl_target_interfaces(proximity_task_generator
               ${PROJECT_NAME} "rosidl_typesupport_cpp")
 
+#add_executable(robot_cloud_broadcaster src/RobotCloudBroadcaster.cpp)
+#ament_target_dependencies(robot_cloud_broadcaster
+#  rclcpp 
+#  geometry_msgs 
+#  sensor_msgs
+#  tf2
+#  tf2_ros
+#  PCL
+#  Eigen3
+#  pcl_conversions
+#  tf2_eigen
+#  tf2_geometry_msgs
+#  visualization_msgs
+#)
+#rosidl_target_interfaces(robot_cloud_broadcaster
+#              ${PROJECT_NAME} "rosidl_typesupport_cpp")
+
 install(TARGETS
   simulated_contact_publisher
   interactive_contact_publisher
   proximity_task_generator
+  #robot_cloud_broadcaster
   DESTINATION lib/${PROJECT_NAME})
 
 # Install launch files
