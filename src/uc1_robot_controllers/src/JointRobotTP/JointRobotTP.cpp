@@ -412,8 +412,8 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool*
         // ---------------------- UPDATE TPIK STEP ---------------------- //
         tp_controller.init_TPComputation(NDOF, lambda, threshold, weight); 
         //tp_controller.computeTP_step("min_altitude",  TP_task_map_["min_altitude"].ActMatrix,  TP_task_map_["min_altitude"].TskJacobian,  TP_task_map_["min_altitude"].RefRate);
-        tp_controller.computeTP_step("obstacle_avoidance",  TP_task_map_["obstacle_avoidance"].ActMatrix,  TP_task_map_["obstacle_avoidance"].TskJacobian,  TP_task_map_["obstacle_avoidance"].RefRate);
-        tp_controller.computeTP_step("joint_limits",  TP_task_map_["joint_limits"].ActMatrix,  TP_task_map_["joint_limits"].TskJacobian,  TP_task_map_["joint_limits"].RefRate);
+        //tp_controller.computeTP_step("obstacle_avoidance",  TP_task_map_["obstacle_avoidance"].ActMatrix,  TP_task_map_["obstacle_avoidance"].TskJacobian,  TP_task_map_["obstacle_avoidance"].RefRate);
+        //tp_controller.computeTP_step("joint_limits",  TP_task_map_["joint_limits"].ActMatrix,  TP_task_map_["joint_limits"].TskJacobian,  TP_task_map_["joint_limits"].RefRate);
         //tp_controller.computeTP_step("obstacle_avoidance_setbased",  TP_task_map_["obstacle_avoidance_setbased"].ActMatrix,  TP_task_map_["obstacle_avoidance_setbased"].TskJacobian,  TP_task_map_["obstacle_avoidance_setbased"].RefRate);
         tp_controller.computeTP_step("endeff_target", TP_task_map_["endeff_target"].ActMatrix, TP_task_map_["endeff_target"].TskJacobian, TP_task_map_["endeff_target"].RefRate);
         tp_controller.computeTP_step("close_task", Eigen::MatrixXd::Identity(NDOF,NDOF), Eigen::MatrixXd::Identity(NDOF,NDOF), Eigen::VectorXd::Zero(NDOF)); 
