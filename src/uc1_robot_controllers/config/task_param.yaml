@@ -10,11 +10,10 @@ joint_robot_tp_node:
     controlloop_step_limit : 3000
 
     # speed command gain for the two robots
-    kuka_gain: 0.5
-    ur10_gain: 0.01
+    kuka_gain: 0.03
+    ur10_gain: 0.5
     # cartella output file txt dati
-    exp_dir_name: "gain_tuning_exp/5"
-    # obav_chassis/test_2D/test_2/1
+    exp_dir_name: "test"
 
     jl_gain_ref_rat: 0.2      # jl refer rate gain
     jl_act_delta: 0.3         # jl activation region

@@ -202,7 +202,7 @@ void KukaRobot::updateTransforms()
 
 bool KukaRobot::initializeKDL()
 {
-    auto param_client = std::make_shared<rclcpp::SyncParametersClient>(node_, "robot_state_publisher");
+    auto param_client = std::make_shared<rclcpp::SyncParametersClient>(node_, "robot_state_publisher_kuka");
 
     // Wait for the parameter service to be available
     while (!param_client->wait_for_service(std::chrono::seconds(1)))

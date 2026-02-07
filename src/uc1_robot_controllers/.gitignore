@@ -3,5 +3,4 @@ build/*
 html/*
 latex/*
 middleware/*
-resources/*
-urdf/*
+

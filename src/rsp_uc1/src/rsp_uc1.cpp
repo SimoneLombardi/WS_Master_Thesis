@@ -75,7 +75,7 @@ geometry_msgs::msg::TransformStamped kdlToTransform(const KDL::Frame & k)
 }  // namespace
 
 RobotStatePublisher::RobotStatePublisher(const rclcpp::NodeOptions & options)
-: rclcpp::Node("robot_state_publisher", options)
+: rclcpp::Node("robot_state_publisher_kuka", options)
 {
   // get the XML
   std::string urdf_xml = this->declare_parameter("robot_description_kuka", std::string(""));
