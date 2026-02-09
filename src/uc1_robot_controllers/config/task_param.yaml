@@ -6,14 +6,17 @@ joint_robot_tp_node:
     fx_tg_ori: [0.0, 0.0, 0.0]
 
     # control loop exit
+    filter_enabler : 0
     control_loop_freq : 50
+    damp_freq : 10
+    damp_amp  : 0.00005
     controlloop_step_limit : 3000
 
     # speed command gain for the two robots
     kuka_gain: 0.03
     ur10_gain: 0.5
     # cartella output file txt dati
-    exp_dir_name: "test"
+    exp_dir_name: "test1"
 
     jl_gain_ref_rat: 0.2      # jl refer rate gain
     jl_act_delta: 0.3         # jl activation region
@@ -29,3 +32,4 @@ joint_robot_tp_node:
     obv_set_delta: 0.1
     obv_set_dist_limit: 0.05
     obv_set_act_delta: 0.2
+

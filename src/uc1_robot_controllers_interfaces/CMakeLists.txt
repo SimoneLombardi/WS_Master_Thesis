@@ -32,6 +32,7 @@ ament_export_dependencies(rosidl_default_runtime)
 
 # library stuff
 add_library(TPComputation src/TPComputation.cpp)
+add_library(LowPassFilter src/LowPassFilter.cpp)
 
 target_include_directories(TPComputation
   PUBLIC
@@ -40,11 +41,24 @@ target_include_directories(TPComputation
     ${EIGEN_INCLUDE_DIRS}
 )
 
+target_include_directories(LowPassFilter
+  PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/uc1_robot_controllers_interfaces>
+    $<INSTALL_INTERFACE:include>
+    ${EIGEN_INCLUDE_DIRS}
+)
+
+
 target_link_libraries(TPComputation
   Eigen3::Eigen
 )
 
+target_link_libraries(LowPassFilter
+  Eigen3::Eigen
+)
+
 ament_export_targets(TPComputation HAS_LIBRARY_TARGET)
+ament_export_targets(LowPassFilter HAS_LIBRARY_TARGET)
 ament_export_dependencies(Eigen3)
 
 install(
@@ -53,13 +67,23 @@ install(
 )
 
 install(
-  TARGETS TPComputation
-  EXPORT TPComputation
+  TARGETS TPComputation 
+  EXPORT TPComputation 
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
   INCLUDES DESTINATION include
 )
+
+install(
+  TARGETS LowPassFilter 
+  EXPORT LowPassFilter 
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+  INCLUDES DESTINATION include
+)
+
 
 add_executable(sync_joint_topic_exe src/sync_jst.cpp) # Joint State Topic
 ament_target_dependencies(sync_joint_topic_exe

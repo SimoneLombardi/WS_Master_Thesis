@@ -87,7 +87,11 @@ void JointRobotTP::initialize(NodeShPtr node_joint_robot, NodeShPtr kuka_node, N
 
     joint_names_ = {"kuka_joint_a1","kuka_joint_a2","kuka_joint_a3","kuka_joint_a4","kuka_joint_a5","kuka_joint_a6",
                     "shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"};
-
+    
+    filter_.configure(node_->get_parameter("control_loop_freq").as_int(), 
+                      node_->get_parameter("damp_freq").as_int(), 
+                      node_->get_parameter("damp_amp").as_double());
+    
     RCLCPP_INFO(node_->get_logger(), "JointRobotTP, initialize complete");
 }
 
@@ -169,7 +173,11 @@ void JointRobotTP::declareParameters(){
     node_->declare_parameter<std::vector<double>>("fx_tg_pos", {0.0, 0.0, 0.0});
     node_->declare_parameter<std::vector<double>>("fx_tg_ori", {0.0, 0.0, 0.0});
 
+    node_->declare_parameter<int>("filter_enabler", 1);
     node_->declare_parameter<int>("control_loop_freq", 50);
+    node_->declare_parameter<int>("damp_freq", 10);
+    node_->declare_parameter<double>("damp_amp", 2);
+
     node_->declare_parameter<int>("controlloop_step_limit", 10000);
 
     node_->declare_parameter<double>("kuka_gain", 0.05);
@@ -195,8 +203,6 @@ void JointRobotTP::declareParameters(){
 
     node_->declare_parameter<double>("obv_set_dist_limit", 0.05);
     node_->declare_parameter<double>("obv_set_act_delta", 0.2);
-
-    // Minimum altitude task
 }
 // ------------------------------------------------------------------------------------------------------------------------------- INITIALIZATION METHODS
 
@@ -370,6 +376,8 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool*
       
 
     RCLCPP_WARN(node_->get_logger(), "KUKA gain: %.4f and UR10 gain: %.4f", kuka_gain, ur10_gain);
+    RCLCPP_WARN(node_->get_logger(), "Fixed tg enab: %ld, Filter enab: %ld", node_->get_parameter("fx_tg_enabler").as_int(), node_->get_parameter("filter_enabler").as_int());
+    std::this_thread::sleep_for(1500ms);
     while(rclcpp::ok() && !(*reached_goal)){
         // ---------------------- UPDATE DATA STEP ---------------------- //
         UpdateTasksReferenceRate();
@@ -413,17 +421,20 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool*
         tp_controller.init_TPComputation(NDOF, lambda, threshold, weight); 
         //tp_controller.computeTP_step("min_altitude",  TP_task_map_["min_altitude"].ActMatrix,  TP_task_map_["min_altitude"].TskJacobian,  TP_task_map_["min_altitude"].RefRate);
         tp_controller.computeTP_step("obstacle_avoidance",  TP_task_map_["obstacle_avoidance"].ActMatrix,  TP_task_map_["obstacle_avoidance"].TskJacobian,  TP_task_map_["obstacle_avoidance"].RefRate);
+        Eigen::VectorXd qdot_des = tp_controller.getTP_ydot();
+        std::cout << qdot_des.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
         //tp_controller.computeTP_step("joint_limits",  TP_task_map_["joint_limits"].ActMatrix,  TP_task_map_["joint_limits"].TskJacobian,  TP_task_map_["joint_limits"].RefRate);
         //tp_controller.computeTP_step("obstacle_avoidance_setbased",  TP_task_map_["obstacle_avoidance_setbased"].ActMatrix,  TP_task_map_["obstacle_avoidance_setbased"].TskJacobian,  TP_task_map_["obstacle_avoidance_setbased"].RefRate);
         tp_controller.computeTP_step("endeff_target", TP_task_map_["endeff_target"].ActMatrix, TP_task_map_["endeff_target"].TskJacobian, TP_task_map_["endeff_target"].RefRate);
         tp_controller.computeTP_step("close_task", Eigen::MatrixXd::Identity(NDOF,NDOF), Eigen::MatrixXd::Identity(NDOF,NDOF), Eigen::VectorXd::Zero(NDOF)); 
-        Eigen::VectorXd qdot_des = tp_controller.getTP_ydot();
+        qdot_des = tp_controller.getTP_ydot();
         
         tp_controller.clear_TPComputation();  
         // ---------------------- UPDATE TPIK STEP ---------------------- //
 
 
         // ---------------------- SEND VELOCITY STEP -------------------- //
+
         SendVelocityCommands(qdot_des, kuka_gain, ur10_gain);
         // ---------------------- SEND VELOCITY STEP -------------------- //
 
@@ -642,7 +653,7 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
     // ---------------------------------------------------------------------------------------------------------- GOAL FRAME BROADCASTING
 
     // ---------------------------------------------------------------------------------------------------------- EXECUTE REACHING LOOP
-    std::this_thread::sleep_for(1000ms);
+    
 
     kuka_gain_ = node_->get_parameter("kuka_gain").as_double();
     ur10_gain_ = node_->get_parameter("ur10_gain").as_double();
@@ -658,7 +669,7 @@ void JointRobotTP::execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle
     // ---------------------------------------------------------------------------------------------------------- EXECUTE REACHING LOOP
 
     // ---------------------------------------------------------------------------------------------------------- LOG RESULT ON FILE
-    std::string path = "/home/simone/Documents/SIMO/tesi/experiment";
+    std::string path = "/home/maclab/Documents/ROS_WORKSPACES/experiment";
     std::string slash = "/";
     std::string dir = slash + exp_dir_;
     // JOINT LIMITS

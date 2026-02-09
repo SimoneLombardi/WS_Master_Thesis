@@ -7,6 +7,7 @@
 #include "UR10eRobot.hpp"
 
 #include "uc1_robot_controllers_interfaces/TPComputation.hpp"
+#include "uc1_robot_controllers_interfaces/LowPassFilter.hpp"
 
 // action server
 #include "TfGoalBroadcaster.hpp"
@@ -186,6 +187,9 @@ class JointRobotTP
         std::string exp_dir_;
         // -------------------------------------------------------------------------------------------------------------------------------------------- Parameter definition
 
+        // -------------------------------------------------------------------------------------------------------------------------------------------- filter
+        LowPassFilter filter_;
+        // -------------------------------------------------------------------------------------------------------------------------------------------- filter
 };      
 
 

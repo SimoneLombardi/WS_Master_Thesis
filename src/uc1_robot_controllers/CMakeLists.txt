@@ -25,6 +25,7 @@ find_package(pcl_msgs REQUIRED)
 find_package(pcl_ros REQUIRED)
 find_package(Eigen3 REQUIRED)
 find_package(urdf REQUIRED)
+find_package(control_toolbox REQUIRED)
 find_package(Doxygen)
 #find_package(skin REQUIRED)
 find_package(PCL REQUIRED COMPONENTS io)
@@ -252,6 +253,7 @@ uc1_robot_perception
 uc1_robot_controllers_interfaces
 rclcpp_action
 rclcpp_components
+control_toolbox
 )
 
 add_executable(joint-robot-tp-test src/joint_controller/joint_robot_tp_test.cpp 
@@ -263,6 +265,7 @@ add_executable(joint-robot-tp-test src/joint_controller/joint_robot_tp_test.cpp
 )
 target_link_libraries(joint-robot-tp-test
   uc1_robot_controllers_interfaces::TPComputation
+  uc1_robot_controllers_interfaces::LowPassFilter
 )
 ament_target_dependencies(joint-robot-tp-test
 rclcpp 
@@ -281,6 +284,7 @@ uc1_robot_perception
 uc1_robot_controllers_interfaces
 rclcpp_action
 rclcpp_components
+control_toolbox
 )
 
 add_executable(robot-test src/joint_controller/test_robot_functions.cpp src/KukaRobot.cpp src/UR10eRobot.cpp src/TfGoalBroadcaster.cpp)

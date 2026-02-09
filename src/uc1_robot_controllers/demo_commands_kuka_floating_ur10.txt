@@ -8,6 +8,7 @@ ros2 launch uc1_robot_controllers kuka_display_control.launch.py
 ros2 launch uc1_robot_controllers floating_ur10e.launch.py ur_type:=ur10e robot_ip:=192.168.56.101 launch_rviz:=false  initial_joint_controller:=joint_trajectory_controller description_package:=ur_description
 
 ------------------------ parametrized action server run command
+ros2 param set /robot_state_publisher publish_frequency 150.0
 ros2 run uc1_robot_controllers joint-robot-tp-test --ros-args --params-file /home/maclab/Documents/ROS_WORKSPACES/WS_Master_Thesis/src/uc1_robot_controllers/config/task_param.yaml
 ros2 run uc1_robot_controllers joint-robot-tp-test --ros-args --params-file /home/simone/Documents/SIMO/tesi/WS_Master_Thesis/src/uc1_robot_controllers/config/task_param.yaml
 
