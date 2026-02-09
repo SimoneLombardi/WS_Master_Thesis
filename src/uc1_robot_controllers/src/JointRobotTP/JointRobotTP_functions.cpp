@@ -103,6 +103,8 @@ void JointRobotTP::Update_TRR_ObstAvoidance(){
     std::lock_guard<std::mutex> lock(proximity_task_mutex_);
     Prx_task_pts_OBAV_ = proximity_task_points_;
 
+    min_dist_task_= prx_task_map_["min_dist_task_"];
+
     // create new task, save in map, save insertion result
     std::string task_name = "obstacle_avoidance";
     tp_task task;
@@ -137,7 +139,8 @@ void JointRobotTP::Update_TRR_ObstAvoidance(){
     vec(2) = TP_task_map_[task_name].RefRate(2); 
     obav_ref.push_back(vec); 
     /// SAVE LOG VAR
-    //std::cout << "[OBV REF RT](nrm/filt):\n" << Prx_task_pts_OBAV_[0].link_id << " // " << Prx_task_pts_OBAV_[0].distance << std::endl;
+    std::cout << "[OBV REF RT](nrm/filt):\n" << Prx_task_pts_OBAV_[0].link_id << " // " << Prx_task_pts_OBAV_[0].distance << "\n" << 
+                                                min_dist_task_.link_id << " // " << min_dist_task_.distance << "\n" << std::endl;
     //std::cout << "[OBV REF RT](nrm/filt):\n" << vector.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << "(" << vector.norm() << ")" << "/" << filt_vector.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << "(" << filt_vector.norm() << ")" << std::endl;
     //std::cout << "[UPDATE TRR] OBAV Ref Rate: " << TP_task_map_["obstacle_avoidance"].RefRate.rows() << "." << TP_task_map_["obstacle_avoidance"].RefRate.cols() << std::endl;
     //std::cout << "[UPDATE TRR] OBAV Ref Rate: " << TP_task_map_["obstacle_avoidance"].RefRate.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;

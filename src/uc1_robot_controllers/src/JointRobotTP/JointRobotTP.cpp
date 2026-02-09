@@ -195,6 +195,7 @@ void JointRobotTP::declareParameters(){
     // Obstacle avoidance task
     node_->declare_parameter<double>("obv_dist_limit", 0.05);
     node_->declare_parameter<double>("obv_delta", 0.2);
+    node_->declare_parameter<double>("prx_task_trsh", 0.02);
 
     // Obstacle avoidance set based task
     node_->declare_parameter<double>("obv_set_gain", 0.2);
@@ -230,6 +231,13 @@ void JointRobotTP::UpdateTasksJacobians(){
 void JointRobotTP::proximityTaskCallback(const uc1_robot_perception::msg::ProximityTaskArray::SharedPtr msg){
     std::lock_guard<std::mutex> lock(proximity_task_mutex_);
     proximity_task_points_.clear();
+
+    double change_trsh = node_->get_parameter("prx_task_trsh").as_double();
+    if(prx_task_map_.find("min_dist_task_") == prx_task_map_.end()){
+        uc1_robot_perception::msg::ProximityTask prx_task;
+        prx_task.distance = 1000.0;
+        prx_task_map_["min_dist_task_"] = prx_task;
+    }
     
     for(const auto& task : msg->proximity_tasks){
         if(task.link_id == KUKA_BASE_LINK || task.link_id == UR10_BASE_LINK || task.link_id == "kuka_link_1"){
@@ -239,15 +247,20 @@ void JointRobotTP::proximityTaskCallback(const uc1_robot_perception::msg::Proxim
             prx_task = task;
             
             proximity_task_points_.push_back(prx_task);
+            prx_task_map_[prx_task.link_id] = prx_task;
         }else{
             uc1_robot_perception::msg::ProximityTask prx_task;
             prx_task = task;
 
             if(proximity_task_points_[0].distance > prx_task.distance){
                 proximity_task_points_.insert(proximity_task_points_.begin(), prx_task);
+                if(prx_task_map_["min_dist_task_"].distance > (prx_task.distance+change_trsh)){
+                    prx_task_map_["min_dist_task_"] = prx_task;
+                }
             }else{
                 proximity_task_points_.push_back(prx_task);
             }
+            prx_task_map_[prx_task.link_id] = prx_task;
         }
     }
 

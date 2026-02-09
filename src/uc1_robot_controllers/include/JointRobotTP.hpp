@@ -153,6 +153,10 @@ class JointRobotTP
         std::vector<uc1_robot_perception::msg::ProximityTask> proximity_task_points_;
         std::vector<uc1_robot_perception::msg::ProximityTask> Prx_task_pts_OBAV_;
 
+        std::map<std::string, uc1_robot_perception::msg::ProximityTask> prx_task_map_;
+        uc1_robot_perception::msg::ProximityTask min_dist_task_; 
+
+
         // joint states variables
         std::mutex joint_states_mutex_;
         std::map<std::string, double> joint_states_;
