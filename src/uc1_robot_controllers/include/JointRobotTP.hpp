@@ -76,6 +76,7 @@ class JointRobotTP
 
         Eigen::Affine3d getGenericTransformation(const std::string& target_frame, const std::string& source_frame);
         Eigen::MatrixXd computePseudoInverse_jointWeight(const Eigen::MatrixXd &jacobian);
+        bool sort_prx_task();
 
         // callbacks
         void proximityTaskCallback(const uc1_robot_perception::msg::ProximityTaskArray::SharedPtr msg);

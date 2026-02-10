@@ -1,8 +1,8 @@
 joint_robot_tp_node:
   ros__parameters:
     # FIXED TARGET POS/ORIENT
-    fx_tg_enabler: 1
-    fx_tg_pos: [3.0, 0.3, 1.05]
+    fx_tg_enabler: 0
+    fx_tg_pos: [3.3, 0.0, 1.05]
     fx_tg_ori: [0.0, 0.0, 0.0]
 
     # control loop exit
@@ -13,10 +13,10 @@ joint_robot_tp_node:
     controlloop_step_limit : 3000
 
     # speed command gain for the two robots
-    kuka_gain: 0.03
+    kuka_gain: 0.05
     ur10_gain: 0.5
     # cartella output file txt dati
-    exp_dir_name: "test1"
+    exp_dir_name: "hyst/single_ob_mult_targ/2"
 
     jl_gain_ref_rat: 0.2      # jl refer rate gain
     jl_act_delta: 0.3         # jl activation region
@@ -25,7 +25,8 @@ joint_robot_tp_node:
     eer_ori_gain: 1.0
 
     obv_dist_limit: 0.05      # basic obstacle av activation fcn
-    obv_delta: 0.5           # params 
+    obv_delta: 0.2            # params 
+    prx_task_trsh : 0.03
 
     obv_set_gain: 0.2         # set based obstacle avoidance reference
     obv_set_min_dist: 0.15    # rate(3) and activation(2) param

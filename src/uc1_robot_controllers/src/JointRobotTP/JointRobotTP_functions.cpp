@@ -103,7 +103,17 @@ void JointRobotTP::Update_TRR_ObstAvoidance(){
     std::lock_guard<std::mutex> lock(proximity_task_mutex_);
     Prx_task_pts_OBAV_ = proximity_task_points_;
 
-    min_dist_task_= prx_task_map_["min_dist_task_"];
+    if(min_dist_task_.distance > Prx_task_pts_OBAV_[0].distance+node_->get_parameter("prx_task_trsh").as_double()){
+        min_dist_task_ = Prx_task_pts_OBAV_[0];
+    }else{
+        for(int i=0;i<Prx_task_pts_OBAV_.size();++i){
+            if(min_dist_task_.link_id == Prx_task_pts_OBAV_[i].link_id){
+                min_dist_task_ = Prx_task_pts_OBAV_[i];
+                break;
+            }
+        }
+        Prx_task_pts_OBAV_[0] = min_dist_task_;
+    }
 
     // create new task, save in map, save insertion result
     std::string task_name = "obstacle_avoidance";
@@ -112,21 +122,14 @@ void JointRobotTP::Update_TRR_ObstAvoidance(){
     insResult = TP_task_map_.insert({task_name, task});
 
     // progressive check list of information
-    Eigen::Vector3d filt_vector, origin, vector;
+    Eigen::Vector2d filt_vector;
+    Eigen::Vector3d origin, vector;
     if(!Prx_task_pts_OBAV_.empty()){ // check for at least 1 min dist points (look out for missing messages publised)
-        if(node_->get_parameter("filter_enabler").as_int()){
-            filt_vector = filter_.filter(Eigen::Vector3d(
-                            -Prx_task_pts_OBAV_[0].min_point_vector.x,
-                            -Prx_task_pts_OBAV_[0].min_point_vector.y,
-                            -Prx_task_pts_OBAV_[0].min_point_vector.z
-            ));
-        }else{
-            filt_vector = Eigen::Vector3d(
-                            -Prx_task_pts_OBAV_[0].min_point_vector.x,
-                            -Prx_task_pts_OBAV_[0].min_point_vector.y,
-                            -Prx_task_pts_OBAV_[0].min_point_vector.z
-            );
-        }
+        filt_vector = Eigen::Vector2d(
+            -Prx_task_pts_OBAV_[0].min_point_vector.x,
+            -Prx_task_pts_OBAV_[0].min_point_vector.y
+            //-Prx_task_pts_OBAV_[0].min_point_vector.z
+        );
         TP_task_map_[task_name].RefRate = filt_vector;
         origin << Prx_task_pts_OBAV_[0].min_point_robot.x, Prx_task_pts_OBAV_[0].min_point_robot.y, Prx_task_pts_OBAV_[0].min_point_robot.z;
         vector << -Prx_task_pts_OBAV_[0].min_point_vector.x, -Prx_task_pts_OBAV_[0].min_point_vector.y, -Prx_task_pts_OBAV_[0].min_point_vector.z; 
@@ -136,7 +139,7 @@ void JointRobotTP::Update_TRR_ObstAvoidance(){
     Eigen::VectorXd vec(3); 
     vec(0) = TP_task_map_[task_name].RefRate(0); 
     vec(1) = TP_task_map_[task_name].RefRate(1); 
-    vec(2) = TP_task_map_[task_name].RefRate(2); 
+    //vec(2) = TP_task_map_[task_name].RefRate(2); 
     obav_ref.push_back(vec); 
     /// SAVE LOG VAR
     std::cout << "[OBV REF RT](nrm/filt):\n" << Prx_task_pts_OBAV_[0].link_id << " // " << Prx_task_pts_OBAV_[0].distance << "\n" << 

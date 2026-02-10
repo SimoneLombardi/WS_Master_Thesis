@@ -92,6 +92,10 @@ void JointRobotTP::initialize(NodeShPtr node_joint_robot, NodeShPtr kuka_node, N
                       node_->get_parameter("damp_freq").as_int(), 
                       node_->get_parameter("damp_amp").as_double());
     
+    uc1_robot_perception::msg::ProximityTask task;
+    task.distance = 1000.0;
+    min_dist_task_ = task;
+    
     RCLCPP_INFO(node_->get_logger(), "JointRobotTP, initialize complete");
 }
 
@@ -205,6 +209,19 @@ void JointRobotTP::declareParameters(){
     node_->declare_parameter<double>("obv_set_dist_limit", 0.05);
     node_->declare_parameter<double>("obv_set_act_delta", 0.2);
 }
+
+bool JointRobotTP::sort_prx_task(){
+    uc1_robot_perception::msg::ProximityTask prx_task;
+    int sz = proximity_task_points_.size();
+    for(int i=0; i<sz-1; ++i){
+        for(int j=0; j<sz-i-1; j++){
+            if(proximity_task_points_[j].distance > proximity_task_points_[j+1].distance){
+                std::swap(proximity_task_points_[j], proximity_task_points_[j+1]);
+            }
+        }
+    }
+    return true;
+}
 // ------------------------------------------------------------------------------------------------------------------------------- INITIALIZATION METHODS
 
 // ------------------------------------------------------------------------------------------------------------------------------- UPDATER METHODS
@@ -232,39 +249,21 @@ void JointRobotTP::proximityTaskCallback(const uc1_robot_perception::msg::Proxim
     std::lock_guard<std::mutex> lock(proximity_task_mutex_);
     proximity_task_points_.clear();
 
-    double change_trsh = node_->get_parameter("prx_task_trsh").as_double();
-    if(prx_task_map_.find("min_dist_task_") == prx_task_map_.end()){
-        uc1_robot_perception::msg::ProximityTask prx_task;
-        prx_task.distance = 1000.0;
-        prx_task_map_["min_dist_task_"] = prx_task;
-    }
     
     for(const auto& task : msg->proximity_tasks){
         if(task.link_id == KUKA_BASE_LINK || task.link_id == UR10_BASE_LINK || task.link_id == "kuka_link_1"){
             continue;
-        }else if(proximity_task_points_.size() == 0){
+        }{
             uc1_robot_perception::msg::ProximityTask prx_task;
             prx_task = task;
             
             proximity_task_points_.push_back(prx_task);
-            prx_task_map_[prx_task.link_id] = prx_task;
-        }else{
-            uc1_robot_perception::msg::ProximityTask prx_task;
-            prx_task = task;
-
-            if(proximity_task_points_[0].distance > prx_task.distance){
-                proximity_task_points_.insert(proximity_task_points_.begin(), prx_task);
-                if(prx_task_map_["min_dist_task_"].distance > (prx_task.distance+change_trsh)){
-                    prx_task_map_["min_dist_task_"] = prx_task;
-                }
-            }else{
-                proximity_task_points_.push_back(prx_task);
-            }
-            prx_task_map_[prx_task.link_id] = prx_task;
         }
     }
 
-    RCLCPP_INFO_THROTTLE(node_->get_logger(), *node_->get_clock(), 3000, "prx task size: %ld", proximity_task_points_.size());
+    bool check = sort_prx_task();
+
+    RCLCPP_INFO_THROTTLE(node_->get_logger(), *node_->get_clock(), 3000, "prx task size: %ld, sort check:%d", proximity_task_points_.size(), check);
 }
 
 void JointRobotTP::jointStateCallback(const sensor_msgs::msg::JointState::SharedPtr msg){
@@ -434,8 +433,8 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool*
         tp_controller.init_TPComputation(NDOF, lambda, threshold, weight); 
         //tp_controller.computeTP_step("min_altitude",  TP_task_map_["min_altitude"].ActMatrix,  TP_task_map_["min_altitude"].TskJacobian,  TP_task_map_["min_altitude"].RefRate);
         tp_controller.computeTP_step("obstacle_avoidance",  TP_task_map_["obstacle_avoidance"].ActMatrix,  TP_task_map_["obstacle_avoidance"].TskJacobian,  TP_task_map_["obstacle_avoidance"].RefRate);
-        Eigen::VectorXd qdot_des = tp_controller.getTP_ydot();
-        std::cout << qdot_des.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
+        Eigen::VectorXd qdot_des;
+        //std::cout << qdot_des.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
         //tp_controller.computeTP_step("joint_limits",  TP_task_map_["joint_limits"].ActMatrix,  TP_task_map_["joint_limits"].TskJacobian,  TP_task_map_["joint_limits"].RefRate);
         //tp_controller.computeTP_step("obstacle_avoidance_setbased",  TP_task_map_["obstacle_avoidance_setbased"].ActMatrix,  TP_task_map_["obstacle_avoidance_setbased"].TskJacobian,  TP_task_map_["obstacle_avoidance_setbased"].RefRate);
         tp_controller.computeTP_step("endeff_target", TP_task_map_["endeff_target"].ActMatrix, TP_task_map_["endeff_target"].TskJacobian, TP_task_map_["endeff_target"].RefRate);
