@@ -122,13 +122,13 @@ void JointRobotTP::Update_TRR_ObstAvoidance(){
     insResult = TP_task_map_.insert({task_name, task});
 
     // progressive check list of information
-    Eigen::Vector2d filt_vector;
+    Eigen::Vector3d filt_vector;
     Eigen::Vector3d origin, vector;
     if(!Prx_task_pts_OBAV_.empty()){ // check for at least 1 min dist points (look out for missing messages publised)
-        filt_vector = Eigen::Vector2d(
+        filt_vector = Eigen::Vector3d(
             -Prx_task_pts_OBAV_[0].min_point_vector.x,
-            -Prx_task_pts_OBAV_[0].min_point_vector.y
-            //-Prx_task_pts_OBAV_[0].min_point_vector.z
+            -Prx_task_pts_OBAV_[0].min_point_vector.y,
+            -Prx_task_pts_OBAV_[0].min_point_vector.z
         );
         TP_task_map_[task_name].RefRate = filt_vector;
         origin << Prx_task_pts_OBAV_[0].min_point_robot.x, Prx_task_pts_OBAV_[0].min_point_robot.y, Prx_task_pts_OBAV_[0].min_point_robot.z;
@@ -139,7 +139,7 @@ void JointRobotTP::Update_TRR_ObstAvoidance(){
     Eigen::VectorXd vec(3); 
     vec(0) = TP_task_map_[task_name].RefRate(0); 
     vec(1) = TP_task_map_[task_name].RefRate(1); 
-    //vec(2) = TP_task_map_[task_name].RefRate(2); 
+    vec(2) = TP_task_map_[task_name].RefRate(2); 
     obav_ref.push_back(vec); 
     /// SAVE LOG VAR
     std::cout << "[OBV REF RT](nrm/filt):\n" << Prx_task_pts_OBAV_[0].link_id << " // " << Prx_task_pts_OBAV_[0].distance << "\n" << 

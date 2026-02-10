@@ -16,7 +16,7 @@ joint_robot_tp_node:
     kuka_gain: 0.05
     ur10_gain: 0.5
     # cartella output file txt dati
-    exp_dir_name: "hyst/single_ob_mult_targ/2"
+    exp_dir_name: "hyst/chassis_exp/test_3/1"
 
     jl_gain_ref_rat: 0.2      # jl refer rate gain
     jl_act_delta: 0.3         # jl activation region
