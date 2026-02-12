@@ -103,16 +103,18 @@ void JointRobotTP::Update_TRR_ObstAvoidance(){
     std::lock_guard<std::mutex> lock(proximity_task_mutex_);
     Prx_task_pts_OBAV_ = proximity_task_points_;
 
-    if(min_dist_task_.distance > Prx_task_pts_OBAV_[0].distance+node_->get_parameter("prx_task_trsh").as_double()){
-        min_dist_task_ = Prx_task_pts_OBAV_[0];
-    }else{
-        for(int i=0;i<Prx_task_pts_OBAV_.size();++i){
-            if(min_dist_task_.link_id == Prx_task_pts_OBAV_[i].link_id){
-                min_dist_task_ = Prx_task_pts_OBAV_[i];
-                break;
+    if(hysteresis){
+            if(min_dist_task_.distance > Prx_task_pts_OBAV_[0].distance+node_->get_parameter("prx_task_trsh").as_double()){
+            min_dist_task_ = Prx_task_pts_OBAV_[0];
+        }else{
+            for(int i=0;i<Prx_task_pts_OBAV_.size();++i){
+                if(min_dist_task_.link_id == Prx_task_pts_OBAV_[i].link_id){
+                    min_dist_task_ = Prx_task_pts_OBAV_[i];
+                    break;
+                }
             }
+            Prx_task_pts_OBAV_[0] = min_dist_task_;
         }
-        Prx_task_pts_OBAV_[0] = min_dist_task_;
     }
 
     // create new task, save in map, save insertion result
@@ -122,33 +124,51 @@ void JointRobotTP::Update_TRR_ObstAvoidance(){
     insResult = TP_task_map_.insert({task_name, task});
 
     // progressive check list of information
-    Eigen::Vector3d filt_vector;
     Eigen::Vector3d origin, vector;
+    Eigen::VectorXd vec;
     if(!Prx_task_pts_OBAV_.empty()){ // check for at least 1 min dist points (look out for missing messages publised)
-        filt_vector = Eigen::Vector3d(
-            -Prx_task_pts_OBAV_[0].min_point_vector.x,
-            -Prx_task_pts_OBAV_[0].min_point_vector.y,
-            -Prx_task_pts_OBAV_[0].min_point_vector.z
-        );
-        TP_task_map_[task_name].RefRate = filt_vector;
+        if(obav_dim == 3){
+            Eigen::Vector3d filt_vector;
+                filt_vector = Eigen::Vector3d(
+                -Prx_task_pts_OBAV_[0].min_point_vector.x,
+                -Prx_task_pts_OBAV_[0].min_point_vector.y,
+                -Prx_task_pts_OBAV_[0].min_point_vector.z
+            );
+            TP_task_map_[task_name].RefRate = filt_vector;
+
+            vec = Eigen::VectorXd::Zero(3); 
+            vec(0) = TP_task_map_[task_name].RefRate(0); 
+            vec(1) = TP_task_map_[task_name].RefRate(1); 
+            vec(2) = TP_task_map_[task_name].RefRate(2); 
+        }else if(obav_dim == 2){
+            Eigen::Vector2d filt_vector;
+            filt_vector = Eigen::Vector2d(
+                -Prx_task_pts_OBAV_[0].min_point_vector.x,
+                -Prx_task_pts_OBAV_[0].min_point_vector.y
+            );
+            TP_task_map_[task_name].RefRate = filt_vector;
+
+            vec = Eigen::VectorXd::Zero(2); 
+            vec(0) = TP_task_map_[task_name].RefRate(0); 
+            vec(1) = TP_task_map_[task_name].RefRate(1);  
+        }else{
+            RCLCPP_ERROR(node_->get_logger(), "Wrong OBAV Size");
+        }
         origin << Prx_task_pts_OBAV_[0].min_point_robot.x, Prx_task_pts_OBAV_[0].min_point_robot.y, Prx_task_pts_OBAV_[0].min_point_robot.z;
         vector << -Prx_task_pts_OBAV_[0].min_point_vector.x, -Prx_task_pts_OBAV_[0].min_point_vector.y, -Prx_task_pts_OBAV_[0].min_point_vector.z; 
     }
 
     /// SAVE LOG VAR
-    Eigen::VectorXd vec(3); 
-    vec(0) = TP_task_map_[task_name].RefRate(0); 
-    vec(1) = TP_task_map_[task_name].RefRate(1); 
-    vec(2) = TP_task_map_[task_name].RefRate(2); 
     obav_ref.push_back(vec); 
     /// SAVE LOG VAR
-    std::cout << "[OBV REF RT](nrm/filt):\n" << Prx_task_pts_OBAV_[0].link_id << " // " << Prx_task_pts_OBAV_[0].distance << "\n" << 
-                                                min_dist_task_.link_id << " // " << min_dist_task_.distance << "\n" << std::endl;
+    //std::cout << "[OBV REF RT](nrm/filt):\n" << Prx_task_pts_OBAV_[0].link_id << " // " << Prx_task_pts_OBAV_[0].distance << "\n" << 
+    //                                            min_dist_task_.link_id << " // " << min_dist_task_.distance << "\n" << std::endl;
     //std::cout << "[OBV REF RT](nrm/filt):\n" << vector.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << "(" << vector.norm() << ")" << "/" << filt_vector.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << "(" << filt_vector.norm() << ")" << std::endl;
     //std::cout << "[UPDATE TRR] OBAV Ref Rate: " << TP_task_map_["obstacle_avoidance"].RefRate.rows() << "." << TP_task_map_["obstacle_avoidance"].RefRate.cols() << std::endl;
     //std::cout << "[UPDATE TRR] OBAV Ref Rate: " << TP_task_map_["obstacle_avoidance"].RefRate.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
     //publishArrowMarker(origin, vector, KUKA_BASE_LINK, "obst_avoidance", "red", 1, control_task_publisher_);
     //publishArrowMarker(origin, filt_vector, KUKA_BASE_LINK, "obst_avoidance_filtered", "blue", 1, control_task_publisher_);
+    RCLCPP_INFO_THROTTLE(node_->get_logger(), *node_->get_clock(), 3000, "Hysteresis: %d, Obav Ref size: %ld", hysteresis, TP_task_map_[task_name].RefRate.size());
 }
 
 void JointRobotTP::Update_TRR_ObstAvoidance_setBased(){

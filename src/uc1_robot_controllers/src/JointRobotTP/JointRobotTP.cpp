@@ -95,6 +95,9 @@ void JointRobotTP::initialize(NodeShPtr node_joint_robot, NodeShPtr kuka_node, N
     uc1_robot_perception::msg::ProximityTask task;
     task.distance = 1000.0;
     min_dist_task_ = task;
+
+    obav_dim = node_->get_parameter("obav_dimens").as_int();
+    hysteresis = node_->get_parameter("hysteresis").as_int();
     
     RCLCPP_INFO(node_->get_logger(), "JointRobotTP, initialize complete");
 }
@@ -208,6 +211,12 @@ void JointRobotTP::declareParameters(){
 
     node_->declare_parameter<double>("obv_set_dist_limit", 0.05);
     node_->declare_parameter<double>("obv_set_act_delta", 0.2);
+
+
+    // work parameter
+    node_->declare_parameter<int>("obav_dimens", 2);
+    node_->declare_parameter<int>("hysteresis", 0);
+    
 }
 
 bool JointRobotTP::sort_prx_task(){
@@ -263,7 +272,7 @@ void JointRobotTP::proximityTaskCallback(const uc1_robot_perception::msg::Proxim
 
     bool check = sort_prx_task();
 
-    RCLCPP_INFO_THROTTLE(node_->get_logger(), *node_->get_clock(), 3000, "prx task size: %ld, sort check:%d", proximity_task_points_.size(), check);
+    RCLCPP_INFO_THROTTLE(node_->get_logger(), *node_->get_clock(), 3000, "prx task size: %ld", proximity_task_points_.size());
 }
 
 void JointRobotTP::jointStateCallback(const sensor_msgs::msg::JointState::SharedPtr msg){
@@ -432,13 +441,13 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool*
         // ---------------------- UPDATE TPIK STEP ---------------------- //
         tp_controller.init_TPComputation(NDOF, lambda, threshold, weight); 
         //tp_controller.computeTP_step("min_altitude",  TP_task_map_["min_altitude"].ActMatrix,  TP_task_map_["min_altitude"].TskJacobian,  TP_task_map_["min_altitude"].RefRate);
-        tp_controller.computeTP_step("obstacle_avoidance",  TP_task_map_["obstacle_avoidance"].ActMatrix,  TP_task_map_["obstacle_avoidance"].TskJacobian,  TP_task_map_["obstacle_avoidance"].RefRate);
-        Eigen::VectorXd qdot_des;
+        //tp_controller.computeTP_step("obstacle_avoidance",  TP_task_map_["obstacle_avoidance"].ActMatrix,  TP_task_map_["obstacle_avoidance"].TskJacobian,  TP_task_map_["obstacle_avoidance"].RefRate);
         //std::cout << qdot_des.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
         //tp_controller.computeTP_step("joint_limits",  TP_task_map_["joint_limits"].ActMatrix,  TP_task_map_["joint_limits"].TskJacobian,  TP_task_map_["joint_limits"].RefRate);
         //tp_controller.computeTP_step("obstacle_avoidance_setbased",  TP_task_map_["obstacle_avoidance_setbased"].ActMatrix,  TP_task_map_["obstacle_avoidance_setbased"].TskJacobian,  TP_task_map_["obstacle_avoidance_setbased"].RefRate);
         tp_controller.computeTP_step("endeff_target", TP_task_map_["endeff_target"].ActMatrix, TP_task_map_["endeff_target"].TskJacobian, TP_task_map_["endeff_target"].RefRate);
         tp_controller.computeTP_step("close_task", Eigen::MatrixXd::Identity(NDOF,NDOF), Eigen::MatrixXd::Identity(NDOF,NDOF), Eigen::VectorXd::Zero(NDOF)); 
+        Eigen::VectorXd qdot_des;
         qdot_des = tp_controller.getTP_ydot();
         
         tp_controller.clear_TPComputation();  

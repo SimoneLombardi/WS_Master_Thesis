@@ -5,18 +5,22 @@ joint_robot_tp_node:
     fx_tg_pos: [3.3, 0.0, 1.05]
     fx_tg_ori: [0.0, 0.0, 0.0]
 
+    # system param
+    obav_dimens: 2
+    hysteresis: 0
+
     # control loop exit
     filter_enabler : 0
     control_loop_freq : 50
     damp_freq : 10
     damp_amp  : 0.00005
-    controlloop_step_limit : 3000
+    controlloop_step_limit : 5000
 
     # speed command gain for the two robots
     kuka_gain: 0.05
     ur10_gain: 0.5
     # cartella output file txt dati
-    exp_dir_name: "hyst/chassis_exp/test_3/1"
+    exp_dir_name: "test"
 
     jl_gain_ref_rat: 0.2      # jl refer rate gain
     jl_act_delta: 0.3         # jl activation region
