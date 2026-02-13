@@ -115,6 +115,7 @@ class JointRobotTP
         std::vector<Eigen::Vector3d> ee_pos, ee_ori, reach_ref_p, reach_ref_o;
         std::vector<Eigen::VectorXd> ee_jacobian;
         std::vector<Eigen::VectorXd> q_dot_vec;
+        std::vector<std::string> min_dist_link;
         // ------------------------------------------------- LOG VAR ------------------------------------------------- //
     private:
         // -------------------------------------------------------------------------------------------------------------------------------------------- Robot interfaces

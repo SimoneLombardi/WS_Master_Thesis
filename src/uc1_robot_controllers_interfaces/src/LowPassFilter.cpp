@@ -12,6 +12,8 @@ void LowPassFilter::configure(double samp_freq, double damp_freq, double damp_in
 
         std::cout << fbc << " ////// " << ffc << std::endl;
         
+        yp = Eigen::Vector3d::Zero();
+        xp = Eigen::Vector3d::Zero();
         ok = true;
     }
     confCheck = ok;

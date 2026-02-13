@@ -92,9 +92,13 @@ void JointRobotTP::Update_TRR_EETarget(){
     TP_task_map_["endeff_target"].RefRate.block(0,0,cart_err.size(),1) = cart_err;
 
     //std::cout << "EE Target Ref Rate: " << TP_task_map_["endeff_target"].RefRate.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
-    //publishArrowMarker(Eigen::Vector3d((tool_tf.translation())(0),(tool_tf.translation())(1),(tool_tf.translation())(2)),
-    //                   Eigen::Vector3d(cart_err[0],cart_err[1],cart_err[2]),
-    //                    KUKA_BASE_LINK, "reach_ref", "red", 1, control_task_publisher_);
+    
+    Eigen::Vector3d origin, vector;
+    origin = Eigen::Vector3d((tool_tf.translation())(0),(tool_tf.translation())(1),(tool_tf.translation())(2));
+    vector = Eigen::Vector3d(cart_err[0],cart_err[1],cart_err[2]);
+
+    publishArrowMarker(origin,vector,
+                        KUKA_BASE_LINK, "reach_ref", "bblue", 1, control_task_publisher_);
 }
 
 void JointRobotTP::Update_TRR_ObstAvoidance(){
@@ -116,6 +120,10 @@ void JointRobotTP::Update_TRR_ObstAvoidance(){
             Prx_task_pts_OBAV_[0] = min_dist_task_;
         }
     }
+
+    // log var
+    min_dist_link.push_back(Prx_task_pts_OBAV_[0].link_id);
+    //
 
     // create new task, save in map, save insertion result
     std::string task_name = "obstacle_avoidance";
@@ -166,7 +174,7 @@ void JointRobotTP::Update_TRR_ObstAvoidance(){
     //std::cout << "[OBV REF RT](nrm/filt):\n" << vector.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << "(" << vector.norm() << ")" << "/" << filt_vector.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << "(" << filt_vector.norm() << ")" << std::endl;
     //std::cout << "[UPDATE TRR] OBAV Ref Rate: " << TP_task_map_["obstacle_avoidance"].RefRate.rows() << "." << TP_task_map_["obstacle_avoidance"].RefRate.cols() << std::endl;
     //std::cout << "[UPDATE TRR] OBAV Ref Rate: " << TP_task_map_["obstacle_avoidance"].RefRate.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
-    //publishArrowMarker(origin, vector, KUKA_BASE_LINK, "obst_avoidance", "red", 1, control_task_publisher_);
+    publishArrowMarker(origin, vector, KUKA_BASE_LINK, "obst_avoidance", "red", 1, control_task_publisher_);
     //publishArrowMarker(origin, filt_vector, KUKA_BASE_LINK, "obst_avoidance_filtered", "blue", 1, control_task_publisher_);
     RCLCPP_INFO_THROTTLE(node_->get_logger(), *node_->get_clock(), 3000, "Hysteresis: %d, Obav Ref size: %ld", hysteresis, TP_task_map_[task_name].RefRate.size());
 }
@@ -463,6 +471,10 @@ void JointRobotTP::Update_TskJac_ObstAvoidance(){
     Eigen::MatrixXd skew_mat = Eigen::MatrixXd::Zero(3,3);
     Eigen::Vector3d JtS = Eigen::Vector3d(Prx_task_pts_OBAV_[0].min_point_robot.x, Prx_task_pts_OBAV_[0].min_point_robot.y, Prx_task_pts_OBAV_[0].min_point_robot.z);
     Eigen::VectorXd r = JtS - ee_frame_tf.translation(); 
+    
+    Eigen::Vector3d r_filt;
+    r_filt = filter_.filter(Eigen::Vector3d(r(0), r(1), r(2)));
+
     //Eigen::VectorXd r = JtS - cur_lnk_tf.translation(); 
     skew_mat << 0,-r(2),r(1),r(2),0,-r(0),-r(1),r(0),0;
     Eigen::MatrixXd rgdJac = Eigen::MatrixXd::Identity(6,6);

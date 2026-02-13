@@ -10,7 +10,7 @@ ProximityTaskGenerator::ProximityTaskGenerator()
       tf_listener_(std::make_shared<tf2_ros::TransformListener>(*tf_buffer_))
 {
   // store frame names
-  std::cout << "prox task gen 1" << std::endl;
+  //std::cout << "prox task gen 1" << std::endl;
   robot_frames_ = {"kuka_base_link", "kuka_link_1", "kuka_link_2", "kuka_link_3", "kuka_link_4", "kuka_link_5", "kuka_link_6", 
                   "base_link", "shoulder_link", "upper_arm_link", "forearm_link", "wrist_1_link", "wrist_2_link", "wrist_3_link"};
 
@@ -38,7 +38,7 @@ ProximityTaskGenerator::ProximityTaskGenerator()
       pointclouds_path + ur10_fldr + "wrist3.ply"
     };
 
-  std::cout << "prox task gen 2" << std::endl;
+  //std::cout << "prox task gen 2" << std::endl;
   for (size_t i = 0; i < robot_link_clouds_.size(); ++i)
   {
     robot_link_clouds_[i] = pcl::PointCloud<pcl::PointXYZ>::Ptr(new pcl::PointCloud<pcl::PointXYZ>());
@@ -52,7 +52,7 @@ ProximityTaskGenerator::ProximityTaskGenerator()
     // also initialize transformed clouds pointers
     robot_link_clouds_base_[i] = pcl::PointCloud<pcl::PointXYZ>::Ptr(new pcl::PointCloud<pcl::PointXYZ>());
   }
-  std::cout << "prox task gen 3" << std::endl;
+  //std::cout << "prox task gen 3" << std::endl;
   RCLCPP_INFO(this->get_logger(), "Loaded %zu robot link point clouds.", robot_link_clouds_.size());
 
   // static cloud uniform downsampling
@@ -73,21 +73,21 @@ ProximityTaskGenerator::ProximityTaskGenerator()
     }
     std::cout << robot_frames_[i] << ", cloude size: " << robot_link_clouds_[i]->points.size() << " rad: " << radiuses[i] <<  std::endl;
   }
-  std::cout << "link offsets" << std::endl;
+  //std::cout << "link offsets" << std::endl;
   // fill static tf offsets for robot links
   for (size_t i = 0; i < links_pcl_offsets_.size(); ++i)
   {
     links_pcl_offsets_[i] = Eigen::Matrix4d::Identity();
     linkTfOffset(i, links_pcl_offsets_[i]);
   }
-  std::cout << "prox task gen 4" << std::endl;
+  //std::cout << "prox task gen 4" << std::endl;
   // apply static tf offsets to clouds
   for (size_t i = 0; i < links_pcl_offsets_.size(); ++i)
   {
     applyCloudTransformation(robot_link_clouds_[i], links_pcl_offsets_[i]);
   }
 
-  std::cout << "prox task gen 5" << std::endl;
+  //std::cout << "prox task gen 5" << std::endl;
   // subscribe to /environment_point_cloud
   pointcloud_subscriber_ = this->create_subscription<sensor_msgs::msg::PointCloud2>(
       "/environment_point_cloud",
@@ -116,7 +116,9 @@ ProximityTaskGenerator::ProximityTaskGenerator()
       std::chrono::milliseconds(5),
       std::bind(&ProximityTaskGenerator::robotCloudModel, this));
   
-  std::cout << "prox task gen 6, init complete" << std::endl;
+  this->declare_parameter<int>("spatial_avg_size");
+  
+  //std::cout << "prox task gen 6, init complete" << std::endl;
 }
 
 // point cloud processing pipeline
@@ -421,3 +423,108 @@ void ProximityTaskGenerator::publishProximityTasks(const std::vector<ProximityTa
   task_pub->publish(msg);
 }
 
+
+
+/*
+merged_robot_cloud_ = pcl::PointCloud<pcl::PointXYZ>::Ptr(new pcl::PointCloud<pcl::PointXYZ>());
+  for (int i = 0; i < robot_link_clouds_.size(); i++)
+  {
+    transformPointCloud(robot_link_clouds_[i], robot_link_clouds_base_[i], robot_frames_[i]);
+
+    // merging base-referred robot clouds
+    merged_robot_cloud_->points.insert(merged_robot_cloud_->points.end(),
+                                       robot_link_clouds_base_[i]->points.begin(), robot_link_clouds_base_[i]->points.end());
+  }
+  merged_robot_cloud_->width = merged_robot_cloud_->points.size();
+  merged_robot_cloud_->height = 1;
+
+  // publish robot link clouds
+  publishPointCloud(merged_robot_cloud_, LINK_ZERO_NAME, robot_cloud_publisher_);
+}
+
+// compute proximity control task
+std::vector<ProximityTask> ProximityTaskGenerator::computeProximityTasks(pcl::PointCloud<pcl::PointXYZ>::Ptr env_cloud)
+{
+  int Kn = this->get_parameter("spatial_avg_size").as_int();
+  std::vector<ProximityTask> tasks;
+  
+  // kd tree for nn search
+  pcl::KdTreeFLANN<pcl::PointXYZ> kdtree_env;
+  kdtree_env.setInputCloud(env_cloud);
+  
+  for (int i=0; i < robot_link_clouds_base_.size(); i++)
+  {
+    std::string link_name = robot_frames_[i];
+    pcl::PointCloud<pcl::PointXYZ>::Ptr link_cloud = robot_link_clouds_base_[i];
+    
+    float min_dist_sq = std::numeric_limits<float>::max();
+    pcl::PointXYZ closest_env_point;
+    pcl::PointXYZ closest_link_point;
+    
+    //RCLCPP_ERROR(this->get_logger(), "envCloud %zu points", env_cloud->points.size());
+    // for each link point, search env cloud neighbor
+    for (const auto & pt : link_cloud->points)
+    {
+      std::vector<int> indices(1);
+      std::vector<float> sqr_distances(1);
+      if (kdtree_env.nearestKSearch(pt, 1, indices, sqr_distances) > 0)
+      {
+        if (sqr_distances[0] < min_dist_sq)
+        {
+          min_dist_sq = sqr_distances[0];
+          closest_link_point = pt;
+          closest_env_point = env_cloud->points[indices[0]];
+        }
+      }
+    }
+
+    // LOOK FOR THE Kn CLOSEST POINT TO THE ENV POINT
+    // create Kdtree for the robot link
+    pcl::PointXYZ closest_link_point_avg = pcl::PointXYZ();
+    double avg_cnt = 0.0;
+    if(Kn != 1){
+      pcl::KdTreeFLANN<pcl::PointXYZ> kdtree_link;
+      kdtree_link.setInputCloud(link_cloud);
+
+      std::vector<int> link_indices(Kn);
+      std::vector<float> link_sqr_distances(Kn);
+      if(kdtree_link.nearestKSearch(closest_env_point, Kn, link_indices, link_sqr_distances) > 0){
+        for(int k=0; k<Kn; ++k){
+          double weight = 1/(link_sqr_distances[k] + 0.01);
+          avg_cnt += weight;
+          closest_link_point_avg.x += link_cloud->points[link_indices[k]].x*(weight);
+          closest_link_point_avg.y += link_cloud->points[link_indices[k]].y*(weight);
+          closest_link_point_avg.z += link_cloud->points[link_indices[k]].z*(weight);
+        }
+      }
+    }
+    //
+    
+    // if a pair is found, fill the task 
+    if (min_dist_sq < std::numeric_limits<float>::max())
+    {
+      ProximityTask task;
+      
+      // extract 3d points
+      Eigen::Vector3d env_pt(closest_env_point.x, closest_env_point.y, closest_env_point.z);
+      Eigen::Vector3d min_dist_link(closest_link_point.x, closest_link_point.y, closest_link_point.z);
+      Eigen::Vector3d link_pt;
+      if(Kn != 1){
+        link_pt << closest_link_point_avg.x, closest_link_point_avg.y, closest_link_point_avg.z;
+      }else{
+        link_pt << closest_link_point.x, closest_link_point.y, closest_link_point.z;
+      }
+      
+      // extract task intensity and direction
+      Eigen::Vector3d diff = (env_pt - link_pt)/avg_cnt;
+      Eigen::Vector3d direction = (diff.norm() > 1e-6) ? diff.normalized() : Eigen::Vector3d::Zero();
+      
+      // fill task info
+      task.point = min_dist_link;
+      task.direction = direction;
+      task.distance = std::sqrt(min_dist_sq); 
+      task.link_name = link_name;
+      
+      tasks.push_back(task);
+    }
+*/

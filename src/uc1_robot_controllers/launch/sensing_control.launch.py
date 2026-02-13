@@ -30,8 +30,8 @@ def generate_launch_description():
         executable="interactive-target",
         name="ik_target_body_marker",
         parameters=[{
-            "position":[3.0, 0.0, 0.05],
-            "orientation":[0.0, 0.0, -1.57]
+            "position":[2.5, 0.0, 0.05],
+            "orientation":[0.0, 0.0, 0.0]
         }]
     )
     
@@ -45,7 +45,7 @@ def generate_launch_description():
         package="pointcloud_interactive_markers",
         executable="obstacle-cloud-broadcaster",
         parameters=[{
-            "ptc_filename":"/resources/chassis_downsampled_cloud_scaled_centered.pcd",
+            "ptc_filename":"/resources/single_cylinder_colud.pcd",
             "ptc_pkgname":"environment_pointcloud_processing"
         }]
     )
@@ -56,7 +56,10 @@ def generate_launch_description():
     
     proximity_task_gen_node = Node(
         package="uc1_robot_perception",
-        executable="proximity_task_generator"
+        executable="proximity_task_generator",
+        parameters=[{
+            "spatial_avg_size":5
+        }]
     )
     
     return LaunchDescription([
