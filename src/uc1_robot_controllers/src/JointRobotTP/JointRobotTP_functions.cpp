@@ -108,7 +108,7 @@ void JointRobotTP::Update_TRR_ObstAvoidance(){
     Prx_task_pts_OBAV_ = proximity_task_points_;
 
     if(hysteresis){
-            if(min_dist_task_.distance > Prx_task_pts_OBAV_[0].distance+node_->get_parameter("prx_task_trsh").as_double()){
+        if(min_dist_task_.distance > Prx_task_pts_OBAV_[0].distance+node_->get_parameter("prx_task_trsh").as_double()){
             min_dist_task_ = Prx_task_pts_OBAV_[0];
         }else{
             for(int i=0;i<Prx_task_pts_OBAV_.size();++i){

@@ -1,7 +1,7 @@
 joint_robot_tp_node:
   ros__parameters:
     # FIXED TARGET POS/ORIENT
-    fx_tg_enabler: 1
+    fx_tg_enabler: 0
     fx_tg_pos: [2.8, 0.0, 1.0]
     fx_tg_ori: [0.0, 0.0, 0.0]
 
@@ -15,14 +15,14 @@ joint_robot_tp_node:
     damp_freq : 10
     damp_amp  : 0.00005
 
-    controlloop_step_limit : 3000
+    controlloop_step_limit : 5000
 
     # speed command gain for the two robots
-    kuka_gain: 0.05
+    kuka_gain: 0.01
     ur10_gain: 0.5
     # cartella output file txt dati
     exp_dir_name: "test"
-    #new/single_obst_single_targ_bh_3D/hyst/2
+    #new/multi_obst_snake/hyst/2
 
     jl_gain_ref_rat: 0.2      # jl refer rate gain
     jl_act_delta: 0.3         # jl activation region

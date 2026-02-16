@@ -134,7 +134,7 @@ void JointRobotTP::insertInitConfigMap(){
     jl2 << 0.0, -1.5, 1.5, 0.0, 2.0, 0.0, 0.0, -1.57, 0.0, -1.57, 0.0, 0.0;
 
     Eigen::VectorXd jl3(12);
-    jl3 << -0.2, -1.5, 1.5, 0.0, 1.57, 0.0, 0.0, -1.57, 0.0, -1.57, 0.0, 0.0;
+    jl3 << -0.35, -1.5, 1.5, 0.0, 1.57, 0.0, 0.0, -1.57, 0.0, -1.57, 0.0, 0.0;
 
     // insert into the map (DO NOT MODIFY THE DEFAULT CONFIGURATION)
     initial_configurations_map_["jl3"] = jl3;
@@ -271,6 +271,9 @@ void JointRobotTP::proximityTaskCallback(const uc1_robot_perception::msg::Proxim
     }
 
     bool check = sort_prx_task();
+    //std::cout << proximity_task_points_[0].link_id << " " << proximity_task_points_[0].distance << "\n"
+    //          << proximity_task_points_[1].link_id << " " << proximity_task_points_[1].distance << "\n"
+    //          << proximity_task_points_[2].link_id << " " << proximity_task_points_[2].distance << "\n" << std::endl;
 
     RCLCPP_INFO_THROTTLE(node_->get_logger(), *node_->get_clock(), 3000, "prx task size: %ld", proximity_task_points_.size());
 }
@@ -441,7 +444,7 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool*
         // ---------------------- UPDATE TPIK STEP ---------------------- //
         tp_controller.init_TPComputation(NDOF, lambda, threshold, weight); 
         //tp_controller.computeTP_step("min_altitude",  TP_task_map_["min_altitude"].ActMatrix,  TP_task_map_["min_altitude"].TskJacobian,  TP_task_map_["min_altitude"].RefRate);
-        tp_controller.computeTP_step("obstacle_avoidance",  TP_task_map_["obstacle_avoidance"].ActMatrix,  TP_task_map_["obstacle_avoidance"].TskJacobian,  TP_task_map_["obstacle_avoidance"].RefRate);
+        //tp_controller.computeTP_step("obstacle_avoidance",  TP_task_map_["obstacle_avoidance"].ActMatrix,  TP_task_map_["obstacle_avoidance"].TskJacobian,  TP_task_map_["obstacle_avoidance"].RefRate);
         //std::cout << qdot_des.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
         //tp_controller.computeTP_step("joint_limits",  TP_task_map_["joint_limits"].ActMatrix,  TP_task_map_["joint_limits"].TskJacobian,  TP_task_map_["joint_limits"].RefRate);
         //tp_controller.computeTP_step("obstacle_avoidance_setbased",  TP_task_map_["obstacle_avoidance_setbased"].ActMatrix,  TP_task_map_["obstacle_avoidance_setbased"].TskJacobian,  TP_task_map_["obstacle_avoidance_setbased"].RefRate);
