@@ -37,6 +37,7 @@ void JointRobotTP::initialize(NodeShPtr node_joint_robot, NodeShPtr kuka_node, N
         std::bind(&JointRobotTP::jointStateCallback, this, std::placeholders::_1)
     );
     control_task_publisher_ = node_->create_publisher<visualization_msgs::msg::Marker>("/uc1_viz/control_task", 10);
+    control_arrayTask_publisher_ = node_->create_publisher<visualization_msgs::msg::MarkerArray>("/uc1_viz/control_task_array", 10);
     goal_frame_broadcaster_ = std::make_shared<TfGoalBroadcaster>(node_);
 
     point_publisher = node_->create_publisher<geometry_msgs::msg::PointStamped>("debug_point_publisher", 10);
@@ -154,19 +155,19 @@ void JointRobotTP::insertFuncPointerVtc(){
     TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_JointLimits);
     TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_EETarget);
     TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance);
-    TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance_setBased);
+    TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_ObstAvoidance_multiLink);
     //TRR_func_vtc.push_back(&JointRobotTP::Update_TRR_MinAlt);
 
     AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_JointLimits);
     AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_EETarget);
     AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_ObstAvoidance);
-    //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_ObstAvoidance_setBased);
+    AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_ObstAvoidance_multiLink);
     //AFunc_func_vtc.push_back(&JointRobotTP::Update_AFunc_MinAlt);
 
     TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_JointLimits);
     TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_EETarget);
     TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_ObstAvoidance);
-    //TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_ObstAvoidance_setBased);
+    TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_ObstAvoidance_multiLink);
     //TskJac_func_vtc.push_back(&JointRobotTP::Update_TskJac_MinAlt);
 
     if(((TRR_func_vtc.size()+AFunc_func_vtc.size()+TskJac_func_vtc.size())%3)!=0){
@@ -204,10 +205,11 @@ void JointRobotTP::declareParameters(){
     node_->declare_parameter<double>("obv_delta", 0.2);
     node_->declare_parameter<double>("prx_task_trsh", 0.02);
 
-    // Obstacle avoidance set based task
+    // Obstacle avoidance multi link task
     node_->declare_parameter<double>("obv_set_gain", 0.2);
     node_->declare_parameter<double>("obv_set_min_dist", 0.15);
     node_->declare_parameter<double>("obv_set_delta", 0.1);
+    node_->declare_parameter<int>("link_count", 3);
 
     node_->declare_parameter<double>("obv_set_dist_limit", 0.05);
     node_->declare_parameter<double>("obv_set_act_delta", 0.2);
@@ -286,14 +288,7 @@ void JointRobotTP::jointStateCallback(const sensor_msgs::msg::JointState::Shared
     //std::cout << msg->name.size() << std::endl;
 }
 
-void JointRobotTP::publishArrowMarker(
-    const Eigen::Vector3d& origin,
-    const Eigen::Vector3d& vector,
-    const std::string& frame_id,
-    const std::string& ns,
-    const std::string& color,
-    int id,
-    rclcpp::Publisher<visualization_msgs::msg::Marker>::SharedPtr publisher)
+void JointRobotTP::publishArrowMarker(const Eigen::Vector3d& origin,const Eigen::Vector3d& vector, const std::string& frame_id,const std::string& ns,const std::string& color,int id,rclcpp::Publisher<visualization_msgs::msg::Marker>::SharedPtr publisher)
 {
     visualization_msgs::msg::Marker marker;
     marker.header.frame_id = frame_id;
@@ -345,6 +340,74 @@ void JointRobotTP::publishArrowMarker(
     }
 
     publisher->publish(marker);
+}
+
+void JointRobotTP::publishArrowMarkerArray(const std::vector<ProximityTask> & tasks, const rclcpp::Publisher<visualization_msgs::msg::MarkerArray>::SharedPtr & marker_pub, const std::string & frame_id, const rclcpp::Time & stamp)
+{
+  visualization_msgs::msg::MarkerArray marker_array;
+  int id = 0;
+  
+  for (const auto & task : tasks)
+  { 
+    // hide tasks from joints not needed 
+    double hide_tsk;
+    if(task.link_name == "kuka_base_link" || task.link_name == "base_link" || task.link_name == "kuka_link_1"){
+      hide_tsk = 0.0;
+    }else{
+      hide_tsk = 1.0;
+    }
+
+    // sphere marker for the minimum distance point
+    visualization_msgs::msg::Marker sphere;
+    sphere.header.frame_id = frame_id;
+    sphere.header.stamp = stamp;
+    sphere.ns = "proximity_points";
+    sphere.id = id++;
+    sphere.type = visualization_msgs::msg::Marker::SPHERE;
+    sphere.action = visualization_msgs::msg::Marker::ADD;
+    sphere.pose.position.x = task.point.x();
+    sphere.pose.position.y = task.point.y();
+    sphere.pose.position.z = task.point.z();
+    sphere.pose.orientation.w = 1.0;
+    sphere.scale.x = 0.05;  
+    sphere.scale.y = 0.05;
+    sphere.scale.z = 0.05;
+    sphere.color.r = 1.0;
+    sphere.color.g = 0.0;
+    sphere.color.b = 0.0;
+    sphere.color.a = 1.0*hide_tsk;
+    marker_array.markers.push_back(sphere);
+
+    // arrow marker for task direction
+    visualization_msgs::msg::Marker arrow;
+    arrow.header.frame_id = frame_id;
+    arrow.header.stamp = stamp;
+    arrow.ns = "proximity_direction";
+    arrow.id = id++;
+    arrow.type = visualization_msgs::msg::Marker::ARROW;
+    arrow.action = visualization_msgs::msg::Marker::ADD;
+    geometry_msgs::msg::Point start;
+    start.x = task.point.x();
+    start.y = task.point.y();
+    start.z = task.point.z();
+    double arrow_length = task.distance;
+    geometry_msgs::msg::Point end;
+    end.x = task.point.x() + task.direction.x() * arrow_length;
+    end.y = task.point.y() + task.direction.y() * arrow_length;
+    end.z = task.point.z() + task.direction.z() * arrow_length;
+    arrow.points.push_back(start);
+    arrow.points.push_back(end);
+    arrow.scale.x = 0.02; 
+    arrow.scale.y = 0.04; 
+    arrow.scale.z = 0.1;  
+    arrow.color.r = 1.0;
+    arrow.color.g = 0.0;
+    arrow.color.b = 0.0;
+    arrow.color.a = 1.0*hide_tsk;
+    marker_array.markers.push_back(arrow);
+  }
+  
+  marker_pub->publish(marker_array);
 }
 // ------------------------------------------------------------------------------------------------------------------------------- CALLBACKS METHODS
 
@@ -436,9 +499,9 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool*
         }
         // ---------------------- Eval STOP CONDION --------------------- //
 
-        //std::cout << TP_task_map_["obstacle_avoidance_setbased"].ActMatrix.rows() << "-" << TP_task_map_["obstacle_avoidance_setbased"].ActMatrix.cols() << std::endl;
-        //std::cout << TP_task_map_["obstacle_avoidance_setbased"].TskJacobian.rows() << "-" << TP_task_map_["obstacle_avoidance_setbased"].TskJacobian.cols() << std::endl;
-        //std::cout << TP_task_map_["obstacle_avoidance_setbased"].RefRate.rows() << "-" << TP_task_map_["obstacle_avoidance_setbased"].RefRate.cols() << std::endl;
+        //std::cout << TP_task_map_["obstacle_avoidance_multilink"].ActMatrix.rows() << "-" << TP_task_map_["obstacle_avoidance_multilink"].ActMatrix.cols() << std::endl;
+        //std::cout << TP_task_map_["obstacle_avoidance_multilink"].TskJacobian.rows() << "-" << TP_task_map_["obstacle_avoidance_multilink"].TskJacobian.cols() << std::endl;
+        //std::cout << TP_task_map_["obstacle_avoidance_multilink"].RefRate.rows() << "-" << TP_task_map_["obstacle_avoidance_multilink"].RefRate.cols() << std::endl;
 
 
         // ---------------------- UPDATE TPIK STEP ---------------------- //
@@ -447,8 +510,8 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool*
         //tp_controller.computeTP_step("obstacle_avoidance",  TP_task_map_["obstacle_avoidance"].ActMatrix,  TP_task_map_["obstacle_avoidance"].TskJacobian,  TP_task_map_["obstacle_avoidance"].RefRate);
         //std::cout << qdot_des.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
         //tp_controller.computeTP_step("joint_limits",  TP_task_map_["joint_limits"].ActMatrix,  TP_task_map_["joint_limits"].TskJacobian,  TP_task_map_["joint_limits"].RefRate);
-        //tp_controller.computeTP_step("obstacle_avoidance_setbased",  TP_task_map_["obstacle_avoidance_setbased"].ActMatrix,  TP_task_map_["obstacle_avoidance_setbased"].TskJacobian,  TP_task_map_["obstacle_avoidance_setbased"].RefRate);
-        tp_controller.computeTP_step("endeff_target", TP_task_map_["endeff_target"].ActMatrix, TP_task_map_["endeff_target"].TskJacobian, TP_task_map_["endeff_target"].RefRate);
+        tp_controller.computeTP_step("obstacle_avoidance_multilink",  TP_task_map_["obstacle_avoidance_multilink"].ActMatrix,  TP_task_map_["obstacle_avoidance_multilink"].TskJacobian,  TP_task_map_["obstacle_avoidance_multilink"].RefRate);
+        //tp_controller.computeTP_step("endeff_target", TP_task_map_["endeff_target"].ActMatrix, TP_task_map_["endeff_target"].TskJacobian, TP_task_map_["endeff_target"].RefRate);
         tp_controller.computeTP_step("close_task", Eigen::MatrixXd::Identity(NDOF,NDOF), Eigen::MatrixXd::Identity(NDOF,NDOF), Eigen::VectorXd::Zero(NDOF)); 
         Eigen::VectorXd qdot_des;
         qdot_des = tp_controller.getTP_ydot();
@@ -464,6 +527,15 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool*
 
         q_dot_vec.push_back(qdot_des);
         
+
+        //std::cout << TP_task_map_["obstacle_avoidance_multilink"].RefRate.rows() << "x" << TP_task_map_["obstacle_avoidance_multilink"].RefRate.cols() << std::endl;
+        //std::cout << TP_task_map_["obstacle_avoidance_multilink"].ActMatrix.rows() << "x" << TP_task_map_["obstacle_avoidance_multilink"].ActMatrix.cols() << std::endl;
+        //std::cout << TP_task_map_["obstacle_avoidance_multilink"].TskJacobian.rows() << "x" << TP_task_map_["obstacle_avoidance_multilink"].TskJacobian.cols() << std::endl;
+
+        //std::cout << TP_task_map_["obstacle_avoidance"].TskJacobian.matrix() << "\n";
+        //std::cout << TP_task_map_["obstacle_avoidance_multilink"].TskJacobian.matrix() << "\n\n" << std::endl;
+
+
         // CLEAR TASK PRIORITY MAP -------------------------------------- //
         TP_task_map_.clear();
         // CLEAR TASK PRIORITY MAP -------------------------------------- //
@@ -475,6 +547,7 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool*
             RCLCPP_ERROR(node_->get_logger(), "Exedeed task time, %ld, %ld", reach_ref_p.size(), node_->get_parameter("controlloop_step_limit").as_int());
             break;
         }
+
 
         loop_rate.sleep();
     }

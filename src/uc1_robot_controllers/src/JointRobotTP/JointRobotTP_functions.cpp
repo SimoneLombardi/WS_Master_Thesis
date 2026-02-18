@@ -97,8 +97,8 @@ void JointRobotTP::Update_TRR_EETarget(){
     origin = Eigen::Vector3d((tool_tf.translation())(0),(tool_tf.translation())(1),(tool_tf.translation())(2));
     vector = Eigen::Vector3d(cart_err[0],cart_err[1],cart_err[2]);
 
-    publishArrowMarker(origin,vector,
-                        KUKA_BASE_LINK, "reach_ref", "bblue", 1, control_task_publisher_);
+    //publishArrowMarker(origin,vector,
+                        //KUKA_BASE_LINK, "reach_ref", "bblue", 1, control_task_publisher_);
 }
 
 void JointRobotTP::Update_TRR_ObstAvoidance(){
@@ -174,22 +174,29 @@ void JointRobotTP::Update_TRR_ObstAvoidance(){
     //std::cout << "[OBV REF RT](nrm/filt):\n" << vector.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << "(" << vector.norm() << ")" << "/" << filt_vector.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << "(" << filt_vector.norm() << ")" << std::endl;
     //std::cout << "[UPDATE TRR] OBAV Ref Rate: " << TP_task_map_["obstacle_avoidance"].RefRate.rows() << "." << TP_task_map_["obstacle_avoidance"].RefRate.cols() << std::endl;
     //std::cout << "[UPDATE TRR] OBAV Ref Rate: " << TP_task_map_["obstacle_avoidance"].RefRate.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
-    publishArrowMarker(origin, vector, KUKA_BASE_LINK, "obst_avoidance", "red", 1, control_task_publisher_);
+    //publishArrowMarker(origin, vector, KUKA_BASE_LINK, "obst_avoidance", "red", 1, control_task_publisher_);
     //publishArrowMarker(origin, filt_vector, KUKA_BASE_LINK, "obst_avoidance_filtered", "blue", 1, control_task_publisher_);
     RCLCPP_INFO_THROTTLE(node_->get_logger(), *node_->get_clock(), 3000, "Hysteresis: %d, Obav Ref size: %ld", hysteresis, TP_task_map_[task_name].RefRate.size());
 }
 
-void JointRobotTP::Update_TRR_ObstAvoidance_setBased(){
-    std::string task_name = "obstacle_avoidance_setbased";
+void JointRobotTP::Update_TRR_ObstAvoidance_multiLink(){
+
+    std::string task_name = "obstacle_avoidance_multilink";
     tp_task task;
 
+    //std::cout << "TRR" << std::endl;
+
+    int link_count = node_->get_parameter("link_count").as_int();
+    int ref_dim = link_count * obav_dim;
+
     TP_task_map_[task_name] = task;
-    TP_task_map_[task_name].RefRate.resize(frame_names_.size(),1);
+    TP_task_map_[task_name].RefRate.resize(ref_dim,1);
     Eigen::VectorXd dist_raw = Eigen::VectorXd::Zero(frame_names_.size());
 
-    double obv_set_gain = node_->get_parameter("obv_set_gain").as_double();
-    double obv_set_min_dist = node_->get_parameter("obv_set_min_dist").as_double();
-    double obv_set_delta = node_->get_parameter("obv_set_delta").as_double();
+    //double obv_set_gain = node_->get_parameter("obv_set_gain").as_double();
+    //double obv_set_min_dist = node_->get_parameter("obv_set_min_dist").as_double();
+    //double obv_set_delta = node_->get_parameter("obv_set_delta").as_double();
+    
     
     if((TP_task_map_.find("obstacle_avoidance") == TP_task_map_.end())){ // if normal_obav not present -> safe copy of prox task
         Prx_task_pts_OBAV_.clear();
@@ -197,10 +204,39 @@ void JointRobotTP::Update_TRR_ObstAvoidance_setBased(){
         Prx_task_pts_OBAV_ = proximity_task_points_;
     }
 
+    std::vector<ProximityTask> visTasks;
+    ProximityTask tempTask;
+
+    Eigen::VectorXd ref_vector;
+    if(!Prx_task_pts_OBAV_.empty()){
+        for(int i=0; i<link_count; ++i){
+            switch(obav_dim){
+                case 2: ref_vector.resize(obav_dim,1);
+                        ref_vector << -Prx_task_pts_OBAV_[i].min_point_vector.x, -Prx_task_pts_OBAV_[i].min_point_vector.y; 
+                        break;
+                case 3: ref_vector.resize(obav_dim,1);
+                        ref_vector << -Prx_task_pts_OBAV_[i].min_point_vector.x, -Prx_task_pts_OBAV_[i].min_point_vector.y, -Prx_task_pts_OBAV_[i].min_point_vector.z; 
+                        break;
+                default: RCLCPP_ERROR(node_->get_logger(), "[obav multi link], obav size error"); break;
+            }
+
+            TP_task_map_[task_name].RefRate.block(i*obav_dim,0,obav_dim,1) = ref_vector;
+            
+            tempTask.link_name = Prx_task_pts_OBAV_[i].link_id;
+            tempTask.distance = Prx_task_pts_OBAV_[i].distance;
+            tempTask.point << Prx_task_pts_OBAV_[i].min_point_robot.x, Prx_task_pts_OBAV_[i].min_point_robot.y, Prx_task_pts_OBAV_[i].min_point_robot.z; 
+            tempTask.direction << Prx_task_pts_OBAV_[i].min_point_vector.x, Prx_task_pts_OBAV_[i].min_point_vector.y, Prx_task_pts_OBAV_[i].min_point_vector.z; 
+
+            visTasks.push_back(tempTask);
+        }
+    }
+
+    // pub visual task
+    publishArrowMarkerArray(visTasks, control_arrayTask_publisher_, KUKA_BASE_LINK, node_->now());
+    
     for(int i=0; i<frame_names_.size(); ++i){               // first loop on frame_names --> RefRate ordinato come frame_names_
         for(int j=0; j<Prx_task_pts_OBAV_.size(); j++){     // second loop on Prx_task (copy)
             if(frame_names_[i] == Prx_task_pts_OBAV_[j].link_id){
-                TP_task_map_[task_name].RefRate(i) = obv_set_gain * (obv_set_min_dist + obv_set_delta - Prx_task_pts_OBAV_[j].distance);
                 dist_raw(i) = Prx_task_pts_OBAV_[j].distance;
             }
         }
@@ -297,23 +333,37 @@ void JointRobotTP::Update_AFunc_ObstAvoidance(){
     //std::cout << "[UPDATE ACT] OBAV Ref Rate: " << TP_task_map_["obstacle_avoidance"].RefRate.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
 }
 
-void JointRobotTP::Update_AFunc_ObstAvoidance_setBased(){
-    std::string task_name = "obstacle_avoidance_setbased";
+void JointRobotTP::Update_AFunc_ObstAvoidance_multiLink(){
+    std::string task_name = "obstacle_avoidance_multilink";
     int RefR_sz = TP_task_map_[task_name].RefRate.size();
     TP_task_map_[task_name].ActMatrix = Eigen::MatrixXd::Zero(RefR_sz, RefR_sz);
+
+    //std::cout << "AF" << std::endl;
 
     double obv_set_dist_limit = node_->get_parameter("obv_set_dist_limit").as_double();
     double obv_set_delta = node_->get_parameter("obv_set_act_delta").as_double();
 
-    for(int i=0; i<frame_names_.size(); ++i){               // first loop on frame_names --> RefRate ordinato come frame_names_
-        for(int j=0; j<Prx_task_pts_OBAV_.size(); j++){     // second loop on Prx_task (copy)
-            if(frame_names_[i] == Prx_task_pts_OBAV_[j].link_id){
-                TP_task_map_[task_name].ActMatrix(i,i) = ur10_robot_->DecreasingBellShapedFunction(obv_set_dist_limit, obv_set_dist_limit+obv_set_delta, 
-                                                                                                   0.0, 1.0, 
-                                                                                                   Prx_task_pts_OBAV_[j].distance);
-            }
+    double act_val;
+    for(int i=0; i<(RefR_sz/obav_dim); ++i){
+        act_val = ur10_robot_->DecreasingBellShapedFunction(obv_set_dist_limit, obv_set_dist_limit+obv_set_delta, 
+                                                            0.0, 1.0, 
+                                                            Prx_task_pts_OBAV_[i].distance);
+        for(int j=i*obav_dim; j<(i*obav_dim+obav_dim); ++j){
+            TP_task_map_[task_name].ActMatrix(j,j) = act_val;
         }
     }
+
+    /*
+        for(int i=0; i<frame_names_.size(); ++i){               // first loop on frame_names --> RefRate ordinato come frame_names_
+            for(int j=0; j<Prx_task_pts_OBAV_.size(); j++){     // second loop on Prx_task (copy)
+                if(frame_names_[i] == Prx_task_pts_OBAV_[j].link_id){
+                    TP_task_map_[task_name].ActMatrix(i,i) = ur10_robot_->DecreasingBellShapedFunction(obv_set_dist_limit, obv_set_dist_limit+obv_set_delta, 
+                                                                                                    0.0, 1.0, 
+                                                                                                    Prx_task_pts_OBAV_[j].distance);
+                }
+            }
+        }
+    */
 
     // log var save
     obav_set_act.push_back(TP_task_map_[task_name].ActMatrix.diagonal());
@@ -420,15 +470,15 @@ void JointRobotTP::Update_TskJac_EETarget(){
 void JointRobotTP::Update_TskJac_ObstAvoidance(){
     std::string last_frame_name = Prx_task_pts_OBAV_[0].link_id; // save the name of the frame to compute the jacobian to
     std::string ee_frame_name;
-    for(int i=0; i<NDOF; ++i){
-        if(frame_names_[i] == last_frame_name){
-            if(i == NDOF-1){
-                ee_frame_name = TOOL;
-            }else{
-                ee_frame_name = frame_names_[i+1];
-            }
-        }
+
+    int ee_index = find(frame_names_.begin(), frame_names_.end(), last_frame_name) - frame_names_.begin();
+    if(ee_index+1 == NDOF){
+        ee_frame_name = TOOL;
+    }else{
+        ee_index++;
+        ee_frame_name = frame_names_[ee_index];
     }
+
     int RefRate_sz = TP_task_map_["obstacle_avoidance"].RefRate.size();
     // compute the Jacobian up to the ee_frame, than attach the RIGID BODY Jacobian
 
@@ -439,10 +489,7 @@ void JointRobotTP::Update_TskJac_ObstAvoidance(){
     Eigen::Affine3d cur_lnk_tf;
     Eigen::Vector3d ax_vtc;
     bool last_link = false;
-    for(int i=0; i<NDOF; ++i){
-        if(frame_names_[i] == ee_frame_name){
-            last_link = true;
-        }
+    for(int i=0; i<=ee_index; ++i){
         cur_lnk_tf = getGenericTransformation(KUKA_BASE_LINK, frame_names_[i]);
         switch(i){
             case 0:  ax_vtc << 0, 0,-1;  break;
@@ -459,21 +506,14 @@ void JointRobotTP::Update_TskJac_ObstAvoidance(){
             case 11: ax_vtc << 0, 0, 1;  break;
             default: break;
         }
-
         Eigen::Vector3d AX_vtc = cur_lnk_tf.linear()*ax_vtc; // rot matrix * joint axes
         Jac.block(0,i,3,1) = AX_vtc.cross((ee_frame_tf.translation() - cur_lnk_tf.translation()));
         Jac.block(3,i,3,1) = AX_vtc;
-        if(last_link){
-            break;
-        }
     }
     // rigid body jacobian
     Eigen::MatrixXd skew_mat = Eigen::MatrixXd::Zero(3,3);
     Eigen::Vector3d JtS = Eigen::Vector3d(Prx_task_pts_OBAV_[0].min_point_robot.x, Prx_task_pts_OBAV_[0].min_point_robot.y, Prx_task_pts_OBAV_[0].min_point_robot.z);
     Eigen::VectorXd r = JtS - ee_frame_tf.translation(); 
-    
-    Eigen::Vector3d r_filt;
-    r_filt = filter_.filter(Eigen::Vector3d(r(0), r(1), r(2)));
 
     //Eigen::VectorXd r = JtS - cur_lnk_tf.translation(); 
     skew_mat << 0,-r(2),r(1),r(2),0,-r(0),-r(1),r(0),0;
@@ -482,12 +522,20 @@ void JointRobotTP::Update_TskJac_ObstAvoidance(){
 
     Eigen::MatrixXd temp = rgdJac * Jac;
     TP_task_map_["obstacle_avoidance"].TskJacobian = temp.block(0,0,RefRate_sz,NDOF);
+    
+    //std::cout << "obn, link name:" << last_frame_name << std::endl;
+    //std::cout << "obn, link idx:" << ee_index << std::endl;
+    //std::cout << "onb,\n" << Jac.matrix() << std::endl; 
+
 }
 
-void JointRobotTP::Update_TskJac_ObstAvoidance_setBased(){
-    std::string task_name = "obstacle_avoidance_setbased";
+void JointRobotTP::Update_TskJac_ObstAvoidance_multiLink(){
+    std::string task_name = "obstacle_avoidance_multilink";
     int RefR_sz = TP_task_map_[task_name].RefRate.size();
-    TP_task_map_[task_name].TskJacobian = Eigen::MatrixXd::Zero(RefR_sz, RefR_sz);
+    TP_task_map_[task_name].TskJacobian = Eigen::MatrixXd::Zero(RefR_sz, NDOF);
+
+    //std::cout << "TJ" << std::endl;
+
 
     int equal_to_obav=0;
     // temp var definition
@@ -495,32 +543,27 @@ void JointRobotTP::Update_TskJac_ObstAvoidance_setBased(){
     Eigen::VectorXd r;
     Eigen::Affine3d ee_frame_tf, cur_lnk_tf;
     Eigen::MatrixXd skew_mat, Jac, rgdJac;
+    int ee_index;
 
-    for(int i=0; i<RefR_sz; ++i){
-        // looping for all the frames, save distance vector --> already normalized;
-        for(int j=0; j<Prx_task_pts_OBAV_.size(); j++){     
-            if(frame_names_[i] == Prx_task_pts_OBAV_[j].link_id){
-                dvec = Eigen::Vector3d(Prx_task_pts_OBAV_[j].min_point_vector.x, 
-                                       Prx_task_pts_OBAV_[j].min_point_vector.y, 
-                                       Prx_task_pts_OBAV_[j].min_point_vector.z);
+    for(int i=0; i<(RefR_sz/obav_dim); ++i){ // loop on the number of selected link
+        RobMinPoint = Eigen::Vector3d(Prx_task_pts_OBAV_[i].min_point_robot.x, 
+                                      Prx_task_pts_OBAV_[i].min_point_robot.y, 
+                                      Prx_task_pts_OBAV_[i].min_point_robot.z);
 
-                RobMinPoint = Eigen::Vector3d(Prx_task_pts_OBAV_[j].min_point_robot.x, 
-                                              Prx_task_pts_OBAV_[j].min_point_robot.y, 
-                                              Prx_task_pts_OBAV_[j].min_point_robot.z);   
-            }
-        }
-        
-        // set end effector transform (with control for last link)
-        if(i+1 == NDOF){
-            ee_frame_tf = getGenericTransformation(KUKA_BASE_LINK, frame_names_[i]);
+                                     
+        // set ee tf
+        ee_index = find(frame_names_.begin(), frame_names_.end(), Prx_task_pts_OBAV_[i].link_id) - frame_names_.begin();                    
+        if(ee_index+1 == NDOF){
+            ee_frame_tf = getGenericTransformation(KUKA_BASE_LINK, frame_names_[ee_index]);
         }else{
-            ee_frame_tf = getGenericTransformation(KUKA_BASE_LINK, frame_names_[i+1]);
+            ee_index++;
+            ee_frame_tf = getGenericTransformation(KUKA_BASE_LINK, frame_names_[ee_index]);
         }
         
         Jac = Eigen::MatrixXd::Zero(6, NDOF);
-        rgdJac = Eigen::MatrixXd::Zero(6,6);
+        rgdJac = Eigen::MatrixXd::Identity(6,6);
 
-        for(int k=0; k<NDOF; ++k){
+        for(int k=0; k<=ee_index; ++k){
             cur_lnk_tf = getGenericTransformation(KUKA_BASE_LINK, frame_names_[k]);
             switch(k){
                 case 0:  ax_vtc << 0, 0,-1;  break;
@@ -542,16 +585,78 @@ void JointRobotTP::Update_TskJac_ObstAvoidance_setBased(){
             Jac.block(0,k,3,1) = AX_vtc.cross((ee_frame_tf.translation() - cur_lnk_tf.translation()));
             Jac.block(3,k,3,1) = AX_vtc;
         }
-        
+
         // rigid body jacobian
         skew_mat = Eigen::MatrixXd::Zero(3,3);
         r = RobMinPoint - ee_frame_tf.translation(); 
         skew_mat << 0,-r(2),r(1),r(2),0,-r(0),-r(1),r(0),0;
         rgdJac.block(0,3,3,3) = skew_mat.transpose();
-        
-        // compose the TASK JACOBIAN LINE
-        TP_task_map_[task_name].TskJacobian.block(i,0,1,NDOF) = - dvec.transpose() * (rgdJac * Jac).block(0,0,3,NDOF);
+
+        TP_task_map_[task_name].TskJacobian.block(i*obav_dim,0,obav_dim,NDOF) = (rgdJac * Jac).block(0,0,obav_dim,NDOF);
+
+        //std::cout << "[[[ link name:" << Prx_task_pts_OBAV_[i].link_id << std::endl; 
+        //std::cout << "[[[ ee_index:" << ee_index << ", i val:" << i << std::endl;
+        //std::cout << "[[[\n" << Jac.matrix() << std::endl; 
     }
+
+    /*
+        for(int i=0; i<RefR_sz; ++i){
+            // looping for all the frames, save distance vector --> already normalized;
+            for(int j=0; j<Prx_task_pts_OBAV_.size(); j++){     
+                if(frame_names_[i] == Prx_task_pts_OBAV_[j].link_id){
+                    dvec = Eigen::Vector3d(Prx_task_pts_OBAV_[j].min_point_vector.x, 
+                                        Prx_task_pts_OBAV_[j].min_point_vector.y, 
+                                        Prx_task_pts_OBAV_[j].min_point_vector.z);
+
+                    RobMinPoint = Eigen::Vector3d(Prx_task_pts_OBAV_[j].min_point_robot.x, 
+                                                Prx_task_pts_OBAV_[j].min_point_robot.y, 
+                                                Prx_task_pts_OBAV_[j].min_point_robot.z);   
+                }
+            }
+            
+            // set end effector transform (with control for last link)
+            if(i+1 == NDOF){
+                ee_frame_tf = getGenericTransformation(KUKA_BASE_LINK, frame_names_[i]);
+            }else{
+                ee_frame_tf = getGenericTransformation(KUKA_BASE_LINK, frame_names_[i+1]);
+            }
+            
+            Jac = Eigen::MatrixXd::Zero(6, NDOF);
+            rgdJac = Eigen::MatrixXd::Zero(6,6);
+
+            for(int k=0; k<NDOF; ++k){
+                cur_lnk_tf = getGenericTransformation(KUKA_BASE_LINK, frame_names_[k]);
+                switch(k){
+                    case 0:  ax_vtc << 0, 0,-1;  break;
+                    case 1:  ax_vtc << 0, 1, 0;  break;
+                    case 2:  ax_vtc << 0, 1, 0;  break;
+                    case 3:  ax_vtc <<-1, 0, 0;  break;
+                    case 4:  ax_vtc << 0, 1, 0;  break;
+                    case 5:  ax_vtc <<-1, 0, 0;  break;
+                    case 6:  ax_vtc << 0, 0, 1;  break;
+                    case 7:  ax_vtc << 0, 0, 1;  break;
+                    case 8:  ax_vtc << 0, 0, 1;  break;
+                    case 9:  ax_vtc << 0, 0, 1;  break;
+                    case 10: ax_vtc << 0, 0, 1;  break;
+                    case 11: ax_vtc << 0, 0, 1;  break;
+                    default: break;
+                }
+
+                AX_vtc = cur_lnk_tf.linear()*ax_vtc; // rot matrix * joint axes
+                Jac.block(0,k,3,1) = AX_vtc.cross((ee_frame_tf.translation() - cur_lnk_tf.translation()));
+                Jac.block(3,k,3,1) = AX_vtc;
+            }
+            
+            // rigid body jacobian
+            skew_mat = Eigen::MatrixXd::Zero(3,3);
+            r = RobMinPoint - ee_frame_tf.translation(); 
+            skew_mat << 0,-r(2),r(1),r(2),0,-r(0),-r(1),r(0),0;
+            rgdJac.block(0,3,3,3) = skew_mat.transpose();
+            
+            // compose the TASK JACOBIAN LINE
+            TP_task_map_[task_name].TskJacobian.block(i,0,1,NDOF) = - dvec.transpose() * (rgdJac * Jac).block(0,0,3,NDOF);
+        }
+    */
 }
 
 void JointRobotTP::Update_TskJac_MinAlt(){

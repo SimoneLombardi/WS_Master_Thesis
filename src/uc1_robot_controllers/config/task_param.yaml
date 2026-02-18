@@ -15,7 +15,7 @@ joint_robot_tp_node:
     damp_freq : 10
     damp_amp  : 0.00005
 
-    controlloop_step_limit : 5000
+    controlloop_step_limit : 10000
 
     # speed command gain for the two robots
     kuka_gain: 0.01
@@ -39,4 +39,6 @@ joint_robot_tp_node:
     obv_set_delta: 0.1
     obv_set_dist_limit: 0.05
     obv_set_act_delta: 0.2
+    
+    link_count: 3
 

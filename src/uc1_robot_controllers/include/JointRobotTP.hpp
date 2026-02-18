@@ -12,6 +12,7 @@
 // action server
 #include "TfGoalBroadcaster.hpp"
 #include "uc1_robot_controllers_interfaces/action/move_robot_tp.hpp"
+#include <visualization_msgs/msg/marker_array.hpp>
 #include "visualization_msgs/msg/marker.hpp"
 #include "geometry_msgs/msg/point.hpp"
 #include "uc1_robot_perception/msg/proximity_task.hpp"
@@ -57,6 +58,14 @@ struct tp_task{
     Eigen::MatrixXd TskJacobian;
 };
 
+// task struct
+struct ProximityTask {
+  Eigen::Vector3d point;     // position of the closest point 
+  Eigen::Vector3d direction; // direction vector from link point to env point
+  float distance;            // absolute distance
+  std::string link_name;     // robot link 
+};
+
 // alias definitions
 using TasKMapType = std::map<std::string, tp_task>;
 using NodeShPtr = rclcpp::Node::SharedPtr;
@@ -82,7 +91,9 @@ class JointRobotTP
         void proximityTaskCallback(const uc1_robot_perception::msg::ProximityTaskArray::SharedPtr msg);
         void jointStateCallback(const sensor_msgs::msg::JointState::SharedPtr msg);
         void publishArrowMarker(const Eigen::Vector3d& origin, const Eigen::Vector3d& vector, const std::string& frame_id, const std::string& ns, const std::string& color, int id,rclcpp::Publisher<visualization_msgs::msg::Marker>::SharedPtr publisher);
+        void publishArrowMarkerArray(const std::vector<ProximityTask> & tasks, const rclcpp::Publisher<visualization_msgs::msg::MarkerArray>::SharedPtr & marker_pub, const std::string & frame_id, const rclcpp::Time & stamp);
 
+        
         // ------------------------------------------------- TP TASKS FUNCTIONS ------------------------------------------------- //
         // UPDATER FUNCTIONS
         void UpdateTasksReferenceRate();
@@ -92,19 +103,19 @@ class JointRobotTP
         void Update_TRR_JointLimits();
         void Update_TRR_EETarget();
         void Update_TRR_ObstAvoidance();
-        void Update_TRR_ObstAvoidance_setBased();
+        void Update_TRR_ObstAvoidance_multiLink();
         void Update_TRR_MinAlt();
 
         void Update_AFunc_JointLimits();
         void Update_AFunc_EETarget();
         void Update_AFunc_ObstAvoidance();
-        void Update_AFunc_ObstAvoidance_setBased();
+        void Update_AFunc_ObstAvoidance_multiLink();
         void Update_AFunc_MinAlt();
 
         void Update_TskJac_JointLimits();
         void Update_TskJac_EETarget();
         void Update_TskJac_ObstAvoidance();
-        void Update_TskJac_ObstAvoidance_setBased();
+        void Update_TskJac_ObstAvoidance_multiLink();
         void Update_TskJac_MinAlt();
         // ------------------------------------------------- TP TASKS FUNCTIONS ------------------------------------------------- //
 
@@ -126,6 +137,7 @@ class JointRobotTP
         
         // Pub and Sub
         rclcpp::Publisher<visualization_msgs::msg::Marker>::SharedPtr control_task_publisher_;
+        rclcpp::Publisher<visualization_msgs::msg::MarkerArray>::SharedPtr control_arrayTask_publisher_;
         rclcpp::Publisher<geometry_msgs::msg::PointStamped>::SharedPtr point_publisher;
         rclcpp::Subscription<uc1_robot_perception::msg::ProximityTaskArray>::SharedPtr proximity_task_subscriber_;
         rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr joint_states_subscriber_;
