@@ -511,7 +511,7 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool*
         //std::cout << qdot_des.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
         //tp_controller.computeTP_step("joint_limits",  TP_task_map_["joint_limits"].ActMatrix,  TP_task_map_["joint_limits"].TskJacobian,  TP_task_map_["joint_limits"].RefRate);
         tp_controller.computeTP_step("obstacle_avoidance_multilink",  TP_task_map_["obstacle_avoidance_multilink"].ActMatrix,  TP_task_map_["obstacle_avoidance_multilink"].TskJacobian,  TP_task_map_["obstacle_avoidance_multilink"].RefRate);
-        //tp_controller.computeTP_step("endeff_target", TP_task_map_["endeff_target"].ActMatrix, TP_task_map_["endeff_target"].TskJacobian, TP_task_map_["endeff_target"].RefRate);
+        tp_controller.computeTP_step("endeff_target", TP_task_map_["endeff_target"].ActMatrix, TP_task_map_["endeff_target"].TskJacobian, TP_task_map_["endeff_target"].RefRate);
         tp_controller.computeTP_step("close_task", Eigen::MatrixXd::Identity(NDOF,NDOF), Eigen::MatrixXd::Identity(NDOF,NDOF), Eigen::VectorXd::Zero(NDOF)); 
         Eigen::VectorXd qdot_des;
         qdot_des = tp_controller.getTP_ydot();

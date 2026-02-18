@@ -2,12 +2,12 @@ joint_robot_tp_node:
   ros__parameters:
     # FIXED TARGET POS/ORIENT
     fx_tg_enabler: 0
-    fx_tg_pos: [2.8, 0.0, 1.0]
+    fx_tg_pos: [3.0, 0.3, 1.0]
     fx_tg_ori: [0.0, 0.0, 0.0]
 
     # system param
     obav_dimens: 3
-    hysteresis: 1
+    hysteresis: 0
 
     # control loop exit
     filter_enabler : 0
@@ -38,7 +38,7 @@ joint_robot_tp_node:
     obv_set_min_dist: 0.15    # rate(3) and activation(2) param
     obv_set_delta: 0.1
     obv_set_dist_limit: 0.05
-    obv_set_act_delta: 0.2
+    obv_set_act_delta: 0.15
     
     link_count: 3
 
