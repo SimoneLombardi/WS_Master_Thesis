@@ -176,7 +176,7 @@ void JointRobotTP::Update_TRR_ObstAvoidance(){
     //std::cout << "[UPDATE TRR] OBAV Ref Rate: " << TP_task_map_["obstacle_avoidance"].RefRate.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
     //publishArrowMarker(origin, vector, KUKA_BASE_LINK, "obst_avoidance", "red", 1, control_task_publisher_);
     //publishArrowMarker(origin, filt_vector, KUKA_BASE_LINK, "obst_avoidance_filtered", "blue", 1, control_task_publisher_);
-    RCLCPP_INFO_THROTTLE(node_->get_logger(), *node_->get_clock(), 3000, "Hysteresis: %d, Obav Ref size: %ld", hysteresis, TP_task_map_[task_name].RefRate.size());
+    //RCLCPP_INFO_THROTTLE(node_->get_logger(), *node_->get_clock(), 3000, "Hysteresis: %d, Obav Ref size: %ld", hysteresis, TP_task_map_[task_name].RefRate.size());
 }
 
 void JointRobotTP::Update_TRR_ObstAvoidance_multiLink(){
@@ -225,7 +225,14 @@ void JointRobotTP::Update_TRR_ObstAvoidance_multiLink(){
             tempTask.link_name = Prx_task_pts_OBAV_[i].link_id;
             tempTask.distance = Prx_task_pts_OBAV_[i].distance;
             tempTask.point << Prx_task_pts_OBAV_[i].min_point_robot.x, Prx_task_pts_OBAV_[i].min_point_robot.y, Prx_task_pts_OBAV_[i].min_point_robot.z; 
-            tempTask.direction << Prx_task_pts_OBAV_[i].min_point_vector.x, Prx_task_pts_OBAV_[i].min_point_vector.y, Prx_task_pts_OBAV_[i].min_point_vector.z; 
+            
+            switch(obav_dim){
+                case 2: tempTask.direction << Prx_task_pts_OBAV_[i].min_point_vector.x, Prx_task_pts_OBAV_[i].min_point_vector.y, 0.0;
+                        break;
+                case 3: tempTask.direction << Prx_task_pts_OBAV_[i].min_point_vector.x, Prx_task_pts_OBAV_[i].min_point_vector.y, Prx_task_pts_OBAV_[i].min_point_vector.z;
+                        break;
+                default: RCLCPP_ERROR(node_->get_logger(), "[obav multi link], obav size error"); break;
+            }
 
             visTasks.push_back(tempTask);
         }
@@ -340,8 +347,8 @@ void JointRobotTP::Update_AFunc_ObstAvoidance_multiLink(){
 
     //std::cout << "AF" << std::endl;
 
-    double obv_set_dist_limit = node_->get_parameter("obv_set_dist_limit").as_double();
-    double obv_set_delta = node_->get_parameter("obv_set_act_delta").as_double();
+    double obv_set_dist_limit = node_->get_parameter("obv_multi_dist_limit").as_double();
+    double obv_set_delta = node_->get_parameter("obv_multi_act_delta").as_double();
 
     double act_val;
     for(int i=0; i<(RefR_sz/obav_dim); ++i){

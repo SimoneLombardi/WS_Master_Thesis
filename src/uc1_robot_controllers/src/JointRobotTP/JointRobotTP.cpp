@@ -137,7 +137,11 @@ void JointRobotTP::insertInitConfigMap(){
     Eigen::VectorXd jl3(12);
     jl3 << -0.35, -1.5, 1.5, 0.0, 1.57, 0.0, 0.0, -1.57, 0.0, -1.57, 0.0, 0.0;
 
+    Eigen::VectorXd jl4(12);
+    jl4 << -1.0, -1.5, 1.5, 0.0, 1.57, 0.0, 0.0, -1.57, 0.0, -1.57, 0.0, 0.0;
+
     // insert into the map (DO NOT MODIFY THE DEFAULT CONFIGURATION)
+    initial_configurations_map_["jl4"] = jl4;
     initial_configurations_map_["jl3"] = jl3;
     initial_configurations_map_["jl2"] = jl2;
     initial_configurations_map_["jl"] = jl;
@@ -211,8 +215,8 @@ void JointRobotTP::declareParameters(){
     node_->declare_parameter<double>("obv_set_delta", 0.1);
     node_->declare_parameter<int>("link_count", 3);
 
-    node_->declare_parameter<double>("obv_set_dist_limit", 0.05);
-    node_->declare_parameter<double>("obv_set_act_delta", 0.2);
+    node_->declare_parameter<double>("obv_multi_dist_limit", 0.05);
+    node_->declare_parameter<double>("obv_multi_act_delta", 0.2);
 
 
     // work parameter
@@ -277,7 +281,7 @@ void JointRobotTP::proximityTaskCallback(const uc1_robot_perception::msg::Proxim
     //          << proximity_task_points_[1].link_id << " " << proximity_task_points_[1].distance << "\n"
     //          << proximity_task_points_[2].link_id << " " << proximity_task_points_[2].distance << "\n" << std::endl;
 
-    RCLCPP_INFO_THROTTLE(node_->get_logger(), *node_->get_clock(), 3000, "prx task size: %ld", proximity_task_points_.size());
+    //RCLCPP_INFO_THROTTLE(node_->get_logger(), *node_->get_clock(), 3000, "prx task size: %ld", proximity_task_points_.size());
 }
 
 void JointRobotTP::jointStateCallback(const sensor_msgs::msg::JointState::SharedPtr msg){
@@ -495,6 +499,7 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool*
                 continue;
             }else{
                 //RCLCPP_INFO(node_->get_logger(), "(%.3f,%.3f) - %.4f", pos.norm(),ang.norm(), ee_error.norm());
+                RCLCPP_INFO_THROTTLE(node_->get_logger(), *node_->get_clock(), 500,  "(%.3f,%.3f) - %.4f", pos.norm(),ang.norm(), ee_error.norm());
             }
         }
         // ---------------------- Eval STOP CONDION --------------------- //
@@ -508,7 +513,6 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool*
         tp_controller.init_TPComputation(NDOF, lambda, threshold, weight); 
         //tp_controller.computeTP_step("min_altitude",  TP_task_map_["min_altitude"].ActMatrix,  TP_task_map_["min_altitude"].TskJacobian,  TP_task_map_["min_altitude"].RefRate);
         //tp_controller.computeTP_step("obstacle_avoidance",  TP_task_map_["obstacle_avoidance"].ActMatrix,  TP_task_map_["obstacle_avoidance"].TskJacobian,  TP_task_map_["obstacle_avoidance"].RefRate);
-        //std::cout << qdot_des.transpose().format(Eigen::IOFormat(3, 0, ", ", "; ", "", "", "", "")) << std::endl;
         //tp_controller.computeTP_step("joint_limits",  TP_task_map_["joint_limits"].ActMatrix,  TP_task_map_["joint_limits"].TskJacobian,  TP_task_map_["joint_limits"].RefRate);
         tp_controller.computeTP_step("obstacle_avoidance_multilink",  TP_task_map_["obstacle_avoidance_multilink"].ActMatrix,  TP_task_map_["obstacle_avoidance_multilink"].TskJacobian,  TP_task_map_["obstacle_avoidance_multilink"].RefRate);
         tp_controller.computeTP_step("endeff_target", TP_task_map_["endeff_target"].ActMatrix, TP_task_map_["endeff_target"].TskJacobian, TP_task_map_["endeff_target"].RefRate);
@@ -526,14 +530,6 @@ void JointRobotTP::RunCartesianReachingLoop(const std::string& goal_frame, bool*
         // ---------------------- SEND VELOCITY STEP -------------------- //
 
         q_dot_vec.push_back(qdot_des);
-        
-
-        //std::cout << TP_task_map_["obstacle_avoidance_multilink"].RefRate.rows() << "x" << TP_task_map_["obstacle_avoidance_multilink"].RefRate.cols() << std::endl;
-        //std::cout << TP_task_map_["obstacle_avoidance_multilink"].ActMatrix.rows() << "x" << TP_task_map_["obstacle_avoidance_multilink"].ActMatrix.cols() << std::endl;
-        //std::cout << TP_task_map_["obstacle_avoidance_multilink"].TskJacobian.rows() << "x" << TP_task_map_["obstacle_avoidance_multilink"].TskJacobian.cols() << std::endl;
-
-        //std::cout << TP_task_map_["obstacle_avoidance"].TskJacobian.matrix() << "\n";
-        //std::cout << TP_task_map_["obstacle_avoidance_multilink"].TskJacobian.matrix() << "\n\n" << std::endl;
 
 
         // CLEAR TASK PRIORITY MAP -------------------------------------- //
