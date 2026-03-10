@@ -43,7 +43,8 @@ def generate_launch_description():
 
     obstacle_node_v2 = Node(
         package="pointcloud_interactive_markers",
-        executable="obstacle-cloud-broadcaster",
+        #executable="obstacle-cloud-broadcaster",
+        executable="chassis-cloud-moving",
         parameters=[{
             "ptc_filename":"/resources/chassis_downsampled_cloud_scaled_centered.pcd",
             "ptc_pkgname":"environment_pointcloud_processing"

@@ -114,6 +114,20 @@ ament_target_dependencies(chassis-cloud
     tf2_geometry_msgs
 )
 
+add_executable(chassis-cloud-moving src/chassis-cloud-moving.cpp)
+ament_target_dependencies(chassis-cloud-moving
+    rclcpp
+    tf2
+    tf2_ros
+    geometry_msgs
+    sensor_msgs
+    PCL
+    Eigen3
+    pcl_conversions
+    tf2_eigen
+    tf2_geometry_msgs
+)
+
 add_executable(obstacle-cloud-broadcaster src/obstacle_cloud_broadcaster.cpp)
 ament_target_dependencies(obstacle-cloud-broadcaster
     rclcpp
@@ -135,6 +149,7 @@ sphere-cloud-broadcaster
 cylinder-cloud-broadcaster
 cylinder-cloud-broadcaster-multi
 chassis-cloud
+chassis-cloud-moving
 obstacle-cloud-broadcaster
 DESTINATION lib/${PROJECT_NAME}
 )
