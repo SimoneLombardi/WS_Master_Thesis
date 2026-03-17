@@ -20,10 +20,13 @@
 class ObstaclePointCloudBroadcaster : public rclcpp::Node
 {
     public:
-        ObstaclePointCloudBroadcaster() : Node("obstacle_point_cloud_broadcaster"),
+        ObstaclePointCloudBroadcaster() : Node("obstacle_point_cloud_broadcaster_moving"),
             tf_buffer_(this->get_clock()), tf_listener_(tf_buffer_)
         {
             ptc_fileName = this->declare_parameter<std::string>("ptc_filename", "default.pcd");
+            shpere_shifts = this->declare_parameter<std::vector<double>>("shpere_shifts", {0.0, 0.0, 0.0});
+            shpere_move_ax = this->declare_parameter<std::vector<double>>("shpere_move_ax", {0.0, 0.0, 0.0});
+            
             ptc_pkg = this->declare_parameter<std::string>("ptc_pkgname", "default");
 
             publisher_ = this->create_publisher<sensor_msgs::msg::PointCloud2>("/environment_point_cloud", 10);
@@ -34,6 +37,9 @@ class ObstaclePointCloudBroadcaster : public rclcpp::Node
             
             auto share_dir = ament_index_cpp::get_package_share_directory(ptc_pkg);
             point_cloud_path = share_dir + ptc_fileName;
+
+            RCLCPP_WARN(this->get_logger(), "shift values: %f, %f, %f \n ax values: %f, %f, %f", shpere_shifts[0], shpere_shifts[1], shpere_shifts[2],
+                                                                                                shpere_move_ax[0], shpere_move_ax[1], shpere_move_ax[2]);
         }
 
     private:
@@ -50,9 +56,14 @@ class ObstaclePointCloudBroadcaster : public rclcpp::Node
             int num_theta = 20;  // polar angle steps
             int num_phi = 20;    // azimuth angle steps
 
-            double z_shift = 0.4;
-            double y_shift = -1.50;
-            double x_shift = 1.5*std::cos(this->now().seconds()); // should rock back and forth around zero
+            double z_shift = shpere_shifts[2];
+            double y_shift = shpere_shifts[1];
+            double x_shift = shpere_shifts[0]; 
+
+            double secs = this->now().seconds();
+            double z_move_ax = shpere_move_ax[2]*std::cos(secs);
+            double y_move_ax = shpere_move_ax[1]*std::cos(secs);
+            double x_move_ax = shpere_move_ax[0]*std::cos(secs); 
 
             // generate sphere with polar coordinates
             for (int i = 0; i <= num_theta; ++i) {
@@ -60,9 +71,9 @@ class ObstaclePointCloudBroadcaster : public rclcpp::Node
               for (int j = 0; j <= num_phi; ++j) {
                 double phi = 2.0 * M_PI * j / num_phi;
                 pcl::PointXYZ point;
-                point.x = radius * std::sin(theta) * std::cos(phi) + x_shift;
-                point.y = radius * std::sin(theta) * std::sin(phi) + y_shift;
-                point.z = radius * std::cos(theta) + z_shift;
+                point.x = radius * std::sin(theta) * std::cos(phi) + x_shift + x_move_ax;
+                point.y = radius * std::sin(theta) * std::sin(phi) + y_shift + y_move_ax;
+                point.z = radius * std::cos(theta) + z_shift + z_move_ax;
                 ob_cloud->points.push_back(point);
               }
             }
@@ -112,6 +123,10 @@ class ObstaclePointCloudBroadcaster : public rclcpp::Node
         std::string point_cloud_path;
         std::string ptc_fileName;
         std::string ptc_pkg;
+
+        // shpere data
+        std::vector<double> shpere_shifts;
+        std::vector<double> shpere_move_ax;
 };
 
 int main(int argc, char ** argv)

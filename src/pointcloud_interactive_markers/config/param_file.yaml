@@ -1,0 +1,16 @@
+ik_target_body_marker:
+  ros__parameters:
+    position: [2.2, 0.3, 0.05]
+    orientation: [0.0, 0.0, -1.57]
+
+obstacle_point_cloud_broadcaster:
+  ros__parameters:
+    ptc_filename: "/resources/chassis_downsampled_cloud_scaled_centered.pcd"
+    ptc_pkgname: "environment_pointcloud_processing"
+
+obstacle_point_cloud_broadcaster_moving:
+  ros__parameters:
+    ptc_filename: "/resources/chassis_downsampled_cloud_scaled_centered.pcd"
+    ptc_pkgname: "environment_pointcloud_processing"
+    shpere_shifts: [0.0, -1.5, 0.4]
+    shpere_move_ax: [1.5, 0.0, 0.0]

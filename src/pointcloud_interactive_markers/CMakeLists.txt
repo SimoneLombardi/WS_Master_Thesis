@@ -143,15 +143,20 @@ ament_target_dependencies(obstacle-cloud-broadcaster
 )
 
 install(TARGETS 
-interactive-target
-mindist-dummy-broadcaster
-sphere-cloud-broadcaster
-cylinder-cloud-broadcaster
-cylinder-cloud-broadcaster-multi
-chassis-cloud
-chassis-cloud-moving
-obstacle-cloud-broadcaster
-DESTINATION lib/${PROJECT_NAME}
+  interactive-target
+  mindist-dummy-broadcaster
+  sphere-cloud-broadcaster
+  cylinder-cloud-broadcaster
+  cylinder-cloud-broadcaster-multi
+  chassis-cloud
+  chassis-cloud-moving
+  obstacle-cloud-broadcaster
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+install(DIRECTORY
+  config
+  DESTINATION share/${PROJECT_NAME}/
 )
 
 

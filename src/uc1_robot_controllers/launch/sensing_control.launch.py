@@ -4,6 +4,7 @@ from launch_ros.actions import Node
 from launch.substitutions import Command
 import os
 from ament_index_python.packages import get_package_share_path
+from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
     # cylinder-cloud-broadcaster -- SINGOLO OSTACOLO CILINDRO 
@@ -23,16 +24,18 @@ def generate_launch_description():
         # BACK
         #"position"   :[4.0, 0.0, 0.05],
         #"orientation":[0.0, 0.0, -3.14]
-
+        
+    config_file = os.path.join(
+        get_package_share_directory('pointcloud_interactive_markers'),
+        'config',
+        'param_file.yaml'
+    )
     
     interactive_targhet_node = Node(
         package="pointcloud_interactive_markers",
         executable="interactive-target",
         name="ik_target_body_marker",
-        parameters=[{
-            "position":[2.2, 0.3, 0.05],
-            "orientation":[0.0, 0.0, -1.57]
-        }]
+        parameters=[config_file]
     )
     
     
@@ -43,12 +46,16 @@ def generate_launch_description():
 
     obstacle_node_v2 = Node(
         package="pointcloud_interactive_markers",
+        executable="obstacle-cloud-broadcaster",
+        #executable="chassis-cloud-moving",
+        parameters=[config_file]
+    )
+    
+    obstacle_node_v3 = Node(
+        package="pointcloud_interactive_markers",
         #executable="obstacle-cloud-broadcaster",
         executable="chassis-cloud-moving",
-        parameters=[{
-            "ptc_filename":"/resources/chassis_downsampled_cloud_scaled_centered.pcd",
-            "ptc_pkgname":"environment_pointcloud_processing"
-        }]
+        parameters=[config_file]
     )
 
     #chassis_downsampled_cloud_scaled_centered.pcd
@@ -65,6 +72,6 @@ def generate_launch_description():
     
     return LaunchDescription([
         interactive_targhet_node,
-        obstacle_node_v2,
+        obstacle_node_v3,
         proximity_task_gen_node
     ])
